@@ -1,0 +1,12 @@
+{
+  "name": "roots-css",
+  "description": "css library built on stylus",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jenius/roots-css.git"
+  },
+  "author": "Jeff Escalante",
+  "main": "lib/roots.js",
+  "engines": { "node": ">=0.8.0" }
+}
