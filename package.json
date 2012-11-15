@@ -6,6 +6,11 @@
     "type": "git",
     "url": "git://github.com/jenius/roots-css.git"
   },
+  "devDependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "open": "latest"
+  },
   "author": "Jeff Escalante",
   "main": "roots.js",
   "engines": { "node": ">=0.8.0" }
