@@ -2,14 +2,12 @@
 // Utilities
 // -----------------------------------------------------
 
-html5-inputs = unquote("input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], input[type='color'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='time'], input[type='week']")
-
 // Mixin: Pie
 // When turned on, enables css3 pie (http://css3pie.com/) for all
 // elements that can use it. Which makes IE look a lot nicer.
 
 pie()
-  behavior: url(/vendor/pie.htc) if pie-enabled
+  behavior: url(/pie.htc) if pie-enabled
 
 // Helper: Literal Join
 // Ported from visionmedia/nib
@@ -65,22 +63,27 @@ box-shadow(params...)
   prefix(box-shadow, params)
   pie()
 
+// Prefixes all css transforms
+
+transform(args...)
+  args = literal-join('',args) if length(args) > 1
+  prefix(transform, args)
+
+transform-origin(args...)
+  args = literal-join('',args) if length(args) > 1
+  prefix(transform-origin, args)
+
+// need a bunch more base-level properties to be prefixed
+// should look these up. all the individual animation ones
+
 // Mixin: Opacity
 // I know, it seems silly. But every time you go to IE testing you will be thanking yourself for
 // using this instead of the normal opacity declaration. Takes the same params as opacity would normally
 // ex. +opacity(.6)
 
 opacity(opacity)
-  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100)
+  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if ie-support
   opacity: opacity
-
-// Mixin: Rotate
-// Prefixed rotation with IE compatibility. Takes a degree value followed by "deg"
-// ex. +rotate(45deg)
-
-rotate(params)
-  prefix(transform, s("rotate(%s)", params))
-  pie()
 
 // Mixin: Rounded
 // Unless you are working with a ridiculously large element, this will round the corners
@@ -402,5 +405,5 @@ ease-in-out-expo =  cubic-bezier(1.000,  0.000, 0.000, 1.000)
 ease-in-out-circ =  cubic-bezier(0.785,  0.135, 0.150, 0.860)
 ease-in-out-back =  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 
-// Definitely considering bringing in the position utilities here:
-// https://github.com/visionmedia/nib/blob/master/lib/nib/positions.styl
+// shortcut to render all html5 input types
+html5-inputs = unquote("input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], input[type='color'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='time'], input[type='week']")

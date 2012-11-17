@@ -1,6 +1,5 @@
-module.exports = exports;
-exports.version = '0.1.0';
-exports.path = __dirname;
+module.exports.version = '0.1.2';
+module.exports.path = __dirname;
 
 function plugin() {
   return function(style){ 
