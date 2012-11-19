@@ -152,5 +152,12 @@ border-box()
 // Mixin: Animation
 // Just a simple one-off prefixer
 
-animation(params)
-  prefix(animation, params)
+animation(args...)
+  prefix(animation, args)
+
+// Mixin: Appearance
+// Only applies for webkit and mozilla
+
+appearance(args...)
+  webkit-appearance: args
+  moz-appearance: args
