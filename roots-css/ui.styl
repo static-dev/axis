@@ -5,8 +5,8 @@
 // Mixin: Area
 // Just a nice little area for you to put content in. Rounded corners, box with light
 // grey background by default. You can pass it a different color if you'd like.
-// ex. +area
-// ex. +area(red) -- not recommended
+// ex. area()
+// ex. area(red) -- not recommended
 
 area(color = #F5F5F5)
   box-shadow(inset 0 0 6px rgba(#000,.05))
@@ -20,8 +20,9 @@ area(color = #F5F5F5)
 // A notice for you. Best used for flash alerts, this was originally an internal
 // mixin, but you can use it if you'd like. Give it a color and a width and it will
 // output a nice lightly gradiented box for your notice to reside in.
-// ex. +notice
-// ex. +notice(500px, blue)
+// ex. notice()
+// ex. notice(300px, red)
+// ex. notice: 500px blue
 
 notice(width = false, color = #EEEEEE)
   simple-gradient(color, 3%)
@@ -37,8 +38,9 @@ notice(width = false, color = #EEEEEE)
 // This is really great for rails flash messages, or really any little notifications like
 // 'logged in!', 'logged out!', or 'errarrrr!'. Takes one of four types and colors them nicely
 // for you - notice, success, warning, or error. Defaults to notice
-// ex. +flash
-// ex. +flash(error )
+// ex. flash()
+// ex. flash(error)
+// ex. flash: success
 
 flash(type = notice)
   if type == notice
@@ -50,7 +52,7 @@ flash(type = notice)
     notice(color: #7BDEA3)
     color: #fff
     font-weight: bold
-    text-shadow: 1px 1px 1px rgba(#000,.2) 
+    text-shadow: 1px 1px 1px rgba(#000,.2)
   if type == warning
     notice(color: #FAE677)
     font-weight: bold
@@ -65,9 +67,10 @@ flash(type = notice)
 // Lay this one down on a list and it will turn the list into a breadcrumb-y thing. By default
 // separates with a slash, but you can feed it any character. Second param is spacing between the
 // list items, and the third is the color of the divider. All are optional.
-// ex. +breadcrumb
-// ex. +breadcrumb(">")
-// ex. +breadcrumb("-", 25px, red)
+// ex. breadcrumb()
+// ex. breadcrumb: '>'
+// ex. breadcrumb: "-" 25px red
+// ex. breadcrumb("~", 40px)
 
 breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
   inline-list(spacing)
@@ -82,8 +85,8 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // If you're anything like me, you always seem to find your designers putting little bubbles in things.
 // This mixin takes care of that problem, and makes a nice bubble with 100% css.
 // All parameters optional - accepts width, pointer position (left, center, or right), and a color.
-// ex. +bubble
-// ex. +bubble(color: blue)
+// ex. bubble()
+// ex. bubble(color: blue)
 // ex. +bubble(center, #57777E)
 // ex. +bubble(right, #5740A1, 500px)
 
@@ -102,7 +105,7 @@ bubble(pointer = left, color = #EEEEEE, width = false)
       left: width/2
     else if pointer == right
       right: 15px
-  
+
   &:before
     triangle(down, 10px, darken(color, 10%))
     position: absolute

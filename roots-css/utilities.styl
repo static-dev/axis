@@ -9,82 +9,6 @@
 pie()
   behavior: url(/pie.htc) if pie-enabled
 
-// Helper: Literal Join
-// Ported from visionmedia/nib
-
-literal-join(string, literals)
-  result = unquote('')
-  first = true
-  for args in literals
-    subresult = unquote('')
-    for arg in args
-      subresult = subresult arg
-    if first
-      result = subresult
-      first = false
-    else
-      result = s('%s%s%s', result, unquote(string), subresult)
-  return result
-
-// Mixin: Prefix
-// Pass this a key and a value and it will put all the browser prefixes on it.
-// ex. +prefix(box-shadow, 0 0 3px #000)
-// ex. +prefix(transition, all .3s ease)
-
-prefix(prop, val)
-  
-  val = literal-join(',', val) if length(val) > 1
-
-  for prefix in vendors
-    if prefix == official
-      {prop}: val
-    else
-      -{prefix}-{prop}: val
-
-// Mixin: Transition
-// A shortcut for prefixed transitions with an intelligent default. If you want to pass it multiple
-// comma-separated transitions you must put your parameters in quotes (or the commas get confused)
-// ex. +transition
-// ex. +transition(color 1s ease)
-// ex. +transition("color, background 1s ease")
-  
-transition(params...)
-  params = unquote('all .3s ease') unless params
-  prefix(transition, params)
-
-// Mixin: Box Shadow
-// A shortcut for prefixed box-shadows with an intelligent default. If you want to pass it multiple
-// comma-separated shadows you must put your parameters in quotes (or the commas get confused)
-// ex. +box-shadow
-// ex. +box-shadow(1px 1px 3px blue)
-// ex. +box-shadow("1px 1px 3px blue, inset 2px 0 5px rgba(0,0,0,.5)")
-
-box-shadow(params...)
-  prefix(box-shadow, params)
-  pie()
-
-// Prefixes all css transforms
-
-transform(args...)
-  args = literal-join('',args) if length(args) > 1
-  prefix(transform, args)
-
-transform-origin(args...)
-  args = literal-join('',args) if length(args) > 1
-  prefix(transform-origin, args)
-
-// need a bunch more base-level properties to be prefixed
-// should look these up. all the individual animation ones
-
-// Mixin: Opacity
-// I know, it seems silly. But every time you go to IE testing you will be thanking yourself for
-// using this instead of the normal opacity declaration. Takes the same params as opacity would normally
-// ex. +opacity(.6)
-
-opacity(opacity)
-  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if ie-support
-  opacity: opacity
-
 // Mixin: Rounded
 // Unless you are working with a ridiculously large element, this will round the corners
 // as much as css will allow. Even in IE.
@@ -94,21 +18,6 @@ rounded()
   border-radius: 999px
   pie()
 
-// Mixin: Round Corners
-// Take a guess what this does. Aliases border-radius, works in IE.
-// ex. +round-corners(5px)
-
-round-corners(px)
-  prefix(border-radius, px)
-  pie()
-
-// Mixin: Round
-// Take a guess what this does. Aliases border-radius, works in IE.
-// ex. +round(5px)
-
-round(px)
-  round-corners(px)
-
 // Mixin: Border
 // Alias of border, but with an intelligent default
 
@@ -116,44 +25,48 @@ border(params...)
   params = unquote('1px solid') unless params
   border: params
 
-// Mixin: B
-// Alias of border, but with an intelligent default. Intended for quick debugging use.
-// I used to spend a lot of time typing "border: 1px solid", but no more!
-// ex. +b
+// Alias: B
 
 b()
   border()
 
 // Mixin: Bg
-// Alias for background (with images), makes it a little quicker. Takes three arguments, the first is
-// the image path, second is background-position if you want, third is background repeat.
-// ex. +bg(../img/test.png)
-// ex. +bg(../img/other.jpg, center center, repeat)
+// Makes background (with image) declarations a little simpler.
+// ex. bg: ../img/test.png
+// ex. bg: ../img/other.jpg center center repeat
 
-bg(path, position = unquote(""), repeat = no-repeat)
-  background: url(unquote(path)) position repeat
+bg(path, args...)
+  args = unquote('no-repeat') unless args
+  background: url(path) args
 
 // Mixin: Bold
 // It's just faster to type +bold than font-weight: bold
-// ex. +bold
+// ex. bold()
 
 bold()
   font-weight: bold
 
 // Mixin: Italic
 // It's just faster to type +italic than font-style: italic
-// ex. +bold
+// ex. italic()
 
 italic()
   font-style: italic
+
+// Mixin: Normal
+// Put the font-weight and style back to normal
+
+normal()
+  font-weight: normal
+  font-style: normal
 
 // Mixin: Columns
 // For css3 columns. Takes column count (int), column gap (px, em), column width (px, em), and
 // a border-like declaration if you want a column rule. This follows exactly with the css3 spec,
 // it's just quicker, prefixed, and shortened.
-// ex. +columns
-// ex. +columns(5)
-// ex. +columns(8, 15px, 200px, 1px solid red)
+// ex. columns()
+// ex. columns(5)
+// ex. columns(8, 15px, 200px, 1px solid red)
 
 columns(count = 3, gap = 30px, width = null, rule = null)
   prefix(column-count, count)
@@ -171,8 +84,8 @@ avoid-column-break()
 // Mixin: Triangle
 // One of my favorites. Makes a little css triangle for you. Pass it a direction (up, down, left, right),
 // size (in pixels), and a color.
-// ex. +triangle
-// ex. +triangle(down, 15px, blue)
+// ex. triangle()
+// ex. triangle: down 15px blue
 
 triangle(direction = up, size = 10px, color = #000)
   width: 0
@@ -196,26 +109,34 @@ triangle(direction = up, size = 10px, color = #000)
 
 // Mixin: Ir
 // Image replacement. Pass it an image path and the image's dimensions and any text will be hidden
-// in the div and it will show an image instead. Uses the fanciest new method, props to Paul Irish
-// Avoid any possibility of an error by quoting the image path. Also looks cleaner.
-// ex. +ir("../img/test.jpg", 200px 400px)
+// in the div and it will show an image instead. Uses the fanciest new method, props to Paul Irish.
+// ex. ir: "../img/test.jpg" 200 400
 
-ir(path = null, dimensions = null)
+ir(path, dimensions...)
   font: 0/0 a
   text-shadow: none
   color: transparent
   bg(path) if path
   if length(dimensions) > 1
-    width: dimensions[0]
-    height: dimensions[1]
+    width: unit(dimensions[0], px)
+    height: unit(dimensions[1], px)
   else
-    warn("Dimenions takes a space-separated list of values - order: width, height. Ex: +ir('img.jpg', 100px 150px)")
+    warn("Make sure you also pass the image dimensions. Example: ir: '/img/whatever.jpg' 200 400")
 
+image-replace(path, dimensions...)
+  font: 0/0 a
+  text-shadow: none
+  color: transparent
+  bg(path) if path
+  if length(dimensions) > 1
+    width: unit(dimensions[0], px)
+    height: unit(dimensions[1], px)
+  else
+    warn("Make sure you also pass the image dimensions. Example: image-replace: '/img/whatever.jpg' 200 400")
 
 // Mixin: Group
-// This is the clearfix with a better name. I use this mixin like there's no tomorrow. It's like using
-// overflow: hidden, except it doesn't hide the overflow. Awesome for wrangling floats, and really quick now.
-// ex. +group
+// This is the clearfix with a better name. Excellent for wrangling floats.
+// ex. group()
 
 group()
   zoom: 1
@@ -226,16 +147,14 @@ group()
   &:after
     clear: both
 
-// Mixin: Clearfix
-// In case you can't leave this crazy word in the past. This is an alias for group.
-// ex. +clearfix
+// Alias: Clearfix
 
 clearfix()
   group()
 
 // Mixin: Inline Block
 // Cross browser inline block display. Saves many IE headaches.
-// ex. +inline-block
+// ex. inline-block()
 
 inline-block()
   display: -moz-inline-stack
@@ -255,12 +174,12 @@ inline-block()
 
 // This mixin works right when the element you apply it to has two or three direct children
 // The first one will float to the left, the second one will be to the right of the first, and third will go farthest right
-// ex. +split
-// ex. +split(15px)
-// ex. +split(15px 10px)
+// ex. media()
+// ex. media: 15px
+// ex. media: 15px 10px
 
 media(margin = 10px)
-  
+
   left: margin
   right: margin
 
@@ -282,32 +201,18 @@ media(margin = 10px)
     margin-left: left
 
 // Mixin: Raquo
-// Because technically raquo is not semantic, it's easier to add it like this.
-// ex. +raquo
+// Because technically raquo is not semantic, it's better to add it like this.
+// ex. raquo()
 
 raquo()
   &:after
     content: " \00BB"
 
-// Mixin: D
-// I find myself writing "width: blah blah px, height: blah px" all the time. This makes it so so
-// much faster. The arguments it accepts are very flexible. You can pass it one number and it will set that
-// to the width and height. You can give it units, and if you don't it will assume pixels. You can pass
-// it two numbers and it will set the first to width and the second to height. It's very convenient.
-// ex. +d(50) => width: 50px; height: 50px;
-// ex. +d(1.5em 2em) => width: 1.5em; height: 2em
-
-dimensions(numbers)
-  if length(numbers) > 1
-    width: unit(numbers[0], px)
-    height: unit(numbers[1], px)
-  else
-    width: unit(numbers, px)
-    height: unit(numbers, px)
-
 // Mixin: Size
-// A shorter alias for dimensions, because I use it so so often. Also is called like a 
-// regular css property, to make life a bit easier
+// Quickly and smoothly set width and height.
+// ex. size: 50px 100px => width: 50px; height: 100px
+// ex. size: 2em => width: 2em; height: 2em;
+// ex. size: 40 80 => width: 40px; height: 80px
 
 size(numbers...)
   if length(numbers) > 1
@@ -317,8 +222,18 @@ size(numbers...)
     width: unit(numbers, px)
     height: unit(numbers, px)
 
-border-box()
-  prefix(box-sizing, border-box)
+// Mixin: Font Face
+// Super simple font-face declaration. Just give the name and the folder it lives in.
+// Make sure the font name matches the name of the files.
+// Uses the fontspring syntax: http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
+// ex. font-face(proxima-nova, '/fonts')
+
+font-face(name, folder, weight = normal, style = normal)
+  @font-face
+    font-family: name
+    src: url(folder unquote('/') name unquote('.eot') '?#iefix') format('embedded-opentype'), url(folder unquote('/') name unquote('.woff')) format('woff'), url(folder unquote('/') name unquote('.ttf')) format('truetype'), url(folder unquote('/') name unquote('.eot') '#svgFontName') format('svg');
+    font-weight: weight
+    font-style: style
 
 // Mixin: Debug
 // Debugging tool - drop this at root level in your css and it will put borders on every element so
@@ -330,7 +245,7 @@ border-box()
 
 debug()
   html
-    
+
     div
       border: 1px solid green
 
@@ -363,14 +278,6 @@ debug()
 
     [class=""], [id=""]
       border: 5px solid yellow
-
-// Mixin: Animation
-// How you actually implement the animation. Takes animation name, duration, and how to handle
-// looping. works the same way as the official, just prefixes it.
-// ex. +animation(fade-out, 5s, infinite)
-
-animation(params)
-  prefix(animation, params)
 
 // Custom animation timing functions, ported from bourbon
 // https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_timing-functions.scss

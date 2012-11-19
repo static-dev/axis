@@ -1,0 +1,156 @@
+// ------
+// Vendor
+// ------
+// Utilities specifically intended for helping with vendor-prefixed
+// css properties, including auto-prefixing.
+
+// ------------------------ helpers ----------------------------------------
+
+// Helper: Literal Join
+// Ported from visionmedia/nib. Joins a few literals together into one string
+// ex. literal-join('', args)
+
+literal-join(string, literals)
+  result = unquote('')
+  first = true
+  for args in literals
+    subresult = unquote('')
+    for arg in args
+      subresult = subresult arg
+    if first
+      result = subresult
+      first = false
+    else
+      result = s('%s%s%s', result, unquote(string), subresult)
+  return result
+
+// Helper: Prefix
+// Pass this a key and a value and it will put all the browser prefixes on it.
+// This can be used in stylesheets but shouldn't be necessary b/c of auto-prefixing.
+// ex. prefix(box-shadow, 0 0 3px #000)
+// ex. prefix(transition, all .3s ease)
+
+prefix(prop, val)
+
+  val = literal-join(',', val) if length(val) > 1
+
+  for prefix in vendors
+    if prefix == official
+      {prop}: val
+    else
+      -{prefix}-{prop}: val
+
+// --------------------------- transitions ---------------------------------
+
+// Mixin: Transition
+// Intelligently prefix shorthand transition. Accepts multiple transitions.
+// ex. transition()
+// ex. transition(color 1s ease)
+// ex. transition(color 1s ease, background 2.4s linear)
+
+transition(args...)
+  args = unquote('all .3s ease') unless args
+  prefix(transition, args)
+
+// Prefixes for all the broken-down components of transition
+
+transition-property(args...)
+  prefix(transition-property, args)
+
+transition-duration(args...)
+  prefix(transition-duration, args)
+
+transition-timing-function(args...)
+  prefix(transition-timing-function, args)
+
+transition-delay(args...)
+  prefix(transition-delay, args)
+
+// ----------------------------- transforms ------------------------------------
+
+// Mixin: Transform
+// Intelligently prefix shorthand transform. Accepts multiple params.
+// ex. transform: rotate(10deg)
+// ex. transform: translateX(40px) rotate(15deg)
+
+transform(args...)
+  args = literal-join('',args) if length(args) > 1
+  prefix(transform, args)
+
+// Prefixes for all the broken down components of transform
+
+transform-origin(args...)
+  args = literal-join('',args) if length(args) > 1
+  prefix(transform-origin, args)
+
+perspective(args...)
+  prefix(perspective, args)
+
+perspective-origin(args...)
+  prefix(perspective-origin, args)
+
+transform-style(args...)
+  prefix(transform-style, args)
+
+backface-visibility(args...)
+  prefix(backface-visibility, args)
+
+// ------------------------------------ box-shadow ---------------------------------
+
+// Mixin: Box Shadow
+// Auto-prefix box-shadow. Accepts multiple box shadows, includes IE support.
+// ex. box-shadow: 1px 1px 3px blue
+// ex. box-shadow: 1px 1px 3px blue, inset 2px 0 5px rgba(0,0,0,.5)
+
+box-shadow(params...)
+  prefix(box-shadow, params)
+  pie()
+
+// ----------------------------------- border-radius ---------------------------------
+
+// Mixin: Border Radius
+// Prefixes border-radius, IE support.
+// ex. +round-corners(5px)
+
+border-radius(px)
+  prefix(border-radius, px)
+
+// Alias: Round Corners
+
+round-corners(px)
+  border-radius: px
+  pie()
+
+// Alias: Round
+
+round(px)
+  round-corners(px)
+
+// ------------------------------------- other utils ---------------------------------
+
+// Mixin: Opacity
+// I know, it seems silly. But every time you go to IE testing you will be thanking yourself for
+// using this instead of the normal opacity declaration. Overrides default opacity.
+// ex. opacity: .6
+
+opacity(opacity)
+  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if ie-support
+  opacity: opacity
+
+// Mixin: Background Size
+// Just a one-off auto-prefixer
+
+background-size(args...)
+  prefix(background-size, args)
+
+// Mixin: Border Box
+// Use carefully if you need to test in IE
+
+border-box()
+  prefix(box-sizing, border-box)
+
+// Mixin: Animation
+// Just a simple one-off prefixer
+
+animation(params)
+  prefix(animation, params)
