@@ -86,9 +86,8 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // This mixin takes care of that problem, and makes a nice bubble with 100% css.
 // All parameters optional - accepts width, pointer position (left, center, or right), and a color.
 // ex. bubble()
-// ex. bubble(color: blue)
-// ex. +bubble(center, #57777E)
-// ex. +bubble(right, #5740A1, 500px)
+// ex. bubble: center #57777E
+// ex. bubble: right #5740A1 500px
 
 // TODO: add option to put the pointer on the top or left
 // bottom left, bottom center, bottom right, left, right, top left...
@@ -120,20 +119,20 @@ bubble(pointer = left, color = #EEEEEE, width = false)
 // For when you want to *semantically* show an image. Put this on your <figure /> element and it will style
 // the nested image and figcaption in a wonderfully pleasing manner. Takes a color (for the thin outline), and
 // if you want, dimensions of the image as a space separated list.
-// ex. +figure
-// ex. +figure(blue)
-// ex. +figure(#D29E78, 100px 250px)
-// ex. +figure(dimensions: 100px 250px)
+// ex. figure()
+// ex. figure: blue
+// ex. figure: #D29E78 100 250
+// ex. figure: green 100px 400px
 
 figure(color = default, dimensions = false)
   if length(dimensions) > 1
     display: block
-    width: dimensions[0]
-    height: dimensions[1]
+    width: unit(dimensions[0], px)
+    height: unit(dimensions[1], px)
   else if dimensions == false
     inline-block()
   else
-    warn("Pass dimensions as false or a space-spearated list, as such: +figure(dimensions: 100px 250px) or +figure(blue, 100px 250px)")
+    warn("Make sure you pass the image's dimensions as a space-separated list")
   img
     display: block
     padding: 4px
@@ -150,10 +149,10 @@ figure(color = default, dimensions = false)
 // and size, which is an integer from one up, and scales every aspect of the nav bar for you.
 // All have defaults.
 // This mixin is meant to be placed on a <nav> element that contains a ul.
-// ex. +nav
-// ex. +nav(false, #444, red, 3)
+// ex. nav()
+// ex. nav: 1 #444 red fixed
 
-nav(size = 1, fixed = true, color = #222, link-color = #fff)
+nav(size = 1, color = #222, link-color = #fff, fixed = true)
   display: block
   z-index: 10
   simple-noise-gradient(color, 5%)
@@ -201,7 +200,7 @@ nav(size = 1, fixed = true, color = #222, link-color = #fff)
 // Super convenient flash notices. Anything with .flash on it will display as a notice, and if
 // you add the additional class .error, .warning, .notice, or .success, it will display the
 // appropriate color background for the message.
-// ex. +flash-notices
+// ex. flash-notices()
 
 flash-notices()
   .flash

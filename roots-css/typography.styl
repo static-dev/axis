@@ -5,40 +5,28 @@
 // Mixin: Text Margin
 // Pass this guy a font size (pixels - no units) and he will apply margins to the element at a ratio
 // most pleasing to the gods.
-// ex. +text-margin(14)
+// ex. text-margin: 14px
 
 text-margin(size)
   margin: unit(size/1.6, px) 0
 
 // Mixin: P
-// Takes care of all your paragraph needs. Pass it an optional size and it will
-// do some golden ratio math and give you a nice line height. Pass it a width and it will
-// be even more accurate. And you can turn off margins if you'd like too.
+// Takes care of all your paragraph needs. This used to have a bunch of golden ratio math
+// to calculate exact pixels for line height and such
 
-// math via http://www.pearsonified.com/2011/12/golden-ratio-typography.php
-
-// ex. +p
-// ex. +p(18)
-// ex. +p(14, true, 500px)
+// ex. paragraph()
+// ex. paragraph: 18
+// ex. paragraph: 14 20px 500px
 
 paragraph(size = font-size, margins = true, width = false)
-
-  gr = 1.61803399
-  height = size * gr
-
-  if width
-    height: gr - (1 / (2 * gr)) * (1 - width / (width * gr))
-    width: width
-
-  if margins
-    text-margin(size)
-  
-  line-height: unit(height, px)
+  width: width if width
+  text-margin(size) if margins
+  line-height: 1.6em
   font-size: unit(size, px)
 
 // Mixin: Fs
 // An alias for 'font-size'
-// ex. +size(16px)
+// ex. fs: 16px
 
 fs(size)
   font-size: size
@@ -87,7 +75,7 @@ small()
   opacity: .6
   font-weight: normal
 
-// Internal Mixin: Heading
+// Helper: Heading
 // For internal use within headings
 
 heading(color = #333)
@@ -95,7 +83,7 @@ heading(color = #333)
   text-rendering: optimizelegibility
   font-weight: bold
 
-// Internal Mixin: Heading Size
+// Helper: Heading Size
 // Gives your headings ratios custom crafted in house from the finest stock of mathematics.
 // Feed it a size and it will get you rem and some nice header-y margins.
 
@@ -106,7 +94,7 @@ heading-size(size)
 // Mixin Set: h1, h2, h3, h4, h5, h6
 // These provide nice defaults for headings based off the default font size.
 // The can scale infinitely, and work best when matched to their corresponding html elements.
-// ex. +h3
+// ex. h3()
 
 h1()
   heading()
@@ -143,9 +131,9 @@ h6()
 // A nice default style for links. Accepts a color and a style. Color can be anything,
 // style can be underline, darken, lighten, or glow, each giving it a different style
 // of interaction when hovered. More suggestions here welcome.
-// ex. +link
-// ex. +link(green)
-// ex. +link(#57777E, glow)
+// ex. link
+// ex. link: green
+// ex. link: #57777E glow
 
 link(color = blue, style = underline)
   color: color
@@ -167,7 +155,7 @@ link(color = blue, style = underline)
 // Mixin: Reset Link
 // Sometimes my link mixin of the browser defaults will give you questionable link defaults
 // that you don't want on certain elements. This guy gets rid of that.
-// ex. +reset-link
+// ex. reset-link()
 
 reset-link()
   color: inherit
@@ -182,13 +170,13 @@ reset-link()
 
 // Mixin: Text Selection
 // This guy sets the text select color intelligently based on the hilight-color variable
-// found in _roots.sass. If you really want, you can pass it a color override too
-// ex. +text-selection()
+// found in the settings file. If you really want, you can pass it a color override too
+// ex. text-selection()
 
-text-select(color = hilight-color)
-  
+text-selection(color = hilight-color)
+
   textColor = light(color) ? white : #494949
-  
+
   ::-moz-selection
     background: color
     color: textColor
@@ -200,8 +188,8 @@ text-select(color = hilight-color)
 // A nice default for list styles. More or less the same as browser defaults, scales nicely.
 // You can pass it any style that list-style-type would normally take. Defaults to disc.
 // Use this on a ul element por favor.
-// ex. +ul
-// ex. +ul(square)
+// ex. ul
+// ex. ul: square
 
 ul(style = disc)
   margin: 5px 15px
@@ -214,8 +202,8 @@ ul(style = disc)
 // A nice default for list styles. More or less the same as browser defaults, scales nicely.
 // You can pass it any style that list-style-type would normally take. Defaults to decimal.
 // Use this on a ol element por favor.
-// ex. +ol
-// ex. +ol(upper-roman)
+// ex. ol
+// ex. ol: upper-roman
 
 ol(style = decimal)
   margin: 5px 18px
@@ -227,8 +215,8 @@ ol(style = decimal)
 // Mixin: Inline List
 // For when you need your list to be horizontal. Pass it the spacing you want between list
 // elements, whatever units you'd like. Defaults to 20px
-// ex. +inline-list
-// ex. +inline-list(15px)
+// ex. inline-list
+// ex. inline-list: 15px
 
 inline-list(spacing = 20px)
   group()
@@ -244,7 +232,7 @@ inline-list(spacing = 20px)
 // Mixin: Reset List
 // If you're tired of all the list shenanigans and want to get rid of them for this special
 // list you're working on, this is your guy. Resets the margins, padding, and style.
-// ex. +reset-list
+// ex. reset-list()
 
 reset-list()
   margin: 0
@@ -257,7 +245,7 @@ reset-list()
 // Mixin: Blockquote
 // Nice styles for a blockquote, and even puts a nice hyphen in before your citation.
 // Use with a <p> and <cite> inside for best results.
-// ex. +blockquote
+// ex. blockquote()
 
 // TODO: Add a couple different styles here
 
@@ -359,7 +347,7 @@ typography()
 
   small
     small()
-    
+
   a
     link()
 

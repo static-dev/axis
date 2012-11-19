@@ -6551,47 +6551,11 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+body {
+  padding: 50px;
+}
 p {
-  background: #7bba27 -webkit-gradient(linear, left top, left bottom, color-stop(0, #84c729), color-stop(1, #7bba27)) repeat-x;
-  background: #7bba27 -vendor-prefixes-linear-gradient(top, #84c729 0%, #7bba27 100%) repeat-x;
-  background: #7bba27 linear-gradient(top, #84c729 0%, #7bba27 100%) repeat-x;
-  zoom: 1;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
-  padding: 15px;
-  border: 1px solid #72ad24;
-  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
-  position: relative;
-  width: 500px;
-}
-p:before,
-p:after {
-  content: "";
-  display: table;
-}
-p:after {
-  clear: both;
-}
-p:after {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #7bba27;
-  position: absolute;
-  bottom: -9px;
-  left: 500px/2;
-}
-p:before {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #72ad24;
-  position: absolute;
-  bottom: -11px;
-  left: 500px/2;
+  margin: 0;
+  line-height: 1.6em;
+  font-size: 15px;
 }
