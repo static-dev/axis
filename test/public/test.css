@@ -6555,7 +6555,74 @@ body {
   padding: 50px;
 }
 p {
-  margin: 0;
-  line-height: 1.6em;
-  font-size: 15px;
+  font-size: 18px;
+  padding: 13.77px 30.294px;
+  -webkit-border-radius: 4.153849349114884px;
+  -moz-border-radius: 4.153849349114884px;
+  -o-border-radius: 4.153849349114884px;
+  -ms-border-radius: 4.153849349114884px;
+  border-radius: 4.153849349114884px;
+  background-color: #b44326;
+  color: #fff;
+  color: rgba(255,255,255,0.95);
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+p:hover,
+p:focus {
+  background-color: #ab4024;
+  color: #f7f7f7;
+  color: rgba(247,247,247,0.95);
+}
+p:active {
+  background-color: #a23c22;
+}
+input {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+  -o-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+  -ms-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-size: 90%;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  border: solid 1px #bbb;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  outline: none !important;
+  padding: 4px 5px 4px;
+  background: #fff;
+  color: #555;
+  width: 250px;
+  text-shadow: 0 0 1px rgba(255,255,255,0.1);
+}
+input:focus {
+  -webkit-box-shadow: 0 0 5px rgba(82,215,254,0.7);
+  -moz-box-shadow: 0 0 5px rgba(82,215,254,0.7);
+  -o-box-shadow: 0 0 5px rgba(82,215,254,0.7);
+  -ms-box-shadow: 0 0 5px rgba(82,215,254,0.7);
+  box-shadow: 0 0 5px rgba(82,215,254,0.7);
+  border: 1px solid #70c7e0;
+  outline: none !important;
+}
+input:focus {
+  -webkit-box-shadow: 0 0 5px rgba(0,166,252,0.7);
+  -moz-box-shadow: 0 0 5px rgba(0,166,252,0.7);
+  -o-box-shadow: 0 0 5px rgba(0,166,252,0.7);
+  -ms-box-shadow: 0 0 5px rgba(0,166,252,0.7);
+  box-shadow: 0 0 5px rgba(0,166,252,0.7);
+  border: 1px solid #2c98d0;
+  outline: none !important;
 }
