@@ -63,25 +63,26 @@ hover-pop(scale = 1.2, rotate = null, shadow = null)
 // Mixin: Hover Fade
 // On hover, fades the element's opacity down. Takes an amount as an integer between
 // 0 and 1, like opacity normally does. Recommended to be used with transition.
-// ex. +hover-fade(.5)
+// ex. hover-fade: .5
 
-hover-fade(amount)
+hover-fade(amount = .5)
   &:hover
     opacity: amount
 
 // Mixin: Hover Color
 // Will swap an elements color or background color on hover. Takes a color in any format
-// as the first argument, and a boolean indicating if you want it to be the background color
-// as the second. Also recommended to be used with transition.
-// ex. +hover-color(#D45D86)
-// ex. +hover-color(red, true)
+// as the first argument. Will first look for a background color to change, then a color.
+// ex. hover-color: #D45D86
 
-hover-color(color, bg = null)
+hover-color(color)
   &:hover
-    if bg
+    if @background
       background-color: color
-    else
+    else if @color
       color: color
+    else
+      warn('you need to set a color or background color on your element for this to work')
+
 
 // To add:
 // *+click-down(pixels)*

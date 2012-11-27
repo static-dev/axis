@@ -9,7 +9,7 @@
 
 // It will also contain the ability to append or prepend little icons to your inputs
 
-// Mixin: Focus Glow
+// Helper: Focus Glow
 // Makes your inputs glow when focused. Takes a color - they will glow that color. Default color by default.
 // ex. +focus-glow
 // ex. +focus-glow(blue)
@@ -55,7 +55,7 @@ input(color = light-blue, width = 250px)
 // ex. +input-search(yellow)
 // ex. +input-search
 
-// TODO: Implement search icon option
+// TODO: Implement search icon option with base64
 
 // =field-search
 //   position: relative
@@ -196,7 +196,20 @@ fields(direction = right, width = 370px)
 // Adds nicer looking styles to all text inputs and textareas. Overrides the defaults.
 
 forms()
-  {html5-inputs}
+  input[type='email']
+  input[type='number']
+  input[type='password']
+  input[type='search']
+  input[type='tel']
+  input[type='text']
+  input[type='url']
+  input[type='color']
+  input[type='date']
+  input[type='datetime']
+  input[type='datetime-local']
+  input[type='month']
+  input[type='time']
+  input[type='week']
   textarea
     input()
 
@@ -208,3 +221,6 @@ forms()
       input-warning()
     &.error
       input-error()
+
+// shortcut to render all html5 input types
+html5-inputs = unquote("input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], input[type='color'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='time'], input[type='week']")
