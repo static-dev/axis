@@ -8,7 +8,7 @@
 table(border = true, striped = true, condensed = false)
 
   max-width: 100%
-  border-collapse: collapse 
+  border-collapse: collapse
   border-spacing: 0
   width: 100%
   margin-bottom: 18px
@@ -32,11 +32,11 @@ table(border = true, striped = true, condensed = false)
 
   tbody + tbody
     border-top: 2px solid #ddd
-  
+
   if condensed
     th, td
       padding: 4px 5px
-  
+
   if border
     border: 1px solid #ddd
     border-collapse: separate
@@ -67,7 +67,7 @@ table(border = true, striped = true, condensed = false)
     thead:last-child tr:last-child th:last-child
     tbody:last-child tr:last-child td:last-child
       round(0 0 4px 0)
-  
+
   if striped
     tbody tr:nth-child(odd) td
     tbody tr:nth-child(odd) th
@@ -82,5 +82,8 @@ table(border = true, striped = true, condensed = false)
 // Makes tables look awesome by default. Highly recommended if you have tables on your site at all.
 
 tables()
-  table
-    table()
+  if mixin == 'root'
+    table
+      table()
+  else
+    warn(this mixin should be called at root level)

@@ -173,9 +173,9 @@ reset-link()
 // found in the settings file. If you really want, you can pass it a color override too
 // ex. text-selection()
 
-text-selection(color = hilight-color)
+text-selection(color = hilight-color, textColor = null)
 
-  textColor = light(color) ? white : #494949
+  textColor = light(color) ? white : #494949 unless textColor
 
   ::-moz-selection
     background: color
@@ -238,6 +238,7 @@ reset-list()
   margin: 0
   padding: 0
   li
+    float: none
     list-style-type: none
     padding: 0
     margin: 0
@@ -271,14 +272,17 @@ blockquote()
 // ex. +base
 
 base(fonts = font-stack, size = font-size, color = font-color)
-  body
-    font-family: fonts
-    font-size: unit(size*6.46, "%")
-    font-size: unit(size, px)
-    color: color
-    -webkit-font-smoothing: antialiased
-    -webkit-text-size-adjust: 100%
-    -ms-text-size-adjust: 100%
+  if mixin == 'root'
+    body
+      font-family: fonts
+      font-size: unit(size*6.46, "%")
+      font-size: unit(size, px)
+      color: color
+      -webkit-font-smoothing: antialiased
+      -webkit-text-size-adjust: 100%
+      -ms-text-size-adjust: 100%
+    else
+      warn(this mixin should be called at root level)
 
 // Additive Mixin: Headers
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -286,23 +290,26 @@ base(fonts = font-stack, size = font-size, color = font-color)
 // ex. +headers
 
 headers()
-  h1
-    h1()
+  if mixin == 'root'
+    h1
+      h1()
 
-  h2
-    h2()
+    h2
+      h2()
 
-  h3
-    h3()
+    h3
+      h3()
 
-  h4
-    h4()
+    h4
+      h4()
 
-  h5
-    h5()
+    h5
+      h5()
 
-  h6
-    h6()
+    h6
+      h6()
+  else
+    warn(this mixin should be called at root level)
 
 // Additive Mixin: Lists
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -310,10 +317,13 @@ headers()
 // ex. +lists
 
 lists()
-  ul
-    ul()
-  ol
-    ol()
+  if mixin == 'root'
+    ul
+      ul()
+    ol
+      ol()
+  else
+    warn(this mixin should be called at root level)
 
 // Additive Mixin: Bold-Italic
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -321,14 +331,17 @@ lists()
 // ex. +bold-italic
 
 bold-italic()
-  b
-    bold()
-  i
-    italic()
-  strong
-    bold()
-  em
-    italic()
+  if mixin == 'root'
+    b
+      bold()
+    i
+      italic()
+    strong
+      bold()
+    em
+      italic()
+  else
+    warn(this mixin should be called at root level)
 
 // Additive Mixin: Typography
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -337,19 +350,22 @@ bold-italic()
 // ex. +typography
 
 typography()
-  bold-italic()
-  headers()
-  text-selection()
-  lists()
+  if mixin == 'root'
+    bold-italic()
+    headers()
+    text-selection()
+    lists()
 
-  p
-    paragraph(font-size)
+    p
+      paragraph(font-size)
 
-  small
-    small()
+    small
+      small()
 
-  a
-    link()
+    a
+      link()
 
-  blockquote
-    blockquote()
+    blockquote
+      blockquote()
+  else
+    warn(this mixin should be called at root level)
