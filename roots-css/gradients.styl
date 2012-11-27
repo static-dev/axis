@@ -101,7 +101,7 @@ linear-gradient(start, stops...)
 
   // vendor prefixed
   stops = join-stops(stops, std-stop)
-  for prefix in vendor-prefixes
+  for prefix in vendors
     unless prefix == official
       gradient = '-%s-linear-gradient(%s, %s)' % (prefix start stops)
       add-property(prop, replace(val, '__CALL__', gradient))
