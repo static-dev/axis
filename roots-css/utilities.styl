@@ -49,14 +49,15 @@ bg(path, args...)
   background: url(path) args
 
 // Mixin: bg-retina
-// Makes background (with image) declarations a little simpler.
-// ex. bg: ../img/test.png
-// ex. bg: ../img/other.jpg center center repeat
+// Make sure the image path is double the size, pass it halved numbers, and you're in the retina-clear
+// ex. bg: ../img/test.png 200px 100px
+// ex. bg: ../img/other.jpg 100px 50px center center repeat
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
   background: url(path) args
-  background-size: unit(width, px) unit(height, px)
+  size: width height
+  background-size: literal-join('', width height)
 
 // Mixin: Bold
 // It's just faster to type +bold than font-weight: bold

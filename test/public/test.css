@@ -6910,32 +6910,14 @@ body {
   padding: 50px;
 }
 p {
-  font-size: 18px;
-  padding: 13.77px 30.294px;
-  -webkit-border-radius: 4.153849349114884px;
-  -moz-border-radius: 4.153849349114884px;
-  -o-border-radius: 4.153849349114884px;
-  -ms-border-radius: 4.153849349114884px;
-  border-radius: 4.153849349114884px;
-  background-color: #b44326;
-  color: #fff;
-  color: rgba(255,255,255,0.95);
-  cursor: pointer;
-  font-weight: bold;
-  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-p:hover,
-p:focus {
-  background-color: #ab4024;
-  color: #f7f7f7;
-  color: rgba(247,247,247,0.95);
-}
-p:active {
-  background-color: #a23c22;
+  background: url("/img/something.jpg") no-repeat;
+  width: 200px;
+  height: 100px;
+  -webkit-background-size: 200px 100px;
+  -moz-background-size: 200px 100px;
+  -o-background-size: 200px 100px;
+  -ms-background-size: 200px 100px;
+  background-size: 200px 100px;
 }
 input {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
