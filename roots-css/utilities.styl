@@ -48,6 +48,16 @@ bg(path, args...)
   args = unquote('no-repeat') unless args
   background: url(path) args
 
+// Mixin: bg-retina
+// Makes background (with image) declarations a little simpler.
+// ex. bg: ../img/test.png
+// ex. bg: ../img/other.jpg center center repeat
+
+bg-retina(path, width, height, args...)
+  args = unquote('no-repeat') unless args
+  background: url(path) args
+  background-size: unit(width, px) unit(height, px)
+
 // Mixin: Bold
 // It's just faster to type +bold than font-weight: bold
 // ex. bold()

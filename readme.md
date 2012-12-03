@@ -6,8 +6,7 @@ Roots css is a terse, feature-rich css library built on top of stylus. It's a ch
 Detailed documentation coming soon. The code is commented pretty thoroughly though, if you want to comb through it.
 
 #### To Do
-- docs
-- hilight spelling
+- clean up differences between native and mixin function calls
 - grid system
 - add extra optional params where i can
 - capybara tests

@@ -1,105 +1,130 @@
 @-webkit-keyframes flash {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   25% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   75% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @-moz-keyframes flash {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   25% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   75% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @-o-keyframes flash {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   25% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   75% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @-ms-keyframes flash {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   25% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   75% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @keyframes flash {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   25% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   75% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -1982,6 +2007,7 @@
     -o-transform: rotate(60deg) translateY(0);
     -ms-transform: rotate(60deg) translateY(0);
     transform: rotate(60deg) translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform-origin: top left;
     -moz-transform-origin: top left;
@@ -1997,6 +2023,7 @@
     -o-transform: translateY(700px);
     -ms-transform: translateY(700px);
     transform: translateY(700px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -2049,6 +2076,7 @@
     -o-transform: rotate(60deg) translateY(0);
     -ms-transform: rotate(60deg) translateY(0);
     transform: rotate(60deg) translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform-origin: top left;
     -moz-transform-origin: top left;
@@ -2064,6 +2092,7 @@
     -o-transform: translateY(700px);
     -ms-transform: translateY(700px);
     transform: translateY(700px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -2116,6 +2145,7 @@
     -o-transform: rotate(60deg) translateY(0);
     -ms-transform: rotate(60deg) translateY(0);
     transform: rotate(60deg) translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform-origin: top left;
     -moz-transform-origin: top left;
@@ -2131,6 +2161,7 @@
     -o-transform: translateY(700px);
     -ms-transform: translateY(700px);
     transform: translateY(700px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -2183,6 +2214,7 @@
     -o-transform: rotate(60deg) translateY(0);
     -ms-transform: rotate(60deg) translateY(0);
     transform: rotate(60deg) translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform-origin: top left;
     -moz-transform-origin: top left;
@@ -2198,6 +2230,7 @@
     -o-transform: translateY(700px);
     -ms-transform: translateY(700px);
     transform: translateY(700px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -2250,6 +2283,7 @@
     -o-transform: rotate(60deg) translateY(0);
     -ms-transform: rotate(60deg) translateY(0);
     transform: rotate(60deg) translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform-origin: top left;
     -moz-transform-origin: top left;
@@ -2265,11 +2299,13 @@
     -o-transform: translateY(700px);
     -ms-transform: translateY(700px);
     transform: translateY(700px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
 @-webkit-keyframes rollIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2279,6 +2315,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2289,6 +2326,7 @@
 }
 @-moz-keyframes rollIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2298,6 +2336,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2308,6 +2347,7 @@
 }
 @-o-keyframes rollIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2317,6 +2357,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2327,6 +2368,7 @@
 }
 @-ms-keyframes rollIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2336,6 +2378,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2346,6 +2389,7 @@
 }
 @keyframes rollIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2355,6 +2399,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2365,6 +2410,7 @@
 }
 @-webkit-keyframes rollOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2374,6 +2420,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2384,6 +2431,7 @@
 }
 @-moz-keyframes rollOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2393,6 +2441,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2403,6 +2452,7 @@
 }
 @-o-keyframes rollOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2412,6 +2462,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2422,6 +2473,7 @@
 }
 @-ms-keyframes rollOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2431,6 +2483,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2441,6 +2494,7 @@
 }
 @keyframes rollOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(0px) rotate(0deg);
     -moz-transform: translateX(0px) rotate(0deg);
@@ -2450,6 +2504,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-100%) rotate(-120deg);
     -moz-transform: translateX(-100%) rotate(-120deg);
@@ -2460,6 +2515,7 @@
 }
 @-webkit-keyframes bounceIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -2469,6 +2525,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
@@ -2495,6 +2552,7 @@
 }
 @-moz-keyframes bounceIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -2504,6 +2562,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
@@ -2530,6 +2589,7 @@
 }
 @-o-keyframes bounceIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -2539,6 +2599,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
@@ -2565,6 +2626,7 @@
 }
 @-ms-keyframes bounceIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -2574,6 +2636,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
@@ -2600,6 +2663,7 @@
 }
 @keyframes bounceIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -2609,6 +2673,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
@@ -2635,6 +2700,7 @@
 }
 @-webkit-keyframes bounceInDown {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -2644,6 +2710,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(30px);
     -moz-transform: translateY(30px);
@@ -2670,6 +2737,7 @@
 }
 @-moz-keyframes bounceInDown {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -2679,6 +2747,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(30px);
     -moz-transform: translateY(30px);
@@ -2705,6 +2774,7 @@
 }
 @-o-keyframes bounceInDown {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -2714,6 +2784,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(30px);
     -moz-transform: translateY(30px);
@@ -2740,6 +2811,7 @@
 }
 @-ms-keyframes bounceInDown {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -2749,6 +2821,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(30px);
     -moz-transform: translateY(30px);
@@ -2775,6 +2848,7 @@
 }
 @keyframes bounceInDown {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -2784,6 +2858,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(30px);
     -moz-transform: translateY(30px);
@@ -2810,6 +2885,7 @@
 }
 @-webkit-keyframes bounceInUp {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -2819,6 +2895,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-30px);
     -moz-transform: translateY(-30px);
@@ -2845,6 +2922,7 @@
 }
 @-moz-keyframes bounceInUp {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -2854,6 +2932,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-30px);
     -moz-transform: translateY(-30px);
@@ -2880,6 +2959,7 @@
 }
 @-o-keyframes bounceInUp {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -2889,6 +2969,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-30px);
     -moz-transform: translateY(-30px);
@@ -2915,6 +2996,7 @@
 }
 @-ms-keyframes bounceInUp {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -2924,6 +3006,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-30px);
     -moz-transform: translateY(-30px);
@@ -2950,6 +3033,7 @@
 }
 @keyframes bounceInUp {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -2959,6 +3043,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-30px);
     -moz-transform: translateY(-30px);
@@ -2985,6 +3070,7 @@
 }
 @-webkit-keyframes bounceInRight {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -2994,6 +3080,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-30px);
     -moz-transform: translateX(-30px);
@@ -3020,6 +3107,7 @@
 }
 @-moz-keyframes bounceInRight {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -3029,6 +3117,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-30px);
     -moz-transform: translateX(-30px);
@@ -3055,6 +3144,7 @@
 }
 @-o-keyframes bounceInRight {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -3064,6 +3154,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-30px);
     -moz-transform: translateX(-30px);
@@ -3090,6 +3181,7 @@
 }
 @-ms-keyframes bounceInRight {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -3099,6 +3191,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-30px);
     -moz-transform: translateX(-30px);
@@ -3125,6 +3218,7 @@
 }
 @keyframes bounceInRight {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -3134,6 +3228,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-30px);
     -moz-transform: translateX(-30px);
@@ -3160,6 +3255,7 @@
 }
 @-webkit-keyframes bounceInLeft {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3169,6 +3265,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(30px);
     -moz-transform: translateX(30px);
@@ -3195,6 +3292,7 @@
 }
 @-moz-keyframes bounceInLeft {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3204,6 +3302,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(30px);
     -moz-transform: translateX(30px);
@@ -3230,6 +3329,7 @@
 }
 @-o-keyframes bounceInLeft {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3239,6 +3339,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(30px);
     -moz-transform: translateX(30px);
@@ -3265,6 +3366,7 @@
 }
 @-ms-keyframes bounceInLeft {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3274,6 +3376,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(30px);
     -moz-transform: translateX(30px);
@@ -3300,6 +3403,7 @@
 }
 @keyframes bounceInLeft {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3309,6 +3413,7 @@
   }
 
   60% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(30px);
     -moz-transform: translateX(30px);
@@ -3351,6 +3456,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -3360,6 +3466,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -3386,6 +3493,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -3395,6 +3503,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -3421,6 +3530,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -3430,6 +3540,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -3456,6 +3567,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -3465,6 +3577,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -3491,6 +3604,7 @@
   }
 
   50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -3500,6 +3614,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: scale(0.3);
     -moz-transform: scale(0.3);
@@ -3518,6 +3633,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(20px);
     -moz-transform: translateY(20px);
@@ -3527,6 +3643,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -3545,6 +3662,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(20px);
     -moz-transform: translateY(20px);
@@ -3554,6 +3672,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -3572,6 +3691,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(20px);
     -moz-transform: translateY(20px);
@@ -3581,6 +3701,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -3599,6 +3720,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(20px);
     -moz-transform: translateY(20px);
@@ -3608,6 +3730,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -3626,6 +3749,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(20px);
     -moz-transform: translateY(20px);
@@ -3635,6 +3759,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(-2000px);
     -moz-transform: translateY(-2000px);
@@ -3653,6 +3778,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-20px);
     -moz-transform: translateY(-20px);
@@ -3662,6 +3788,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -3680,6 +3807,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-20px);
     -moz-transform: translateY(-20px);
@@ -3689,6 +3817,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -3707,6 +3836,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-20px);
     -moz-transform: translateY(-20px);
@@ -3716,6 +3846,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -3734,6 +3865,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-20px);
     -moz-transform: translateY(-20px);
@@ -3743,6 +3875,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -3761,6 +3894,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateY(-20px);
     -moz-transform: translateY(-20px);
@@ -3770,6 +3904,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -moz-transform: translateY(2000px);
@@ -3788,6 +3923,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(20px);
     -moz-transform: translateX(20px);
@@ -3797,6 +3933,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3815,6 +3952,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(20px);
     -moz-transform: translateX(20px);
@@ -3824,6 +3962,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3842,6 +3981,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(20px);
     -moz-transform: translateX(20px);
@@ -3851,6 +3991,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3869,6 +4010,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(20px);
     -moz-transform: translateX(20px);
@@ -3878,6 +4020,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3896,6 +4039,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(20px);
     -moz-transform: translateX(20px);
@@ -3905,6 +4049,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(-2000px);
     -moz-transform: translateX(-2000px);
@@ -3923,6 +4068,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-20px);
     -moz-transform: translateX(-20px);
@@ -3932,6 +4078,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -3950,6 +4097,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-20px);
     -moz-transform: translateX(-20px);
@@ -3959,6 +4107,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -3977,6 +4126,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-20px);
     -moz-transform: translateX(-20px);
@@ -3986,6 +4136,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -4004,6 +4155,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-20px);
     -moz-transform: translateX(-20px);
@@ -4013,6 +4165,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -4031,6 +4184,7 @@
   }
 
   20% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     -webkit-transform: translateX(-20px);
     -moz-transform: translateX(-20px);
@@ -4040,6 +4194,7 @@
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
     -webkit-transform: translateX(2000px);
     -moz-transform: translateX(2000px);
@@ -4050,46 +4205,56 @@
 }
 @-webkit-keyframes fadeIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @-moz-keyframes fadeIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @-o-keyframes fadeIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @-ms-keyframes fadeIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @keyframes fadeIn {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4100,6 +4265,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4109,6 +4275,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4119,6 +4286,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4128,6 +4296,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4138,6 +4307,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4147,6 +4317,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4157,6 +4328,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4166,6 +4338,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4176,6 +4349,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4185,6 +4359,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4195,6 +4370,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4204,6 +4380,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4214,6 +4391,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4223,6 +4401,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4233,6 +4412,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4242,6 +4422,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4252,6 +4433,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4261,6 +4443,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4271,6 +4454,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4280,6 +4464,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4290,6 +4475,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4299,6 +4485,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4309,6 +4496,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4318,6 +4506,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4328,6 +4517,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4337,6 +4527,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4347,6 +4538,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4356,6 +4548,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4366,6 +4559,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4375,6 +4569,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4385,6 +4580,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4394,6 +4590,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4404,6 +4601,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4413,6 +4611,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4423,6 +4622,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4432,6 +4632,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4442,6 +4643,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4451,6 +4653,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4461,6 +4664,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4470,51 +4674,62 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @-webkit-keyframes fadeOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
 @-moz-keyframes fadeOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
 @-o-keyframes fadeOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
 @-ms-keyframes fadeOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
 @keyframes fadeOut {
   0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
   100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4525,6 +4740,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4534,6 +4750,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4544,6 +4761,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4553,6 +4771,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4563,6 +4782,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4572,6 +4792,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4582,6 +4803,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4591,6 +4813,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4601,6 +4824,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4610,6 +4834,7 @@
     -o-transform: translateY(-20px);
     -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4620,6 +4845,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4629,6 +4855,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4639,6 +4866,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4648,6 +4876,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4658,6 +4887,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4667,6 +4897,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4677,6 +4908,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4686,6 +4918,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4696,6 +4929,7 @@
     -o-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4705,6 +4939,7 @@
     -o-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4715,6 +4950,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4724,6 +4960,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4734,6 +4971,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4743,6 +4981,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4753,6 +4992,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4762,6 +5002,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4772,6 +5013,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4781,6 +5023,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4791,6 +5034,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4800,6 +5044,7 @@
     -o-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4810,6 +5055,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4819,6 +5065,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4829,6 +5076,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4838,6 +5086,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4848,6 +5097,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4857,6 +5107,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4867,6 +5118,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4876,6 +5128,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4886,6 +5139,7 @@
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -4895,6 +5149,7 @@
     -o-transform: translateX(-20px);
     -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -4910,6 +5165,7 @@
     -o-transform: rotate(-200deg);
     -ms-transform: rotate(-200deg);
     transform: rotate(-200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4924,6 +5180,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4939,6 +5196,7 @@
     -o-transform: rotate(-200deg);
     -ms-transform: rotate(-200deg);
     transform: rotate(-200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4953,6 +5211,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4968,6 +5227,7 @@
     -o-transform: rotate(-200deg);
     -ms-transform: rotate(-200deg);
     transform: rotate(-200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -4982,6 +5242,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -4997,6 +5258,7 @@
     -o-transform: rotate(-200deg);
     -ms-transform: rotate(-200deg);
     transform: rotate(-200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5011,6 +5273,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5026,6 +5289,7 @@
     -o-transform: rotate(-200deg);
     -ms-transform: rotate(-200deg);
     transform: rotate(-200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5040,6 +5304,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5055,6 +5320,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5069,6 +5335,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5084,6 +5351,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5098,6 +5366,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5113,6 +5382,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5127,6 +5397,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5142,6 +5413,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5156,6 +5428,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5171,6 +5444,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5185,6 +5459,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5200,6 +5475,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5214,6 +5490,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5229,6 +5506,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5243,6 +5521,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5258,6 +5537,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5272,6 +5552,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5287,6 +5568,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5301,6 +5583,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5316,6 +5599,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5330,6 +5614,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5345,6 +5630,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5359,6 +5645,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5374,6 +5661,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5388,6 +5676,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5403,6 +5692,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5417,6 +5707,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5432,6 +5723,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5446,6 +5738,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5461,6 +5754,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5475,6 +5769,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5490,6 +5785,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5504,6 +5800,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5519,6 +5816,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5533,6 +5831,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5548,6 +5847,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5562,6 +5862,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5577,6 +5878,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5591,6 +5893,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5606,6 +5909,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
@@ -5620,6 +5924,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
@@ -5635,6 +5940,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5649,6 +5955,7 @@
     -o-transform: rotate(200deg);
     -ms-transform: rotate(200deg);
     transform: rotate(200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5664,6 +5971,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5678,6 +5986,7 @@
     -o-transform: rotate(200deg);
     -ms-transform: rotate(200deg);
     transform: rotate(200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5693,6 +6002,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5707,6 +6017,7 @@
     -o-transform: rotate(200deg);
     -ms-transform: rotate(200deg);
     transform: rotate(200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5722,6 +6033,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5736,6 +6048,7 @@
     -o-transform: rotate(200deg);
     -ms-transform: rotate(200deg);
     transform: rotate(200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5751,6 +6064,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5765,6 +6079,7 @@
     -o-transform: rotate(200deg);
     -ms-transform: rotate(200deg);
     transform: rotate(200deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5780,6 +6095,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5794,6 +6110,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5809,6 +6126,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5823,6 +6141,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5838,6 +6157,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5852,6 +6172,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5867,6 +6188,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5881,6 +6203,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5896,6 +6219,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5910,6 +6234,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5925,6 +6250,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5939,6 +6265,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5954,6 +6281,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5968,6 +6296,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -5983,6 +6312,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -5997,6 +6327,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6012,6 +6343,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6026,6 +6358,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6041,6 +6374,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6055,6 +6389,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6070,6 +6405,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6084,6 +6420,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6099,6 +6436,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6113,6 +6451,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6128,6 +6467,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6142,6 +6482,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6157,6 +6498,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6171,6 +6513,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6186,6 +6529,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6200,6 +6544,7 @@
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6215,6 +6560,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6229,6 +6575,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6244,6 +6591,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6258,6 +6606,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6273,6 +6622,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6287,6 +6637,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6302,6 +6653,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6316,6 +6668,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
@@ -6331,6 +6684,7 @@
     -o-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 
@@ -6345,6 +6699,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
