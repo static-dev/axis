@@ -37,10 +37,10 @@ parse(size)
 
 // These will accept font icons interally in the very near future
 
-simple-button(color = default, size = "medium")
+simple-button(color = default, size = "medium", textColor = null)
 
   // color detection and changes
-  textColor = light(color) ? #494949 : #fff
+  textColor = light(color) ? #494949 : #fff unless textColor
   parsed_size = parse(size)
 
   // now that we've got numbers, let's work some proportions
@@ -85,14 +85,14 @@ simple-button(color = default, size = "medium")
 
 // These will accept font icons interally in the very near future
 
-button(color = default, size = "medium")
+button(color = default, size = "medium", textColor = null, shadowColor = null, hoverColor = null)
 
   // color detection and changes
   // this could be refactored for sure
   darkText = light(color) ? false : true
-  textColor = darkText ? white : #494949
-  shadowColor = darkText ? rgba(#000,.1) : rgba(#fff,.3)
-  hoverColor = darkText ? rgba(#000,.2) : rgba(#fff,.5)
+  textColor = darkText ? white : #494949 unless textColor
+  shadowColor = darkText ? rgba(#000,.1) : rgba(#fff,.3) unless shadowColor
+  hoverColor = darkText ? rgba(#000,.2) : rgba(#fff,.5) unless hoverColor
   downShadow = darkText ? 0 -1px 1px rgba(#000,.2) : 1px 1px 1px rgba(#fff,.6)
 
   // parse words, make sure it's a number

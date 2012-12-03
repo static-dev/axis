@@ -6910,16 +6910,51 @@ body {
   padding: 50px;
 }
 p {
-  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
-  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
-  -o-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
-  -ms-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
-  box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
-  -webkit-transform: rotate(5deg);
-  -moz-transform: rotate(5deg);
-  -o-transform: rotate(5deg);
-  -ms-transform: rotate(5deg);
-  transform: rotate(5deg);
+  font-size: 13px;
+  padding: 9.945px 21.879px;
+  -webkit-border-radius: 3.000002307694083px;
+  -moz-border-radius: 3.000002307694083px;
+  -o-border-radius: 3.000002307694083px;
+  -ms-border-radius: 3.000002307694083px;
+  border-radius: 3.000002307694083px;
+  background: url("/img/noise.png") repeat, #0095e3 -webkit-gradient(linear, left top, left bottom, color-stop(0, #17b0ff), color-stop(1, #0095e3)) repeat-x;
+  background: url("/img/noise.png") repeat, #0095e3 -webkit-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #0095e3 -moz-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #0095e3 -o-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #0095e3 -ms-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #0095e3 linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  border: 1px solid #0095e3;
+  color: #fff;
+  color: rgba(255,255,255,0.95);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+p:hover,
+p:focus {
+  background-position: 0 -9.945px;
+  color: #f7f7f7;
+  color: rgba(247,247,247,0.95);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+p:active {
+  -webkit-box-shadow: inset 0 1px 5px rgba(0,124,189,0.6);
+  -moz-box-shadow: inset 0 1px 5px rgba(0,124,189,0.6);
+  -o-box-shadow: inset 0 1px 5px rgba(0,124,189,0.6);
+  -ms-box-shadow: inset 0 1px 5px rgba(0,124,189,0.6);
+  box-shadow: inset 0 1px 5px rgba(0,124,189,0.6);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+  border-color: #0088cf;
 }
 input {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);

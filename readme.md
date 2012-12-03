@@ -5,8 +5,9 @@ Roots css is a terse, feature-rich css library built on top of stylus. It's a ch
 
 Detailed documentation coming soon. The code is commented pretty thoroughly though, if you want to comb through it.
 
+Note: native-style mixins should always be used unless at root level or unless there are no parameters.
+
 #### To Do
-- clean up differences between native and mixin function calls
 - grid system
 - add extra optional params where i can
 - capybara tests
