@@ -10,6 +10,4 @@ Note: native-style mixins should always be used unless at root level or unless t
 #### To Do
 - grid system
 - capybara tests
-- sprite mixin
-- auto media queries
 - background-position-x and y overrides with background-position: 0 x

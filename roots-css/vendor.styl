@@ -162,3 +162,13 @@ animation(args...)
 appearance(args...)
   webkit-appearance: args
   moz-appearance: args
+
+// Mixin: background-appearance-x and y
+// In case you want to use an unsupported background-position property, this
+// should set you straight!
+
+background-position-x(x)
+  background-position: x 0
+
+background-position-y(y)
+  background-position: 0 y
