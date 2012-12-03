@@ -7000,3 +7000,14 @@ input:focus {
   border: 1px solid #2c98d0;
   outline: none !important;
 }
+.sprite {
+  background: url("/img/sprite.png") no-repeat;
+  width: 100px;
+  height: 200px;
+}
+.sprite:hover {
+  background-position: 100px 0;
+}
+.sprite:active {
+  background-position: 0 -400px;
+}

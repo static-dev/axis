@@ -9,9 +9,7 @@ Note: native-style mixins should always be used unless at root level or unless t
 
 #### To Do
 - grid system
-- add extra optional params where i can
 - capybara tests
 - sprite mixin
-- @2x images
 - auto media queries
 - background-position-x and y overrides with background-position: 0 x

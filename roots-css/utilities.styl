@@ -127,6 +127,15 @@ triangle(direction = up, size = 10px, color = #000)
     border-bottom: size solid transparent
     border-left: size solid color
 
+
+sprite(iteration, orientation = vertical)
+  if orientation == vertical
+    background-position: 0 unit(@height*-1*iteration, px)
+  else if orientation == horizontal
+    background-position: unit(@width*iteration, px) 0 
+  else
+    warn('orientation must be horizontal or veritcal')
+
 // Mixin: Ir
 // Image replacement. Pass it an image path and the image's dimensions and any text will be hidden
 // in the div and it will show an image instead. Uses the fanciest new method, props to Paul Irish.
