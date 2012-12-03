@@ -31,8 +31,7 @@ literal-join(string, literals)
 // ex. prefix(transition, all .3s ease)
 
 prefix(prop, val)
-
-  val = literal-join(',', val) if length(val) > 1
+  // val = literal-join(',', val) if length(val) > 1
 
   for prefix in vendors
     if prefix == official
@@ -48,9 +47,9 @@ prefix(prop, val)
 // ex. transition(color 1s ease)
 // ex. transition(color 1s ease, background 2.4s linear)
 
-transition(args...)
-  args = unquote('all .3s ease') unless args
-  prefix(transition, args)
+transition()
+  arguments = unquote('all .3s ease') unless arguments
+  prefix(transition, arguments)
 
 // Prefixes for all the broken-down components of transition
 
@@ -74,7 +73,7 @@ transition-delay(args...)
 // ex. transform: translateX(40px) rotate(15deg)
 
 transform(args...)
-  args = literal-join('',args) if length(args) > 1
+  args = literal-join('', args) if length(args) > 1
   prefix(transform, args)
 
 // Prefixes for all the broken down components of transform
@@ -102,8 +101,8 @@ backface-visibility(args...)
 // ex. box-shadow: 1px 1px 3px blue
 // ex. box-shadow: 1px 1px 3px blue, inset 2px 0 5px rgba(0,0,0,.5)
 
-box-shadow(params...)
-  prefix(box-shadow, params)
+box-shadow()
+  prefix(box-shadow, arguments)
   pie()
 
 // ----------------------------------- border-radius ---------------------------------

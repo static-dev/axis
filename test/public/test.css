@@ -6910,14 +6910,16 @@ body {
   padding: 50px;
 }
 p {
-  background: url("/img/something.jpg") no-repeat;
-  width: 200px;
-  height: 100px;
-  -webkit-background-size: 200px 100px;
-  -moz-background-size: 200px 100px;
-  -o-background-size: 200px 100px;
-  -ms-background-size: 200px 100px;
-  background-size: 200px 100px;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
+  -o-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
+  -ms-box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5), 3px 3px 3px #b44326;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
 }
 input {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
