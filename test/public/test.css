@@ -7001,7 +7001,7 @@ input:focus {
   outline: none !important;
 }
 .sprite {
-  background: url("/img/sprite.png") no-repeat;
+  background: url("sprite.png") no-repeat;
   width: 100px;
   height: 200px;
 }

@@ -9,7 +9,7 @@ ie-support ?= true
 // elements that can use it. Which makes IE look a lot nicer.
 
 pie()
-  behavior: url(/pie.htc) if pie-enabled
+  behavior: url(pie-path) if pie-enabled
 
 // Mixin: Rounded
 // Unless you are working with a ridiculously large element, this will round the corners
@@ -46,7 +46,7 @@ b()
 
 bg(path, args...)
   args = unquote('no-repeat') unless args
-  background: url(path) args
+  background: url(img-path path) args
 
 // Mixin: bg-retina
 // Make sure the image path is double the size, pass it halved numbers, and you're in the retina-clear
@@ -55,7 +55,7 @@ bg(path, args...)
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
-  background: url(path) args
+  background: url(img-path path) args
   size: width height
   background-size: literal-join('', width height)
 
