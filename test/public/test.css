@@ -7006,7 +7006,7 @@ input:focus {
   height: 200px;
 }
 .sprite:hover {
-  background-position: 100px 0;
+  background-position: 0 -200px;
 }
 .sprite:active {
   background-position: 0 -400px;

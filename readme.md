@@ -8,6 +8,5 @@ Detailed documentation coming soon. The code is commented pretty thoroughly thou
 Note: native-style mixins should always be used unless at root level or unless there are no parameters.
 
 #### To Do
-- grid system
+- document grid system
 - capybara tests
-- background-position-x and y overrides with background-position: 0 x
