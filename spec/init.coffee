@@ -53,6 +53,16 @@ casper.then ->
   @capture_resource 'field-warning'
   @capture_resource 'field-success'
 
+# gradients
+casper.then ->
+  @headline 'gradients'
+  @capture_resource 'gradient'
+  @capture_resource 'gradient-multiple-stops'
+  @capture_resource 'gradient-mixin'
+  @capture_resource 'simple-gradient'
+  @capture_resource 'noise-gradient'
+  @capture_resource 'simple-noise-gradient'
+
 casper.then ->
   @echo ""
 
