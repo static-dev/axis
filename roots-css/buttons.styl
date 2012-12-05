@@ -145,9 +145,12 @@ button-disabled()
   border-color: darken(#ccc, 10%)
   opacity: .5
   cursor: default
+  no-select()
   &:hover
+    background: #ccc
     background-position: 0 0
   &:active
+    background: #ccc
     box-shadow(none)
     border-color: darken(#ccc, 10%)
     text-shadow: 1px 1px 1px rgba(#000,.1)

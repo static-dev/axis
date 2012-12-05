@@ -45,6 +45,13 @@ casper.then ->
   @capture_resource 'input'
   @capture_resource 'input-search'
   @capture_resource 'input-disabled'
+  @capture_resource 'input-error'
+  @capture_resource 'input-warning'
+  @capture_resource 'input-success'
+  @capture_resource 'field'
+  @capture_resource 'field-error'
+  @capture_resource 'field-warning'
+  @capture_resource 'field-success'
 
 casper.then ->
   @echo ""

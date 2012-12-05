@@ -9,6 +9,10 @@ font-face(proxima-nova, '/fonts/proxima')
 body
   padding: 50px
 
+.section
+  clear: both
+  margin-top: 30px
+
 .button
   button()
 
@@ -25,7 +29,7 @@ body
   button: #7518D9 'large'
 
 .button-custom-size
-  button: black 40
+  button: black 30
 
 .button-disabled
   button()
@@ -50,7 +54,7 @@ body
 .pre
   pre()
 
-.input
+.input, .input2
   input()
 
 .input-search
@@ -59,3 +63,33 @@ body
 .input-disabled
   input()
   input-disabled()
+
+.input-error
+  input()
+  input-error()
+
+.input-warning
+  input()
+  input-warning()
+
+.input-success
+  input()
+  input-success()
+
+.field
+  field: 300px
+
+.field-error
+  field: 300px
+  field-error()
+
+.field-warning
+  field: 300px
+  field-warning()
+
+.field-success
+  field: 300px
+  field-success()
+
+.label
+  label()
