@@ -1,0 +1,3 @@
+#!/bin/bash
+node spec/server.js
+open 'http://localhost:3000'

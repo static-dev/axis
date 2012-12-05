@@ -20,5 +20,5 @@ app.get('/', function(req, res){ res.render('index') });
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log(('server started on port ' + app.get('port')).green);
-  open('http://localhost:' + app.get('port'));
+  // open('http://localhost:' + app.get('port'));
 });

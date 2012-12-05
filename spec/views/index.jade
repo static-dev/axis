@@ -1,0 +1,27 @@
+!!!
+html
+  head
+    title Roots CSS Testing
+    link(rel='stylesheet', href='test.css')
+  body
+    //- this document is parsed with casper.js and screenshots are
+    //- captured of each element. not intended to look pretty.
+
+    .button click me!
+    .button-color button with custom color
+    .button-small small
+    .button-medium medium
+    .button-large large
+    .button-custom-size custom size
+    .button-disabled oh no :(
+    .simple-button i'm simple!
+    .simple-color simple alt color
+    .simple-size simple alt size
+    .simple-disabled wahhhh
+    .code the system is down
+    .pre oh hello
+      | i am code
+      |  look it's indented too!
+    input(type='text', placeholder='type here').input
+    input(type='text', placeholder='search...').input-search
+    input(type='text', placeholder='oh noes!').input-disabled
