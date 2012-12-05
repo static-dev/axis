@@ -3,6 +3,7 @@
 
 normalize()
 base()
+img-path = '/img/'
 
 font-face(proxima-nova, '/fonts/proxima')
 
@@ -12,6 +13,10 @@ body
 .section
   clear: both
   margin-top: 30px
+
+// 
+// buttons
+// 
 
 .button
   button()
@@ -48,11 +53,19 @@ body
   simple-button()
   button-disabled()
 
+// 
+// code
+// 
+
 .code
   code()
 
 .pre
   pre()
+
+// 
+// forms
+// 
 
 .input, .input2
   input()
@@ -93,3 +106,28 @@ body
 
 .label
   label()
+
+// 
+// gradients
+// 
+
+.gradients > div
+  size: 300px 100px
+
+.gradient
+  background: linear-gradient(top, #D94B42, #D97F35)
+
+.gradient-multiple-stops
+  background: linear-gradient(top, #D94B42, 20% #D97F35, 40% #D9B95C, 60% #A7D952, 80% #5FD4D9, 100% #786BD9)
+
+.gradient-mixin
+  gradient: #D988D0 #7429D9
+
+.simple-gradient
+  simple-gradient: #D94734 30%
+
+.noise-gradient
+  noise-gradient: #80D9B0 #88C5D9
+
+.simple-noise-gradient
+  simple-noise-gradient: #D9CC55

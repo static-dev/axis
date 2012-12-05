@@ -4,9 +4,8 @@ html
     title Roots CSS Testing
     link(rel='stylesheet', href='test.css')
   body
-    //- this document is parsed with casper.js and screenshots are
-    //- captured of each element. not intended to look pretty.
     
+    //- buttons
     .section
       .button click me!
       br
@@ -37,6 +36,7 @@ html
         | i am code
         |  look it's indented too!
 
+    //- forms
     .section
       input(type='text', placeholder='type here').input
       br
@@ -65,3 +65,17 @@ html
       .field-success
         label.label you did it: 
         input(type='text', value='awww yeeee').input2
+
+    //- gradients
+    .section.gradients
+      .gradient
+      br
+      .gradient-multiple-stops
+      br
+      .gradient-mixin
+      br
+      .simple-gradient
+      br
+      .noise-gradient
+      br
+      .simple-noise-gradient

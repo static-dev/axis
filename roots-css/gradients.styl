@@ -145,7 +145,7 @@ noise-gradient(color1, color2, imagePath = 'noise.png')
 // Exactly like simple gradient, but overlays a very light noise to give it more texture.
 // ex. simple-noise-gradient(#EB8468, #BA6952)
 
-simple-noise-gradient(color, strength = 10%, imagePath = '/img/noise.png')
+simple-noise-gradient(color, strength = 10%, imagePath = 'noise.png')
   start = lighten(color, strength)
   end = darken(color, strength)
   noise-gradient(start, end, imagePath)
