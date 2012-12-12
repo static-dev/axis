@@ -3,13 +3,13 @@
 // -----------------------------------------------------
 // I realize that this is insane, but trust me, it's worth it
 
-// Mixin: Hilight
+// Mixin: highlight
 // Adds a light brighter line across the top of the element for a perspective effect.
 // Takes an optional argument for strength, which takes a value between 0 and 1
-// ex. hilight
-// ex. hilight(.7)
+// ex. highlight
+// ex. highlight(.7)
 
-hilight(strength = .3)
+highlight(strength = .3)
   box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,strength)))
 
 // This is an internal function used for the button mixins, not intended for use.
@@ -90,10 +90,11 @@ button(color = default, size = "medium", textColor = null, shadowColor = null, h
   // color detection and changes
   // this could be refactored for sure
   if textColor
-    darkText = light(textColor) ? false : true
+    darkText = light(textColor) ? true : false
   else
     darkText = light(color) ? false : true
-    
+    textColor = darkText ? white : #494949
+
   shadowColor = darkText ? rgba(#000,.1) : rgba(#fff,.3) unless shadowColor
   hoverColor = darkText ? rgba(#000,.2) : rgba(#fff,.5) unless hoverColor
   downShadow = darkText ? 0 -1px 1px rgba(#000,.2) : 1px 1px 1px rgba(#fff,.6)
@@ -116,7 +117,7 @@ button(color = default, size = "medium", textColor = null, shadowColor = null, h
   color: rgba(textColor, .95)
 
   // constant styles
-  hilight()
+  highlight()
   cursor: pointer
   font-weight: bold
   font-family: font-stack

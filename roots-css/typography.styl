@@ -169,11 +169,11 @@ reset-link()
     opacity: 1
 
 // Mixin: Text Selection
-// This guy sets the text select color intelligently based on the hilight-color variable
+// This guy sets the text select color intelligently based on the highlight-color variable
 // found in the settings file. If you really want, you can pass it a color override too
 // ex. text-selection()
 
-text-selection(color = hilight-color, textColor = null)
+text-selection(color = highlight-color, textColor = null)
 
   textColor = light(color) ? white : #494949 unless textColor
 

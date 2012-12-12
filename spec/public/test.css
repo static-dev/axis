@@ -7062,14 +7062,14 @@ body {
   -o-border-radius: 3.000002307694083px;
   -ms-border-radius: 3.000002307694083px;
   border-radius: 3.000002307694083px;
-  background: url("/img/noise.png") repeat, #72ad24 -webkit-gradient(linear, left top, left bottom, color-stop(0, #8ed430), color-stop(1, #72ad24)) repeat-x;
-  background: url("/img/noise.png") repeat, #72ad24 -webkit-linear-gradient(top, #8ed430 0%, #72ad24 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #72ad24 -moz-linear-gradient(top, #8ed430 0%, #72ad24 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #72ad24 -o-linear-gradient(top, #8ed430 0%, #72ad24 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #72ad24 -ms-linear-gradient(top, #8ed430 0%, #72ad24 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #72ad24 linear-gradient(top, #8ed430 0%, #72ad24 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #813cb4 -webkit-gradient(linear, left top, left bottom, color-stop(0, #995ac8), color-stop(1, #813cb4)) repeat-x;
+  background: url("/img/noise.png") repeat, #813cb4 -webkit-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #813cb4 -moz-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #813cb4 -o-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #813cb4 -ms-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
+  background: url("/img/noise.png") repeat, #813cb4 linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-  border: 1px solid #72ad24;
+  border: 1px solid #813cb4;
   color: #fff;
   color: rgba(255,255,255,0.95);
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
@@ -7093,13 +7093,13 @@ body {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 .button-medium:active {
-  -webkit-box-shadow: inset 0 1px 5px rgba(95,144,30,0.6);
-  -moz-box-shadow: inset 0 1px 5px rgba(95,144,30,0.6);
-  -o-box-shadow: inset 0 1px 5px rgba(95,144,30,0.6);
-  -ms-box-shadow: inset 0 1px 5px rgba(95,144,30,0.6);
-  box-shadow: inset 0 1px 5px rgba(95,144,30,0.6);
+  -webkit-box-shadow: inset 0 1px 5px rgba(107,50,150,0.6);
+  -moz-box-shadow: inset 0 1px 5px rgba(107,50,150,0.6);
+  -o-box-shadow: inset 0 1px 5px rgba(107,50,150,0.6);
+  -ms-box-shadow: inset 0 1px 5px rgba(107,50,150,0.6);
+  box-shadow: inset 0 1px 5px rgba(107,50,150,0.6);
   text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
-  border-color: #689d21;
+  border-color: #7537a4;
 }
 .button-large {
   font-size: 18px;
