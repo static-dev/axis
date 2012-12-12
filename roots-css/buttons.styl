@@ -89,9 +89,11 @@ button(color = default, size = "medium", textColor = null, shadowColor = null, h
 
   // color detection and changes
   // this could be refactored for sure
-  darkText = light(color) ? false : true
-  textColor = darkText ? white : #494949 unless textColor
-  darkText = light(textColor) ? false : true if textColor
+  if textColor
+    darkText = light(textColor) ? false : true
+  else
+    darkText = light(color) ? false : true
+    
   shadowColor = darkText ? rgba(#000,.1) : rgba(#fff,.3) unless shadowColor
   hoverColor = darkText ? rgba(#000,.2) : rgba(#fff,.5) unless hoverColor
   downShadow = darkText ? 0 -1px 1px rgba(#000,.2) : 1px 1px 1px rgba(#fff,.6)
