@@ -7229,7 +7229,7 @@ body {
   border-color: #b8b8b8;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  cursor: #00a6fc;
+  cursor: default;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -7373,7 +7373,7 @@ body {
   border-color: #b8b8b8;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  cursor: #00a6fc;
+  cursor: default;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
