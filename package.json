@@ -9,7 +9,9 @@
   "devDependencies": {
     "express": "latest",
     "jade": "latest",
-    "open": "latest"
+    "open": "latest",
+    "colors": "latest",
+    "stylus": "latest"
   },
   "author": "Jeff Escalante",
   "main": "roots.js",
