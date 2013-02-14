@@ -8408,125 +8408,6 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: none;
-}
-body {
-  line-height: 1;
-  color: #272727;
-  background: #fff;
-}
-ol,
-ul {
-  list-style: none;
-}
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
-}
-caption,
-th,
-td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-a img {
-  border: none;
-}
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary {
-  margin: 0;
-  padding: 0;
-  border: 1px solid;
-  outline: 0;
-  display: block;
-}
-audio,
-canvas,
-video {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-}
-audio:not([controls]),
-[hidden] {
-  display: none;
-}
 @font-face {
   font-family: proxima-nova;
   src: url("/fonts/proxima/proxima-nova.eot?#iefix") format('embedded-opentype'), url("/fonts/proxima/proxima-nova.woff") format('woff'), url("/fonts/proxima/proxima-nova.ttf") format('truetype'), url("/fonts/proxima/proxima-nova.eot#svgFontName") format('svg');
@@ -8535,6 +8416,11 @@ audio:not([controls]),
 }
 body {
   padding: 50px;
+  -webkit-background-size: 100% 100%, 200% 100%;
+  -moz-background-size: 100% 100%, 200% 100%;
+  -o-background-size: 100% 100%, 200% 100%;
+  -ms-background-size: 100% 100%, 200% 100%;
+  background-size: 100% 100%, 200% 100%;
 }
 .section {
   clear: both;
@@ -9459,4 +9345,53 @@ body {
   background: url("/img/noise.png") repeat, #d3c53c -o-linear-gradient(top, #ddd166 0%, #d3c53c 100%) repeat-x;
   background: url("/img/noise.png") repeat, #d3c53c -ms-linear-gradient(top, #ddd166 0%, #d3c53c 100%) repeat-x;
   background: url("/img/noise.png") repeat, #d3c53c linear-gradient(top, #ddd166 0%, #d3c53c 100%) repeat-x;
+}
+.bubble {
+  background: #e7e7e7 -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #e7e7e7)) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef 0%, #e7e7e7 100%) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef 0%, #e7e7e7 100%) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef 0%, #e7e7e7 100%) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef 0%, #e7e7e7 100%) repeat-x;
+  background: #e7e7e7 linear-gradient(top, #efefef 0%, #e7e7e7 100%) repeat-x;
+  zoom: 1;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+  width: 300px;
+}
+.bubble:before,
+.bubble:after {
+  content: "";
+  display: table;
+}
+.bubble:after {
+  clear: both;
+}
+.bubble:after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e7e7e7;
+  position: absolute;
+  bottom: -9px;
+  display: block;
+  right: 15px;
+}
+.bubble:before {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #d6d6d6;
+  position: absolute;
+  bottom: -11px;
+  display: block;
+  right: 15px;
 }

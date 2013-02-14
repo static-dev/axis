@@ -99,9 +99,10 @@ bubble(pointer = left, color = #EEEEEE, width = false)
     triangle(down, 10px, darken(color, 3%))
     position: absolute
     bottom: -9px
+    display: block
     if pointer == center
       warn("you must specify a width to center the pointer") unless width
-      left: width/2
+      left: (unit(width, 'px')/2)
     else if pointer == right
       right: 15px
 
@@ -109,9 +110,10 @@ bubble(pointer = left, color = #EEEEEE, width = false)
     triangle(down, 10px, darken(color, 10%))
     position: absolute
     bottom: -11px
+    display: block
     if pointer == center
       warn("you must specify a width to center the pointer") unless width
-      left: width/2
+      left: (unit(width, 'px')/2)
     else if pointer == right
       right: 15px
 
