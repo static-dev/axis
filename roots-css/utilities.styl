@@ -245,11 +245,18 @@ raquo()
 
 size(numbers...)
   if length(numbers) > 1
-    width: unit(numbers[0], px)
-    height: unit(numbers[1], px)
+
+    width-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+    height-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+
+    width:  unit(numbers[0], width-unit)
+    height: unit(numbers[1], height-unit)
   else
-    width: unit(numbers, px)
-    height: unit(numbers, px)
+
+    size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
+
+    width:  unit(numbers, size-unit)
+    height: unit(numbers, size-unit)
 
 // Mixin: Font Face
 // Super simple font-face declaration. Just give the name and the folder it lives in.
