@@ -8416,11 +8416,11 @@ body {
 }
 body {
   padding: 50px;
-  -webkit-background-size: 100% 100%, 200% 100%;
-  -moz-background-size: 100% 100%, 200% 100%;
-  -o-background-size: 100% 100%, 200% 100%;
-  -ms-background-size: 100% 100%, 200% 100%;
-  background-size: 100% 100%, 200% 100%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 10px;
+  ((null)): 0;
 }
 .section {
   clear: both;
