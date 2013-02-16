@@ -8416,8 +8416,10 @@ body {
 }
 body {
   padding: 50px;
-  width: 1px;
-  height: 3px;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  right: 60px;
 }
 .section {
   clear: both;
