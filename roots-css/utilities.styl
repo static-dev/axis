@@ -27,17 +27,12 @@ no-select()
   -webkit-touch-callout: none
   prefix(user-select, none)
 
-// Mixin: Border
-// Alias of border, but with an intelligent default
-
-border(params...)
-  params = unquote('1px solid') unless params
-  border: params
-
-// Alias: B
+// Mixin: B
+// Border, but with an intelligent default
 
 b()
-  border()
+  params = unquote('1px solid') unless params
+  border: params
 
 // Mixin: Bg
 // Makes background (with image) declarations a little simpler.
