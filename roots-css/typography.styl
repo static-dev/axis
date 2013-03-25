@@ -272,17 +272,14 @@ blockquote()
 // ex. +base
 
 base(fonts = font-stack, size = font-size, color = font-color)
-  if mixin == 'root'
-    body
-      font-family: fonts
-      font-size: unit(size*6.46, "%")
-      font-size: unit(size, px)
-      color: color
-      -webkit-font-smoothing: antialiased
-      -webkit-text-size-adjust: 100%
-      -ms-text-size-adjust: 100%
-  else
-    warn('this mixin should be called at root level')
+  body
+    font-family: fonts
+    font-size: unit(size*6.46, "%")
+    font-size: unit(size, px)
+    color: color
+    -webkit-font-smoothing: antialiased
+    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
 
 // Additive Mixin: Headers
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -290,26 +287,23 @@ base(fonts = font-stack, size = font-size, color = font-color)
 // ex. +headers
 
 headers()
-  if mixin == 'root'
-    h1
-      h1()
+  h1
+    h1()
 
-    h2
-      h2()
+  h2
+    h2()
 
-    h3
-      h3()
+  h3
+    h3()
 
-    h4
-      h4()
+  h4
+    h4()
 
-    h5
-      h5()
+  h5
+    h5()
 
-    h6
-      h6()
-  else
-    warn('this mixin should be called at root level')
+  h6
+    h6()
 
 // Additive Mixin: Lists
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -317,13 +311,10 @@ headers()
 // ex. +lists
 
 lists()
-  if mixin == 'root'
-    ul
-      ul()
-    ol
-      ol()
-  else
-    warn('this mixin should be called at root level')
+  ul
+    ul()
+  ol
+    ol()
 
 // Additive Mixin: Bold-Italic
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -331,17 +322,14 @@ lists()
 // ex. +bold-italic
 
 bold-italic()
-  if mixin == 'root'
-    b
-      bold()
-    i
-      italic()
-    strong
-      bold()
-    em
-      italic()
-  else
-    warn('this mixin should be called at root level')
+  b
+    bold()
+  i
+    italic()
+  strong
+    bold()
+  em
+    italic()
 
 // Additive Mixin: Typography
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -350,22 +338,19 @@ bold-italic()
 // ex. +typography
 
 typography()
-  if mixin == 'root'
-    bold-italic()
-    headers()
-    text-selection()
-    lists()
+  bold-italic()
+  headers()
+  text-selection()
+  lists()
 
-    p
-      paragraph(font-size)
+  p
+    paragraph(font-size)
 
-    small
-      small-text()
+  small
+    small-text()
 
-    a
-      link()
+  a
+    link()
 
-    blockquote
-      blockquote()
-  else
-    warn('this mixin should be called at root level')
+  blockquote
+    blockquote()
