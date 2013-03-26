@@ -8211,48 +8211,42 @@ figure,
 footer,
 header,
 hgroup,
+main,
 nav,
-section {
+section,
+summary {
   display: block;
 }
 audio,
 canvas,
 video {
   display: inline-block;
-  *display: inline;
-  *zoom: 1;
 }
 audio:not([controls]) {
   display: none;
+  height: 0;
 }
 [hidden] {
   display: none;
 }
 html {
-  font-size: 100%;
-  overflow-y: scroll;
+  font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 body {
   margin: 0;
 }
-body,
-button,
-input,
-select,
-textarea {
-  font-family: sans-serif;
-}
 a:focus {
   outline: thin dotted;
 }
-a:hover,
-a:active {
+a:active,
+a:hover {
   outline: 0;
 }
 h1 {
   font-size: 2em;
+  margin: 0.67em 0;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -8261,39 +8255,37 @@ b,
 strong {
   font-weight: bold;
 }
-blockquote {
-  margin: 1em 40px;
-}
 dfn {
   font-style: italic;
+}
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
 }
 mark {
   background: #ff0;
   color: #000;
 }
-pre,
 code,
 kbd,
+pre,
 samp {
   font-family: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace, serif;
-  _font-family: 'Courier New', 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
   font-size: 1em;
 }
 pre {
-  white-space: pre;
   white-space: pre-wrap;
-  word-wrap: break-word;
 }
 q {
-  quotes: none;
-}
-q:before,
-q:after {
-  content: '';
-  content: none;
+  quotes: "\201C" "\201D" "\2018" "\2019";
 }
 small {
-  font-size: 75%;
+  font-size: 80%;
 }
 sub,
 sup {
@@ -8308,30 +8300,13 @@ sup {
 sub {
   bottom: -0.25em;
 }
-ul,
-ol {
-  margin-left: 0;
-  padding: 0 0 0 40px;
-}
-dd {
-  margin: 0 0 0 40px;
-}
-nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none;
-}
 img {
-  border: 1px solid;
-  -ms-interpolation-mode: bicubic;
+  border: 0;
 }
 svg:not(:root) {
   overflow: hidden;
 }
 figure {
-  margin: 0;
-}
-form {
   margin: 0;
 }
 fieldset {
@@ -8340,29 +8315,35 @@ fieldset {
   padding: 0.35em 0.625em 0.75em;
 }
 legend {
-  border: 1px solid;
-  *margin-left: -7px;
+  border: 0;
+  padding: 0;
 }
 button,
 input,
 select,
 textarea {
+  font-family: inherit;
   font-size: 100%;
   margin: 0;
-  vertical-align: baseline;
-  *vertical-align: middle;
 }
 button,
 input {
   line-height: normal;
 }
 button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-  cursor: pointer;
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
-  *overflow: visible;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -8383,12 +8364,13 @@ input[type="search"] {
   -ms-box-sizing: content-box;
   box-sizing: content-box;
 }
+input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 1px solid;
+  border: 0;
   padding: 0;
 }
 textarea {
