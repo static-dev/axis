@@ -12,6 +12,8 @@ hover-darken(percent = 15%)
   &:hover
     if @background
       background-color: darken(@background, percent)
+    else if @background-color
+      background-color: darken(@background-color, percent)
     else if @color
       color: darken(@color, percent)
     else
@@ -24,6 +26,8 @@ hover-lighten(percent = 15%)
   &:hover
     if @background
       background-color: lighten(@background, percent)
+    else if @background-color
+      background-color: lighten(@background-color, percent)
     else if @color
       color: lighten(@color, percent)
     else
@@ -77,6 +81,8 @@ hover-fade(amount = .5)
 hover-color(color)
   &:hover
     if @background
+      background-color: color
+    else if @background-color
       background-color: color
     else if @color
       color: color
