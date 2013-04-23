@@ -204,12 +204,12 @@ inline-block()
 
 media(margin = 10px)
 
-  left = margin
-  right = margin
+  left-margin = margin
+  right-margin = margin
 
   if length(margin) > 1
-    left = margin[0]
-    right = margin[1]
+    left-margin = margin[0]
+    right-margin = margin[1]
 
   overflow: hidden
   zoom: 1
@@ -220,10 +220,10 @@ media(margin = 10px)
     zoom: 1
   & > *:first-child
     float: left
-    margin-right: right
+    margin-right: right-margin
   & > *:nth-child(3)
     float: right
-    margin-left: left
+    margin-left: left-margin
 
 // Mixin: Raquo
 // Because technically raquo is not semantic, it's better to add it like this.
