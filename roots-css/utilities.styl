@@ -147,16 +147,8 @@ ir(path, dimensions...)
   else
     warn("Make sure you also pass the image dimensions. Example: ir: '/img/whatever.jpg' 200 400")
 
-image-replace(path, dimensions...)
-  font: 0/0 a
-  text-shadow: none
-  color: transparent
-  bg(path) if path
-  if length(dimensions) > 1
-    width: unit(dimensions[0], px)
-    height: unit(dimensions[1], px)
-  else
-    warn("Make sure you also pass the image dimensions. Example: image-replace: '/img/whatever.jpg' 200 400")
+// Alias: ir
+image-replace = ir
 
 // Mixin: Group
 // This is the clearfix with a better name. Excellent for wrangling floats.
