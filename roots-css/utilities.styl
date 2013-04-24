@@ -207,9 +207,9 @@ media(margin = 10px)
   left-margin = margin
   right-margin = margin
 
-  if length(margin) > 1
-    left-margin = margin[0]
-    right-margin = margin[1]
+  if length(arguments) > 1
+    left-margin = arguments[0]
+    right-margin = arguments[1]
 
   overflow: hidden
   zoom: 1
