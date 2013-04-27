@@ -8,11 +8,11 @@
 // ex. hover-darken()
 // ex. hover-darken: 30%
 
-hover-darken(percent = 15%)
+hover-darken(percent = 15%, force-use-color = false)
   &:hover
-    if @background
+    if @background and !force-use-color
       background-color: darken(@background, percent)
-    else if @background-color
+    else if @background-color and not force-use-color
       background-color: darken(@background-color, percent)
     else if @color
       color: darken(@color, percent)
@@ -22,11 +22,11 @@ hover-darken(percent = 15%)
 // Mixin: Hover Lighten
 // Works the same way as hover darken but lightens the color
 
-hover-lighten(percent = 15%)
+hover-lighten(percent = 15%, force-use-color = false)
   &:hover
-    if @background
+    if @background and !force-use-color
       background-color: lighten(@background, percent)
-    else if @background-color
+    else if @background-color and !force-use-color
       background-color: lighten(@background-color, percent)
     else if @color
       color: lighten(@color, percent)
@@ -78,9 +78,11 @@ hover-fade(amount = .5)
 // as the first argument. Will first look for a background color to change, then a color.
 // ex. hover-color: #D45D86
 
-hover-color(color)
+hover-color(color, force-use-color = false)
   &:hover
-    if @background
+    if @background and !force-use-color
+      background-color: color
+    else if @background-color and !force-use-color
       background-color: color
     else if @background-color
       background-color: color
