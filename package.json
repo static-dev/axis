@@ -4,7 +4,7 @@
   "version": "0.1.11",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jenius/roots-css.git"
+    "url": "git://github.com/jenius/axis.git"
   },
   "devDependencies": {
     "express": "latest",
@@ -14,6 +14,9 @@
     "stylus": "latest"
   },
   "author": "Jeff Escalante",
-  "main": "roots.js",
+  "main": "axis.js",
+  "scripts": {
+    "test": "./test"
+  },
   "engines": { "node": ">=0.8.0" }
 }
