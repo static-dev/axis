@@ -1,7 +1,7 @@
 {
   "name": "roots-css",
   "description": "css library built on stylus",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "repository": {
     "type": "git",
     "url": "git://github.com/jenius/axis.git"
