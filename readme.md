@@ -12,7 +12,7 @@ Axis is already integrated into [roots](http://roots.cx) by default, and it's su
 ```js
 var connect = require('connect')
   , stylus = require('stylus')
-  , axis = require('roots-css');
+  , axis = require('axis-css');
 
 var server = connect();
 
