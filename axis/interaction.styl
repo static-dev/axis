@@ -12,7 +12,7 @@ hover-darken(percent = 15%, force-use-color = false)
   &:hover
     if @background and !force-use-color
       background-color: darken(@background, percent)
-    else if @background-color and not force-use-color
+    else if @background-color and !force-use-color
       background-color: darken(@background-color, percent)
     else if @color
       color: darken(@color, percent)
