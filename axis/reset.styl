@@ -1,3 +1,18 @@
+base-font-size ?= 16px
+
+h1-font-size ?= 2 * base-font-size
+h2-font-size ?= 1.5 * base-font-size
+h3-font-size ?= 1.17 * base-font-size
+h4-font-size ?= 1 * base-font-size
+h5-font-size ?= 0.83 * base-font-size
+h6-font-size ?= 0.67 * base-font-size
+
+base-font-family ?= sans-serif
+
+indent-amount ?= 40px
+
+support-for-ie ?= true
+
 // ---------------------------------------
 // COMPLETE RESET
 // ---------------------------------------
@@ -117,9 +132,10 @@ global-reset()
 // NORMALIZE
 // ---------------------------------------
 
-// Direct port from http://github.com/necolas/normalize.css
+// Combination of v1 (IE 6/7 fixes) and v2 with optional support for vertical rhythm.
+// Ported from JohnAlbin/normalize.css-with-sass-or-compass and modified slightly
 
-normalize()
+normalize(baseline-support = false)
   article
   aside
   details
@@ -132,146 +148,266 @@ normalize()
   nav
   section
   summary
-    display: block
+    display block
 
   audio
   canvas
   video
-    display: inline-block
+    display inline-block
+    if support-for-ie
+      *display inline
+      *zoom 1
 
   audio:not([controls])
-    display: none
-    height: 0
-
+    display none
+    height 0
   [hidden]
-    display: none
+    display none
 
   html
-    font-family: sans-serif
-    -webkit-text-size-adjust: 100%
-    -ms-text-size-adjust: 100%
+    font-family base-font-family
+    -webkit-text-size-adjust 100%
+    -ms-text-size-adjust 100%
+    if baseline-support
+      font-size 100% * (base-font-size / 16px)
+      adjust-leading-to 1
+    else
+      font-size 100%
+
+  if support-for-ie
+    button
+    input
+    select
+    textarea
+      font-family base-font-family
 
   body
-    margin: 0
+      margin 0
 
   a:focus
-    outline: thin dotted
+    outline thin dotted
 
   a:active
   a:hover
-    outline: 0
+    outline 0
+
+  if baseline-support
+    p
+    pre
+      margin baseline-support ? $rhythm(1) 0 : 1em 0
+
+    blockquote
+      margin baseline-support ? $rhythm(1) indent-amount : 1em indent-amount
 
   h1
-    font-size: 2em
-    margin: 0.67em 0
+    if baseline-support
+      adjust-font-size-to h1-font-size
+      leader 1, h1-font-size
+      trailer 1, h1-font-size
+    else
+      font-size 2em
+      margin 0.67em 0
+
+  h2
+    if baseline-support
+      adjust-font-size-to h2-font-size
+      leader 1, h2-font-size
+      trailer 1, h2-font-size
+    else
+      font size 1.5em
+      margin 0.83em 0
+
+  h3
+    if baseline-support
+      adjust-font-size-to h3-font-size
+      leader 1, h3-font-size
+      trailer 1, h3-font-size
+    else
+      font-size 1.17em
+      margin 1em 0
+
+  h4
+    if baseline-support
+      adjust-font-size-to h4-font-size
+      leader 1, h4-font-size
+      trailer 1, h4-font-size
+    else
+      font-size 1em
+      margin 1.33em 0
+
+  h5
+    if baseline-support
+      adjust-font-size-to h5-font-size
+      leader 1, h5-font-size
+      trailer 1, h5-font-size
+    else
+      font-size 0.83em
+      margin 1.67em 0
+
+  h6
+    if baseline-support
+      adjust-font-size-to h6-font-size
+      leader 1, h6-font-size
+      trailer 1, h6-font-size
+    else
+      font-size 0.67em
+      margin 2.33em 0
 
   abbr[title]
-    border-bottom: 1px dotted
+    border-bottom 1px dotted
 
   b
   strong
-    font-weight: bold
+    font-weight bold
 
   dfn
-    font-style: italic
+    font-style italic
 
   hr
-    -moz-box-sizing: content-box
-    box-sizing: content-box
-    height: 0
+    box-sizing content-box
+    height 0
 
   mark
-    background: #ff0
-    color: #000
+    background #ff0
+    color #000
 
   code
   kbd
   pre
   samp
-    font-family: monospace, serif
-    font-size: 1em
+    font-family monospace serif
+    if support-for-ie
+        _font-family 'courier new', monospace
+    if baseline-support
+      adjust-font-size-to 1 * base-font-size
+    else
+      font-size 1em
 
   pre
-    white-space: pre-wrap
+    white-space pre-wrap
 
   q
-    quotes: "\201C" "\201D" "\2018" "\2019"
+    quotes "\201C" "\201D" "\2018" "\2019"
 
   small
-    font-size: 80%
+    font-size 80%
 
   sub
   sup
-    font-size: 75%
-    line-height: 0
-    position: relative
-    vertical-align: baseline
+    font-size 75%
+    line-height 0
+    position relative
+    vertical-align baseline
 
   sup
-    top: -0.5em
+    top -0.5em
 
   sub
-    bottom: -0.25em
+    bottom -0.25em
+
+  dl
+  menu
+  ol
+  ul
+    margin baseline-support ? $rhythm(1) 0 : 1em 0
+    padding 0 0 0 indent-amount
+
+  dl
+    padding 0
+
+  dd
+    margin 0 0 0 indent-amount
+
+  if support-for-ie
+    nav ul
+    nav ol
+      list-style none
+      list-style-image none
 
   img
-    border: 0
+    border 0
+      if support-for-ie
+        -ms-interpolation-mode bicubic
 
   svg:not(:root)
-    overflow: hidden
+    overflow hidden
 
   figure
-    margin: 0
+    margin 0
+
+  if support-for-ie
+    form
+      margin 0
 
   fieldset
-    border: 1px solid #c0c0c0
-    margin: 0 2px
-    padding: 0.35em 0.625em 0.75em
+    border-color #c0c0c0
+    margin 0 2px
+    if baseline-support
+      apply-side-rhythm-border top, width = 1px, lines = 0.35
+      apply-side-rhythm-border bottom, width = 1px, lines = 0.65
+      apply-side-rhythm-border left,  width = 1px, lines = 0.625
+      apply-side-rhythm-border right, width = 1px, lines = 0.625
+    else
+      border 1px solid #c0c0c0
+      padding 0.35em 0.625em 0.75em
 
   legend
-    border: 0
-    padding: 0
+    border 0
+    padding 0
+    if support-for-ie
+      *margin-left -7px
 
-  button, input, select, textarea
-    font-family: inherit
-    font-size: 100%
-    margin: 0
+  button
+  input
+  select
+  textarea
+    font-family inherit
+    font-size 100%
+    margin 0
+    if support-for-ie
+      vertical-align baseline
+      *vertical-align middle
 
-  button, input
-    line-height: normal
+  button
+  input
+    line-height normal
 
   button
   select
-    text-transform: none
+    text-transform none
 
-  button
-  html input[type="button"], input[type="reset"], input[type="submit"]
-    -webkit-appearance: button
-    cursor: pointer
+  button, html input[type="button"], input[type="reset"], input[type="submit"]
+    -webkit-appearance button
+    cursor pointer
+    if support-for-ie
+      *overflow visible
 
   button[disabled], html input[disabled]
-    cursor: default
+    cursor default
 
   input[type="checkbox"], input[type="radio"]
-    box-sizing: border-box
-    padding: 0
+    box-sizing border-box
+    padding 0
+    if support-for-ie
+      *height 13px
+      *width 13px
 
   input[type="search"]
-    -webkit-appearance: textfield
-    -moz-box-sizing: content-box
-    -webkit-box-sizing: content-box
-    box-sizing: content-box
+    -webkit-appearance textfield
+    box-sizing content-box
 
   input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration
-    -webkit-appearance: none
+    -webkit-appearance none
 
-  button::-moz-focus-inner, input::-moz-focus-inner
-    border: 0
-    padding: 0
+  button::-moz-focus-inner
+  input::-moz-focus-inner
+    border 0
+    padding 0
 
   textarea
-    overflow: auto
-    vertical-align: top
+    overflow auto
+    vertical-align top
 
   table
-    border-collapse: collapse
-    border-spacing: 0
+    border-collapse collapse
+    border-spacing 0
