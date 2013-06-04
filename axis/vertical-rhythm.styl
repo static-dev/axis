@@ -65,14 +65,21 @@ if (relative-font-sizing) and (not -relative-unit(font-unit))
 // Mixin
 // Establishes a font baseline for the given font-size.
 establish-baseline(fs = base-font-size)
-  // IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts
-  // whose root is set in ems. So we set the root font size in percentages of
-  // the default font size.
-  * html
-    font-size: 100% * (fs / browser-default-font-size)
-  html
-    font-size: fs
-    adjust-leading-to: 1, relative-font-sizing ? fs : base-font-size
+  if fs is a 'unit'
+    // IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts
+    // whose root is set in ems. So we set the root font size in percentages of
+    // the default font size.
+    * html
+      font-size: 100% * (fs / browser-default-font-size)
+    html
+      font-size: fs
+      adjust-leading-to: 1, relative-font-sizing ? fs : base-font-size
+
+  else if (fs is a 'string') and (fs is 'normalize')
+    baseline-normalize()
+
+  else
+    warn('Invalid parameter ' + fs + ' passed to establish-baseline().')
 
 // Show a background image that can be used to debug your alignments.
 // Requires internet connection
@@ -176,6 +183,257 @@ horizontal-borders(width = 1px, lines = 1, font-size = base-font-size, border-st
   leading-border: width, lines, font-size, border-style
   trailing-border: width, lines, font-size, border-style
 
-// -------------------------------------
-// @private Internal Baseline Normalize
-// -------------------------------------
+// ---------------------------------------------
+// @private Mixin - Internal Baseline Normalize
+// ---------------------------------------------
+
+baseline-normalize()
+  h1-font-size = 2 * base-font-size
+  h2-font-size = 1.5 * base-font-size
+  h3-font-size = 1.17 * base-font-size
+  h4-font-size = 1 * base-font-size
+  h5-font-size = 0.83 * base-font-size
+  h6-font-size = 0.67 * base-font-size
+  base-font-family = sans-serif
+  indent-amount = 40px
+
+  article
+  aside
+  details
+  figcaption
+  figure
+  footer
+  header
+  hgroup
+  main
+  nav
+  section
+  summary
+    display: block
+
+  audio
+  canvas
+  video
+    display: inline-block
+    if support-for-ie
+      *display: inline
+      *zoom: 1
+
+  audio:not([controls])
+    display: none
+    height: 0
+  [hidden]
+    display: none
+
+  html
+    font-family: base-font-family
+    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
+    font-size: 100% * (base-font-size / 16px)
+    adjust-leading-to: 1
+
+  if support-for-ie
+    button
+    input
+    select
+    textarea
+      font-family: base-font-family
+
+  body
+      margin: 0
+
+  a:focus
+    outline: thin dotted
+
+  a:active
+  a:hover
+    outline: 0
+
+  p
+  pre
+    margin: -rhythm(1) 0
+
+  blockquote
+    margin: -rhythm(1) indent-amount
+
+  h1
+    adjust-font-size-to: h1-font-size
+    leader: 1, h1-font-size
+    trailer: 1, h1-font-size
+
+  h2
+    adjust-font-size-to: h2-font-size
+    leader: 1, h2-font-size
+    trailer: 1, h2-font-size
+
+  h3
+    adjust-font-size-to: h3-font-size
+    leader: 1, h3-font-size
+    trailer: 1, h3-font-size
+
+  h4
+    adjust-font-size-to: h4-font-size
+    leader: 1, h4-font-size
+    trailer: 1, h4-font-size
+
+  h5
+    adjust-font-size-to: h5-font-size
+    leader: 1, h5-font-size
+    trailer: 1, h5-font-size
+
+  h6
+    adjust-font-size-to: h6-font-size
+    leader: 1, h6-font-size
+    trailer: 1, h6-font-size
+
+  abbr[title]
+    border-bottom: 1px dotted
+
+  b
+  strong
+    font-weight: bold
+
+  dfn
+    font-style: italic
+
+  hr
+    box-sizing: content-box
+    height: 0
+
+  mark
+    background: #ff0
+    color: #000
+
+  code
+  kbd
+  pre
+  samp
+    font-family: monospace serif
+    if support-for-ie
+      _font-family: 'courier new', monospace
+      adjust-font-size-to: 1 * base-font-size
+
+  pre
+    white-space: pre-wrap
+
+  q
+    quotes: "\201C" "\201D" "\2018" "\2019"
+
+  small
+    font-size: 80%
+
+  sub
+  sup
+    font-size: 75%
+    line-height: 0
+    position: relative
+    vertical-align: baseline
+
+  sup
+    top: -0.5em
+
+  sub
+    bottom: -0.25em
+
+  dl
+  menu
+  ol
+  ul
+    margin: -rhythm(1) 0
+    padding: 0 0 0 indent-amount
+
+  dl
+    padding: 0
+
+  dd
+    margin: 0 0 0 indent-amount
+
+  if support-for-ie
+    nav ul
+    nav ol
+      list-style: none
+      list-style-image: none
+
+  img
+    border: 0
+    if support-for-ie
+      -ms-interpolation-mode: bicubic
+
+  svg:not(:root)
+    overflow: hidden
+
+  figure
+    margin: 0
+
+  if support-for-ie
+    form
+      margin: 0
+
+  fieldset
+    border-color: #c0c0c0
+    margin: 0 2px
+    apply-side-rhythm-border: top, width = 1px, lines = 0.35
+    apply-side-rhythm-border: bottom, width = 1px, lines = 0.65
+    apply-side-rhythm-border: left,  width = 1px, lines = 0.625
+    apply-side-rhythm-border: right, width = 1px, lines = 0.625
+
+  legend
+    border: 0
+    padding: 0
+    if support-for-ie
+      *margin-left: -7px
+
+  button
+  input
+  select
+  textarea
+    font-family: inherit
+    font-size: 100%
+    margin: 0
+    if support-for-ie
+      vertical-align: baseline
+      *vertical-align: middle
+
+  button
+  input
+    line-height: normal
+
+  button
+  select
+    text-transform: none
+
+  button, html input[type="button"], input[type="reset"], input[type="submit"]
+    -webkit-appearance: button
+    cursor: pointer
+    if support-for-ie
+      *overflow: visible
+
+  button[disabled], html input[disabled]
+    cursor: default
+
+  input[type="checkbox"], input[type="radio"]
+    box-sizing: border-box
+    padding: 0
+    if support-for-ie
+      *height: 13px
+      *width: 13px
+
+  input[type="search"]
+    -webkit-appearance: textfield
+    box-sizing: content-box
+
+  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration
+    -webkit-appearance: none
+
+  button::-moz-focus-inner
+  input::-moz-focus-inner
+    border: 0
+    padding: 0
+
+  textarea
+    overflow: auto
+    vertical-align: top
+
+  table
+    border-collapse: collapse
+    border-spacing: 0
