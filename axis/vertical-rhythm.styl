@@ -64,15 +64,15 @@ if (relative-font-sizing) and (not -relative-unit(font-unit))
 
 // Mixin
 // Establishes a font baseline for the given font-size.
-establish-baseline(font-size = base-font-size)
+establish-baseline(fs = base-font-size)
   // IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts
   // whose root is set in ems. So we set the root font size in percentages of
   // the default font size.
   * html
-    font-size: 100% * (font-size / browser-default-font-size)
+    font-size: 100% * (fs / browser-default-font-size)
   html
-    font-size: font-size
-    adjust-leading-to: 1, relative-font-sizing ? font-size : base-font-size
+    font-size: fs
+    adjust-leading-to: 1, relative-font-sizing ? fs : base-font-size
 
 // Show a background image that can be used to debug your alignments.
 // Requires internet connection
