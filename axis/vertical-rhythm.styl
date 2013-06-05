@@ -155,20 +155,20 @@ rhythm(l = 0, pl = 0, pt = 0, t = 0, font-size = base-font-size)
 
 // Apply a border and whitespace to any side without destroying the vertical
 // rhythm. The whitespace must be greater than the width of the border.
-apply-side-rhythm-border(side, width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
+apply-side-rhythm-border(side, w = 1px, lines = 1, font-size = base-font-size, bs = default-rhythm-border-style)
   if (not relative-font-sizing) and (font-size is not base-font-size)
     warn('relative-font-sizing is false but a relative font size was passed to apply-side-rhythm-border')
-  border-{side}-style: border-style
-  border-{side}-width: font-unit * (width / font-size)
-  padding-{side}: -rhythm(lines, font-size, offset = width)
+  border-{side}-style: bs
+  border-{side}-width: font-unit * (w / font-size)
+  padding-{side}: -rhythm(lines, font-size, offset = w)
 
 // Apply borders and whitespace equally to all sides.
-rhythm-borders(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
+rhythm-borders(w = 1px, lines = 1, font-size = base-font-size, bs = default-rhythm-border-style)
   if (not relative-font-sizing) and (font-size is not base-font-size)
     warn('relative-font-sizing is false but a relative font size was passed to rhythm-borders')
-  border-style: border-style
-  border-width: font-unit * (width / font-size)
-  padding: -rhythm(lines, font-size, offset = width)
+  border-style: bs
+  border-width: font-unit * (w / font-size)
+  padding: -rhythm(lines, font-size, offset = w)
 
 // Apply a leading border.
 leading-border(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
