@@ -297,6 +297,7 @@ baseline-normalize()
     font-style: italic
 
   hr
+    -moz-box-sizing: content-box
     box-sizing: content-box
     height: 0
 
@@ -308,7 +309,7 @@ baseline-normalize()
   kbd
   pre
   samp
-    font-family: monospace serif
+    font-family: monospace, serif
     if support-for-ie
       _font-family: 'courier new', monospace
       adjust-font-size-to: 1 * base-font-size
@@ -349,10 +350,11 @@ baseline-normalize()
     margin: 0 0 0 indent-amount
 
   if support-for-ie
-    nav ul
-    nav ol
-      list-style: none
-      list-style-image: none
+    nav
+      ul
+      ol
+        list-style: none
+        list-style-image: none
 
   img
     border: 0
