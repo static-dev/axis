@@ -107,8 +107,7 @@ breakpoint = bp
 grid()
   *
     box-sizing: border-box
-    if box-sizing-enabled
-      *behaviour: box-sizing-path
+    *behaviour: url(box-sizing-path) if box-sizing-enabled
 
   html
     overflow-y: scroll
