@@ -149,3 +149,21 @@ simple-noise-gradient(color, strength = 10%, imagePath = 'noise.png')
   start = lighten(color, strength)
   end = darken(color, strength)
   noise-gradient(start, end, imagePath)
+
+// Mixin: Radial Gradient
+// Exactly like linear gradient, but has no sense of direction
+// ex. radial-gradient(red, blue)
+
+radial-gradient(stops...)
+  error('color stops required') unless length(stops)
+  prop = current-property[0]
+  val = current-property[1]
+  stops = -normalize-stops(stops)
+  webkit-legacy = '-webkit-gradient(radial, center center 0px, center center 100%, %s, %s)' % -join-stops(stops, -webkit-stop)
+  add-property(prop, -replace(val, '__CALL__', webkit-legacy))
+  stops = -join-stops(stops, -std-stop)
+  for prefix in vendors
+    unless prefix is official
+      gradient = '-%s-radial-gradient(center, ellipse cover, %s)' % (prefix stops)
+      add-property(prop, -replace(val, '__CALL__', gradient))
+  'radial-gradient(ellipse at center, %s)' % stops
