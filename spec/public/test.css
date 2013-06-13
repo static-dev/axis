@@ -9387,6 +9387,14 @@ body {
   background: url("/img/noise.png") repeat, #d3c53c -ms-linear-gradient(top, #ddd166 0%, #d3c53c 100%) repeat-x;
   background: url("/img/noise.png") repeat, #d3c53c linear-gradient(top, #ddd166 0%, #d3c53c 100%) repeat-x;
 }
+.radial-gradient {
+  background: -webkit-gradient(radial, center center 0px, center center 100%, color-stop(0, #b44326), color-stop(0.33333333333333326, #fff), color-stop(1, #00a6fc), );
+  background: -webkit-radial-gradient(center, ellipse cover, #b44326 0%, #fff 33.33333333333333%, #00a6fc 100%);
+  background: -moz-radial-gradient(center, ellipse cover, #b44326 0%, #fff 33.33333333333333%, #00a6fc 100%);
+  background: -o-radial-gradient(center, ellipse cover, #b44326 0%, #fff 33.33333333333333%, #00a6fc 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #b44326 0%, #fff 33.33333333333333%, #00a6fc 100%);
+  background: radial-gradient(ellipse at center, #b44326 0%, #fff 33.33333333333333%, #00a6fc 100%);
+}
 .bubble {
   background: #e7e7e7 -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #e7e7e7)) repeat-x;
   background: #e7e7e7 -webkit-linear-gradient(top, #efefef 0%, #e7e7e7 100%) repeat-x;
