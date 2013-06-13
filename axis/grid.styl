@@ -1,48 +1,121 @@
-/////////////////
-// Semantic.gs // for Stylus: http://learnboost.github.com/stylus/
-/////////////////
+// ------------------------------------------------------
+// Grid ported from Jeet (http://jeetframework.com)
+// ------------------------------------------------------
 
-// Defaults which you can freely override
-column-width = 60px
-gutter-width = 20px
-columns = 12
+gutter = 1
 
-// Utility variable — you should never need to modify this
-_gridsystem-width = (column-width + gutter-width) * columns
+// Centers a containing row within the viewport
+center(mw = 1410px)
+  clearfix()
+  max-width: mw
+  float: none !important
+  display: block
+  margin-right: auto !important
+  margin-left: auto !important
+  *margin-right: auto !important
+  *margin-left: auto !important
 
-// Set @total-width to 100% for a fluid layout
-total-width = _gridsystem-width
+// Calculates the column width with gutters.
+column(numerator = 1, denominator = 1, number-of-nested-columns = 0, g = gutter)
+  clearfix()
+  float: left
+  if number-of-nested-columns is not 0
+    width: ((100 - (g*2) * (number-of-nested-columns - 1)) / number-of-nested-columns)%
+    margin-left: (g)%
+    margin-right: (g)%
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: 0
+  else
+    width: (((numerator / denominator) * 100) - (g * 2))%
+    margin-left: (g)%
+    margin-right: (g)%
 
-// Correcting percentage-to-pixel rounding errors in IE6 & 7
-// See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
-// Override @min with the minimum width of your layout
-min-width = 960
-correction = (((0.5 / min-width) * 100) * 1%)
+// Same as column, but without the gutters
+span(numerator = 1, denominator = 1)
+  clearfix()
+  float: left
+  width: ((numerator / denominator) * 100)%
+  margin-left: 0
+  margin-right: 0
 
-//////////
-// GRID //
-//////////
+// Offset the column by a fraction of the row
+offset(numerator = 0, denominator = 0, left-or-right = left, col-or-span = column)
+  if (col-or-span is column) or (col-or-span is col) or (col-or-span is c)
+    if (left-or-right is left) or (left-or-right is l)
+      margin-left: (((numerator / denominator) * 100) + (g))%
+    if (left-or-right is right) or (left-or-right is r)
+      margin-right: (((numerator / denominator) * 100) + (g))%
+  if (col-or-span is span) or (col-or-span is s)
+    if (left-or-right is left) or (left-or-right is l)
+      margin-left ((numerator / denominator) * 100)%
+    if (left-or-right is right) or (left-or-right is r)
+      margin-right ((numerator / denominator) * 100)%
 
+// Returns calculated width of a column or span fraction
+-get(numerator = 1, denominator = 1, col-or-span = column)
+  if (col-or-span is span) or (col-or-span is s)
+    return ((numerator / denominator) * 100)%
+  if (col-or-span is column) or (col-or-span is col) or (col-or-span is c)
+    return (((numerator / denominator) * 100) - (g * 2))%
+
+// Breakpoint wrapper
+bp(w = 705px, mobile-first = false)
+  if (mobile-first is mf) or (mobile-first)
+    unquote("@media all and (min-width: " + w + ") {")
+  else
+    unquote("@media all and (max-width: " + w + ") {")
+endbp()
+  unquote("}")
+
+// Stack grid columns on top of each other
+stack(align = center)
+  display: block
+  width: 100%
+  margin-left: auto !important
+  margin-right: auto !important
+  margin-bottom: (g * 3)%
+  if (align is center) or (align is c)
+    text-align: center
+  if (align is left) or (align is l)
+    text-align: left
+  if (align is right) or (align is r)
+    text-align: right
+
+// Helps to visualize your changes and looks cool as hell while developing
+edit()
+  body *
+    transition: 200ms ease all
+    background: rgba(#000, .15)
+
+// Add this to the last element in a row
+// if that element isn't aligning properly
+pxfix()
+  float: none
+  overflow: hidden
+  width: auto
+
+// Aliases
+g = gutter
+gut = gutter
+col = column
+off = offset
+breakpoint = bp
+
+// Grid initialize
 grid()
-	body
-		width 100%
-		clearfix()
+  *
+    box-sizing: border-box
+    *behaviour: url(box-sizing-path) if box-sizing-enabled
 
-row(columns = columns)
-	display: block
-	width: total-width * ((gutter-width + _gridsystem-width ) / _gridsystem-width)
-	margin: 0 total-width * (((gutter-width * 0.5) / _gridsystem-width ) * - 1)
-	*width: total-width * ((gutter-width + _gridsystem-width ) / _gridsystem-width)-correction
-	*margin: 0 total-width * (((gutter-width * 0.5) / _gridsystem-width ) * - 1)-correction
+  html
+    overflow-y: scroll
+    overflow-x: hidden
 
-column(x, columns = columns)
-	display: inline
-	float: left
-	overflow: hidden
-	width: total-width * ((((gutter-width + column-width ) * x) - gutter-width) / _gridsystem-width)
-	margin: 0 total-width * ( (gutter-width * 0.5) / _gridsystem-width)
-	*width: total-width * ((((gutter-width + column-width ) * x) - gutter-width) / _gridsystem-width)-correction
-	*margin: 0 total-width * ( (gutter-width * 0.5) / _gridsystem-width)-correction
+  body
+    clearfix()
+    width: 100%
 
-offset(offset = 1)
-	margin-left: total-width*(((gutter-width+column-width)*offset + (gutter-width*0.5))/_gridsystem-width)
+  img, video, audio, embed, object, input, iframe
+    max-width: 100%
