@@ -8449,6 +8449,7 @@ body {
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
   font-size: 96.9%;
   font-size: 15px;
+  font-size: 0.9375rem;
   color: #555;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -8466,6 +8467,14 @@ body {
 .section {
   clear: both;
   margin-top: 30px;
+}
+.text {
+  margin: 9.375px 0;
+  margin: 0.9375rem 0;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 24px;
+  line-height: 1.6rem;
 }
 .button {
   font-size: 13px;
