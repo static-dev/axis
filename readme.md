@@ -1,4 +1,4 @@
-Axis CSS [![NPM version](https://badge.fury.io/js/axis-css.png)](http://badge.fury.io/js/axis) [![Dependency Status](https://gemnasium.com/jenius/axis.png)](https://gemnasium.com/jenius/axis)
+Axis CSS [![NPM version](https://badge.fury.io/js/axis-css.png)](http://badge.fury.io/js/axis-css) [![Dependency Status](https://gemnasium.com/jenius/axis.png)](https://gemnasium.com/jenius/axis)
 ---------
 
 Axis is a terse, feature-rich css library built on top of stylus. It's a child of the [roots build system](http://github.com/jenius/roots), but is totally old enough to live on it's own. It can be integrated as a plugin for stylus or included manually.
