@@ -8447,13 +8447,14 @@ table {
 }
 body {
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
-  font-size: 96.9%;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 103.36%;
+  font-size: 16px;
+  font-size: 1rem;
   color: #555;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  font-size-adjust: auto;
 }
 @font-face {
   font-family: proxima-nova;
@@ -8469,12 +8470,23 @@ body {
   margin-top: 30px;
 }
 .text {
-  margin: 9.375px 0;
-  margin: 0.9375rem 0;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  margin: 10.666666666666666px 0;
+  margin: 0.1rem 0;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
-  line-height: 1.6rem;
+  line-height: 1.5rem;
+}
+h1 {
+  color: #333;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  margin: 12.799999999999999px 0;
+  margin: 0.12rem 0;
+  line-height: 57.599999999999994px;
+  line-height: 3.5999999999999996rem;
 }
 .button {
   font-size: 13px;
