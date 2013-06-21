@@ -1,3 +1,10 @@
+///////////////////////////////////
+//                               //
+//  Jeet Framework Grid          //
+//   (http://jeetframework.com)  //
+//                               //
+///////////////////////////////////
+
 /*  Syntax quick reference
  *  ----------------------
  *  gutter[gut, g] = 1[float between 0 and 1]
@@ -67,14 +74,6 @@ offset(numerator = 0, denominator = 0, left-or-right = left, col-or-span = colum
   return (fraction*100)% if (col-or-span == span) or (col-or-span == s)
   return ((fraction*100) - (g*2))% if (col-or-span == column) or (col-or-span == col) or (col-or-span == c)
 
-bp(w = 705px, mobile_first = false)
-  if (mobile_first == mf)
-    unquote("@media all and (min-width: " + w + ") {")
-  else
-    unquote("@media all and (max-width: " + w + ") {")
-endbp()
-  unquote("}")
-
 stack(align = center)
   display: block
   width: 100%
@@ -101,7 +100,6 @@ gut = gutter
 col = column
 off = offset
 cf = clearfix
-breakpoint = bp
 
 // Config junk
 grid()
