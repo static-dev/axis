@@ -1,48 +1,124 @@
-/////////////////
-// Semantic.gs // for Stylus: http://learnboost.github.com/stylus/
-/////////////////
+/*  Syntax quick reference
+ *  ----------------------
+ *  gutter[gut, g] = 1[float between 0 and 1]
+ *  cf() - clearfix
+ *  center(maximum-width = 1410px)
+ *  column[col](numerator = 1, denominator = 1, nested-columns = 0)
+ *  span(numerator = 1, denominator = 1)
+ *  offset[off](numerator = 0, denominator = 0, col-or-span = column[col, c, span, s], left-or-right = left[right])
+ *  -get-column-width(numerator = 1, denominator = 1, col-or-span = column[col, c, span, s])
+ *  bp(w = 705px, mobile_first = false[mf])
+ *  endbp()
+ *  stack(align = center[c, left, l, right, r])
+ *  edit()
+ *  pxfix()
+ */
 
-// Defaults which you can freely override
-column-width = 60px
-gutter-width = 20px
-columns = 12
+gutter = 1
 
-// Utility variable — you should never need to modify this
-_gridsystem-width = (column-width + gutter-width) * columns
+center(maximum-width = 1410px)
+  clearfix()
+  max-width: maximum-width
+  float: none !important
+  display: block
+  margin-right: auto !important
+  margin-left: auto !important
+  *margin-right: auto !important
+  *margin-left: auto !important
 
-// Set @total-width to 100% for a fluid layout
-total-width = _gridsystem-width
+column(numerator = 1, denominator = 1, nested-columns = 0, g = gutter)
+  clearfix()
+  float: left
 
-// Correcting percentage-to-pixel rounding errors in IE6 & 7
-// See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
-// Override @min with the minimum width of your layout
-min-width = 960
-correction = (((0.5 / min-width) * 100) * 1%)
+  if (nested-columns != 0)
+    width: ((100 - (g * 2) * (nested-columns - 1)) / nested-columns )% // Thanks flebron from #math
+    margin-left: (g)%
+    margin-right: (g)%
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: 0
 
-//////////
-// GRID //
-//////////
+  else
+    width: -get-column-width(numerator, denominator)
+    margin-left: (g)%
+    margin-right: (g)%
 
+span(numerator = 1, denominator = 1)
+  clearfix()
+  float: left
+  width: -get-column-width(numerator, denominator, span)
+  margin-left: 0
+  margin-right: 0
+
+offset(numerator = 0, denominator = 0, left-or-right = left, col-or-span = column)
+  gap = -get-column-width(numerator, denominator, span)
+
+  if (col-or-span == column) or (col-or-span == col) or (col-or-span == c)
+    margin-left: (gap + (g))% if (left-or-right == left) or (left-or-right == l)
+    margin-right: (gap + (g))% if (left-or-right == right) or (left-or-right == r)
+
+  if (col-or-span == span) or (col-or-span == s)
+    margin-left: gap if (left-or-right == left) or (left-or-right == l)
+    margin-right: gap if (left-or-right == right) or (left-or-right == r)
+
+-get-column-width(numerator = 1, denominator = 1, col-or-span = column)
+  fraction = numerator / denominator
+  return (fraction*100)% if (col-or-span == span) or (col-or-span == s)
+  return ((fraction*100) - (g*2))% if (col-or-span == column) or (col-or-span == col) or (col-or-span == c)
+
+bp(w = 705px, mobile_first = false)
+  if (mobile_first == mf)
+    unquote("@media all and (min-width: " + w + ") {")
+  else
+    unquote("@media all and (max-width: " + w + ") {")
+endbp()
+  unquote("}")
+
+stack(align = center)
+  display: block
+  width: 100%
+  margin-left: auto !important
+  margin-right: auto !important
+  margin-bottom: (g * 3)%
+  text-align: center if (align == center) or (align == c)
+  text-align: left if (align == l) or (align == l)
+  text-align: right if (align == r) or (align == r)
+
+edit()
+  body *
+    transition: 200ms ease all
+    background: rgba(#000, .15)
+
+pxfix() // http://stackoverflow.com/a/12371926/1242079
+  float: none
+  overflow: hidden
+  width: auto
+
+// Function aliases
+g = gutter
+gut = gutter
+col = column
+off = offset
+cf = clearfix
+breakpoint = bp
+
+// Config junk
 grid()
-	body
-		width 100%
-		clearfix()
-
-row(columns = columns)
-	display: block
-	width: total-width * ((gutter-width + _gridsystem-width ) / _gridsystem-width)
-	margin: 0 total-width * (((gutter-width * 0.5) / _gridsystem-width ) * - 1)
-	*width: total-width * ((gutter-width + _gridsystem-width ) / _gridsystem-width)-correction
-	*margin: 0 total-width * (((gutter-width * 0.5) / _gridsystem-width ) * - 1)-correction
-
-column(x, columns = columns)
-	display: inline
-	float: left
-	overflow: hidden
-	width: total-width * ((((gutter-width + column-width ) * x) - gutter-width) / _gridsystem-width)
-	margin: 0 total-width * ( (gutter-width * 0.5) / _gridsystem-width)
-	*width: total-width * ((((gutter-width + column-width ) * x) - gutter-width) / _gridsystem-width)-correction
-	*margin: 0 total-width * ( (gutter-width * 0.5) / _gridsystem-width)-correction
-
-offset(offset = 1)
-	margin-left: total-width*(((gutter-width+column-width)*offset + (gutter-width*0.5))/_gridsystem-width)
+  *
+    box-sizing: border-box
+    *behavior: url(box-sizing-path) if box-sizing-enabled
+  html
+    overflow-y: scroll
+    overflow-x: hidden
+  body
+    clearfix()
+    width: 100%
+  img
+  video
+  audio
+  embed
+  object
+  input
+  iframe
+    max-width: 100%
