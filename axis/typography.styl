@@ -295,6 +295,19 @@ base(fonts = font-stack, size = font-size, color = font-color)
     -webkit-text-size-adjust: 100%
     -ms-text-size-adjust: 100%
 
+    -ms-word-break: break-all
+    word-break: break-all
+    // Non standard for webkit
+    word-break: break-word
+
+    hyphens: auto
+
+    -webkit-hyphenate-before: 2
+    -webkit-hyphenate-after: 3
+    hyphenate-lines: 3
+
+    font-size-adjust: auto
+
 // Additive Mixin: Headers
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
 // Adds roots' wonderful scaling header styles to your <hx> tags.
