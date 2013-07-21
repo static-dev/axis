@@ -8456,6 +8456,38 @@ body {
   -ms-text-size-adjust: 100%;
   font-size-adjust: auto;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body {
+  zoom: 1;
+  width: 100%;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+img,
+video,
+audio,
+embed,
+object,
+input,
+iframe {
+  max-width: 100%;
+}
 @font-face {
   font-family: proxima-nova;
   src: url("/fonts/proxima/proxima-nova.eot?#iefix") format('embedded-opentype'), url("/fonts/proxima/proxima-nova.woff") format('woff'), url("/fonts/proxima/proxima-nova.ttf") format('truetype'), url("/fonts/proxima/proxima-nova.eot#svgFontName") format('svg');
