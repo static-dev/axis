@@ -37,12 +37,13 @@ hover-lighten(percent = 15%, force-use-color = false)
 // This one is interesting, and may need tweaking to get it to work right on the
 // intended element. Works very nicely for text, like in a span, and can animate.
 // ex. hover-underline()
+// ex. hover-underline: 2px dotted
 
-hover-underline()
-  border-bottom: 1px solid transparent
+hover-underline(border-size = 1px, type = solid, color = null)
+  border-bottom: border-size type transparent
   &:hover
-    border-bottom: 1px solid
-
+    border-bottom: border-size type color
+    
 // Mixin: Hover Pop
 // On hover, your element pops out from the page. For scale, it takes an integer or float,
 // 1 represents 100%, 2 is 200%, etc. Optionally can also rotate, pass it a number followed by
