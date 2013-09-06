@@ -9546,6 +9546,7 @@ blockquote > figcaption:before {
 }
 .bubbles > * {
   margin: 20px 0;
+  height: 100px;
 }
 .bubbles .bottom-right {
   background: #e7e7e7 -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #e7e7e7)) repeat-x;
@@ -9565,7 +9566,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .bottom-right:before,
 .bubbles .bottom-right:after {
@@ -9604,7 +9604,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .bottom-left:before,
 .bubbles .bottom-left:after {
@@ -9643,7 +9642,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .top-right:before,
 .bubbles .top-right:after {
@@ -9682,7 +9680,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .top-left:before,
 .bubbles .top-left:after {
@@ -9721,7 +9718,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .left-top:before,
 .bubbles .left-top:after {
@@ -9760,7 +9756,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .right-top:before,
 .bubbles .right-top:after {
@@ -9799,7 +9794,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .left-bottom:before,
 .bubbles .left-bottom:after {
@@ -9838,7 +9832,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .right-bottom:before,
 .bubbles .right-bottom:after {
@@ -9877,7 +9870,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .bottom-center:before,
 .bubbles .bottom-center:after {
@@ -9888,6 +9880,7 @@ blockquote > figcaption:before {
   clear: both;
 }
 .bubbles .bottom-center:after {
+  margin-left: -10px;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -9895,7 +9888,7 @@ blockquote > figcaption:before {
   border-top: 10px solid #e7e7e7;
   position: absolute;
   bottom: -10px;
-  left: 135px;
+  left: 50%;
   display: block;
 }
 .bubbles .left-center {
@@ -9916,7 +9909,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .left-center:before,
 .bubbles .left-center:after {
@@ -9927,13 +9919,14 @@ blockquote > figcaption:before {
   clear: both;
 }
 .bubbles .left-center:after {
+  margin-top: -5px;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid #e7e7e7;
   position: absolute;
-  top: 37.5px;
+  top: 50%;
   left: -10px;
   display: block;
 }
@@ -9955,7 +9948,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .right-center:before,
 .bubbles .right-center:after {
@@ -9966,13 +9958,14 @@ blockquote > figcaption:before {
   clear: both;
 }
 .bubbles .right-center:after {
+  margin-top: -5px;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid #e7e7e7;
   position: absolute;
-  top: 37.5px;
+  top: 50%;
   right: -10px;
   display: block;
 }
@@ -9994,7 +9987,6 @@ blockquote > figcaption:before {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .top-center:before,
 .bubbles .top-center:after {
@@ -10005,6 +9997,7 @@ blockquote > figcaption:before {
   clear: both;
 }
 .bubbles .top-center:after {
+  margin-left: -10px;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -10012,6 +10005,6 @@ blockquote > figcaption:before {
   border-bottom: 10px solid #e7e7e7;
   position: absolute;
   top: -10px;
-  left: 135px;
+  left: 50%;
   display: block;
 }

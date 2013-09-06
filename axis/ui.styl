@@ -90,53 +90,49 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // ex. bubble: bottom right #5740A1 500px
 // ex. bubble: right top #5740A1 500px
 
-bubble(pos0 = bottom, pos1 = left, color = #EEEEEE, width = false, height = false, triangleSize = 10px, sideDistance = 15px, padding = 10px)
+bubble(pos0 = bottom, pos1 = left, color = #EEEEEE, width = false, triangleSize = 10px, sideDistance = 15px, padding = 10px)
   notice(width, color, padding)
-  if height
-    height: height
-  if pos0 is top
-    directionTriangle = up
-    positionY = pos0
-    distanceY = -(triangleSize)
-  else if pos0 is bottom
-    directionTriangle = down
-    positionY = pos0
-    distanceY = -(triangleSize)
-  else if pos0 is left
-    directionTriangle = left
-    positionX = pos0
-    distanceX = -(triangleSize)
-  else if pos0 right
-    directionTriangle = right
-    positionX = pos0
-    distanceX = -(triangleSize)
-
-  if pos1 is left
-    positionX = pos1
-    distanceX = sideDistance
-  else if pos1 is right
-    positionX = pos1
-    distanceX = sideDistance
-  else if pos1 is bottom
-    positionY = pos1
-    distanceY = sideDistance
-  else if pos1 is top
-    positionY = pos1
-    distanceY = sideDistance
-  else if pos1 is center
-    if pos0 is top or pos0 is bottom
-      warn("you must specify a width to center the pointer") unless width
-      width = (width - triangleSize)
-      positionX = left
-      distanceX = (unit(width, 'px')/2) - padding
-    else
-      warn("you must specify a height to center the pointer") unless height
-      height = (height - (triangleSize/2))
-      warn("you must specify a height to center the pointer") unless height
-      positionY = top
-      distanceY = (unit(height, 'px')/2) - padding
-
   &:after
+    if pos0 is top
+      directionTriangle = up
+      positionY = pos0
+      distanceY = -(triangleSize)
+    else if pos0 is bottom
+      directionTriangle = down
+      positionY = pos0
+      distanceY = -(triangleSize)
+    else if pos0 is left
+      directionTriangle = left
+      positionX = pos0
+      distanceX = -(triangleSize)
+    else if pos0 right
+      directionTriangle = right
+      positionX = pos0
+      distanceX = -(triangleSize)
+
+    if pos1 is left
+      positionX = pos1
+      distanceX = sideDistance
+    else if pos1 is right
+      positionX = pos1
+      distanceX = sideDistance
+    else if pos1 is bottom
+      positionY = pos1
+      distanceY = sideDistance
+    else if pos1 is top
+      positionY = pos1
+      distanceY = sideDistance
+    else if pos1 is center
+      if pos0 is top or pos0 is bottom
+        margin-left: -(triangleSize)
+        positionX = left
+        distanceX = 50%
+      else
+        warn("you must specify a height to center the pointer") unless height
+        margin-top: -(triangleSize/2)
+        positionY = top
+        distanceY = 50%
+
     triangle(directionTriangle, triangleSize, darken(color, 3%))
     absolute: positionY distanceY positionX distanceX
     display: block
