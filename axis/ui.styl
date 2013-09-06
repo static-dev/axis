@@ -90,7 +90,7 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // ex. bubble: bottom right #5740A1 500px
 // ex. bubble: right top #5740A1 500px
 
-bubble(pos0 = bottom, pos1 = false, color = #EEEEEE, width = false, triangleSize = 10px, sideDistance = 15px, padding = 10px, pointer = false)
+bubble(pos0 = left, pos1 = false, color = #EEEEEE, width = false, triangleSize = 10px, sideDistance = 15px, padding = 10px, pointer = false)
   // use named argument 'pointer' as pos0 arg (to preserve old bubble api)
   if pointer
     pos1 = pointer
@@ -136,7 +136,7 @@ bubble(pos0 = bottom, pos1 = false, color = #EEEEEE, width = false, triangleSize
       positionY = top
       distanceY = sideDistance
     else if pos1 is center
-      if pos0 is top or pos0 is bottom
+      if pos0 is top or pos0 is bottom or pos1 is false
         margin-left: -(triangleSize)
         positionX = left
         distanceX = 50%
