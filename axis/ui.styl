@@ -90,37 +90,47 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // ex. bubble: bottom right #5740A1 500px
 // ex. bubble: right top #5740A1 500px
 
-bubble(pos0 = bottom, pos1 = left, color = #EEEEEE, width = false, triangleSize = 10px, sideDistance = 15px, padding = 10px)
+bubble(pos0 = bottom, pos1 = left, color = #EEEEEE, width = false, triangleSize = 10px, sideDistance = 15px, padding = 10px, pointer = false)
+  // use named argument 'pointer' as pos0 arg (to preserve old bubble api)
+  if pointer
+    pos1 = pointer
+    pos0 = bottom
+  // if no pos1 is given, shift args and assume 'bottom pos0'
+  if pos1 is a 'color'
+    width = color
+    color = pos1
+    pos1 = pos0
+    pos0 = bottom
   notice(width, color, padding)
   &:after
     if pos0 is top
       directionTriangle = up
-      positionY = pos0
+      positionY = top
       distanceY = -(triangleSize)
     else if pos0 is bottom
       directionTriangle = down
-      positionY = pos0
+      positionY = bottom
       distanceY = -(triangleSize)
     else if pos0 is left
       directionTriangle = left
-      positionX = pos0
+      positionX = left
       distanceX = -(triangleSize)
     else if pos0 right
       directionTriangle = right
-      positionX = pos0
+      positionX = right
       distanceX = -(triangleSize)
 
     if pos1 is left
-      positionX = pos1
+      positionX = left
       distanceX = sideDistance
     else if pos1 is right
-      positionX = pos1
+      positionX = right
       distanceX = sideDistance
     else if pos1 is bottom
-      positionY = pos1
+      positionY = bottom
       distanceY = sideDistance
     else if pos1 is top
-      positionY = pos1
+      positionY = top
       distanceY = sideDistance
     else if pos1 is center
       if pos0 is top or pos0 is bottom
@@ -128,7 +138,6 @@ bubble(pos0 = bottom, pos1 = left, color = #EEEEEE, width = false, triangleSize 
         positionX = left
         distanceX = 50%
       else
-        warn("you must specify a height to center the pointer") unless height
         margin-top: -(triangleSize/2)
         positionY = top
         distanceY = 50%
