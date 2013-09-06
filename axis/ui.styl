@@ -24,11 +24,11 @@ area(color = #F5F5F5)
 // ex. notice(300px, red)
 // ex. notice: 500px blue
 
-notice(width = false, color = #EEEEEE)
+notice(width = false, color = #EEEEEE, padding = 10px)
   simple-gradient(color, 3%)
   group()
   border-radius: 5px
-  padding: 15px
+  padding: padding
   border: 1px solid darken(color, 10%)
   -webkit-box-shadow: 1px 1px 3px rgba(#000,.05)
   position: relative
@@ -86,36 +86,60 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // This mixin takes care of that problem, and makes a nice bubble with 100% css.
 // All parameters optional - accepts width, pointer position (left, center, or right), and a color.
 // ex. bubble()
-// ex. bubble: center #57777E
-// ex. bubble: right #5740A1 500px
+// ex. bubble: top center #57777E
+// ex. bubble: bottom right #5740A1 500px
+// ex. bubble: right top #5740A1 500px
 
-// TODO: add option to put the pointer on the top or left
-// bottom left, bottom center, bottom right, left, right, top left...
+bubble(pos0 = bottom, pos1 = left, color = #EEEEEE, width = false, height = false, triangleSize = 10px, sideDistance = 15px, padding = 10px)
+  notice(width, color, padding)
+  if height
+    height: height
+  if pos0 is top
+    directionTriangle = up
+    positionY = pos0
+    distanceY = -(triangleSize)
+  else if pos0 is bottom
+    directionTriangle = down
+    positionY = pos0
+    distanceY = -(triangleSize)
+  else if pos0 is left
+    directionTriangle = left
+    positionX = pos0
+    distanceX = -(triangleSize)
+  else if pos0 right
+    directionTriangle = right
+    positionX = pos0
+    distanceX = -(triangleSize)
 
-bubble(pointer = left, color = #EEEEEE, width = false)
-  notice(width, color)
+  if pos1 is left
+    positionX = pos1
+    distanceX = sideDistance
+  else if pos1 is right
+    positionX = pos1
+    distanceX = sideDistance
+  else if pos1 is bottom
+    positionY = pos1
+    distanceY = sideDistance
+  else if pos1 is top
+    positionY = pos1
+    distanceY = sideDistance
+  else if pos1 is center
+    if pos0 is top or pos0 is bottom
+      warn("you must specify a width to center the pointer") unless width
+      width = (width - triangleSize)
+      positionX = left
+      distanceX = (unit(width, 'px')/2) - padding
+    else
+      warn("you must specify a height to center the pointer") unless height
+      height = (height - (triangleSize/2))
+      warn("you must specify a height to center the pointer") unless height
+      positionY = top
+      distanceY = (unit(height, 'px')/2) - padding
 
   &:after
-    triangle(down, 10px, darken(color, 3%))
-    position: absolute
-    bottom: -9px
+    triangle(directionTriangle, triangleSize, darken(color, 3%))
+    absolute: positionY distanceY positionX distanceX
     display: block
-    if pointer == center
-      warn("you must specify a width to center the pointer") unless width
-      left: (unit(width, 'px')/2)
-    else if pointer == right
-      right: 15px
-
-  &:before
-    triangle(down, 10px, darken(color, 10%))
-    position: absolute
-    bottom: -11px
-    display: block
-    if pointer == center
-      warn("you must specify a width to center the pointer") unless width
-      left: (unit(width, 'px')/2)
-    else if pointer == right
-      right: 15px
 
 // Mixin: Figure
 // For when you want to *semantically* show an image. Put this on your <figure /> element and it will style
