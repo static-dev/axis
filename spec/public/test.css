@@ -9450,6 +9450,7 @@ h1 {
 }
 .bubbles > * {
   margin: 20px 0;
+  height: 100px;
 }
 .bubbles .bottom-right {
   background: #e7e7e7 -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef), color-stop(1, #e7e7e7)) repeat-x;
@@ -9469,7 +9470,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .bottom-right:before,
 .bubbles .bottom-right:after {
@@ -9508,7 +9508,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .bottom-left:before,
 .bubbles .bottom-left:after {
@@ -9547,7 +9546,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .top-right:before,
 .bubbles .top-right:after {
@@ -9586,7 +9584,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .top-left:before,
 .bubbles .top-left:after {
@@ -9625,7 +9622,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .left-top:before,
 .bubbles .left-top:after {
@@ -9664,7 +9660,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .right-top:before,
 .bubbles .right-top:after {
@@ -9703,7 +9698,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .left-bottom:before,
 .bubbles .left-bottom:after {
@@ -9742,7 +9736,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .right-bottom:before,
 .bubbles .right-bottom:after {
@@ -9781,7 +9774,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .bottom-center:before,
 .bubbles .bottom-center:after {
@@ -9792,6 +9784,7 @@ h1 {
   clear: both;
 }
 .bubbles .bottom-center:after {
+  margin-left: -10px;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -9799,7 +9792,7 @@ h1 {
   border-top: 10px solid #e7e7e7;
   position: absolute;
   bottom: -10px;
-  left: 135px;
+  left: 50%;
   display: block;
 }
 .bubbles .left-center {
@@ -9820,7 +9813,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .left-center:before,
 .bubbles .left-center:after {
@@ -9831,13 +9823,14 @@ h1 {
   clear: both;
 }
 .bubbles .left-center:after {
+  margin-top: -5px;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid #e7e7e7;
   position: absolute;
-  top: 37.5px;
+  top: 50%;
   left: -10px;
   display: block;
 }
@@ -9859,7 +9852,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .right-center:before,
 .bubbles .right-center:after {
@@ -9870,13 +9862,14 @@ h1 {
   clear: both;
 }
 .bubbles .right-center:after {
+  margin-top: -5px;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid #e7e7e7;
   position: absolute;
-  top: 37.5px;
+  top: 50%;
   right: -10px;
   display: block;
 }
@@ -9898,7 +9891,6 @@ h1 {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
   width: 300px;
-  height: 100px;
 }
 .bubbles .top-center:before,
 .bubbles .top-center:after {
@@ -9909,6 +9901,7 @@ h1 {
   clear: both;
 }
 .bubbles .top-center:after {
+  margin-left: -10px;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -9916,6 +9909,6 @@ h1 {
   border-bottom: 10px solid #e7e7e7;
   position: absolute;
   top: -10px;
-  left: 135px;
+  left: 50%;
   display: block;
 }
