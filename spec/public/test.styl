@@ -157,5 +157,39 @@ blockquote
 // ui
 //
 
-.bubble
-  bubble(right, width: 300px)
+.bubbles
+  & > *
+    margin: 20px 0
+    height: 100px
+  .right-red
+    bubble: right red 300px
+    color: lighten(red, 80%)
+  .center-green
+    bubble(pointer: center, color: green, width: 300px)
+    color: lighten(green, 80%)
+  .left
+    bubble(left, width: 300px)
+  .bottom-right
+    bubble: bottom right #EEE 300px
+  .bottom-left
+    bubble: bottom left #EEE 300px
+  .top-right
+    bubble: top right #EEE 300px
+  .top-left
+    bubble: top left #EEE 300px
+  .left-top
+    bubble: left top #EEE 300px
+  .right-top
+    bubble: right top #EEE 300px
+  .left-bottom
+    bubble: left bottom #EEE 300px
+  .right-bottom
+    bubble: right bottom #EEE 300px
+  .bottom-center
+    bubble: bottom center #EEE 300px
+  .left-center
+    bubble: left center #EEE 300px
+  .right-center
+    bubble: right center #EEE 300px
+  .top-center
+    bubble: top center #EEE 300px
