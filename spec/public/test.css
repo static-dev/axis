@@ -8447,9 +8447,8 @@ table {
 }
 body {
   font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
-  font-size: 103.36%;
   font-size: 16px;
-  font-size: 1rem;
+  font-size: 103.36%;
   color: #555;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -8488,6 +8487,61 @@ input,
 iframe {
   max-width: 100%;
 }
+h1 {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  color: #555;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+h2 {
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  color: #555;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #555;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+h4 {
+  font-size: 20.8px;
+  font-size: 1.3rem;
+  color: #555;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  color: #555;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+h6 {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  color: #555;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
+}
 @font-face {
   font-family: proxima-nova;
   src: url("/fonts/proxima/proxima-nova.eot?#iefix") format('embedded-opentype'), url("/fonts/proxima/proxima-nova.woff") format('woff'), url("/fonts/proxima/proxima-nova.ttf") format('truetype'), url("/fonts/proxima/proxima-nova.eot#svgFontName") format('svg');
@@ -8502,23 +8556,65 @@ body {
   margin-top: 30px;
 }
 .text {
-  margin: 10.666666666666666px 0;
-  margin: 0.1rem 0;
-  font-size: 16px;
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  margin: 0.75em 0;
+  line-height: 1.6em;
 }
-h1 {
-  color: #333;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  font-size: 38.4px;
-  font-size: 2.4rem;
-  margin: 12.799999999999999px 0;
-  margin: 0.12rem 0;
-  line-height: 57.599999999999994px;
-  line-height: 3.5999999999999996rem;
+.link {
+  color: #00a6fc;
+  text-decoration: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  border-bottom: 1px solid transparent;
+}
+.link:hover {
+  border-bottom: 1px solid;
+}
+.link:hover {
+  color: #008dd6;
+}
+.link:visited {
+  -webkit-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  -moz-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  -o-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+blockquote {
+  border-left: 4px solid #00a6fc;
+  margin: 1em 0;
+  padding-left: 1.5em;
+  zoom: 1;
+}
+blockquote:before,
+blockquote:after {
+  content: "";
+  display: table;
+}
+blockquote:after {
+  clear: both;
+}
+blockquote > p {
+  font-weight: 300;
+  font-size: 127%;
+  font-size: 1.27rem;
+  line-height: 1.6em;
+  line-height: 1.6em;
+  margin-top: 0;
+}
+blockquote > cite,
+blockquote > footer,
+blockquote > figcaption {
+  color: #888;
+}
+blockquote > cite:before,
+blockquote > footer:before,
+blockquote > figcaption:before {
+  content: '\2014';
 }
 .button {
   font-size: 13px;
