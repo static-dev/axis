@@ -12,9 +12,10 @@
 highlight(strength = .3)
   box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,strength)))
 
-// This is an internal function used for the button mixins, not intended for use.
+// Helper: parse
+// Used internally for setting button sizes.
 
-parse(size)
+-parse(size)
   if size == "small"
     return 10
   else if size == "medium"
@@ -41,7 +42,7 @@ simple-button(color = default-color, size = "medium", textColor = null)
 
   // color detection and changes
   textColor = light(color) ? #494949 : #fff unless textColor
-  parsed_size = parse(size)
+  parsed_size = -parse(size)
 
   // now that we've got numbers, let's work some proportions
   height = (parsed_size * 1.53px) / 2
@@ -72,7 +73,7 @@ simple-button(color = default-color, size = "medium", textColor = null)
   &:active
     background-color: darken(color, 10%)
 
-// Mixin: Button
+// Mixin: Glossy Button
 // Creates a more fancy looking button style. Two optional params:
 // - color: Takes any color, defaults to the default global color
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects the
@@ -85,7 +86,7 @@ simple-button(color = default-color, size = "medium", textColor = null)
 
 // These will accept font icons interally in the very near future
 
-button(color = default-color, size = "medium", textColor = null, shadowColor = null, hoverColor = null)
+glossy-button(color = default-color, size = "medium", textColor = null, shadowColor = null, hoverColor = null)
 
   // color detection and changes
   // this could be refactored for sure
@@ -100,7 +101,7 @@ button(color = default-color, size = "medium", textColor = null, shadowColor = n
   downShadow = darkText ? 0 -1px 1px rgba(#000,.2) : 1px 1px 1px rgba(#fff,.6)
 
   // parse words, make sure it's a number
-  parsed_size = parse(size)
+  parsed_size = -parse(size)
 
   // now that we've got numbers, let's work some proportions
   height = (parsed_size*1.53px)/2
@@ -172,6 +173,6 @@ buttons()
     simple-button(blue)
   .btn
     transition()
-    button(blue)
+    glossy-button(blue)
   .btn.disabled, .btn-simple.disabled
     button-disabled()
