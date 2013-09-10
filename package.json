@@ -1,7 +1,7 @@
 {
   "name": "axis-css",
   "description": "css library built on stylus",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "repository": {
     "type": "git",
     "url": "git://github.com/jenius/axis.git"
