@@ -28,7 +28,7 @@ focus-glow(color = default-color)
 // ex. +input(purple)
 // ex. +input(#D45D86, 400px)
 
-input(color = light-blue, width = 250px)
+input-field(color = light-blue, width = 250px)
   box-shadow(inset 0 1px 1px rgba(#000, 0.1))
   font-size: {font-size}px
   font-family: font-stack
@@ -92,7 +92,7 @@ input-disabled()
 // Very basic label for your form. Pass it an optional display type to have it inline or block.
 // ex. +label
 
-label(display = inline-block)
+form-label(display = inline-block)
   line-height: 1.5em
   display: display
 
@@ -211,7 +211,7 @@ forms()
   input[type='time'],
   input[type='week'],
   textarea
-    input()
+    input-field()
 
     &.disabled
       input-disabled()
