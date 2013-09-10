@@ -1,6 +1,7 @@
-module.exports = function() {
+module.exports = function(opts) {
+  var implicit = (opts && opts.implicit == false) ? false : true;
   return function(style){
     style.include(__dirname);
-    style.import('axis');
+    if (implicit) style.import('axis');
   }
 }
