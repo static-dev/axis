@@ -11,12 +11,11 @@
  *  stack(padding = 0, align = center[c, left, l, right, r])
  *  edit()
  *  align(direction = both[b, vertical, v, horizontal, h])
- *  cf()
  */
 
 // Mixins
 center(max_width = 1410px, padding = 15px)
-    @extends $cf
+    group()
     max-width max_width
     float none
     display block
@@ -39,7 +38,7 @@ column(ratios = 1, offset = 0, cycle = 0, uncycle = 0)
             offset = get_column(offset, widths[1])[0]
             margin_l = offset + widths[1]
             
-    @extends $cf
+    group()
     float side
     width (widths[0])%
     margin-{side} (margin_l)%
@@ -66,7 +65,7 @@ span(ratio = 1, offset = 0)
             margin_r = get_span(offset)
         else
             margin_l = get_span(offset)
-    @extends $cf
+    group()
     float side
     width (width)%
     margin-{side} (margin_l)%
@@ -116,11 +115,6 @@ stack(padding = 0, align = center)
         text-align left
     if (align == right) or (align == r)
         text-align right
-
-edit()
-    *
-        transition 200ms ease all
-        background rgba(#000, .15)
 
 align(direction = both) // IE10+
     if (direction == both) or (direction == b)
@@ -197,39 +191,25 @@ reverse(list)
 // Function aliases
 g = gutter
 col = column
-cf = clearfix
 
-// Placeholders
-$cf
-    cf()
+// Fancy editing - root level mixin
+edit()
+  *
+    transition 200ms ease all
+    background rgba(#000, .15)
 
-// Resets and defaults
-*
+// Resets and defaults - root level mixin
+grid()
+  *
     box-sizing(border-box)
-    *behavior url(js/vendor/boxsizing.htc)
-html
-    overflow-y scroll
-    overflow-x hidden
-body
-    @extends $cf
-    width 100%
-img, video, audio, embed, object, input, iframe
-    max-width 100%
-.cf
-    @extends $cf
-.chromeframe
-    width 100%
-    background #fff
-    background linear-gradient(top, #fff, #eee)
-    border-bottom 1px solid #ddd
-    box-shadow inset 0 -1px 0 #fff
-    text-shadow 0 1px 0 #fff
-    p
-        center()
-        padding 15px 0
-        margin-top 0
-        margin-bottom 0
-        text-align center
-        margin-bottom 0
-        a
-            color #3a95fb
+    *behavior: url(box-sizing-path)
+
+  html
+    overflow-y: scroll
+    overflow-x: hidden
+
+  body
+    width: 100%
+
+  img, video, audio, embed, object, input, iframe
+    max-width: 100%
