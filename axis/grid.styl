@@ -1,122 +1,215 @@
-///////////////////////////////////
-//                               //
-//  Jeet Framework Grid          //
-//   (http://jeetframework.com)  //
-//                               //
-///////////////////////////////////
-
 /*  Syntax quick reference
  *  ----------------------
- *  gutter[gut, g] = 1[float between 0 and 1]
- *  cf() - clearfix
- *  center(maximum-width = 1410px)
- *  column[col](numerator = 1, denominator = 1, nested-columns = 0)
- *  span(numerator = 1, denominator = 1)
- *  offset[off](numerator = 0, denominator = 0, col-or-span = column[col, c, span, s], left-or-right = left[right])
- *  -get-column-width(numerator = 1, denominator = 1, col-or-span = column[col, c, span, s])
+ *  gutter[g] = 1
+ *  center(max_width = 1410px, padding = 15px)
+ *  column[col](ratios = 1, offset = false)
+ *  span(ratio = 1, offset = false)
+ *  shift(ratios = 0)
+ *  unshift()
  *  bp(w = 705px, mobile_first = false[mf])
  *  endbp()
- *  stack(align = center[c, left, l, right, r])
+ *  stack(padding = 0, align = center[c, left, l, right, r])
  *  edit()
- *  pxfix()
+ *  align(direction = both[b, vertical, v, horizontal, h])
  */
 
-gutter = 1
+// Mixins
+center(max_width = 1410px, padding = 15px)
+    group()
+    max-width max_width
+    float none
+    display block
+    margin-right auto
+    margin-left auto
+    padding-left padding 
+    padding-right padding 
 
-center(maximum-width = 1410px)
-  clearfix()
-  max-width: maximum-width
-  float: none !important
-  display: block
-  margin-right: auto !important
-  margin-left: auto !important
-  *margin-right: auto !important
-  *margin-left: auto !important
+column(ratios = 1, offset = 0, cycle = 0, uncycle = 0)
+    side = get_layout_direction()
+    widths = get_column(ratios)
+    margin_l = margin_last = 0
+    margin_r = widths[1]
+    unless offset == 0
+        if offset < 0
+            offset *= -1
+            offset = get_column(offset, widths[1])[0]
+            margin_r = margin_last = offset + widths[1] * 2
+        else
+            offset = get_column(offset, widths[1])[0]
+            margin_l = offset + widths[1]
+            
+    group()
+    float side
+    width (widths[0])%
+    margin-{side} (margin_l)%
+    margin-{opposite-position(side)} (margin_r)%
+    if uncycle != 0
+        &:nth-child({uncycle}n)
+            margin-{opposite-position(side)} (margin_r)%
+            float side
+    if cycle != 0
+        &:nth-child({cycle}n)
+            margin-{opposite-position(side)} (margin_last)%
+            float opposite-position(side)
+    else
+        &:last-child
+            margin-{opposite-position(side)} (margin_last)%
 
-column(numerator = 1, denominator = 1, nested-columns = 0, g = gutter)
-  clearfix()
-  float: left
+span(ratio = 1, offset = 0)
+    side = get_layout_direction()
+    width = get_span(ratio)
+    margin_l = margin_r = 0
+    unless offset == 0
+        if offset < 0
+            offset *= -1
+            margin_r = get_span(offset)
+        else
+            margin_l = get_span(offset)
+    group()
+    float side
+    width (width)%
+    margin-{side} (margin_l)%
+    margin-{opposite-position(side)} (margin_r)%
 
-  if (nested-columns != 0)
-    width: ((100 - (g * 2) * (nested-columns - 1)) / nested-columns )% // Thanks flebron from #math
-    margin-left: (g)%
-    margin-right: (g)%
+shift(ratios = 0, col_or_span = column)
+    side = get_layout_direction()
+    if side == right
+        ratios = replace_nth(ratios, 0, ratios[0] * -1)
+    if col_or_span == column or col_or_span == col or col_or_span == c
+        widths = get_column(ratios)
+        translate = widths[0] + widths[1]
+    else
+        translate = get_span(ratios)
+    position relative
+    left (translate)%
+
+unshift()
+    position static
+    left 0
+
+bp(w = 705px, mobile_first = false)
+    if (mobile_first == mf || mobile_first == true)
+        unquote("@media all and (min-width: " + w + ") {")
+    else
+        unquote("@media all and (max-width: " + w + ") {")
+endbp()
+    unquote("}")
+
+stack(padding = 0, align = center)
+    side = get_layout_direction()
+    display block
+    float none
+    width 100%
+    margin-left auto
+    margin-right auto
+    if padding != 0
+        padding-left padding
+        padding-right padding  
     &:first-child
-      margin-left: 0
+        margin-{side} auto
     &:last-child
-      margin-right: 0
+        margin-{opposite-position(side)} auto
+    if (align == center) or (align == c)
+        text-align center
+    if (align == left) or (align == l)
+        text-align left
+    if (align == right) or (align == r)
+        text-align right
 
-  else
-    width: -get-column-width(numerator, denominator)
-    margin-left: (g)%
-    margin-right: (g)%
+align(direction = both) // IE10+
+    if (direction == both) or (direction == b)
+        display -webkit-box
+        display -moz-box
+        display -ms-flexbox
+        display -webkit-flex
+        display flex
+        -webkit-box-align center
+        -webkit-flex-align center
+        -ms-flex-align center
+        -webkit-align-items center
+        align-items center
+        -webkit-box-pack center
+        -moz-box-pack center
+        -webkit-justify-content center
+        -ms-flex-pack center
+        justify-content center
+    if (direction == vertical) or (direction == v)
+        display -webkit-box
+        display -moz-box
+        display -ms-flexbox
+        display -webkit-flex
+        display flex
+        -webkit-box-align center
+        -webkit-flex-align center
+        -ms-flex-align center
+        -webkit-align-items center
+        align-items center
+    if (direction == horizontal) or (direction == h)
+        display -webkit-box
+        display -moz-box
+        display -ms-flexbox
+        display -webkit-flex
+        display flex
+        -webkit-box-pack center
+        -moz-box-pack center
+        -webkit-justify-content center
+        -ms-flex-pack center
+        justify-content center
 
-span(numerator = 1, denominator = 1)
-  clearfix()
-  float: left
-  width: -get-column-width(numerator, denominator, span)
-  margin-left: 0
-  margin-right: 0
+// Grid utilities
+get_span(ratio = 1)
+    return ratio * 100
 
-offset(numerator = 0, denominator = 0, left-or-right = left, col-or-span = column)
-  gap = -get-column-width(numerator, denominator, span)
+get_column(ratios = 1, g = gutter)
+    ratios = reverse(ratios) unless parent_first is true
+    w = 100
+    for ratio in ratios
+        g = g / w * 100
+        w = 100 * ratio - g + ratio * g
+    return w g
 
-  if (col-or-span == column) or (col-or-span == col) or (col-or-span == c)
-    margin-left: (gap + (g))% if (left-or-right == left) or (left-or-right == l)
-    margin-right: (gap + (g))% if (left-or-right == right) or (left-or-right == r)
+get_layout_direction()
+    layout_direction == RTL ? result = right : result = left
+    return result
 
-  if (col-or-span == span) or (col-or-span == s)
-    margin-left: gap if (left-or-right == left) or (left-or-right == l)
-    margin-right: gap if (left-or-right == right) or (left-or-right == r)
+replace_nth(list, index, value)
+    result = ()
+    index = length(list) + index if index < 0
+    for i in (0..(length(list) - 1))
+        if i == index
+            append(result, value)
+        else
+            append(result, list[i])
+    return result
 
--get-column-width(numerator = 1, denominator = 1, col-or-span = column)
-  fraction = numerator / denominator
-  return (fraction*100)% if (col-or-span == span) or (col-or-span == s)
-  return ((fraction*100) - (g*2))% if (col-or-span == column) or (col-or-span == col) or (col-or-span == c)
-
-stack(align = center)
-  display: block
-  width: 100%
-  margin-left: auto !important
-  margin-right: auto !important
-  margin-bottom: (g * 3)%
-  text-align: center if (align == center) or (align == c)
-  text-align: left if (align == l) or (align == l)
-  text-align: right if (align == r) or (align == r)
-
-edit()
-  body *
-    transition: 200ms ease all
-    background: rgba(#000, .15)
-
-pxfix() // http://stackoverflow.com/a/12371926/1242079
-  float: none
-  overflow: hidden
-  width: auto
+reverse(list)
+    result = ()
+    for item in list
+        prepend(result, item)
+    return result
 
 // Function aliases
 g = gutter
-gut = gutter
 col = column
-off = offset
-cf = clearfix
 
-// Config junk
+// Fancy editing - root level mixin
+edit()
+  *
+    transition 200ms ease all
+    background rgba(#000, .15)
+
+// Resets and defaults - root level mixin
 grid()
   *
-    box-sizing: border-box
-    *behavior: url(box-sizing-path) if box-sizing-enabled
+    box-sizing(border-box)
+    *behavior: url(box-sizing-path)
+
   html
     overflow-y: scroll
     overflow-x: hidden
+
   body
-    clearfix()
     width: 100%
-  img
-  video
-  audio
-  embed
-  object
-  input
-  iframe
+
+  img, video, audio, embed, object, input, iframe
     max-width: 100%
