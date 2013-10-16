@@ -1,8 +1,8 @@
-normalize()
+normalize-css()
 base()
 grid()
 headers()
-// establish-baseline()
+establish-baseline()
 img-path = '/img/'
 
 font-face(proxima-nova, '/fonts/proxima')
@@ -29,26 +29,25 @@ blockquote
 //
 
 .button
-  button()
-  filter: blah
+  glossy-button()
 
 .button-color
-  button: #D9C07F
+  glossy-button: #D9C07F
 
 .button-small
-  button: red 'small'
+  glossy-button: red 'small'
 
 .button-medium
-  button(purple, 'medium', textColor: #fff)
+  glossy-button(purple, 'medium', textColor: #fff)
 
 .button-large
-  button: #7518D9 'large'
+  glossy-button: #7518D9 'large'
 
 .button-custom-size
-  button: black 30
+  glossy-button: black 30
 
 .button-disabled
-  button()
+  glossy-button()
   button-disabled()
 
 .simple-button

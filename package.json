@@ -23,5 +23,9 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "dependencies": {
+    "autoprefixer-stylus": "0.0.1",
+    "nib": "1.x.x"
   }
 }
