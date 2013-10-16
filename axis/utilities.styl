@@ -164,18 +164,7 @@ image-replace(path, dimensions...)
 // ex. group()
 
 group()
-  zoom: 1
-  &:before
-  &:after
-    content: ""
-    display: table
-  &:after
-    clear: both
-
-// Alias: Clearfix
-
-clearfix()
-  group()
+  clearfix()
 
 // Mixin: Inline Block
 // Cross browser inline block display. Saves many IE headaches.
@@ -233,27 +222,6 @@ media(margin = 10px)
 raquo()
   &:after
     content: " \00BB"
-
-// Mixin: Size
-// Quickly and smoothly set width and height.
-// ex. size: 50px 100px => width: 50px; height: 100px
-// ex. size: 2em => width: 2em; height: 2em;
-// ex. size: 40 80 => width: 40px; height: 80px
-
-size(numbers...)
-  if length(numbers) > 1
-
-    width-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
-    height-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
-
-    width:  unit(numbers[0], width-unit)
-    height: unit(numbers[1], height-unit)
-  else
-
-    size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
-
-    width:  unit(numbers, size-unit)
-    height: unit(numbers, size-unit)
 
 // Mixin: Font Face
 // Super simple font-face declaration. Just give the name and the folder it lives in.
