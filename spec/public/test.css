@@ -91,11 +91,8 @@ dfn {
 }
 hr {
   -moz-box-sizing: content-box;
-<<<<<<< HEAD
-=======
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
->>>>>>> nib integration
   box-sizing: content-box;
   height: 0;
 }
@@ -220,12 +217,8 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-<<<<<<< HEAD
-:-moz-focus-inner,
-=======
 
 button::-moz-focus-inner,
->>>>>>> nib integration
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -249,12 +242,9 @@ body {
   font-size-adjust: auto;
 }
 * {
-<<<<<<< HEAD
-=======
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
->>>>>>> nib integration
   *behavior: url("/boxsizing.htc");
 }
 html {
@@ -264,10 +254,7 @@ html {
 body {
   width: 100%;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> nib integration
 img,
 video,
 audio,
@@ -332,8 +319,6 @@ h6 {
   line-height: 1.6em;
   text-transform: uppercase;
 }
-<<<<<<< HEAD
-=======
 
 * html {
   font-size: 100%;
@@ -344,7 +329,6 @@ html {
   line-height: 1.5em;
 }
 
->>>>>>> nib integration
 @font-face {
   font-family: proxima-nova;
   src: url("/fonts/proxima/proxima-nova.eot?#iefix") format('embedded-opentype'), url("/fonts/proxima/proxima-nova.woff") format('woff'), url("/fonts/proxima/proxima-nova.ttf") format('truetype'), url("/fonts/proxima/proxima-nova.eot#svgFontName") format('svg');
@@ -416,18 +400,9 @@ blockquote > figcaption:before {
   padding: 9.945px 21.879px;
   border-radius: 3.000002307694083px;
   background: #17b0ff;
-<<<<<<< HEAD
-  background: url("/img/noise.png") repeat, #0095e3 -webkit-gradient(linear, left top, left bottom, color-stop(0, #17b0ff), color-stop(1, #0095e3)) repeat-x;
-  background: url("/img/noise.png") repeat, #0095e3 -moz-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #0095e3 -webkit-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #0095e3 -o-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #0095e3 -ms-linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #0095e3 linear-gradient(top, #17b0ff 0%, #0095e3 100%) repeat-x;
-=======
   background: url("/img/noise.png") repeat, #0095e3 -webkit-linear-gradient(top, #17b0ff, #0095e3) repeat-x;
   background: url("/img/noise.png") repeat, #0095e3-webkit-gradient(linear, top left, bottom left, from(#17b0ff), to(#0095e3)) repeat-x;
   background: url("/img/noise.png") repeat, #0095e3 linear-gradient(to bottom, #17b0ff, #0095e3) repeat-x;
->>>>>>> nib integration
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   border: 1px solid #0095e3;
   color: #fff;
@@ -440,10 +415,6 @@ blockquote > figcaption:before {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-<<<<<<< HEAD
-  filter: blah;
-=======
->>>>>>> nib integration
 }
 .button:hover,
 .button:focus {
@@ -462,18 +433,9 @@ blockquote > figcaption:before {
   padding: 9.945px 21.879px;
   border-radius: 3.000002307694083px;
   background: #ddc68c;
-<<<<<<< HEAD
-  background: url("/img/noise.png") repeat, #d1b364 -webkit-gradient(linear, left top, left bottom, color-stop(0, #ddc68c), color-stop(1, #d1b364)) repeat-x;
-  background: url("/img/noise.png") repeat, #d1b364 -moz-linear-gradient(top, #ddc68c 0%, #d1b364 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #d1b364 -webkit-linear-gradient(top, #ddc68c 0%, #d1b364 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #d1b364 -o-linear-gradient(top, #ddc68c 0%, #d1b364 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #d1b364 -ms-linear-gradient(top, #ddc68c 0%, #d1b364 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #d1b364 linear-gradient(top, #ddc68c 0%, #d1b364 100%) repeat-x;
-=======
   background: url("/img/noise.png") repeat, #d1b364 -webkit-linear-gradient(top, #ddc68c, #d1b364) repeat-x;
   background: url("/img/noise.png") repeat, #d1b364-webkit-gradient(linear, top left, bottom left, from(#ddc68c), to(#d1b364)) repeat-x;
   background: url("/img/noise.png") repeat, #d1b364 linear-gradient(to bottom, #ddc68c, #d1b364) repeat-x;
->>>>>>> nib integration
   text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
   border: 1px solid #d1b364;
   color: #494949;
@@ -504,18 +466,9 @@ blockquote > figcaption:before {
   padding: 7.65px 16.830000000000002px;
   border-radius: 2.307694082841602px;
   background: #cc4c2b;
-<<<<<<< HEAD
-  background: url("/img/noise.png") repeat, #a23c22 -webkit-gradient(linear, left top, left bottom, color-stop(0, #cc4c2b), color-stop(1, #a23c22)) repeat-x;
-  background: url("/img/noise.png") repeat, #a23c22 -moz-linear-gradient(top, #cc4c2b 0%, #a23c22 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #a23c22 -webkit-linear-gradient(top, #cc4c2b 0%, #a23c22 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #a23c22 -o-linear-gradient(top, #cc4c2b 0%, #a23c22 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #a23c22 -ms-linear-gradient(top, #cc4c2b 0%, #a23c22 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #a23c22 linear-gradient(top, #cc4c2b 0%, #a23c22 100%) repeat-x;
-=======
   background: url("/img/noise.png") repeat, #a23c22 -webkit-linear-gradient(top, #cc4c2b, #a23c22) repeat-x;
   background: url("/img/noise.png") repeat, #a23c22-webkit-gradient(linear, top left, bottom left, from(#cc4c2b), to(#a23c22)) repeat-x;
   background: url("/img/noise.png") repeat, #a23c22 linear-gradient(to bottom, #cc4c2b, #a23c22) repeat-x;
->>>>>>> nib integration
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   border: 1px solid #a23c22;
   color: #fff;
@@ -546,18 +499,9 @@ blockquote > figcaption:before {
   padding: 9.945px 21.879px;
   border-radius: 3.000002307694083px;
   background: #995ac8;
-<<<<<<< HEAD
-  background: url("/img/noise.png") repeat, #813cb4 -webkit-gradient(linear, left top, left bottom, color-stop(0, #995ac8), color-stop(1, #813cb4)) repeat-x;
-  background: url("/img/noise.png") repeat, #813cb4 -moz-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #813cb4 -webkit-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #813cb4 -o-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #813cb4 -ms-linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #813cb4 linear-gradient(top, #995ac8 0%, #813cb4 100%) repeat-x;
-=======
   background: url("/img/noise.png") repeat, #813cb4 -webkit-linear-gradient(top, #995ac8, #813cb4) repeat-x;
   background: url("/img/noise.png") repeat, #813cb4-webkit-gradient(linear, top left, bottom left, from(#995ac8), to(#813cb4)) repeat-x;
   background: url("/img/noise.png") repeat, #813cb4 linear-gradient(to bottom, #995ac8, #813cb4) repeat-x;
->>>>>>> nib integration
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   border: 1px solid #813cb4;
   color: #fff;
@@ -588,18 +532,9 @@ blockquote > figcaption:before {
   padding: 13.77px 30.294px;
   border-radius: 4.153849349114884px;
   background: #8225e7;
-<<<<<<< HEAD
-  background: url("/img/noise.png") repeat, #6916c3 -webkit-gradient(linear, left top, left bottom, color-stop(0, #8225e7), color-stop(1, #6916c3)) repeat-x;
-  background: url("/img/noise.png") repeat, #6916c3 -moz-linear-gradient(top, #8225e7 0%, #6916c3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #6916c3 -webkit-linear-gradient(top, #8225e7 0%, #6916c3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #6916c3 -o-linear-gradient(top, #8225e7 0%, #6916c3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #6916c3 -ms-linear-gradient(top, #8225e7 0%, #6916c3 100%) repeat-x;
-  background: url("/img/noise.png") repeat, #6916c3 linear-gradient(top, #8225e7 0%, #6916c3 100%) repeat-x;
-=======
   background: url("/img/noise.png") repeat, #6916c3 -webkit-linear-gradient(top, #8225e7, #6916c3) repeat-x;
   background: url("/img/noise.png") repeat, #6916c3-webkit-gradient(linear, top left, bottom left, from(#8225e7), to(#6916c3)) repeat-x;
   background: url("/img/noise.png") repeat, #6916c3 linear-gradient(to bottom, #8225e7, #6916c3) repeat-x;
->>>>>>> nib integration
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   border: 1px solid #6916c3;
   color: #fff;
@@ -819,25 +754,7 @@ blockquote > figcaption:before {
   border-color: #b8b8b8;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
-.code {
-  padding: 3px 4px;
-  color: #df5c33;
-  background-color: #f5f5f5;
-  border: 1px solid #e1e1e8;
-  border-radius: 3px;
-  font-family: Menlo, Monaco, 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
-}
-.pre {
-  display: block;
-  padding: 7px;
-  background-color: #f5f5f5;
-  border: 1px solid #e1e1e8;
-  border-radius: 3px;
-  white-space: pre-wrap;
-  word-break: break-all;
-  font-family: Menlo, Monaco, 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
-  line-height: 160%;
-}
+
 .input,
 .input2 {
   box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
@@ -1044,15 +961,7 @@ blockquote > figcaption:before {
   border: 1px solid #7ba543;
   outline: none !important;
 }
-.label {
-  line-height: 1.5em;
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: baseline;
-  zoom: 1;
-  *display: inline;
-  *vertical-align: auto;
-}
+
 .gradients > div {
   width: 300px;
   height: 100px;
