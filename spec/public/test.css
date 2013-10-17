@@ -1,3 +1,7 @@
+position: relative {
+  left: translate %;
+}
+
 article:,
 aside,
 details,
@@ -1004,6 +1008,43 @@ blockquote > figcaption:before {
   background: -webkit-radial-gradient(#b44326, #fff, #00a6fc);
   background: radial-gradient(#b44326, #fff, #00a6fc);
 }
+
+.text-wrapper {
+  zoom: 1;
+}
+
+.text-wrapper:before,
+.text-wrapper:after {
+  content: "";
+  display: table;
+}
+
+.text-wrapper:after {
+  clear: both;
+}
+
+.text {
+  zoom: 1;
+  float: left;
+  width: 31.33333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+
+.text:before,
+.text:after {
+  content: "";
+  display: table;
+}
+
+.text:after {
+  clear: both;
+}
+
+.text:last-child {
+  margin-right: 0%;
+}
+
 .bubbles > * {
   margin: 20px 0;
   height: 100px;
