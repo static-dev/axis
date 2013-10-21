@@ -1,0 +1,59 @@
+// --------------------------------------------------------------------------------
+// Stylus implentation of basic trigonometry function using taylor series.
+//   "useful" combined with calc() when using rotation/skew to calculate dimensions without js
+// --------------------------------------------------------------------------------
+
+pi = 3.14159265359
+
+-factorial(n)
+  if n is 1
+    n
+  else
+    n * -factorial(n - 1)
+
+-radians(n)
+  n * pi / 180
+
+-raise(n, x)
+  if x is 1
+    n
+  else
+    n * -raise(n, x - 1)
+
+-taylor-term(n, x)
+  -raise(n, x) / -factorial(x)
+
+-taylor-plus(n, x)
+  if -taylor-term(n, x) > 0.000000001
+    -taylor-term(n, x) + -taylor-minus(n, x + 2)
+  else
+    -taylor-term(n, x)
+
+-taylor-minus(n, x)
+  if -taylor-term(n, x) > 0.000000001
+    -taylor-plus(n, x + 2) - -taylor-term(n, x)
+  else
+    -taylor-term(n, x)
+
+-sin(n)
+  n + -taylor-minus(n, 3)
+
+-cos(n)
+  1 + -taylor-minus(n, 2)
+
+-tan(n)
+  -sin(n) / -cos(n)
+
+// --------------------------------------------------------------------------------
+// public functions, sin, cos, tan
+//   all take an angle in degrees, which is automatically converted to radians
+// --------------------------------------------------------------------------------
+
+sin(n)
+  -sin(-radians(n))
+
+cos(n)
+  -cos(-radians(n))
+
+tan(n)
+  -tan(-radians(n))
