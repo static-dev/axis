@@ -1,5 +1,4 @@
-var autoprefixer = require('autoprefixer-stylus'),
-    nib = require('nib'),
+var nib = require('nib'),
     path = require('path');
 
 exports = module.exports = function(opts) {
@@ -18,8 +17,6 @@ exports = module.exports = function(opts) {
       style.import('axis');
     }
 
-    // autoprefixer integration
-    autoprefixer()(style);
   }
 
 }
