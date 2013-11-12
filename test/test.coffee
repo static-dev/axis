@@ -16,4 +16,7 @@ describe 'buttons', ->
   it 'simple-button', ->
     compile(@path, 'simple-button.styl')
 
+  it 'glossy-button', ->
+    compile(@path, 'glossy-button.styl')
+
 

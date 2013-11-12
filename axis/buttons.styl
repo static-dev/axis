@@ -45,13 +45,13 @@ simple-button(color = default-color, size = "medium", textColor = null)
   parsed_size = -parse(size)
 
   // now that we've got numbers, let's work some proportions
-  height = math((parsed_size * 1.53px) / 2, 'round')
-  width = math(((parsed_size * 1.53px) * 2.2) / 2, 'round')
+  height = round((parsed_size * 1.53px) / 2)
+  width = round(((parsed_size * 1.53px) * 2.2) / 2)
 
   // dynamically calculated styles
   font-size: unit(parsed_size, px)
   padding: unit(height, px) unit(width, px)
-  border-radius: math((parsed_size / 4.33333px), 'round')
+  border-radius: round(parsed_size / 4.33333px)
   background-color: color
   color: textColor
 
@@ -102,25 +102,24 @@ glossy-button(color = default-color, size = "medium", textColor = null, shadowCo
   parsed_size = -parse(size)
 
   // now that we've got numbers, let's work some proportions
-  height = (parsed_size*1.53px)/2
-  width = ((parsed_size*1.53px)*2.2)/2
+  height = round((parsed_size*1.53px)/2)
+  width = round(((parsed_size*1.53px)*2.2)/2)
 
   // dynamically calculated styles
   font-size: unit(parsed_size, px)
   padding: unit(height, px) unit(width, px)
-  border-radius: (parsed_size/4.33333px)
+  border-radius: round(parsed_size/4.33333px)
   simple-noise-gradient(color)
   text-shadow: 1px 1px 1px shadowColor
   border: s('1px solid %s', darken(color, 10%))
   color: textColor
-  color: rgba(textColor, .95)
 
   // constant styles
   -highlight()
   cursor: pointer
   font-weight: bold
   font-family: font-stack
-  line-height: 1
+  line-height: 1em
   text-align: center
   text-decoration: none
   display: inline-block
@@ -128,7 +127,6 @@ glossy-button(color = default-color, size = "medium", textColor = null, shadowCo
   &:hover, &:focus
     background-position: 0 unit(height * -1, px)
     color: darken(textColor, 3%)
-    color: rgba(darken(textColor, 3%), .95)
     text-shadow: 1px 1px 1px hoverColor
 
   &:active
