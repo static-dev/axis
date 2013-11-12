@@ -3,13 +3,13 @@
 // -----------------------------------------------------
 // I realize that this is insane, but trust me, it's worth it
 
-// Mixin: highlight
+// Helper: highlight
 // Adds a light brighter line across the top of the element for a perspective effect.
 // Takes an optional argument for strength, which takes a value between 0 and 1
 // ex. highlight
 // ex. highlight(.7)
 
-highlight(strength = .3)
+-highlight(strength = .3)
   box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,strength)))
 
 // Helper: parse
@@ -41,26 +41,25 @@ highlight(strength = .3)
 simple-button(color = default-color, size = "medium", textColor = null)
 
   // color detection and changes
-  textColor = light(color) ? #494949 : #fff unless textColor
+  textColor = (light(color) ? #494949 : #fff) unless textColor
   parsed_size = -parse(size)
 
   // now that we've got numbers, let's work some proportions
-  height = (parsed_size * 1.53px) / 2
-  width = ((parsed_size * 1.53px) * 2.2) / 2
+  height = math((parsed_size * 1.53px) / 2, 'round')
+  width = math(((parsed_size * 1.53px) * 2.2) / 2, 'round')
 
   // dynamically calculated styles
   font-size: unit(parsed_size, px)
   padding: unit(height, px) unit(width, px)
-  border-radius: (parsed_size / 4.33333px)
+  border-radius: math((parsed_size / 4.33333px), 'round')
   background-color: color
   color: textColor
-  color: rgba(textColor, .95)
 
   // constant styles
   cursor: pointer
   font-weight: bold
   font-family: font-stack
-  line-height: 1
+  line-height: 1em
   text-align: center
   text-decoration: none
   display: inline-block
@@ -68,7 +67,6 @@ simple-button(color = default-color, size = "medium", textColor = null)
   &:hover, &:focus
     background-color: darken(color, 5%)
     color: darken(textColor, 3%)
-    color: rgba(darken(textColor, 3%), .95)
 
   &:active
     background-color: darken(color, 10%)
@@ -118,7 +116,7 @@ glossy-button(color = default-color, size = "medium", textColor = null, shadowCo
   color: rgba(textColor, .95)
 
   // constant styles
-  highlight()
+  -highlight()
   cursor: pointer
   font-weight: bold
   font-family: font-stack
