@@ -41,6 +41,7 @@ round-corners()
   pie()
 
 // Alias: Round
+// TODO: This overwrites stylus' native round function. eek.
 
 round(px)
   round-corners(px)
@@ -73,7 +74,7 @@ background-position-y(y)
   background-position: 0 y
 
 // Mixin: Opentype ligatures
-// The vast majority of fonts contain lowercase and uppercase alphabets, numerals, punctuation and accents. Many professionally-designed 
+// The vast majority of fonts contain lowercase and uppercase alphabets, numerals, punctuation and accents. Many professionally-designed
 // fonts also contain ligatures, alternative characters, smallcaps, different kinds of numbers, and sometimes much more besides. This enables it.
 // Source: http://www.newnet-soft.com/blog/csstypography
 // Additiona: http://blog.fontdeck.com/post/15777165734/opentype-1
