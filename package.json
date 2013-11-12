@@ -7,14 +7,14 @@
     "url": "git://github.com/jenius/axis.git"
   },
   "devDependencies": {
-    "express": "latest",
-    "jade": "latest",
-    "open": "latest",
-    "colors": "latest",
-    "stylus": "latest"
+    "transformers": "git://github.com/ForbesLindesay/transformers.git#master",
+    "stylus": "*",
+    "mocha": "*",
+    "should": "*",
+    "coffee-script": "*"
   },
   "author": "Jeff Escalante",
-  "main": "axis.js",
+  "main": "index.js",
   "scripts": {
     "test": "./test"
   },
