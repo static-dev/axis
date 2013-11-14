@@ -48,7 +48,7 @@ round-corners()
 // ex. opacity: .6
 
 opacity(opacity)
-  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if ie-support
+  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if support-for-ie
   opacity: opacity
 
 // Mixin: Border Box

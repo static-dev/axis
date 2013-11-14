@@ -11,15 +11,15 @@
 
 // Helper: Focus Glow
 // Makes your inputs glow when focused. Takes a color - they will glow that color. Default color by default.
-// ex. +focus-glow
-// ex. +focus-glow(blue)
+// ex. +-focus-glow
+// ex. +-focus-glow(blue)
 // ex. +focus-glow(#D45D86)
 
-focus-glow(color = default-color)
+-focus-glow(color = default-color)
   &:focus
     box-shadow(0 0 5px rgba(color,.7))
     border: 1px solid desaturate(color, 35%)
-    outline: none !important
+    outline: none
 
 // Mixin: Input
 // A general purpose mixin for text inputs. Provides an nice attractive default style that's easily
@@ -32,19 +32,19 @@ input-field(color = light-blue, width = 250px)
   box-shadow(inset 0 1px 1px rgba(#000, 0.1))
   font-size: unit(font-size, px)
   font-family: font-stack
-  font-size: 90%
-  transition()
   border: solid 1px #bbb
   border-radius: 2px
-  outline: none !important
-  padding: 4px 5px 4px // test this and make sure it's proportional at different sizes
+  outline: none
+  // TODO: test this and make sure it's proportional at different sizes
+  padding: 4px 5px 4px
   background: #fff
   color: #555
   width: width
   text-shadow: 0 0 1px rgba(#fff, .1)
+  transition()
   pie()
   if color
-    focus-glow(color)
+    -focus-glow(color)
   else
     box-shadow(none)
 
@@ -82,7 +82,7 @@ input-search(color = blue)
 
 input-disabled()
   cursor: not-allowed
-  background: #F5F5F5 !important
+  background: #F5F5F5
 
   &:hover, &:focus
     border-color: #bbb
@@ -120,7 +120,7 @@ field(direction = right, width = 370px)
 input-error(color = red)
   color: color
   border-color: color
-  focus-glow(color)
+  -focus-glow(color)
 
 // Mixin: Field Error
 // If you are wrapping labels and inputs in a field div, this makes life even easier. Makes the
@@ -142,7 +142,7 @@ field-error(color = red)
 input-warning(color = yellow)
   color: color
   border-color: color
-  focus-glow(color)
+  -focus-glow(color)
 
 // Mixin: Field Warning
 // If you are wrapping labels and inputs in a field div, this makes life even easier. Makes the
@@ -163,7 +163,7 @@ field-warning(color = yellow)
 input-success(color = green)
   color: color
   border-color: color
-  focus-glow(color)
+  -focus-glow(color)
 
 // Mixin: Field Success
 // You're probably getting tired of this routine at this point. I'm sure you can imagine what this does.
