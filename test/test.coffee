@@ -12,8 +12,8 @@ describe 'buttons', ->
 
   before -> @path = path.join(test_path, 'buttons')
 
-  it 'simple-button', ->
-    compile(@path, 'simple-button.styl')
+  it 'button', ->
+    compile(@path, 'button.styl')
 
   it 'glossy-button', ->
     compile(@path, 'glossy-button.styl')
@@ -22,11 +22,11 @@ describe 'code', ->
 
   before -> @path = path.join(test_path, 'code')
 
-  it 'code-inline', ->
-    compile(@path, 'code-inline.styl')
+  it 'code', ->
+    compile(@path, 'code.styl')
 
-  it 'code-block', ->
-    compile(@path, 'code-block.styl')
+  it 'pre', ->
+    compile(@path, 'pre.styl')
 
 describe 'forms', ->
 
@@ -97,9 +97,50 @@ describe 'interaction', ->
   it 'hover-color', ->
     compile(@path, 'hover-color.styl')
 
-describe 'reset', ->
 describe 'tables', ->
+
+  before -> @path = path.join(test_path, 'tables')
+
+  it 'table-styles', ->
+    compile(@path, 'table.styl')
+
 describe 'typography', ->
+
+  before -> @path = path.join(test_path, 'typography')
+
+  it 'text-margin', ->
+    compile(@path, 'text-margin.styl')
+
+  it 'paragraph', ->
+    compile(@path, 'paragraph.styl')
+
+  it 'fs', ->
+    compile(@path, 'fs.styl')
+
+  it 'cases', ->
+    compile(@path, 'cases.styl')
+
+  it 'headlines', ->
+    compile(@path, 'headlines.styl')
+
+  it 'small', ->
+    compile(@path, 'small.styl')
+
+  it 'link', ->
+    compile(@path, 'link.styl')
+
+  it 'text-selection', ->
+    compile(@path, 'text-select.styl')
+
+  it 'lists', ->
+    compile(@path, 'lists.styl')
+
+  it 'blockquo', ->
+    compile(@path, 'blockquo.styl')
+
+  it 'hyphenation', ->
+    compile(@path, 'hyphenation.styl')
+
 describe 'ui', ->
 describe 'utilities', ->
 describe 'vendor', ->
