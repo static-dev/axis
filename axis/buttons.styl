@@ -30,15 +30,15 @@
 // - color: Takes any color, defaults to the default global color
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects the
 //   font size for the text inside the button, but scales all other aspects as well.
-// ex. +simple-button
-// ex. +simple-button(blue)
-// ex. +simple-button(#D4513B)
-// ex. +simple-button(green, large)
-// ex. +simple-button(#4C82D4, 24)
+// ex. _button()
+// ex. _button(blue)
+// ex. _button(#D4513B)
+// ex. _button(green, large)
+// ex. _button(#4C82D4, 24)
 
 // These will accept font icons interally in the very near future
 
-simple-button(color = default-color, size = "medium", textColor = null)
+$button(color = default-color, size = "medium", textColor = null)
 
   // color detection and changes
   textColor = (light(color) ? #494949 : #fff) unless textColor
@@ -76,18 +76,17 @@ simple-button(color = default-color, size = "medium", textColor = null)
 // - color: Takes any color, defaults to the default global color
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects the
 //   font size for the text inside the button, but scales all other aspects as well.
-// ex. +button
-// ex. +button(blue)
-// ex. +button(#D4513B)
-// ex. +button(green, large)
-// ex. +button(#4C82D4, 24)
+// ex. glossy-button()
+// ex. glossy-button(blue)
+// ex. glossy-button(#D4513B)
+// ex. glossy-button(green, large)
+// ex. glossy-button(#4C82D4, 24)
 
 // These will accept font icons interally in the very near future
 
 glossy-button(color = default-color, size = "medium", textColor = null, shadowColor = null, hoverColor = null)
 
   // color detection and changes
-  // this could be refactored for sure
   if textColor
     darkText = light(textColor) ? true : false
   else
@@ -166,7 +165,7 @@ button-disabled()
 buttons()
   .btn-simple
     transition()
-    simple-button(blue)
+    _button(blue)
   .btn
     transition()
     glossy-button(blue)
