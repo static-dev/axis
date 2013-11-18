@@ -32,8 +32,8 @@ describe 'forms', ->
 
   before -> @path = path.join(test_path, 'forms')
 
-  it 'input-field', ->
-    compile(@path, 'input-field.styl')
+  it 'input', ->
+    compile(@path, 'input.styl')
 
   it 'input-search', ->
     compile(@path, 'input-search.styl')
@@ -41,8 +41,8 @@ describe 'forms', ->
   it 'input-disabled', ->
     compile(@path, 'input-disabled.styl')
 
-  it 'form-label', ->
-    compile(@path, 'form-label.styl')
+  it 'label', ->
+    compile(@path, 'label.styl')
 
   it 'field', ->
     compile(@path, 'field.styl')
