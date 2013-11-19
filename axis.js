@@ -9,9 +9,6 @@ module.exports = function(opts) {
 
     // implicit import handling
     if (implicit) style.import('axis');
-
-    // autoprefixer integration
-    autoprefixer()(style);
   }
 
 }
