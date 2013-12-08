@@ -70,44 +70,6 @@
 -std-stop(color, pos)
   '%s %s' % (color pos)
 
-// Create a linear gradient with the given start position
-// and variable number of color stops.
-
-// Examples:
-//   background: linear-gradient(top, red, green, blue)
-//   background: linear-gradient(bottom, red, green 50%, blue)
-//   background: linear-gradient(bottom, red, 50% green, blue)
-//   background: linear-gradient(bottom, red, 50% green, 90% white, blue)
-
-linear-gradient(start, stops...)
-  error('color stops required') unless length(stops)
-  prop = current-property[0]
-  val = current-property[1]
-
-  if start is a 'color'
-    unshift(stops, start)
-    start = top
-
-  stops = -normalize-stops(stops)
-
-  // gradient image
-  if start[0] is a 'unit'
-    start = start[1]
-
-  // legacy webkit
-  end = -grad-point(opposite-position(start))
-  webkit-legacy = '-webkit-gradient(linear, %s, %s, %s)' % (-grad-point(start) end -join-stops(stops, -webkit-stop))
-  add-property(prop, -replace(val, '__CALL__', webkit-legacy))
-
-  // vendor prefixed
-  stops = -join-stops(stops, -std-stop)
-  for prefix in vendors
-    unless prefix == official
-      gradient = '-%s-linear-gradient(%s, %s)' % (prefix start stops)
-      add-property(prop, -replace(val, '__CALL__', gradient))
-
-  // standard
-  'linear-gradient(%s, %s)' % (start stops)
 
 // Mixin: Gradient
 // Takes two colors and outputs a vertical gradient that fades between the two colors.
@@ -151,21 +113,3 @@ simple-noise-gradient(color, strength = 10%, imagePath = 'noise.png')
   start = lighten(color, strength)
   end = darken(color, strength)
   noise-gradient(start, end, imagePath)
-
-// Mixin: Radial Gradient
-// Exactly like linear gradient, but has no sense of direction
-// ex. radial-gradient(red, blue)
-
-radial-gradient(stops...)
-  error('color stops required') unless length(stops)
-  prop = current-property[0]
-  val = current-property[1]
-  stops = -normalize-stops(stops)
-  webkit-legacy = '-webkit-gradient(radial, center center 0px, center center 100%, %s, %s)' % -join-stops(stops, -webkit-stop)
-  add-property(prop, -replace(val, '__CALL__', webkit-legacy))
-  stops = -join-stops(stops, -std-stop)
-  for prefix in vendors
-    unless prefix is official
-      gradient = '-%s-radial-gradient(center, ellipse cover, %s)' % (prefix stops)
-      add-property(prop, -replace(val, '__CALL__', gradient))
-  'radial-gradient(ellipse at center, %s)' % stops

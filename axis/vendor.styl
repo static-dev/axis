@@ -47,15 +47,6 @@ round(px)
 
 // ------------------------------------- other utils ---------------------------------
 
-// Mixin: Opacity
-// I know, it seems silly. But every time you go to IE testing you will be thanking yourself for
-// using this instead of the normal opacity declaration. Overrides default opacity.
-// ex. opacity: .6
-
-opacity(opacity)
-  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if ie-support
-  opacity: opacity
-
 // Mixin: Border Box
 // Use carefully if you need to test in IE
 
