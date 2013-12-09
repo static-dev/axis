@@ -6,6 +6,10 @@
     "type": "git",
     "url": "git://github.com/jenius/axis.git"
   },
+  "dependencies": {
+    "nib": "~1.0.1",
+    "autoprefixer-stylus": "0.0.3"
+  },
   "devDependencies": {
     "express": "latest",
     "jade": "latest",
