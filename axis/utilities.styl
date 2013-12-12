@@ -127,7 +127,7 @@ sprite(iteration, orientation = vertical)
   if orientation == vertical
     background-position: 0 unit(@height*-1*iteration, px)
   else if orientation == horizontal
-    background-position: unit(@width*iteration, px) 0 
+    background-position: unit(@width*iteration, px) 0
   else
     warn('orientation must be horizontal or veritcal')
 
@@ -207,7 +207,6 @@ media(margin = 10px)
   & > *
     inline-block()
     overflow: hidden
-    zoom: 1
   & > *:first-child
     float: left
     margin-right: right-margin
