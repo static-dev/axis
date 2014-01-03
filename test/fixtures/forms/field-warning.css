@@ -1,0 +1,12 @@
+.field-warning {
+  color: #f8ca5c;
+}
+.field-warning input {
+  color: #f8ca5c;
+  border-color: #f8ca5c;
+}
+.field-warning input:focus {
+  box-shadow: 0 0 5px rgba(248,202,92,0.7);
+  border: 1px solid #ddbf77;
+  outline: none;
+}
