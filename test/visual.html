@@ -3,10 +3,28 @@
 
   <head>
     <title>Axis Visual Test</title>
+
+    <!-- buttons -->
     <link rel='stylesheet' href='fixtures/buttons/button.css' >
     <link rel='stylesheet' href='fixtures/buttons/glossy-button.css' >
+
+    <!-- code -->
     <link rel='stylesheet' href='fixtures/code/code.css' >
     <link rel='stylesheet' href='fixtures/code/pre.css' >
+
+    <!-- forms -->
+    <link rel='stylesheet' href='fixtures/forms/input.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-search.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-disabled.css' >
+    <link rel='stylesheet' href='fixtures/forms/label.css' >
+    <link rel='stylesheet' href='fixtures/forms/field.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-error.css' >
+    <link rel='stylesheet' href='fixtures/forms/field-error.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-warning.css' >
+    <link rel='stylesheet' href='fixtures/forms/field-warning.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-success.css' >
+    <link rel='stylesheet' href='fixtures/forms/field-success.css' >
+
     <style>
       body {
         font-family: sans-serif;
@@ -39,6 +57,59 @@
       <h1>code</h1>
       <code>code</code>
       <pre>pre</pre>
+    </section>
+
+    <section id='forms'>
+      <h1>forms</h1>
+
+      <div>
+        <input type="text" class='input' placeholder='input' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-search' placeholder='search' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-disabled' disabled placeholder='disabled' />
+      </div>
+
+      <div>
+        <label class='label'>this is a label</label>
+      </div>
+
+      <div class='field'>
+        <label class='label'>field</label>
+        <input type="text" class='input' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-error' value='error' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-warning' value='warning' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-success' value='success' />
+      </div>
+
+      <div class='field-error'>
+        <label class='label'>field error</label>
+        <input type="text" class='input' />
+      </div>
+
+      <div class='field-warning'>
+        <label class='label'>field warning</label>
+        <input type="text" class='input' />
+      </div>
+
+      <div class='field-success'>
+        <label class='label'>field success</label>
+        <input type="text" class='input' />
+      </div>
+
     </section>
 
   </body>
