@@ -10,7 +10,7 @@
     "autoprefixer-stylus": "0.0.3"
   },
   "devDependencies": {
-    "transformers": "git://github.com/ForbesLindesay/transformers.git#master",
+    "accord": "*",
     "stylus": "*",
     "mocha": "*",
     "should": "*",
@@ -19,7 +19,7 @@
   "author": "Jeff Escalante",
   "main": "index.js",
   "scripts": {
-    "test": "./test"
+    "test": "mocha"
   },
   "engines": {
     "node": ">=0.8.0"
