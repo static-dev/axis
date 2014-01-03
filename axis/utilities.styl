@@ -120,7 +120,7 @@ triangle(direction = up, size = 10px, color = #000)
     border-bottom: size solid transparent
     border-left: size solid color
 
-
+// TODO: document this
 sprite(iteration, orientation = vertical)
   if orientation == vertical
     background-position: 0 unit(@height*-1*iteration, px)
@@ -157,24 +157,23 @@ image-replace(path, dimensions...)
   else
     warn("Make sure you also pass the image dimensions. Example: ir: '/img/whatever.jpg' 200 400")
 
-// Mixin: Group
-// This is the clearfix with a better name. Excellent for wrangling floats.
-// ex. group()
-
-group()
-  clearfix()
+// Alias: group
+// Clearfix with a better name. Excellent for wrangling floats.
+group = clearfix
 
 // Mixin: Inline Block
 // Cross browser inline block display. Saves many IE headaches.
 // ex. inline-block()
 
 inline-block()
-  display: -moz-inline-stack
   display: inline-block
-  vertical-align: baseline
-  zoom: 1
-  *display: inline
-  *vertical-align: auto;
+
+  if support-for-ie
+    display: -moz-inline-stack
+    vertical-align: baseline
+    zoom: 1
+    *display: inline
+    *vertical-align: auto
 
 // Mixin: Media
 // Based on Nicole Sullivan's media class, made famous by Facebook
