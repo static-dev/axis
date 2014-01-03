@@ -29,6 +29,14 @@
     <link rel='stylesheet' href='fixtures/gradients/gradient.css' >
     <link rel='stylesheet' href='fixtures/gradients/image-gradient.css' >
 
+    <!-- interaction -->
+    <link rel='stylesheet' href='fixtures/interaction/hover-darken.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-lighten.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-underline.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-pop.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-fade.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-color.css' >
+
     <style>
       body {
         font-family: sans-serif;
@@ -42,6 +50,7 @@
         box-sizing: border-box;
         margin: 1em 0;
         border-radius: 4px;
+        overflow: hidden;
       }
       h1 {
         margin: 0 0 1em 0;
@@ -50,6 +59,13 @@
         width: 400px;
         height: 70px;
         margin: .5em 0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+        float: left;
+        margin: .5em .5em 0 0;
       }
     </style>
   </head>
@@ -127,6 +143,16 @@
       <div class='block gradient-twocolor'></div>
       <div class='block image-gradient-onecolor'></div>
       <div class='block image-gradient-twocolor'></div>
+    </section>
+
+    <section id='interaction'>
+      <h1>interaction</h1>
+      <div class='box hover-darken'></div>
+      <div class='box hover-lighten'></div>
+      <div class='box hover-underline'></div>
+      <div class='box hover-pop'></div>
+      <div class='box hover-fade'></div>
+      <div class='box hover-color'></div>
     </section>
 
   </body>
