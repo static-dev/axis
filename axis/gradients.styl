@@ -10,6 +10,11 @@
 // ex. gradient: red
 
 gradient(color1, color2 = null, strength = 10%)
+  // shift args if one color mode
+  if (typeof(color2) is 'unit')
+    strength = color2
+    color2 = null
+
   start = color2 ? color1 : lighten(color1, strength)
   end = color2 ? color2 : darken(color1, strength)
   background: start
@@ -22,9 +27,16 @@ gradient(color1, color2 = null, strength = 10%)
 // Exactly the same as the gradient mixin, but overlays an image to give it more texture.
 // ex. image-gradient: red blue
 // ex. image-gradient: red
-// ex. image-gradient red blue 20% pattern.png
+// ex. image-gradient red blue pattern.png
+// ex. image-gradient red pattern.png
 
-image-gradient(color1, color2 = null, strength = 10%, imagePath = 'noise.png')
+image-gradient(color1, color2 = null, imagePath = 'noise.png', strength = 10%)
+  // shift args if one color mode
+  if (typeof(color2) == 'string')
+    strength = imagePath if (typeof(imagePath) == 'unit')
+    imagePath = color2
+    color2 = null
+
   start = color2 ? color1 : lighten(color1, strength)
   end = color2 ? color2 : darken(color1, strength)
   background: start

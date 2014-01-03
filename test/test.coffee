@@ -13,14 +13,18 @@ compile = (p) ->
 
 match_expected = (out, p, done) ->
   # console.log out
-  expected_path = path.join(path.dirname(p), path.basename(p, '.styl')) + '.css'
-  if not fs.existsSync(expected_path) then return done('"expected" file doesnt exist')
-  expected_contents = fs.readFileSync(expected_path, 'utf8')
-  out.should.eql(expected_contents)
+  try
+    expected_path = path.join(path.dirname(p), path.basename(p, '.styl')) + '.css'
+    if not fs.existsSync(expected_path) then throw '"expected" file doesnt exist'
+    expected_contents = fs.readFileSync(expected_path, 'utf8')
+    out.should.eql(expected_contents)
+  catch err
+    return done(err)
   done()
 
 compile_and_match = (p, done) ->
-  compile(p).then((out) => match_expected(out, p, done))
+  compile(p)
+    .done(((out) => match_expected(out, p, done)), done)
 
 # tests
 
