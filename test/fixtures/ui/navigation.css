@@ -1,0 +1,52 @@
+.navigation {
+  display: block;
+  z-index: 10;
+  background: #2d2d2d;
+  background: #202020 -webkit-linear-gradient(top, #2d2d2d, #202020) repeat-x;
+  background: #202020 -moz-linear-gradient(top, #2d2d2d, #202020) repeat-x;
+  background: #202020 -o-linear-gradient(top, #2d2d2d, #202020) repeat-x;
+  background: #202020 -ms-linear-gradient(top, #2d2d2d, #202020) repeat-x;
+  background: #202020 linear-gradient(to bottom, #2d2d2d, #202020) repeat-x;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(29,29,29,0.7);
+  height: 42.99px;
+  width: 100%;
+  font-size: 15px;
+  position: relative;
+}
+.navigation:before,
+.navigation:after {
+  content: "";
+  display: table;
+}
+.navigation:after {
+  clear: both;
+}
+.navigation h1 {
+  float: left;
+  padding: 8.7px;
+  padding-left: 17px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 19.5px;
+}
+.navigation ul {
+  float: right;
+  margin: 0;
+  padding: 12px;
+  color: #fff;
+}
+.navigation ul li {
+  list-style-type: none;
+  margin-right: 30px;
+  float: left;
+}
+.navigation ul li a {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.navigation ul li a:hover {
+  color: #ccc;
+  border: none;
+}

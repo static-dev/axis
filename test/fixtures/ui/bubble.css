@@ -1,0 +1,420 @@
+.bubble {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble:before,
+.bubble:after {
+  content: "";
+  display: table;
+}
+.bubble:after {
+  clear: both;
+}
+.bubble:after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e7e7e7;
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  display: block;
+}
+.bubble-tl {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-tl:before,
+.bubble-tl:after {
+  content: "";
+  display: table;
+}
+.bubble-tl:after {
+  clear: both;
+}
+.bubble-tl:after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #e7e7e7;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  display: block;
+}
+.bubble-tr {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-tr:before,
+.bubble-tr:after {
+  content: "";
+  display: table;
+}
+.bubble-tr:after {
+  clear: both;
+}
+.bubble-tr:after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #e7e7e7;
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  display: block;
+}
+.bubble-tc {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-tc:before,
+.bubble-tc:after {
+  content: "";
+  display: table;
+}
+.bubble-tc:after {
+  clear: both;
+}
+.bubble-tc:after {
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #e7e7e7;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  display: block;
+}
+.bubble-bl {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-bl:before,
+.bubble-bl:after {
+  content: "";
+  display: table;
+}
+.bubble-bl:after {
+  clear: both;
+}
+.bubble-bl:after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e7e7e7;
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  display: block;
+}
+.bubble-br {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-br:before,
+.bubble-br:after {
+  content: "";
+  display: table;
+}
+.bubble-br:after {
+  clear: both;
+}
+.bubble-br:after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e7e7e7;
+  position: absolute;
+  bottom: -10px;
+  right: 15px;
+  display: block;
+}
+.bubble-bc {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-bc:before,
+.bubble-bc:after {
+  content: "";
+  display: table;
+}
+.bubble-bc:after {
+  clear: both;
+}
+.bubble-bc:after {
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e7e7e7;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  display: block;
+}
+.bubble-lt {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-lt:before,
+.bubble-lt:after {
+  content: "";
+  display: table;
+}
+.bubble-lt:after {
+  clear: both;
+}
+.bubble-lt:after {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #e7e7e7;
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  display: block;
+}
+.bubble-lb {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-lb:before,
+.bubble-lb:after {
+  content: "";
+  display: table;
+}
+.bubble-lb:after {
+  clear: both;
+}
+.bubble-lb:after {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #e7e7e7;
+  position: absolute;
+  bottom: 15px;
+  left: -10px;
+  display: block;
+}
+.bubble-lc {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-lc:before,
+.bubble-lc:after {
+  content: "";
+  display: table;
+}
+.bubble-lc:after {
+  clear: both;
+}
+.bubble-lc:after {
+  margin-top: -5px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #e7e7e7;
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  display: block;
+}
+.bubble-rt {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-rt:before,
+.bubble-rt:after {
+  content: "";
+  display: table;
+}
+.bubble-rt:after {
+  clear: both;
+}
+.bubble-rt:after {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #e7e7e7;
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  display: block;
+}
+.bubble-rb {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-rb:before,
+.bubble-rb:after {
+  content: "";
+  display: table;
+}
+.bubble-rb:after {
+  clear: both;
+}
+.bubble-rb:after {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #e7e7e7;
+  position: absolute;
+  bottom: 15px;
+  right: -10px;
+  display: block;
+}
+.bubble-rc {
+  background: #efefef;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+.bubble-rc:before,
+.bubble-rc:after {
+  content: "";
+  display: table;
+}
+.bubble-rc:after {
+  clear: both;
+}
+.bubble-rc:after {
+  margin-top: -5px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #e7e7e7;
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  display: block;
+}
