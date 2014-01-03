@@ -162,6 +162,30 @@ describe 'typography', ->
     compile_and_match(path.join(@path, 'hyphenation.styl'), done)
 
 describe 'ui', ->
+
+  before -> @path = path.join(test_path, 'ui')
+
+  it 'area', (done) ->
+    compile_and_match(path.join(@path, 'area.styl'), done)
+
+  it 'breadcrumb', (done) ->
+    compile_and_match(path.join(@path, 'breadcrumb.styl'), done)
+
+  it 'bubble', (done) ->
+    compile_and_match(path.join(@path, 'bubble.styl'), done)
+
+  it 'figure', (done) ->
+    compile_and_match(path.join(@path, 'figure.styl'), done)
+
+  it 'flash', (done) ->
+    compile_and_match(path.join(@path, 'flash.styl'), done)
+
+  it 'navigation', (done) ->
+    compile_and_match(path.join(@path, 'navigation.styl'), done)
+
+  it 'notice', (done) ->
+    compile_and_match(path.join(@path, 'notice.styl'), done)
+
 describe 'utilities', ->
 describe 'vendor', ->
 describe 'vertical-rhythm', ->
