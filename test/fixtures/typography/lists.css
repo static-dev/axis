@@ -1,0 +1,50 @@
+.ul {
+  margin: 5px 15px;
+  margin: 0.32rem 0.94rem;
+  padding-left: 1rem;
+}
+.ul li {
+  list-style-type: disc;
+  padding: 2px 0;
+  padding: 0.125rem;
+}
+.ol {
+  margin: 5px 18px;
+  margin: 0.32rem 1.125rem;
+  padding-left: 1rem;
+}
+.ol li {
+  list-style-type: decimal;
+  padding: 2px 0;
+  padding: 0.125rem;
+}
+.inline-list {
+  margin: 0;
+  padding: 0;
+}
+.inline-list:before,
+.inline-list:after {
+  content: "";
+  display: table;
+}
+.inline-list:after {
+  clear: both;
+}
+.inline-list li {
+  float: left;
+  margin-right: 20px;
+  list-style-type: none;
+}
+.inline-list li:last-child {
+  margin-right: 0;
+}
+.reset-list {
+  margin: 0;
+  padding: 0;
+}
+.reset-list li {
+  float: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

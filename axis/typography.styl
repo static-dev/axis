@@ -182,10 +182,10 @@ text-selection(color = highlight-color, textColor = null)
 
   textColor = (light(color) ? white : #494949) unless textColor
 
-  ::-moz-selection
+  &::-moz-selection
     background: color
     color: textColor
-  ::selection
+  &::selection
     background: color
     color: textColor
 
@@ -273,8 +273,8 @@ $blockquote(color = blue)
     font-weight: 300
     font-size: 127%
     font-size: 1.27rem
-    -line-height: 127%
-    -line-height: 1.27rem
+    line-height: 127%
+    line-height: 1.27rem
     margin-top: 0
 
   > cite, > footer, > figcaption
@@ -283,7 +283,7 @@ $blockquote(color = blue)
       content: '\2014'
 
 // Alias: blockquo
-blockquo = $blockquote()
+blockquo = $blockquote
 
 // Hyphenation
 // Hyphenation is the better word-break. It’s locale aware, and inserts the hyphen character
