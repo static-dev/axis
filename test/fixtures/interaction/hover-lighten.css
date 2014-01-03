@@ -1,0 +1,6 @@
+.hover-lighten {
+  background: #b44326;
+}
+.hover-lighten:hover {
+  background-color: #d45332;
+}

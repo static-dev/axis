@@ -1,0 +1,6 @@
+.hover-underline {
+  border-bottom: 1px solid transparent;
+}
+.hover-underline:hover {
+  border-bottom: 1px solid;
+}
