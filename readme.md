@@ -1,7 +1,7 @@
 Axis CSS
 ---------
 
-[![npm](https://badge.fury.io/js/axis.png)](http://badge.fury.io/js/axis)
+[![npm](https://badge.fury.io/js/axis-css.png)](http://badge.fury.io/js/axis-css)
 [![tests](https://travis-ci.org/jenius/axis.png?branch=master)](https://travis-ci.org/jenius/axis)
 [![dependencies](https://david-dm.org/jenius/axis.png)](https://david-dm.org/jenius/axis)
 
