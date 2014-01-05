@@ -1,0 +1,12 @@
+.sprite-vert {
+  background: url("foo.png") no-repeat;
+  height: 50px;
+  overflow: hidden;
+  background-position: 0 -100px;
+}
+.sprite-horiz {
+  background: url("foo.png") no-repeat;
+  width: 50px;
+  overflow: hidden;
+  background-position: 150px 0;
+}
