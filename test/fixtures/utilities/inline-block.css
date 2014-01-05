@@ -1,0 +1,11 @@
+.inline-block {
+  display: inline-block;
+}
+.inline-block-ie {
+  display: inline-block;
+  display: -moz-inline-stack;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+}
