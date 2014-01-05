@@ -1,0 +1,16 @@
+.media {
+  overflow: hidden;
+  zoom: 1;
+}
+.media > * {
+  display: inline-block;
+  overflow: hidden;
+}
+.media > *:first-child {
+  float: left;
+  margin-right: 10px;
+}
+.media > *:nth-child(3) {
+  float: right;
+  margin-left: 10px;
+}

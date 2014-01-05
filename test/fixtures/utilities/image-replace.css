@@ -1,0 +1,16 @@
+.image-replace {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background: url("foo.png") no-repeat;
+  width: 200px;
+  height: 300px;
+}
+.ir {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background: url("foo.png") no-repeat;
+  width: 200px;
+  height: 300px;
+}
