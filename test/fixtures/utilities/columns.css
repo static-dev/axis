@@ -1,0 +1,11 @@
+.columns {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+}
+.avoid-break {
+  column-break-inside: avoid;
+}

@@ -1,0 +1,10 @@
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.normal {
+  font-weight: normal;
+  font-style: normal;
+}

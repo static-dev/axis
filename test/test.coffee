@@ -187,5 +187,71 @@ describe 'ui', ->
     compile_and_match(path.join(@path, 'notice.styl'), done)
 
 describe 'utilities', ->
+
+  before -> @path = path.join(test_path, 'utilities')
+
+  it 'b', (done) ->
+    compile_and_match(path.join(@path, 'b.styl'), done)
+
+  it 'bg', (done) ->
+    compile_and_match(path.join(@path, 'bg.styl'), done)
+
+  it 'columns', (done) ->
+    compile_and_match(path.join(@path, 'columns.styl'), done)
+
+  it 'font-face', (done) ->
+    compile_and_match(path.join(@path, 'font-face.styl'), done)
+
+  it 'font-weight', (done) ->
+    compile_and_match(path.join(@path, 'font-weight.styl'), done)
+
+  it 'group', (done) ->
+    compile_and_match(path.join(@path, 'group.styl'), done)
+
+  it 'image-replace', (done) ->
+    compile_and_match(path.join(@path, 'image-replace.styl'), done)
+
+  it 'inline-block', (done) ->
+    compile_and_match(path.join(@path, 'inline-block.styl'), done)
+
+  it 'media', (done) ->
+    compile_and_match(path.join(@path, 'media.styl'), done)
+
+  it 'no-select', (done) ->
+    compile_and_match(path.join(@path, 'no-select.styl'), done)
+
+  it 'raquo', (done) ->
+    compile_and_match(path.join(@path, 'raquo.styl'), done)
+
+  it 'rounded', (done) ->
+    compile_and_match(path.join(@path, 'rounded.styl'), done)
+
+  it 'sprite', (done) ->
+    compile_and_match(path.join(@path, 'sprite.styl'), done)
+
+  it 'triangle', (done) ->
+    compile_and_match(path.join(@path, 'triangle.styl'), done)
+
 describe 'vendor', ->
-describe 'vertical-rhythm', ->
+
+  before -> @path = path.join(test_path, 'vendor')
+
+  it 'background-position', (done) ->
+    compile_and_match(path.join(@path, 'background-position.styl'), done)
+
+  it 'border-box', (done) ->
+    compile_and_match(path.join(@path, 'border-box.styl'), done)
+
+  it 'border-radius', (done) ->
+    compile_and_match(path.join(@path, 'border-radius.styl'), done)
+
+  it 'box-shadow', (done) ->
+    compile_and_match(path.join(@path, 'box-shadow.styl'), done)
+
+  it 'opacity', (done) ->
+    compile_and_match(path.join(@path, 'opacity.styl'), done)
+
+  it 'transition', (done) ->
+    compile_and_match(path.join(@path, 'transition.styl'), done)
+
+# describe 'vertical-rhythm'
