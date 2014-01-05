@@ -12,7 +12,6 @@ compile = (p) ->
   accord.load('stylus').renderFile(p, { use: axis() })
 
 match_expected = (out, p, done) ->
-  # console.log out
   try
     expected_path = path.join(path.dirname(p), path.basename(p, '.styl')) + '.css'
     if not fs.existsSync(expected_path) then throw '"expected" file doesnt exist'

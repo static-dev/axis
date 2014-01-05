@@ -1,0 +1,6 @@
+.transition {
+  transition: all .3s ease;
+}
+.trans-custom {
+  transition: all 1s ease;
+}
