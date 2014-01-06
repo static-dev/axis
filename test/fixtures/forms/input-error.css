@@ -1,9 +1,9 @@
 .input-error {
-  color: #b44326;
-  border-color: #b44326;
+  color: #d13f19;
+  border-color: #d13f19;
 }
 .input-error:focus {
-  box-shadow: 0 0 5px rgba(180,67,38,0.7);
-  border: 1px solid #9b523f;
+  box-shadow: 0 0 5px rgba(209,63,25,0.7);
+  border: 1px solid #b15239;
   outline: none;
 }
