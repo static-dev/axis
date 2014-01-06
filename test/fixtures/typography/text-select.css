@@ -1,8 +1,8 @@
 .text-select::-moz-selection {
-  background: #00a6fc;
+  background: #0074d9;
   color: #494949;
 }
 .text-select::selection {
-  background: #00a6fc;
+  background: #0074d9;
   color: #494949;
 }
