@@ -2,7 +2,7 @@
   font-size: 13px;
   padding: 10px 22px;
   border-radius: 3px;
-  background-color: #00a6fc;
+  background-color: #0074d9;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
@@ -14,9 +14,9 @@
 }
 .button:hover,
 .button:focus {
-  background-color: #009eef;
+  background-color: #006ece;
   color: #f7f7f7;
 }
 .button:active {
-  background-color: #0095e3;
+  background-color: #0068c3;
 }

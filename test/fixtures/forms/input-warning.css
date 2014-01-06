@@ -1,9 +1,9 @@
 .input-warning {
-  color: #f8ca5c;
-  border-color: #f8ca5c;
+  color: #d9bb00;
+  border-color: #ffdc00;
 }
 .input-warning:focus {
-  box-shadow: 0 0 5px rgba(248,202,92,0.7);
-  border: 1px solid #ddbf77;
+  box-shadow: 0 0 5px rgba(255,220,0,0.7);
+  border: 1px solid #d2bc2d;
   outline: none;
 }

@@ -1,16 +1,16 @@
 .gradient-twocolor {
-  background: #b44326;
-  background: #00a6fc -webkit-linear-gradient(top, #b44326, #00a6fc) repeat-x;
-  background: #00a6fc -moz-linear-gradient(top, #b44326, #00a6fc) repeat-x;
-  background: #00a6fc -o-linear-gradient(top, #b44326, #00a6fc) repeat-x;
-  background: #00a6fc -ms-linear-gradient(top, #b44326, #00a6fc) repeat-x;
-  background: #00a6fc linear-gradient(to bottom, #b44326, #00a6fc) repeat-x;
+  background: #d13f19;
+  background: #0074d9 -webkit-linear-gradient(top, #d13f19, #0074d9) repeat-x;
+  background: #0074d9 -moz-linear-gradient(top, #d13f19, #0074d9) repeat-x;
+  background: #0074d9 -o-linear-gradient(top, #d13f19, #0074d9) repeat-x;
+  background: #0074d9 -ms-linear-gradient(top, #d13f19, #0074d9) repeat-x;
+  background: #0074d9 linear-gradient(to bottom, #d13f19, #0074d9) repeat-x;
 }
 .gradient-onecolor {
-  background: #cc4c2b;
-  background: #a23c22 -webkit-linear-gradient(top, #cc4c2b, #a23c22) repeat-x;
-  background: #a23c22 -moz-linear-gradient(top, #cc4c2b, #a23c22) repeat-x;
-  background: #a23c22 -o-linear-gradient(top, #cc4c2b, #a23c22) repeat-x;
-  background: #a23c22 -ms-linear-gradient(top, #cc4c2b, #a23c22) repeat-x;
-  background: #a23c22 linear-gradient(to bottom, #cc4c2b, #a23c22) repeat-x;
+  background: #e44921;
+  background: #bc3917 -webkit-linear-gradient(top, #e44921, #bc3917) repeat-x;
+  background: #bc3917 -moz-linear-gradient(top, #e44921, #bc3917) repeat-x;
+  background: #bc3917 -o-linear-gradient(top, #e44921, #bc3917) repeat-x;
+  background: #bc3917 -ms-linear-gradient(top, #e44921, #bc3917) repeat-x;
+  background: #bc3917 linear-gradient(to bottom, #e44921, #bc3917) repeat-x;
 }

@@ -2,18 +2,13 @@
 // Forms
 // -----------------------------------------------------
 
-// This module is the most severely lacking, just because I'm not totally sure how to
-// handle it - forms are so different. It will probably end up with this basic functionality
-// for custom forms as well as a mixin you can drop on a form and it will style it for you
-// and take care of everything, for something more like an early prototype or back end.
-
-// It will also contain the ability to append or prepend little icons to your inputs
+// Forms are painful and difficult. While on one hand, it would be nice to have the
+// styling just done for you, you also cannot sacrifice control, and I'd like to avoid
+// forcing specific markup structure if possible. So the helpers here are less invasive
+// but also do not do *all* the work for you.
 
 // Helper: Focus Glow
-// Makes your inputs glow when focused. Takes a color - they will glow that color. Default color by default.
-// ex. +-focus-glow
-// ex. +-focus-glow(blue)
-// ex. +focus-glow(#D45D86)
+// Makes your inputs glow when focused. Takes a color - they will glow that color. 
 
 -focus-glow(color = default-color)
   &:focus
@@ -22,21 +17,22 @@
     outline: none
 
 // Mixin: Input
-// A general purpose mixin for text inputs. Provides an nice attractive default style that's easily
-// customizable. Takes a color as the first param and an optional width as the second.
-// ex. +input
-// ex. +input(purple)
-// ex. +input(#D45D86, 400px)
+// A general purpose mixin for text inputs. Provides an nice attractive default
+// style that's easily customizable. Takes a color as the first param and an
+// optional width as the second.
+// ex. $input()
+// ex. $input: purple
+// ex. $input: #D45D86 400px
 
-$input(color = light-blue, width = 250px)
+$input(color = aqua, width = 250px)
   box-shadow(inset 0 1px 1px rgba(#000, 0.1))
+  -webkit-font-smoothing: antialiased
   font-size: unit(font-size, px)
   font-family: font-stack
   border: solid 1px #bbb
-  border-radius: 2px
+  border-radius: .2em
   outline: none
-  // TODO: test this and make sure it's proportional at different sizes
-  padding: 4px 5px 4px
+  padding: .45em
   background: #fff
   color: #555
   width: width
@@ -49,36 +45,21 @@ $input(color = light-blue, width = 250px)
     box-shadow(none)
 
 // Mixin: Input Search
-// A search style input with rounded corners and an optional search icon at the end. Takes
-// any color.
-// ex. +input-search
-// ex. +input-search(yellow)
-// ex. +input-search
+// A search style input with rounded corners and an optional search icon at the end. 
+// Takes any color.
+// ex. input-search()
+// ex. input-search: yellow
 
 // TODO: Implement search icon option with base64
-
-// =field-search
-//   position: relative
-//   input
-//     +input-search
-//   &:after
-//     font: 16px roots-icons
-//     content: icon(arrow_down_alt1)
-//     display: block
-//     position: absolute
-//     top: 8px
-//     right: 8px
-//     opacity: .5
-
-input-search(color = blue)
-  input-field(color)
+input-search(color = aqua, width = 250px)
+  $input: color width
   padding-left: 9px
   rounded()
 
 // Mixin: Input Disabled
-// Makes your input appear to be disabled. Note that you also need to add 'disabled' to your
-// html tag in order for it to actually be disabled.
-// ex. +disabled
+// Makes your input appear to be disabled. Note that you also need to add 'disabled'
+// to your html tag in order for it to actually be disabled.
+// ex. input-disabled()
 
 input-disabled()
   cursor: not-allowed
@@ -89,21 +70,24 @@ input-disabled()
     box-shadow(inset 0 1px 1px rgba(#000, 0.1))
 
 // Mixin: Label
-// Very basic label for your form. Pass it an optional display type to have it inline or block.
-// ex. +label
+// Very basic label for your form. Pass it an optional display type to have it
+// inline or block.
+// ex. label()
+// ex. label: block
 
 $label(display = inline-block)
   line-height: 1.5em
   display: display
 
 // Mixin: Field
-// Often times it's easier to wrap your input and label in a div called "field" so they can be
-// floated, position, and manipulated without screwing up the rest of the form. That's what this
-// mixin is for - put it on a div that contains a label and an input. Then feed it a direction to
-// align (default is right), and an optional width.
-// ex. +field
-// ex. +field(left)
-// ex. +field(right, 500px)
+// Often times it's easier to wrap your input and label in a div called "field" so
+// they can be floated, position, and manipulated without screwing up the rest of
+// the form. That's what this mixin is for - put it on a div that contains a label
+// and an input. Then feed it a direction to align (default is right), and an
+// optional width.
+// ex. field()
+// ex. field: left
+// ex. field: right 500px
 
 field(direction = right, width = 370px)
   clear: both
@@ -112,10 +96,11 @@ field(direction = right, width = 370px)
   width: width
 
 // Mixin: Input Error
-// When someone F'd it up, you gotta show them how it is. Put this on an input to make it clear
-// that something bad is happening. Best implemented in a .error class or something similar.
-// ex. input.error
-//       +input-error
+// When someone F'd it up, you gotta show them how it is. Put this on an input to
+// make it clear that something bad is happening. Best implemented in a .error class
+// or something similar.
+// ex. input-error()
+// ex. input-error: blue
 
 input-error(color = red)
   color: color
@@ -123,42 +108,45 @@ input-error(color = red)
   -focus-glow(color)
 
 // Mixin: Field Error
-// If you are wrapping labels and inputs in a field div, this makes life even easier. Makes the
-// label text as well as the input field red.
-// ex. .field.error
-//       +field-error
+// If you are wrapping labels and inputs in a field div, this makes life even
+// easier. Makes the label text as well as the input field red.
+// ex. field-error()
+// ex. field-error: blue
 
 field-error(color = red)
   color: color
+  
   input
     input-error()
 
 // Mixin: Input Warning
-// Ok, so maybe you didn't totally F it up, but at very least you deserve a warning. Well here it is.
+// Ok, so maybe you didn't totally F it up, but at very least you deserve a warning.
 // Best implemented in a .warning class or something similar.
-// ex. input.warning
-//       +input-warning
+// ex. input-warning()
+// ex. input-warning: blue
 
 input-warning(color = yellow)
-  color: color
+  color: darken(color, 15%)
   border-color: color
   -focus-glow(color)
 
 // Mixin: Field Warning
 // If you are wrapping labels and inputs in a field div, this makes life even easier. Makes the
 // label text as well as the input field yellow.
-// ex. .field.warning
-//       +field-warning
+// ex. field-warning()
+// ex. field-warning: blue
 
 field-warning(color = yellow)
-  color: color
+  color: darken(color, 15%)
+  
   input
     input-warning()
 
 // Mixin: Input Success
-// http://cl.ly/F4Em/great-success.jpeg - Best implemented in a .success class or something similar.
-// ex. input.success
-//       +input-success
+// http://cl.ly/F4Em/great-success.jpeg - Best implemented in a .success class or
+// something similar.
+// ex. input-success()
+// ex. input-success: red
 
 input-success(color = green)
   color: color
@@ -166,9 +154,10 @@ input-success(color = green)
   -focus-glow(color)
 
 // Mixin: Field Success
-// You're probably getting tired of this routine at this point. I'm sure you can imagine what this does.
-// ex. .field.success
-//       +field-success
+// You're probably getting tired of this routine at this point. I'm sure you can
+// imagine what this does.
+// ex. field-success()
+// ex. field-success: blue
 
 field-success(color = green)
   color: color
@@ -177,8 +166,8 @@ field-success(color = green)
 
 // Additive Mixin: Fields
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
-// Add the field styles to .field as well as success, warning, and failure states. Also takes
-// direction and width. Highly recommended mixin.
+// Add the field styles to .field as well as success, warning, and failure states. Also
+// takes direction and width. Highly recommended mixin.
 
 fields(direction = right, width = 370px)
   .field
