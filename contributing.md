@@ -19,6 +19,8 @@ This project is constantly evolving, and to ensure that things are secure and wo
 
 To run the test suite, make sure you have installed [mocha](http://visionmedia.github.io/mocha/) (`npm install mocha -g`), then you can use the `npm test` command to run them.
 
+In addition, axis has a set of visual tests because the fact that the code checks out doesn't mean it looks the way you want it to. To add a visual test, import your test's css into `test/visual.html` at the top, then write some html, open up the page, and verify that your handiwork is looking fresh.
+
 ### Code Style
 
 To keep a consistant coding style in the project, we're going with [Felix's Node.js Style Guide](http://nodeguide.com/style.html) for JS and [Polar Mobile's guide](https://github.com/polarmobile/coffeescript-style-guide) for CoffeeScript, but it should be noted that much of this project uses under_scores rather than camelCase for naming. Both of these are pretty standard guides. For documenting in the code, we're using [JSDoc](http://usejsdoc.org/).
