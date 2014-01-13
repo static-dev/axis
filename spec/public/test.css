@@ -120,7 +120,9 @@ sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 sup {
   top: -0.5em;
@@ -177,7 +179,9 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
-  vertical-align: baseline;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   *vertical-align: middle;
 }
 button,
@@ -222,7 +226,9 @@ input::-moz-focus-inner {
 }
 textarea {
   overflow: auto;
-  vertical-align: top;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 table {
   border-collapse: collapse;
@@ -986,12 +992,7 @@ blockquote > figcaption:before {
 }
 .label {
   line-height: 1.5em;
-  display: -moz-inline-stack;
   display: inline-block;
-  vertical-align: baseline;
-  zoom: 1;
-  *display: inline;
-  *vertical-align: auto;
 }
 .gradients > div {
   width: 300px;
@@ -1660,4 +1661,14 @@ blockquote > figcaption:before {
   bottom: -10px;
   left: 15px;
   display: block;
+}
+.vertical-align {
+  background-color: #eee;
+  height: 150px;
+  width: 100%;
+}
+.vertical-align span {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
