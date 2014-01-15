@@ -231,6 +231,9 @@ describe 'utilities', ->
   it 'triangle', (done) ->
     compile_and_match(path.join(@path, 'triangle.styl'), done)
 
+  it 'vertical-align', (done) ->
+    compile_and_match(path.join(@path, 'vertical-align.styl'), done)
+
 describe 'vendor', ->
 
   before -> @path = path.join(test_path, 'vendor')
