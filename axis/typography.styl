@@ -205,7 +205,7 @@ ul(style = disc)
   margin: 0.32rem 0.94rem
   padding-left: 1rem
 
-  li
+  > li
     list-style-type: style
     padding: 2px 0
     padding: 0.125rem
@@ -222,7 +222,7 @@ ol(style = decimal)
   margin: 0.32rem 1.125rem
   padding-left: 1rem
 
-  li
+  > li
     list-style-type: style
     padding: 2px 0
     padding: 0.125rem
@@ -238,12 +238,12 @@ inline-list(spacing = 20px)
   margin: 0
   padding: 0
 
-  li
+  > li
     float: left
     margin-right: spacing
     list-style-type: none
 
-  li:last-child
+  > li:last-child
     margin-right: 0
 
 // Mixin: Reset List
@@ -255,7 +255,7 @@ reset-list()
   margin: 0
   padding: 0
 
-  li
+  > li
     float: none
     list-style-type: none
     padding: 0
