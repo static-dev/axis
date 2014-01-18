@@ -235,6 +235,9 @@ describe 'utilities', ->
   it 'vertical-align', (done) ->
     compile_and_match(path.join(@path, 'vertical-align.styl'), done)
 
+  it 'image-cache', (done) ->
+    compile_and_match(path.join(@path, 'image-cache.styl'), done)
+
 describe 'vendor', ->
 
   before -> @path = path.join(test_path, 'vendor')

@@ -315,3 +315,24 @@ ease-in-out-sine =  cubic-bezier(0.445,  0.050, 0.550, 0.950)
 ease-in-out-expo =  cubic-bezier(1.000,  0.000, 0.000, 1.000)
 ease-in-out-circ =  cubic-bezier(0.785,  0.135, 0.150, 0.860)
 ease-in-out-back =  cubic-bezier(0.680, -0.550, 0.265, 1.550)
+
+// initialize empty "array" store for all background-images
+background-images = null
+
+// function: cached-image-url
+// an alternative to url() that
+// stores images in a cache
+// for use in cache-images()
+cached-image-url()
+  base = ''
+  s = unquote('url("' + base + join('', arguments) + '")')
+  push(background-images, s) unless s in background-images
+  url(arguments)
+
+// mixin: cache-images
+// use this at the end of all your styles
+// outputs the image cache script
+cache-images()
+  body:after
+    display: none
+    content: background-images
