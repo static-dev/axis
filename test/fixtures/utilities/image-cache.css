@@ -1,0 +1,10 @@
+.element-1 {
+  background: url("img/image1.png");
+}
+.element-2 {
+  background: url("img/image2.png");
+}
+body:after {
+  display: none;
+  content: url("img/image1.png") url("img/image2.png");
+}
