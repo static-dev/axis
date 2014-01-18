@@ -315,3 +315,32 @@ ease-in-out-sine =  cubic-bezier(0.445,  0.050, 0.550, 0.950)
 ease-in-out-expo =  cubic-bezier(1.000,  0.000, 0.000, 1.000)
 ease-in-out-circ =  cubic-bezier(0.785,  0.135, 0.150, 0.860)
 ease-in-out-back =  cubic-bezier(0.680, -0.550, 0.265, 1.550)
+
+// image caching utility
+image-caching-enabled ?= false
+
+// initialize empty "array" store for all background-images
+background-images = null
+
+// function: private-url
+// dynamically overrides url() to store all background-images
+// by caching any images not in the "array" already
+// then reverts url() back to it's original use
+-private-url()
+  base = ''
+  s = unquote('url("' + base + join('', arguments) + '")')
+  if image-caching-enabled
+    push(image-cache, s) unless s in image-cache
+  return s
+if image-caching-enabled
+  url = -private-url
+  warn("Image caching has been enabled. This will break relative paths in Stylus.")
+
+// mixin: cache-images
+// use this at the end of all your styles
+// outputs the image cache script
+cache-images()
+  if image-caching-enabled
+    body:after
+      display: none
+      content: background-images
