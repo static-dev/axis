@@ -8,7 +8,6 @@
   border-collapse: separate;
   *border-collapse: collapsed;
   border-radius: 4px;
-th + th, td + td, th + td, td + th { border-left: 1px solid #ddd; }
 }
 .table th,
 .table td {
@@ -31,7 +30,12 @@ th + th, td + td, th + td, td + th { border-left: 1px solid #ddd; }
 .table tbody + tbody {
   border-top: 2px solid #ddd;
 }
-th + th, td + td, th + td, td + th { border-left: 1px solid #ddd; }
+.table css th + th,
+.table css td + td,
+.table css th + td,
+.table css td + th {
+  border-left: 1px solid #ddd;
+}
 .table thead:first-child tr:first-child th,
 .table tbody:first-child tr:first-child th,
 .table tbody:first-child tr:first-child td {
