@@ -14,7 +14,8 @@
     "stylus": "*",
     "mocha": "*",
     "should": "*",
-    "coffee-script": "*"
+    "coffee-script": "*",
+    "css-parse": "*"
   },
   "author": "Jeff Escalante",
   "main": "index.js",

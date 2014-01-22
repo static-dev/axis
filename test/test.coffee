@@ -3,6 +3,7 @@ path = require 'path'
 fs = require 'fs'
 accord = require 'accord'
 axis = require '../'
+cssparse = require 'css-parse'
 
 # utilities
 
@@ -16,7 +17,7 @@ match_expected = (out, p, done) ->
     expected_path = path.join(path.dirname(p), path.basename(p, '.styl')) + '.css'
     if not fs.existsSync(expected_path) then throw '"expected" file doesnt exist'
     expected_contents = fs.readFileSync(expected_path, 'utf8')
-    out.should.eql(expected_contents)
+    cssparse(out).should.eql(cssparse(expected_contents))
   catch err
     return done(err)
   done()
