@@ -30,11 +30,11 @@
 // - color: Takes any color, defaults to the default global color
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects the
 //   font size for the text inside the button, but scales all other aspects as well.
-// ex. _button()
-// ex. _button(blue)
-// ex. _button(#D4513B)
-// ex. _button(green, large)
-// ex. _button(#4C82D4, 24)
+// ex. $button()
+// ex. $button(blue)
+// ex. $button(#D4513B)
+// ex. $button(green, large)
+// ex. $button(#4C82D4, 24)
 
 // These will accept font icons interally in the very near future
 
@@ -165,9 +165,9 @@ button-disabled()
 buttons()
   .btn-simple
     transition()
-    _button(blue)
+    $button()
   .btn
     transition()
-    glossy-button(blue)
+    glossy-button()
   .btn.disabled, .btn-simple.disabled
     button-disabled()

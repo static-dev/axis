@@ -260,4 +260,11 @@ describe 'vendor', ->
   it 'transition', (done) ->
     compile_and_match(path.join(@path, 'transition.styl'), done)
 
+describe 'additive', ->
+
+  before -> @path = path.join(test_path, 'additive')
+
+  it 'framework', (done) ->
+    compile_and_match(path.join(@path, 'framework.styl'), done)
+
 # describe 'vertical-rhythm'
