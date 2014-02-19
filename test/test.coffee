@@ -28,6 +28,18 @@ compile_and_match = (p, done) ->
 
 # tests
 
+describe 'api', ->
+
+  before ->
+    @pkg = require('../package.json')
+
+  it 'exposes the library path', ->
+    axis.path.should.match(/axis/)
+  it 'exposes the correct version', ->
+    axis.version.should.eql(@pkg.version)
+  it 'exposes the library name', ->
+    axis.libname.should.eql(@pkg.name)
+
 describe 'buttons', ->
 
   before -> @path = path.join(test_path, 'buttons')
