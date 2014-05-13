@@ -48,9 +48,15 @@ bg(path, args...)
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
+  set_size = false
+  for arg in args
+    if arg == 'no-repeat'
+      set_size = true
+
   background: url(img-path path) args
-  size: width height
-  background-size: literal-join('', width height)
+  background-size: width height
+  if set_size
+    size: width height
 
 // Mixin: Bold
 // It's just faster to type +bold than font-weight: bold
