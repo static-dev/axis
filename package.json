@@ -1,13 +1,13 @@
 {
   "name": "axis",
   "description": "css library built on stylus",
-  "version": "0.2.0-rc.3",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/jenius/axis.git"
   },
   "dependencies": {
-    "autoprefixer-stylus": "0.0.3"
+    "nib": "1.x.x"
   },
   "devDependencies": {
     "accord": "*",
@@ -24,8 +24,5 @@
   },
   "engines": {
     "node": ">=0.8.0"
-  },
-  "dependencies": {
-    "nib": "1.x.x"
   }
 }
