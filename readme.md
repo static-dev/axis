@@ -1,9 +1,9 @@
 Axis CSS
 ---------
 
-[![npm](https://badge.fury.io/js/axis-css.png)](http://badge.fury.io/js/axis-css)
-[![tests](https://travis-ci.org/jenius/axis.png?branch=0.2.0)](https://travis-ci.org/jenius/axis)
-[![dependencies](https://david-dm.org/jenius/axis.png)](https://david-dm.org/jenius/axis)
+[![npm](http://img.shields.io/npm/v/axis.svg?style=flat)](http://badge.fury.io/js/axis)
+[![tests](http://img.shields.io/travis/jenius/axis/0.2.0.svg?style=flat)](https://travis-ci.org/jenius/axis)
+[![dependencies](http://img.shields.io/gemnasium/jenius/axis.svg?style=flat)](https://gemnasium.com/jenius/axis)
 
 Axis is a terse, feature-rich css library built on top of stylus. It is built on top of [nib](http://visionmedia.github.io/nib/), providing a number of additional useful tools and mixins.
 
