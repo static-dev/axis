@@ -30,10 +30,10 @@
 .table tbody + tbody {
   border-top: 2px solid #ddd;
 }
-.table css th + th,
-.table css td + td,
-.table css th + td,
-.table css td + th {
+.table th + th,
+.table td + td,
+.table th + td,
+.table td + th {
   border-left: 1px solid #ddd;
 }
 .table thead:first-child tr:first-child th,
