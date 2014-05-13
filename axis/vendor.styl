@@ -34,26 +34,15 @@ border-radius()
   border-radius: arguments
   pie()
 
-// Alias: Round Corners
-
-round-corners()
-  border-radius: arguments
-  pie()
-
-// Alias: Round
-
-round(px)
-  round-corners(px)
-
 // ------------------------------------- other utils ---------------------------------
 
 // Mixin: Opacity
-// I know, it seems silly. But every time you go to IE testing you will be thanking yourself for
+// I know, it seems silly. But every time you go to old IE testing you will be thanking yourself for
 // using this instead of the normal opacity declaration. Overrides default opacity.
 // ex. opacity: .6
 
 opacity(opacity)
-  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if ie-support
+  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if support-for-ie
   opacity: opacity
 
 // Mixin: Border Box
@@ -73,10 +62,10 @@ background-position-y(y)
   background-position: 0 y
 
 // Mixin: Opentype ligatures
-// The vast majority of fonts contain lowercase and uppercase alphabets, numerals, punctuation and accents. Many professionally-designed 
-// fonts also contain ligatures, alternative characters, smallcaps, different kinds of numbers, and sometimes much more besides. This enables it.
+// The vast majority of fonts contain lowercase and uppercase alphabets, numerals, punctuation and accents. // Many professionally-designed fonts also contain ligatures, alternative characters, smallcaps, different
+// kinds of numbers, and sometimes much more besides. This enables it.
 // Source: http://www.newnet-soft.com/blog/csstypography
-// Additiona: http://blog.fontdeck.com/post/15777165734/opentype-1
+// Additional: http://blog.fontdeck.com/post/15777165734/opentype-1
 
 openTypeLigatures()
   -moz-font-feature-settings:    "liga=1, dlig=1"

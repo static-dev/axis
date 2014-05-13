@@ -1,0 +1,14 @@
+.figure {
+  display: inline-block;
+}
+.figure img {
+  display: block;
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,116,217,0.6);
+}
+.figure figcaption {
+  padding: 10px 0;
+  text-align: center;
+  font-style: italic;
+}

@@ -1,0 +1,9 @@
+.input-success {
+  color: #2ecc40;
+  border-color: #2ecc40;
+}
+.input-success:focus {
+  box-shadow: 0 0 5px rgba(46,204,64,0.7);
+  border: 1px solid #4ab055;
+  outline: none;
+}

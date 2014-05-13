@@ -21,12 +21,11 @@ area(color = #F5F5F5)
 // mixin, but you can use it if you'd like. Give it a color and a width and it will
 // output a nice lightly gradiented box for your notice to reside in.
 // ex. notice()
-// ex. notice(300px, red)
 // ex. notice: 500px blue
 
 notice(width = false, color = #EEEEEE, padding = 10px)
-  simple-gradient(color, 3%)
   group()
+  gradient: color 3%
   border-radius: 5px
   padding: padding
   border: 1px solid darken(color, 10%)
@@ -39,8 +38,7 @@ notice(width = false, color = #EEEEEE, padding = 10px)
 // 'logged in!', 'logged out!', or 'errarrrr!'. Takes one of four types and colors them nicely
 // for you - notice, success, warning, or error. Defaults to notice
 // ex. flash()
-// ex. flash(error)
-// ex. flash: success
+// ex. flash: error
 
 flash(type = notice)
   if type == notice
@@ -73,11 +71,13 @@ flash(type = notice)
 // ex. breadcrumb("~", 40px)
 
 breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
-  inline-list(spacing)
+  inline-list: spacing
+
   li:after
     content: character
     margin-left: spacing
     color: divider-color
+
   li:last-child:after
     content: ""
 
@@ -91,7 +91,7 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // ex. bubble: right top #5740A1 500px
 
 bubble(pos0 = left, pos1 = false, color = #EEEEEE, width = false, triangleSize = 10px, sideDistance = 15px, padding = 10px, pointer = false, triangleColor = darken(color, 3%))
-  
+
   // use named argument 'pointer' as pos0 arg (to preserve old bubble api)
   if pointer
     pos1 = pointer
@@ -105,7 +105,9 @@ bubble(pos0 = left, pos1 = false, color = #EEEEEE, width = false, triangleSize =
     color = pos1
     pos1 = pos0
     pos0 = bottom
-  notice(width, color, padding)
+
+  notice: width color padding
+
   &:after
     if pos0 is top
       directionTriangle = up
@@ -146,9 +148,7 @@ bubble(pos0 = left, pos1 = false, color = #EEEEEE, width = false, triangleSize =
         positionY = top
         distanceY = 50%
 
-    // p(pos1)
-    // p(directionTriangle)
-    triangle(directionTriangle, triangleSize, triangleColor)
+    triangle: directionTriangle triangleSize triangleColor
     absolute: positionY distanceY positionX distanceX
     display: block
 
@@ -162,6 +162,7 @@ bubble(pos0 = left, pos1 = false, color = #EEEEEE, width = false, triangleSize =
 // ex. figure: green 100px 400px
 
 figure(color = default-color, dimensions = false)
+
   if length(dimensions) > 1
     display: block
     width: unit(dimensions[0], px)
@@ -170,11 +171,13 @@ figure(color = default-color, dimensions = false)
     inline-block()
   else
     warn("Make sure you pass the image's dimensions as a space-separated list")
+
   img
     display: block
     padding: 4px
-    round(3px)
+    border-radius: 3px
     border: 1px solid rgba(color, .6)
+
   figcaption
     padding: 10px 0
     text-align: center
@@ -189,18 +192,19 @@ figure(color = default-color, dimensions = false)
 // ex. nav()
 // ex. nav: 1 #444 red fixed
 
-navigation(size = 1, color = #222, link-color = #fff, fixed = true)
+navigation(size = 1, bgcolor = #222, link-color = #fff, pos-fixed = false)
+  group()
   display: block
   z-index: 10
-  simple-noise-gradient(color, 5%)
-  group()
-  box-shadow(0 3px 3px rgba(0,0,0,.15))
-  border-bottom: 1px solid rgba(darken(color, 15%),.7)
+  gradient: bgcolor 5%
+  box-shadow: 0 3px 3px rgba(0,0,0,.15)
+  border-bottom: 1px solid rgba(darken(bgcolor, 15%),.7)
   height: (size + 14) * 2.866px
   width: 100%
   font-size: unit(size + 14, px)
-  if fixed
-    position: unquote('fixed')
+
+  if pos-fixed
+    position: fixed
   else
     position: relative
 
@@ -231,6 +235,9 @@ navigation(size = 1, color = #222, link-color = #fff, fixed = true)
         &:hover
           color: darken(link-color, 20%)
           border: none
+
+// Alias: nav
+$nav = navigation
 
 // Additive Mixin: Flash Notices
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.

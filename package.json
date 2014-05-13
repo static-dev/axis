@@ -1,25 +1,26 @@
 {
-  "name": "axis-css",
+  "name": "axis",
   "description": "css library built on stylus",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/jenius/axis.git"
   },
   "dependencies": {
-    "autoprefixer-stylus": "0.0.3"
+    "nib": "1.x.x"
   },
   "devDependencies": {
-    "express": "latest",
-    "jade": "latest",
-    "open": "latest",
-    "colors": "latest",
-    "stylus": "latest"
+    "accord": "*",
+    "stylus": "*",
+    "mocha": "*",
+    "should": "*",
+    "coffee-script": "*",
+    "css-parse": "*"
   },
   "author": "Jeff Escalante",
-  "main": "axis.js",
+  "main": "index.js",
   "scripts": {
-    "test": "./test"
+    "test": "mocha"
   },
   "engines": {
     "node": ">=0.8.0"

@@ -1,0 +1,7 @@
+.opacity {
+  opacity: 0.5;
+}
+.opacity-ie {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}

@@ -1,0 +1,12 @@
+.field-error {
+  color: #d13f19;
+}
+.field-error input {
+  color: #d13f19;
+  border-color: #d13f19;
+}
+.field-error input:focus {
+  box-shadow: 0 0 5px rgba(209,63,25,0.7);
+  border: 1px solid #b15239;
+  outline: none;
+}

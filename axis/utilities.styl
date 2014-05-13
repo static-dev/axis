@@ -2,8 +2,6 @@
 // Utilities
 // -----------------------------------------------------
 
-ie-support ?= true
-
 // Helper: Pie
 // When turned on, enables css3 pie (http://css3pie.com/) for all
 // elements that can use it. Which makes IE look a lot nicer.
@@ -25,14 +23,14 @@ rounded()
 
 no-select()
   -webkit-touch-callout: none
-  prefix(user-select, none)
+  user-select: none
 
 // Mixin: B
 // Border, but with an intelligent default
 
 b()
-  params = unquote('1px solid') unless params
-  border: params
+  arguments = unquote('1px solid') unless arguments
+  border: arguments
 
 // Mixin: Bg
 // Makes background (with image) declarations a little simpler.
@@ -45,14 +43,20 @@ bg(path, args...)
 
 // Mixin: bg-retina
 // Make sure the image path is double the size, pass it halved numbers, and you're in the retina-clear
-// ex. bg: ../img/test.png 200px 100px
-// ex. bg: ../img/other.jpg 100px 50px center center repeat
+// ex. bg-retina: ../img/test.png 200px 100px
+// ex. bg-retina: ../img/other.jpg 100px 50px center center repeat
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
+  set_size = false
+  for arg in args
+    if arg == 'no-repeat'
+      set_size = true
+
   background: url(img-path path) args
-  size: width height
-  background-size: literal-join('', width height)
+  background-size: width height
+  if set_size
+    size: width height
 
 // Mixin: Bold
 // It's just faster to type +bold than font-weight: bold
@@ -75,6 +79,27 @@ normal()
   font-weight: normal
   font-style: normal
 
+// Mixin: Image Replace
+// Image replacement. Pass it an image path and the image's dimensions and any text will be hidden
+// in the div and it will show an image instead. Uses the fanciest new method, props to Paul Irish.
+// ex. ir("/img/test.jpg", 200 400)
+// Something strange is causing this only to work when called as a function
+
+image-replace(path, dimensions...)
+  dimensions = dimensions[0]
+  font: 0/0 a
+  text-shadow: none
+  color: transparent
+  bg: path if path
+  if length(dimensions) > 1
+    width: unit(dimensions[0], px)
+    height: unit(dimensions[1], px)
+  else
+    warn("Make sure you also pass the image dimensions. Example: ir: '/img/whatever.jpg' 200 400")
+
+// Alias: ir
+ir = image-replace
+
 // Mixin: Columns
 // For css3 columns. Takes column count (int), column gap (px, em), column width (px, em), and
 // a border-like declaration if you want a column rule. This follows exactly with the css3 spec,
@@ -84,17 +109,17 @@ normal()
 // ex. columns(8, 15px, 200px, 1px solid red)
 
 columns(count = 3, gap = 30px, width = null, rule = null)
-  prefix(column-count, count)
-  prefix(column-gap, gap)
-  prefix(column-width, width) if width
-  prefix(column-rule, rule) if rule
+  column-count: count
+  column-gap: gap
+  column-width: width if width
+  column-rule: rule if rule
 
 // Mixin: Avoid Column Break
 // If you have a list that is broken into columns, this will make sure that the list item
 // is not split across columns awkwardly. Works only in webkit at the moment.
 
 avoid-column-break()
-  prefix(column-break-inside, avoid)
+  column-break-inside: avoid
 
 // Mixin: Triangle
 // One of my favorites. Makes a little css triangle for you. Pass it a direction (up, down, left, right),
@@ -122,72 +147,46 @@ triangle(direction = up, size = 10px, color = #000)
     border-bottom: size solid transparent
     border-left: size solid color
 
-
+// Mixin: Sprite
+// Given a direction in which your sprites are aligned (horizontal/vertical) and
+// an iteration, will measure the width/height of your first sprite frame and step
+// through to the nth next one, depending on the given iteration number.
+// Width/height must be defined for this to work (as is the case for any sprite)
+// ex. sprite: 2
+// ex. sprite: 5 horizontal
 sprite(iteration, orientation = vertical)
   if orientation == vertical
     background-position: 0 unit(@height*-1*iteration, px)
   else if orientation == horizontal
-    background-position: unit(@width*iteration, px) 0 
+    background-position: unit(@width*iteration, px) 0
   else
     warn('orientation must be horizontal or veritcal')
 
-// Mixin: Ir
-// Image replacement. Pass it an image path and the image's dimensions and any text will be hidden
-// in the div and it will show an image instead. Uses the fanciest new method, props to Paul Irish.
-// ex. ir: "../img/test.jpg" 200 400
-
-ir(path, dimensions...)
-  font: 0/0 a
-  text-shadow: none
-  color: transparent
-  bg(path) if path
-  if length(dimensions) > 1
-    width: unit(dimensions[0], px)
-    height: unit(dimensions[1], px)
-  else
-    warn("Make sure you also pass the image dimensions. Example: ir: '/img/whatever.jpg' 200 400")
-
-// Alias: ir
-image-replace(path, dimensions...)
-  font: 0/0 a
-  text-shadow: none
-  color: transparent
-  bg(path) if path
-  if length(dimensions) > 1
-    width: unit(dimensions[0], px)
-    height: unit(dimensions[1], px)
-  else
-    warn("Make sure you also pass the image dimensions. Example: ir: '/img/whatever.jpg' 200 400")
-
-// Mixin: Group
-// This is the clearfix with a better name. Excellent for wrangling floats.
-// ex. group()
-
-group()
-  zoom: 1
-  &:before
-  &:after
-    content: ""
-    display: table
-  &:after
-    clear: both
-
-// Alias: Clearfix
-
-clearfix()
-  group()
+// Alias: group
+// Clearfix with a better name. Excellent for wrangling floats.
+group = clearfix
 
 // Mixin: Inline Block
 // Cross browser inline block display. Saves many IE headaches.
 // ex. inline-block()
 
 inline-block()
-  display: -moz-inline-stack
   display: inline-block
-  vertical-align: baseline
-  zoom: 1
-  *display: inline
-  *vertical-align: auto;
+
+  if support-for-ie
+    display: -moz-inline-stack
+    vertical-align: baseline
+    zoom: 1
+    *display: inline
+    *vertical-align: auto
+
+// Mixin: Vertically Align
+// Cross browser vertical align. Works all the way down to IE9.
+// ex. vertically-align()
+vertically-align()
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
 
 // Mixin: Media
 // Based on Nicole Sullivan's media class, made famous by Facebook
@@ -218,7 +217,6 @@ media(margin = 10px)
   & > *
     inline-block()
     overflow: hidden
-    zoom: 1
   & > *:first-child
     float: left
     margin-right: right-margin
@@ -233,27 +231,6 @@ media(margin = 10px)
 raquo()
   &:after
     content: " \00BB"
-
-// Mixin: Size
-// Quickly and smoothly set width and height.
-// ex. size: 50px 100px => width: 50px; height: 100px
-// ex. size: 2em => width: 2em; height: 2em;
-// ex. size: 40 80 => width: 40px; height: 80px
-
-size(numbers...)
-  if length(numbers) > 1
-
-    width-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
-    height-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
-
-    width:  unit(numbers[0], width-unit)
-    height: unit(numbers[1], height-unit)
-  else
-
-    size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
-
-    width:  unit(numbers, size-unit)
-    height: unit(numbers, size-unit)
 
 // Mixin: Font Face
 // Super simple font-face declaration. Just give the name and the folder it lives in.
@@ -344,3 +321,24 @@ ease-in-out-sine =  cubic-bezier(0.445,  0.050, 0.550, 0.950)
 ease-in-out-expo =  cubic-bezier(1.000,  0.000, 0.000, 1.000)
 ease-in-out-circ =  cubic-bezier(0.785,  0.135, 0.150, 0.860)
 ease-in-out-back =  cubic-bezier(0.680, -0.550, 0.265, 1.550)
+
+// initialize empty "array" store for all background-images
+background-images = null
+
+// function: cached-image-url
+// an alternative to url() that
+// stores images in a cache
+// for use in cache-images()
+cached-image-url()
+  base = ''
+  s = unquote('url("' + base + join('', arguments) + '")')
+  push(background-images, s) unless s in background-images
+  url(arguments)
+
+// mixin: cache-images
+// use this at the end of all your styles
+// outputs the image cache script
+cache-images()
+  body:after
+    display: none
+    content: background-images

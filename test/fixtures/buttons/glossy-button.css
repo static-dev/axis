@@ -1,0 +1,33 @@
+.glossy-button {
+  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 3px;
+  background: #0084f6;
+  background: #0068c3 -webkit-linear-gradient(top, #0084f6, #0068c3) repeat-x;
+  background: #0068c3 -moz-linear-gradient(top, #0084f6, #0068c3) repeat-x;
+  background: #0068c3 -o-linear-gradient(top, #0084f6, #0068c3) repeat-x;
+  background: #0068c3 -ms-linear-gradient(top, #0084f6, #0068c3) repeat-x;
+  background: #0068c3 linear-gradient(to bottom, #0084f6, #0068c3) repeat-x;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  border: 1px solid #0068c3;
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  line-height: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.glossy-button:hover,
+.glossy-button:focus {
+  background-position: 0 -10px;
+  color: #f7f7f7;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+.glossy-button:active {
+  box-shadow: inset 0 1px 5px rgba(0,87,163,0.6);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+  border-color: #005fb2;
+}

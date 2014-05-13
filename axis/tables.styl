@@ -5,7 +5,7 @@
 
 // TODO: Add options to customize colors
 
-table(border = true, striped = true, condensed = false)
+$table(border = true, striped = true, condensed = false)
 
   max-width: 100%
   border-collapse: collapse
@@ -41,11 +41,10 @@ table(border = true, striped = true, condensed = false)
     border: 1px solid #ddd
     border-collapse: separate
     *border-collapse: collapsed
-    round(4px)
-
-    @css {
-      th + th, td + td, th + td, td + th { border-left: 1px solid #ddd; }
-    }
+    border-radius: 4px
+    
+    th + th, td + td, th + td, td + th
+      border-left: 1px solid #ddd
 
     thead:first-child tr:first-child th
     tbody:first-child tr:first-child th
@@ -54,19 +53,19 @@ table(border = true, striped = true, condensed = false)
 
     thead:first-child tr:first-child th:first-child
     tbody:first-child tr:first-child td:first-child
-      round(4px 0 0 0)
+      border-radius: 4px 0 0 0
 
     thead:first-child tr:first-child th:last-child
     tbody:first-child tr:first-child td:last-child
-      round(0 4px 0 0)
+      border-radius: 0 4px 0 0
 
     thead:last-child tr:last-child th:first-child
     tbody:last-child tr:last-child td:first-child
-      round(0 0 0 4px)
+      border-radius: 0 0 0 4px
 
     thead:last-child tr:last-child th:last-child
     tbody:last-child tr:last-child td:last-child
-      round(0 0 4px 0)
+      border-radius: 0 0 4px 0
 
   if striped
     tbody tr:nth-child(odd) td
@@ -83,4 +82,4 @@ table(border = true, striped = true, condensed = false)
 
 tables()
   table
-    table()
+    $table()

@@ -1,0 +1,9 @@
+.input-warning {
+  color: #d9bb00;
+  border-color: #ffdc00;
+}
+.input-warning:focus {
+  box-shadow: 0 0 5px rgba(255,220,0,0.7);
+  border: 1px solid #d2bc2d;
+  outline: none;
+}

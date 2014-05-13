@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Axis Visual Test</title>
+
+    <!-- buttons -->
+    <link rel='stylesheet' href='fixtures/buttons/button.css' >
+    <link rel='stylesheet' href='fixtures/buttons/glossy-button.css' >
+
+    <!-- code -->
+    <link rel='stylesheet' href='fixtures/code/code.css' >
+    <link rel='stylesheet' href='fixtures/code/pre.css' >
+
+    <!-- forms -->
+    <link rel='stylesheet' href='fixtures/forms/input.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-search.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-disabled.css' >
+    <link rel='stylesheet' href='fixtures/forms/label.css' >
+    <link rel='stylesheet' href='fixtures/forms/field.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-error.css' >
+    <link rel='stylesheet' href='fixtures/forms/field-error.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-warning.css' >
+    <link rel='stylesheet' href='fixtures/forms/field-warning.css' >
+    <link rel='stylesheet' href='fixtures/forms/input-success.css' >
+    <link rel='stylesheet' href='fixtures/forms/field-success.css' >
+
+    <!-- gradients -->
+    <link rel='stylesheet' href='fixtures/gradients/gradient.css' >
+    <link rel='stylesheet' href='fixtures/gradients/image-gradient.css' >
+
+    <!-- interaction -->
+    <link rel='stylesheet' href='fixtures/interaction/hover-darken.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-lighten.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-underline.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-pop.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-fade.css' >
+    <link rel='stylesheet' href='fixtures/interaction/hover-color.css' >
+
+    <!-- tables -->
+    <link rel='stylesheet' href='fixtures/tables/table.css' >
+
+    <!-- typography -->
+    <link rel='stylesheet' href='fixtures/typography/text-margin.css' >
+    <link rel='stylesheet' href='fixtures/typography/paragraph.css' >
+    <link rel='stylesheet' href='fixtures/typography/fs.css' >
+    <link rel='stylesheet' href='fixtures/typography/cases.css' >
+    <link rel='stylesheet' href='fixtures/typography/headlines.css' >
+    <link rel='stylesheet' href='fixtures/typography/small.css' >
+    <link rel='stylesheet' href='fixtures/typography/link.css' >
+    <link rel='stylesheet' href='fixtures/typography/text-select.css' >
+    <link rel='stylesheet' href='fixtures/typography/lists.css' >
+    <link rel='stylesheet' href='fixtures/typography/blockquo.css' >
+    <link rel='stylesheet' href='fixtures/typography/hyphenation.css' >
+
+    <!-- ui -->
+    <link rel='stylesheet' href='fixtures/ui/area.css' >
+    <link rel='stylesheet' href='fixtures/ui/breadcrumb.css' >
+    <link rel='stylesheet' href='fixtures/ui/bubble.css' >
+    <link rel='stylesheet' href='fixtures/ui/figure.css' >
+    <link rel='stylesheet' href='fixtures/ui/flash.css' >
+    <link rel='stylesheet' href='fixtures/ui/navigation.css' >
+    <link rel='stylesheet' href='fixtures/ui/notice.css' >
+
+    <!-- utilities -->
+    <link rel='stylesheet' href='fixtures/utilities/b.css' >
+    <link rel='stylesheet' href='fixtures/utilities/bg.css' >
+    <link rel='stylesheet' href='fixtures/utilities/columns.css' >
+    <link rel='stylesheet' href='fixtures/utilities/font-face.css' >
+    <link rel='stylesheet' href='fixtures/utilities/font-weight.css' >
+    <link rel='stylesheet' href='fixtures/utilities/group.css' >
+    <link rel='stylesheet' href='fixtures/utilities/image-replace.css' >
+    <link rel='stylesheet' href='fixtures/utilities/inline-block.css' >
+    <link rel='stylesheet' href='fixtures/utilities/media.css' >
+    <link rel='stylesheet' href='fixtures/utilities/no-select.css' >
+    <link rel='stylesheet' href='fixtures/utilities/raquo.css' >
+    <link rel='stylesheet' href='fixtures/utilities/rounded.css' >
+    <link rel='stylesheet' href='fixtures/utilities/sprite.css' >
+    <link rel='stylesheet' href='fixtures/utilities/triangle.css' >
+    <link rel='stylesheet' href='fixtures/utilities/vertical-align.css' >
+
+    <style>
+      body {
+        font-family: sans-serif;
+        color: #333;
+        -webkit-font-smoothing: antialiased;
+      }
+      section {
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 30px;
+        box-sizing: border-box;
+        margin: 1em 0;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      h1 {
+        margin: 0 0 1em 0;
+      }
+      .block {
+        width: 400px;
+        height: 70px;
+        margin: .5em 0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+        float: left;
+        margin: .5em .5em 0 0;
+      }
+      .bub {
+        margin: 1em 0;
+        width: 400px;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section id='buttons'>
+      <h1>buttons</h1>
+      <div class='button'>button</div>
+      <div class='glossy-button'>glossy-button</div>
+    </section>
+
+    <section id='code'>
+      <h1>code</h1>
+      <code>code</code>
+      <pre>pre</pre>
+    </section>
+
+    <section id='forms'>
+      <h1>forms</h1>
+
+      <div>
+        <input type="text" class='input' placeholder='input' />
+      </div>
+
+      <div>
+        <input type="text" class='input-search' placeholder='search' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-disabled' disabled placeholder='disabled' />
+      </div>
+
+      <div>
+        <label class='label'>this is a label</label>
+      </div>
+
+      <div class='field'>
+        <label class='label'>field</label>
+        <input type="text" class='input' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-error' value='error' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-warning' value='warning' />
+      </div>
+
+      <div>
+        <input type="text" class='input input-success' value='success' />
+      </div>
+
+      <div class='field-error'>
+        <label class='label'>field error</label>
+        <input type="text" class='input' />
+      </div>
+
+      <div class='field-warning'>
+        <label class='label'>field warning</label>
+        <input type="text" class='input' />
+      </div>
+
+      <div class='field-success'>
+        <label class='label'>field success</label>
+        <input type="text" class='input' />
+      </div>
+
+    </section>
+
+    <section id='gradients'>
+      <h1>gradients</h1>
+      <div class='block gradient-onecolor'></div>
+      <div class='block gradient-twocolor'></div>
+      <div class='block image-gradient-onecolor'></div>
+      <div class='block image-gradient-twocolor'></div>
+    </section>
+
+    <section id='interaction'>
+      <h1>interaction</h1>
+      <div class='box hover-darken'></div>
+      <div class='box hover-lighten'></div>
+      <div class='box hover-underline'></div>
+      <div class='box hover-pop'></div>
+      <div class='box hover-fade'></div>
+      <div class='box hover-color'></div>
+    </section>
+
+    <section id='tables'>
+      <h1>tables</h1>
+      <table class='table'>
+        <tr>
+          <th>Name</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td>Me</td>
+          <td>a billiyun</td>
+        </tr>
+        <tr>
+          <td>You</td>
+          <td>nuthun</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id='typography'>
+      <h1>typography</h1>
+
+      <p class='text-margin'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, autem, dolores quae nobis recusandae eos harum vitae rem minus sit ducimus iure repudiandae eveniet at quo voluptates aperiam reiciendis perspiciatis!</p>
+      <p class='text-margin'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, autem, dolores quae nobis recusandae eos harum vitae rem minus sit ducimus iure repudiandae eveniet at quo voluptates aperiam reiciendis perspiciatis!</p>
+
+      <p class='p'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, porro, aliquid nisi voluptatem repellat quas saepe nesciunt est quidem voluptates eos deleniti sapiente fugiat provident minus? Tempore nam quidem mollitia!</p>
+
+      <p class='fs-px'>Lorem ipsum dolor</p>
+      <p class='fs-rem'>Lorem ipsum dolor</p>
+
+      <p class='lowercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nulla, officia quibusdam.</p>
+      <p class='uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nulla, officia quibusdam.</p>
+      <p class='lowercase reset-case'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, nulla, officia quibusdam.</p>
+
+      <h1 class='h1'>Lorem ipsum dolor sit amet</h1>
+      <h2 class='h2'>Lorem ipsum dolor sit amet</h2>
+      <h3 class='h3'>Lorem ipsum dolor sit amet</h3>
+      <h4 class='h4'>Lorem ipsum dolor sit amet</h4>
+      <h5 class='h5'>Lorem ipsum dolor sit amet</h5>
+      <h6 class='h6'>Lorem ipsum dolor sit amet</h6>
+
+      <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, quos, velit, dolorem alias minima iusto numquam cupiditate itaque sed voluptatibus voluptas beatae.</p>
+
+      <div><a class='link' href='#'>foobar!</a></div>
+      <div><a class='link reset-link' href='#'>foobar!</a></div>
+
+      <p class='text-select'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolorem, iste, natus, voluptatem veniam consequuntur nulla aliquid ut quibusdam pariatur at magni animi hic dignissimos quisquam est tempore similique quas.</p>
+
+      <ul class='ul'>
+        <li>foo</li>
+        <li>bar</li>
+        <li>baz</li>
+      </ul>
+
+      <ol class='ol'>
+        <li>foo</li>
+        <li>bar</li>
+        <li>baz</li>
+      </ol>
+
+      <ul class='inline-list'>
+        <li>foo</li>
+        <li>bar</li>
+        <li>baz</li>
+      </ul>
+
+      <ul class='reset-list'>
+        <li>foo</li>
+        <li>bar</li>
+        <li>baz</li>
+      </ul>
+
+      <blockquote class='blockquote'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <cite>some latin text</cite>
+      </blockquote>
+
+      <p class='p hyphenation'>sdfkjhsdkjfhkjdshfksjdhfksdjhfksjdhfksjdhfkjshdfkjsdhfkjshdfkjshdkfjhsdkfjhskdfjhskdjfhskdjfhskjdhfksjdhfksjdhfksjhdfkjshdfkjshdkfjhsdkjfhskdjfhksjdhfksjdhflakejhroiweroiahsodiskjcnkzxbckjbdosifeaoihdaosjdlznxkj dsjkhfskdjhf skdjhfkjdhkfjhsdkfjhsdkfjhskdjfhksjdhfksd kdsfjhksdjhfksjdhfksjdhfksjdhfkjh kjhsdfkjsdhfksjdhfksjhdfksjhdfksjhdfksjdhfksjdhfksjdh</p>
+
+    </section>
+
+    <section>
+      <h1>ui</h1>
+
+      <div class="area">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, commodi, fugit sunt accusantium at suscipit optio a voluptates iusto laudantium consequuntur adipisci minima cumque inventore natus ullam tempore maxime itaque!</div>
+
+      <ul class="breadcrumb">
+        <li>foo</li>
+        <li>bar</li>
+        <li>baz</li>
+      </ul>
+
+      <div class="bub bubble">bubble</div>
+
+      <div class="bub bubble-tl">top left</div>
+      <div class="bub bubble-tc">top center</div>
+      <div class="bub bubble-tr">top right</div>
+
+      <div class="bub bubble-bl">bottom left</div>
+      <div class="bub bubble-bc">bottom center</div>
+      <div class="bub bubble-br">bottom right</div>
+
+      <div class="bub bubble-lt">left top</div>
+      <div class="bub bubble-lc">left center</div>
+      <div class="bub bubble-lb">left bottom</div>
+
+      <div class="bub bubble-rt">right top</div>
+      <div class="bub bubble-rc">right center</div>
+      <div class="bub bubble-rb">right bottom</div>
+
+      <figure class="figure">
+        <img src="data:image/jpeg;base64,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" alt="">
+        <figcaption>a prime specimen of doge</figcaption>
+      </figure>
+
+      <div class="flash-notice">notice</div>
+      <div class="flash-warning">warning</div>
+      <div class="flash-error">error</div>
+      <div class="flash-success">success</div>
+
+      <div class="navigation">
+        <h1>test</h1>
+        <ul>
+          <li>foo</li>
+          <li>bar</li>
+          <li>baz</li>
+        </ul>
+      </div>
+
+      <div class="notice">notice</div>
+
+    </section>
+
+    <section id="utilities">
+      <h1>utilities</h1>
+
+      <div class="block b"></div>
+
+      <div class="block bg"></div>
+      <div class="block bg-retina"></div>
+
+      <ul class='columns'>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+      </ul>
+
+      <p class="bold">bold</p>
+      <p class="italic">italic</p>
+      <p class="bold normal">normal</p>
+
+      <p class="ir">i should not be able to be read</p>
+
+      <div class="inline-block">inline block</div>
+      <div class="inline-block">inline block 2</div>
+
+      <div class="media">
+        <img src="http://upload.wikimedia.org/wikipedia/en/4/4e/Shibe_Inu_Doge_meme.jpg" alt="">
+        <p>comment</p>
+      </div>
+
+      <p class="no-select">you should not be able to select this text</p>
+
+      <p class="raquo">look at this</p>
+
+      <div class="button rounded">look im rounded</div>
+
+      <div class="tri"></div>
+      <div class="tri-up"></div>
+      <div class="tri-left"></div>
+      <div class="tri-down"></div>
+      <div class="tri-right"></div>
+
+      <div class="vertical-align">
+        <div class='inner-div'>vertically aligned</div>
+      </div>
+
+    </section>
+
+  </body>
+
+</html>

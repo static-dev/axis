@@ -1,0 +1,22 @@
+.button {
+  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 3px;
+  background-color: #0074d9;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  line-height: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.button:hover,
+.button:focus {
+  background-color: #006ece;
+  color: #f7f7f7;
+}
+.button:active {
+  background-color: #0068c3;
+}

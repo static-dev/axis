@@ -1,0 +1,17 @@
+.bg {
+  background: url("foo.png") no-repeat;
+}
+.bg-retina {
+  background: url("foo.png") no-repeat;
+  -webkit-background-size: 300px 500px;
+  -moz-background-size: 300px 500px;
+  background-size: 300px 500px;
+  width: 300px;
+  height: 500px;
+}
+.bg-retina-repeat {
+  background: url("foo.png") repeat center;
+  -webkit-background-size: 300px 500px;
+  -moz-background-size: 300px 500px;
+  background-size: 300px 500px;
+}

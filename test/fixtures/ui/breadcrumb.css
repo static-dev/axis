@@ -1,0 +1,28 @@
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb:before,
+.breadcrumb:after {
+  content: "";
+  display: table;
+}
+.breadcrumb:after {
+  clear: both;
+}
+.breadcrumb li {
+  float: left;
+  margin-right: 10px;
+  list-style-type: none;
+}
+.breadcrumb li:last-child {
+  margin-right: 0;
+}
+.breadcrumb li:after {
+  content: "/";
+  margin-left: 10px;
+  color: #cdcdcd;
+}
+.breadcrumb li:last-child:after {
+  content: "";
+}

@@ -1,0 +1,6 @@
+.hover-darken {
+  background: #d13f19;
+}
+.hover-darken:hover {
+  background-color: #b23615;
+}

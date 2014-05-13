@@ -28,16 +28,18 @@ text-margin(size=font-size)
 // of text. Pass a size in to customize. Toggle margins off if
 // you don't want them.
 
-// ex. paragraph()
-// ex. paragraph: 18px
-// ex. paragraph: 14px false
+// ex. $p()
+// ex. $p: 18px
+// ex. $p: 14px false
 
-paragraph(size=1rem, margins = true)
+$p(size=1rem, margins = true)
   font-size: size
   text-margin() if margins
   -line-height()
   openTypeLigatures() if ligatures
 
+// Alias: paragraph
+paragraph = $p
 
 // Mixin: Fs
 // An alias for 'font-size' with auto-fallback for rem
@@ -46,7 +48,7 @@ paragraph(size=1rem, margins = true)
 
 fs(size)
   if (unit(size) == 'rem')
-    font-size: unit((font-size*size), px)
+    font-size: round(unit((font-size*size), px))
     font-size: size
   else
     font-size: size
@@ -58,12 +60,8 @@ fs(size)
 uppercase()
   text-transform: uppercase
 
-// Mixin: Upcase
-// An alias for 'text-transform: uppercase'
-// ex. upcase()
-
-upcase()
-  uppercase()
+// Alias: upcase
+upcase = uppercase
 
 // Mixin: Lowercase
 // An alias for 'text-transform: lowercase'
@@ -72,12 +70,8 @@ upcase()
 lowercase()
   text-transform: lowercase
 
-// Mixin: Downcase
-// An alias for 'text-transform: lowercase'
-// ex. downcase()
-
-downcase()
-  lowercase()
+// Alias: Downcase
+downcase = lowercase
 
 // Mixin: Reset Case
 // Gets rid of an text transform
@@ -86,11 +80,11 @@ downcase()
 reset-case()
   text-transform: none
 
-// Mixin: Small Text
+// Mixin: Small
 // Makes your text smaller and a little lighter. Great on <small /> tags.
-// ex. small-text()
+// ex. $small()
 
-small-text()
+$small()
   font-size: 55%
   opacity: .6
   font-weight: normal
@@ -101,7 +95,6 @@ small-text()
 -heading(multiplier)
   font-size: unit((font-size*multiplier), px)
   font-size: unit(multiplier, rem)
-  color: font-color
   text-rendering: optimizelegibility
   font-weight: bold
   text-margin()
@@ -115,24 +108,24 @@ small-text()
 // ex. h3()
 // ex. h3(3.5)
 
-h1(size=2.4)
+$h1(size=2.4)
   -heading(size)
 
-h2(size=1.8)
+$h2(size=1.8)
   -heading(size)
 
-h3(size=1.5)
+$h3(size=1.5)
   -heading(size)
 
-h4(size=1.3)
+$h4(size=1.3)
   -heading(size)
 
-h5(size=1.0)
+$h5(size=1.0)
   -heading(size)
 
-h6(size=0.9)
+$h6(size=0.9)
   -heading(size)
-  text-transform: uppercase
+  upcase()
 
 // Mixin: Link
 // A nice default style for links. Accepts a color and a style. Color can be anything,
@@ -161,6 +154,9 @@ link(color = blue, style = underline)
   &:visited
     opacity: .8
 
+// Alias: $a
+$a = link
+
 // Mixin: Reset Link
 // Sometimes my link mixin of the browser defaults will give you questionable link defaults
 // that you don't want on certain elements. This guy gets rid of that.
@@ -184,12 +180,12 @@ reset-link()
 
 text-selection(color = highlight-color, textColor = null)
 
-  textColor = light(color) ? white : #494949 unless textColor
+  textColor = (light(color) ? white : #494949) unless textColor
 
-  ::-moz-selection
+  &::-moz-selection
     background: color
     color: textColor
-  ::selection
+  &::selection
     background: color
     color: textColor
 
@@ -200,7 +196,7 @@ text-selection(color = highlight-color, textColor = null)
 // ex. ul
 // ex. ul: square
 
-ul(style = disc)
+$ul(style = disc)
   margin: 5px 15px
   margin: 0.32rem 0.94rem
   padding-left: 1rem
@@ -217,7 +213,7 @@ ul(style = disc)
 // ex. ol
 // ex. ol: upper-roman
 
-ol(style = decimal)
+$ol(style = decimal)
   margin: 5px 18px
   margin: 0.32rem 1.125rem
   padding-left: 1rem
@@ -267,7 +263,7 @@ reset-list()
 // Pass a color or 'none' to set the left border.
 // ex. blockquote()
 
-blockquo(color = blue)
+$blockquote(color = blue)
   border-left: 4px solid color
   margin: 1em 0
   padding-left: 1.5em
@@ -277,8 +273,8 @@ blockquo(color = blue)
     font-weight: 300
     font-size: 127%
     font-size: 1.27rem
-    -line-height: 127%
-    -line-height: 1.27rem
+    line-height: 127%
+    line-height: 1.27rem
     margin-top: 0
 
   > cite, > footer, > figcaption
@@ -286,9 +282,12 @@ blockquo(color = blue)
     &:before
       content: '\2014'
 
+// Alias: blockquo
+blockquo = $blockquote
+
 // Hyphenation
-// Hyphenation is the better word-break. It’s locale aware, and inserts the hyphen character 
-// at the correct place, when breaking the words. This is especially important in responsive designs. 
+// Hyphenation is the better word-break. It’s locale aware, and inserts the hyphen character
+// at the correct place, when breaking the words. This is especially important in responsive designs.
 // It will save you from a lot of ragged lines. And, no need anymore for clunky & slow Javascript hyphenation fallbacks.
 // Taken from http://www.newnet-soft.com/blog/csstypography
 
@@ -297,8 +296,8 @@ hyphenation()
   word-break:     break-all
   word-break:     break-word // webkit
 
-  hyphens(auto) // none, auto, <number>
-                  
+  hyphens: auto // none, auto, <number>
+
   -webkit-hyphenate-before: 2
   -webkit-hyphenate-after:  3
   hyphenate-lines:          3
@@ -315,15 +314,17 @@ hyphenation()
 // ex. +base
 
 base(fonts = font-stack, size = font-size, color = font-color)
+  html, body
+    font-size: unit(size, px)
+    font-size: unit((size/16)*100, "%")
+
   body
     font-family: fonts
-    font-size: unit(size, px)
-    font-size: unit(size*6.46, "%")
     color: color
     -webkit-font-smoothing: antialiased
     -webkit-text-size-adjust: 100%
     -ms-text-size-adjust: 100%
-    font-size-adjust:auto
+    font-size-adjust: auto
 
 // Additive Mixin: Headers
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -332,22 +333,22 @@ base(fonts = font-stack, size = font-size, color = font-color)
 
 headers()
   h1
-    h1()
+    $h1()
 
   h2
-    h2()
+    $h2()
 
   h3
-    h3()
+    $h3()
 
   h4
-    h4()
+    $h4()
 
   h5
-    h5()
+    $h5()
 
   h6
-    h6()
+    $h6()
 
 // Additive Mixin: Lists
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
@@ -355,9 +356,9 @@ headers()
 // ex. lists()
 
 lists()
-  ul
+  $ul
     ul()
-  ol
+  $ol
     ol()
 
 // Additive Mixin: Bold-Italic
@@ -392,7 +393,7 @@ typography()
     paragraph()
 
   small
-    small-text()
+    $small()
 
   a
     link()

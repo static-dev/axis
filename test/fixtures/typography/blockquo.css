@@ -1,0 +1,31 @@
+.blockquote {
+  border-left: 4px solid #0074d9;
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+.blockquote:before,
+.blockquote:after {
+  content: "";
+  display: table;
+}
+.blockquote:after {
+  clear: both;
+}
+.blockquote > p {
+  font-weight: 300;
+  font-size: 127%;
+  font-size: 1.27rem;
+  line-height: 127%;
+  line-height: 1.27rem;
+  margin-top: 0;
+}
+.blockquote > cite,
+.blockquote > footer,
+.blockquote > figcaption {
+  color: #888;
+}
+.blockquote > cite:before,
+.blockquote > footer:before,
+.blockquote > figcaption:before {
+  content: '\2014';
+}
