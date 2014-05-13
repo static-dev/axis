@@ -48,13 +48,14 @@ bg(path, args...)
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
+  set_size = false
   for arg in args
-    if arg == repeat
-      repeat = true
+    if arg == 'no-repeat'
+      set_size = true
 
   background: url(img-path path) args
   background-size: width height
-  unless repeat
+  if set_size
     size: width height
 
 // Mixin: Bold
