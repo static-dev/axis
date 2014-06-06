@@ -14,7 +14,7 @@ Axis is a terse, feature-rich css library built on top of stylus. It is built on
 You can install axis through npm, as such
 
 ```
-npm install axis-css
+npm install axis
 ```
 
 ### Usage
