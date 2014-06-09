@@ -370,6 +370,7 @@ textarea.error:focus {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border: none;
 }
 .btn-simple:hover,
 .btn-simple:focus {
