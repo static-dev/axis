@@ -7,8 +7,6 @@ Axis CSS
 
 Axis is a terse, feature-rich css library built on top of stylus. It is built on top of [nib](http://visionmedia.github.io/nib/), providing a number of additional useful tools and mixins.
 
-**Detailed documentation for axis [can be found here!](http://roots.cx/axis)**
-
 ### Installation
 
 You can install axis through npm, as such
@@ -36,6 +34,10 @@ normalize-css()
 base()
 ...etc...
 ```
+
+### Documentation
+
+We are working on an official documentation site for axis at the moment. In the meantime, you might be able to find what you need in the [thoroughly commented source](https://github.com/jenius/axis/tree/master/axis), or in this [outdated documentation for an older version](http://roots.cx/axis). Really sorry about this transitional period, real documentation will be online soon!
 
 ### Miscellaneous
 
