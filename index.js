@@ -6,18 +6,13 @@ exports = module.exports = function(opts) {
   var implicit = (opts && opts.implicit == false) ? false : true;
 
   return function(style){
-    // include nib
-    style.use(nib());
+    style.use(nib());         // include nib
+    style.include(__dirname); // include axis
 
-    // include axis
-    style.include(__dirname);
-
-    // implicit import handling
     if (implicit) {
       style.import('nib');
       style.import('axis');
     }
-
   }
 
 }

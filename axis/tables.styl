@@ -1,9 +1,16 @@
-// Mixin: Table
-// Ported directly from Twitter Bootstrap, as they did an excellent job with the tables.
-// Take three fairly self-explanitory arguments, all boolean. 1st makes the table bordered,
-// 2nd adds zebra striping, and the 3rd indiated whether the table is condensed or not.
+// ------
+// Tables
+// ------
 
-// TODO: Add options to customize colors
+// Mixin: Table
+// 
+// Ported directly from Twitter Bootstrap, as they did an excellent job with
+// the tables. Take three fairly self-explanitory arguments, all boolean. 1st
+// makes the table bordered, 2nd adds zebra striping, and the 3rd indiated
+// whether the table is condensed or not.
+// 
+// ex. table()
+// ex. table(striped: true)
 
 $table(border = true, striped = true, condensed = false)
 
@@ -77,8 +84,12 @@ $table(border = true, striped = true, condensed = false)
       background-color: #f5f5f5
 
 // Additive Mixin: Tables
-// WARNING: Creates classes in your css and styles them - not to be used inside an element.
-// Makes tables look awesome by default. Highly recommended if you have tables on your site at all.
+// 
+// WARNING: Creates classes in your css and styles them - not to be used inside
+// an element.
+// 
+// Makes tables look awesome by default. Highly recommended if you have tables
+// on your site at all.
 
 tables()
   table

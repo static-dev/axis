@@ -1,15 +1,16 @@
 // ------
 // Vendor
 // ------
+
 // Utilities specifically intended for helping with vendor-prefixed
 // css properties
 
-// --------------------------- transitions ---------------------------------
-
-// Mixin: Transition
-// Intelligently prefix shorthand transition. Accepts multiple transitions.
+// Alias: Transition
+// 
+// Transition with an intelligent default.
+// 
 // ex. transition()
-// ex. transition(color 1s ease)
+// ex. transition: color 1s ease
 // ex. transition(color 1s ease, background 2.4s linear)
 
 transition()
@@ -17,8 +18,10 @@ transition()
   transition: arguments
 
 
-// Mixin: Box Shadow
-// Auto-prefix box-shadow. Accepts multiple box shadows, includes IE support.
+// Alias: Box Shadow
+// 
+// Box shadow with pie support, if you are using it.
+// 
 // ex. box-shadow: 1px 1px 3px blue
 // ex. box-shadow: 1px 1px 3px blue, inset 2px 0 5px rgba(0,0,0,.5)
 
@@ -26,32 +29,36 @@ box-shadow()
   box-shadow: arguments
   pie()
 
-// Mixin: Border Radius
-// Prefixes border-radius, IE support.
+// Alias: Border Radius
+// 
+// Border-radius with pie support, if you are using it.
+// 
 // ex. +round-corners(5px)
 
 border-radius()
   border-radius: arguments
   pie()
 
-// ------------------------------------- other utils ---------------------------------
-
-// Mixin: Opacity
-// I know, it seems silly. But every time you go to old IE testing you will be thanking yourself for
-// using this instead of the normal opacity declaration. Overrides default opacity.
+// Alias: Opacity
+// 
+// I know, it seems silly. But every time you go to old IE testing you will be
+// thanking yourself for using this instead of the normal opacity declaration.
+// Overrides default opacity.
+// 
 // ex. opacity: .6
 
 opacity(opacity)
   filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if support-for-ie
   opacity: opacity
 
-// Mixin: Border Box
-// Use carefully if you need to test in IE
+// Alias: Border Box
+// A quicker way to specify border-box sizing.
 
 border-box()
   box-sizing: border-box
 
-// Mixin: background-appearance-x and y
+// Alises: background-appearance-x and y
+// 
 // In case you want to use an unsupported background-position property, this
 // should set you straight!
 
@@ -62,8 +69,12 @@ background-position-y(y)
   background-position: 0 y
 
 // Mixin: Opentype ligatures
-// The vast majority of fonts contain lowercase and uppercase alphabets, numerals, punctuation and accents. // Many professionally-designed fonts also contain ligatures, alternative characters, smallcaps, different
-// kinds of numbers, and sometimes much more besides. This enables it.
+// 
+// The vast majority of fonts contain lowercase and uppercase alphabets,
+// numerals, punctuation and accents. // Many professionally-designed fonts
+// also contain ligatures, alternative characters, smallcaps, different kinds of
+// numbers, and sometimes much more besides. This enables it.
+// 
 // Source: http://www.newnet-soft.com/blog/csstypography
 // Additional: http://blog.fontdeck.com/post/15777165734/opentype-1
 

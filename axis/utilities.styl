@@ -1,8 +1,8 @@
-// -----------------------------------------------------
+// ---------
 // Utilities
-// -----------------------------------------------------
+// ---------
 
-// Helper: Pie
+// Mixin: Pie
 // When turned on, enables css3 pie (http://css3pie.com/) for all
 // elements that can use it. Which makes IE look a lot nicer.
 
@@ -10,30 +10,36 @@ pie()
   behavior: url(pie-path) if pie-enabled
 
 // Mixin: Rounded
-// Unless you are working with a ridiculously large element, this will round the corners
-// as much as css will allow. Even in IE.
-// ex. +rounded
+// 
+// Unless you are working with a ridiculously large element, this will round the
+// corners as much as css will allow. Even in IE.
+// 
+// ex. rounded()
 
 rounded()
   border-radius: 999px
   pie()
 
-// Mixin: No Select
+// Alias: No Select
 // You can't highlight this.
 
 no-select()
   -webkit-touch-callout: none
   user-select: none
 
-// Mixin: B
-// Border, but with an intelligent default
+// Alias: B
+// Border, but quicker and with an intelligent default.
 
 b()
   arguments = unquote('1px solid') unless arguments
   border: arguments
 
 // Mixin: Bg
-// Makes background (with image) declarations a little simpler.
+// 
+// Makes background (with image) declarations a little simpler. Use this with
+// the global img-path variable to set a base image path that you don't have to
+// keep repeating. Also sets 'no-repeat' as the default background-repeat.
+// 
 // ex. bg: ../img/test.png
 // ex. bg: ../img/other.jpg center center repeat
 
@@ -42,37 +48,40 @@ bg(path, args...)
   background: url(img-path path) args
 
 // Mixin: bg-retina
-// Make sure the image path is double the size, pass it halved numbers, and you're in the retina-clear
+// 
+// Make sure the image path is double the size, pass it halved numbers, and
+// you're in the retina-clear.
+// 
 // ex. bg-retina: ../img/test.png 200px 100px
 // ex. bg-retina: ../img/other.jpg 100px 50px center center repeat
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
   set_size = false
+  
   for arg in args
     if arg == 'no-repeat'
       set_size = true
 
   background: url(img-path path) args
   background-size: width height
+  
   if set_size
     size: width height
 
-// Mixin: Bold
-// It's just faster to type +bold than font-weight: bold
-// ex. bold()
+// Alias: Bold
+// It's just faster to type bold() than font-weight: bold
 
 bold()
   font-weight: bold
 
-// Mixin: Italic
-// It's just faster to type +italic than font-style: italic
-// ex. italic()
+// Alias: Italic
+// It's just faster to type italic() than font-style: italic
 
 italic()
   font-style: italic
 
-// Mixin: Normal
+// Alias: Normal
 // Put the font-weight and style back to normal
 
 normal()
@@ -80,10 +89,13 @@ normal()
   font-style: normal
 
 // Mixin: Image Replace
-// Image replacement. Pass it an image path and the image's dimensions and any text will be hidden
-// in the div and it will show an image instead. Uses the fanciest new method, props to Paul Irish.
+// 
+// Image replacement. Pass it an image path and the image's dimensions and any
+// text will be hidden in the div and it will show an image instead. Uses the
+// fanciest new method, props to Paul Irish. Only works when called as a
+// function with parens. Do not try to do it with a colon!
+// 
 // ex. ir("/img/test.jpg", 200 400)
-// Something strange is causing this only to work when called as a function
 
 image-replace(path, dimensions...)
   dimensions = dimensions[0]
@@ -101,11 +113,13 @@ image-replace(path, dimensions...)
 ir = image-replace
 
 // Mixin: Columns
-// For css3 columns. Takes column count (int), column gap (px, em), column width (px, em), and
-// a border-like declaration if you want a column rule. This follows exactly with the css3 spec,
-// it's just quicker, prefixed, and shortened.
+// 
+// For css3 columns. Takes column count (int), column gap (px, em), column width
+// (px, em), and a border-like declaration if you want a column rule. This
+// follows exactly with the css3 spec, it's just quicker.
+// 
 // ex. columns()
-// ex. columns(5)
+// ex. columns: 5
 // ex. columns(8, 15px, 200px, 1px solid red)
 
 columns(count = 3, gap = 30px, width = null, rule = null)
@@ -115,15 +129,21 @@ columns(count = 3, gap = 30px, width = null, rule = null)
   column-rule: rule if rule
 
 // Mixin: Avoid Column Break
-// If you have a list that is broken into columns, this will make sure that the list item
-// is not split across columns awkwardly. Works only in webkit at the moment.
+// 
+// If you have a list that is broken into columns, this will make sure that the
+// list item is not split across columns awkwardly. Works only in webkit at the
+// moment.
+// 
+// ex. avoid-column-break()
 
 avoid-column-break()
   column-break-inside: avoid
 
 // Mixin: Triangle
-// One of my favorites. Makes a little css triangle for you. Pass it a direction (up, down, left, right),
-// size (in pixels), and a color.
+// 
+// One of my favorites. Makes a little css triangle for you. Pass it a direction
+// (up, down, left, right), size (in pixels), and a color.
+// 
 // ex. triangle()
 // ex. triangle: down 15px blue
 
@@ -148,12 +168,15 @@ triangle(direction = up, size = 10px, color = #000)
     border-left: size solid color
 
 // Mixin: Sprite
+// 
 // Given a direction in which your sprites are aligned (horizontal/vertical) and
-// an iteration, will measure the width/height of your first sprite frame and step
-// through to the nth next one, depending on the given iteration number.
+// an iteration, will measure the width/height of your first sprite frame and
+// step through to the nth next one, depending on the given iteration number.
 // Width/height must be defined for this to work (as is the case for any sprite)
+// 
 // ex. sprite: 2
 // ex. sprite: 5 horizontal
+
 sprite(iteration, orientation = vertical)
   if orientation == vertical
     background-position: 0 unit(@height*-1*iteration, 'px')
@@ -164,11 +187,11 @@ sprite(iteration, orientation = vertical)
 
 // Alias: group
 // Clearfix with a better name. Excellent for wrangling floats.
+
 group = clearfix
 
-// Mixin: Inline Block
+// Alias: Inline Block
 // Cross browser inline block display. Saves many IE headaches.
-// ex. inline-block()
 
 inline-block()
   display: inline-block
@@ -181,23 +204,31 @@ inline-block()
     *vertical-align: auto
 
 // Mixin: Vertically Align
-// Cross browser vertical align. Works all the way down to IE9.
+// 
+// Cross browser vertical align. Works down to IE9.
+// 
 // ex. vertically-align()
+
 vertically-align()
   position: relative
   top: 50%
   transform: translateY(-50%)
 
 // Mixin: Media
+// 
 // Based on Nicole Sullivan's media class, made famous by Facebook
-// http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
-
-// Put this on a parent and it will split the first two children left and right, like you would with perhaps
-// a comment with an avatar to the left. Pass it a margin between the two.
-// Explained fully here: http://carrotblog.com/css-patterns-evolved/
-
-// This mixin works right when the element you apply it to has two or three direct children
-// The first one will float to the left, the second one will be to the right of the first, and third will go farthest right
+// http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-
+// hundreds-of-lines-of-code
+// 
+// Put this on a parent and it will split the first two children left and right,
+// like you would with perhaps a comment with an avatar to the left. Pass it a
+// margin between the two. Explained fully here:
+// http://carrotblog.com/css-patterns-evolved/
+// 
+// This mixin works right when the element you apply it to has two or three
+// direct children. The first one will float to the left, the second one will be
+// to the right of the first, and third will go farthest right.
+// 
 // ex. media()
 // ex. media: 15px
 // ex. media: 15px 10px
@@ -225,7 +256,9 @@ media(margin = 10px)
     margin-left: left-margin
 
 // Mixin: Raquo
+// 
 // Because technically raquo is not semantic, it's better to add it like this.
+// 
 // ex. raquo()
 
 raquo()
@@ -233,9 +266,12 @@ raquo()
     content: " \00BB"
 
 // Mixin: Font Face
-// Super simple font-face declaration. Just give the name and the folder it lives in.
-// Make sure the font name matches the name of the files.
-// Uses the fontspring syntax: http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
+// 
+// Super simple font-face declaration. Just give the name and the folder it
+// lives in. Make sure the font name matches the name of the files. Uses the
+// fontspring syntax:
+// http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
+// 
 // ex. font-face(proxima-nova, '/fonts')
 
 font-face(name, folder, weight = normal, style = normal)
@@ -246,11 +282,12 @@ font-face(name, folder, weight = normal, style = normal)
     font-style: style
 
 // Mixin: Debug
-// Debugging tool - drop this at root level in your css and it will put borders on every element so
-// you can see what's up. It will also flag them if you made mistakes like put in inline styles, forgot
-// an alt on an image, left the alt blank, etc. For god's sake don't use this in production.
-
-// all credit for this goes to intuit.css, from which I adapted it (and improved it a bit)
+// 
+// Debugging tool - drop this at root level in your css and it will put borders
+// on every element so you can see what's up. It will also flag them if you made
+// mistakes like put in inline styles, forgot an alt on an image, left the alt
+// blank, etc. For god's sake don't use this in production. All credit for this
+// goes to intuit.css, from which I adapted it (and improved it a bit).
 // https://github.com/csswizardry/inuit.css
 
 debug()
@@ -322,22 +359,22 @@ ease-in-out-expo =  cubic-bezier(1.000,  0.000, 0.000, 1.000)
 ease-in-out-circ =  cubic-bezier(0.785,  0.135, 0.150, 0.860)
 ease-in-out-back =  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 
-// initialize empty "array" store for all background-images
+// Function: cached-image-url
+// 
+// An alternative to url() that stores images in a cache for use in
+// cache-images().
+
 background-images = null
 
-// function: cached-image-url
-// an alternative to url() that
-// stores images in a cache
-// for use in cache-images()
 cached-image-url()
   base = ''
   s = unquote('url("' + base + join('', arguments) + '")')
   push(background-images, s) unless s in background-images
   url(arguments)
 
-// mixin: cache-images
-// use this at the end of all your styles
-// outputs the image cache script
+// Mixin: Cache Images
+// Use this at the end of all your styles outputs the image cache script.
+
 cache-images()
   body:after
     display: none
