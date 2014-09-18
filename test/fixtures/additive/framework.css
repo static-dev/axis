@@ -473,9 +473,10 @@ table th,
 table td {
   padding: 8px;
   line-height: 18px;
+  border-top: 1px solid;
+  border-color: #ddd;
   text-align: left;
   vertical-align: top;
-  border-top: 1px solid #ddd;
 }
 table th {
   font-weight: bold;
