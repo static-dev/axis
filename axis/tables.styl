@@ -5,44 +5,73 @@
 
 // TODO: Add options to customize colors
 
-$table(border = true, striped = true, condensed = false)
-
+$table(border = true, striped = true, condensed = false, rhythm = false)
   max-width: 100%
   border-collapse: collapse
   border-spacing: 0
   width: 100%
-  margin-bottom: 18px
+  if rhythm
+    if border
+      trailer(1, border: 1)
+      leader(1, border: 1)
+    else
+      trailer(1)
+      leader(1)
+
+  else
+    margin-bottom: 18px
 
   th, td
-    padding: 8px
-    line-height: 18px
+    if rhythm
+      if condensed
+        padding 4px
+        padding-trailer(.25)
+        if border
+          leading-border(lines: .25)
+        else
+          padding-leader(.25)
+        adjust-leading-to(.5)
+      else
+        padding 8px
+        padding-trailer(.5)
+        if border
+          leading-border(lines: .5)
+        else
+          padding-leader(.5)
+        adjust-leading-to(1)
+    else
+      if condensed
+        padding: 4px 5px
+      else
+        padding: 8px
+        line-height: 18px
+        border-top: 1px solid
+    border-color #ddd
     text-align: left
     vertical-align: top
-    border-top: 1px solid #ddd
 
   th
     font-weight: bold
 
   thead th
     vertical-align: bottom
-
-  thead:first-child tr th
-  thead:first-child tr td
-    border-top: 0
+  if border
+    if not rhythm
+      thead:first-child tr th
+      thead:first-child tr td
+        border-top: 0
 
   tbody + tbody
     border-top: 2px solid #ddd
 
-  if condensed
-    th, td
-      padding: 4px 5px
 
   if border
     border: 1px solid #ddd
     border-collapse: separate
     *border-collapse: collapsed
     border-radius: 4px
-    
+
+
     th + th, td + td, th + td, td + th
       border-left: 1px solid #ddd
 
@@ -66,6 +95,8 @@ $table(border = true, striped = true, condensed = false)
     thead:last-child tr:last-child th:last-child
     tbody:last-child tr:last-child td:last-child
       border-radius: 0 0 4px 0
+  else
+    border 0
 
   if striped
     tbody tr:nth-child(odd) td
@@ -80,6 +111,6 @@ $table(border = true, striped = true, condensed = false)
 // WARNING: Creates classes in your css and styles them - not to be used inside an element.
 // Makes tables look awesome by default. Highly recommended if you have tables on your site at all.
 
-tables()
+tables(border = true, striped = true, condensed = false, rhythm = false)
   table
-    $table()
+    $table(border, striped, condensed, rhythm)

@@ -13,9 +13,10 @@
 .table td {
   padding: 8px;
   line-height: 18px;
+  border-top: 1px solid;
+  border-color: #ddd;
   text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #ddd;
+  vertical-align: top; 
 }
 .table th {
   font-weight: bold;

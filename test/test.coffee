@@ -135,6 +135,11 @@ describe 'tables', ->
 
   it 'table-styles', (done) ->
     compile_and_match(path.join(@path, 'table.styl'), done)
+  describe 'tables with vertical rhythm', ->
+    it 'default', (done) ->
+      compile_and_match(path.join(@path, 'table-rhythm.styl'), done)
+    it 'condensed', (done) ->
+      compile_and_match(path.join(@path, 'table-rhythm-condensed.styl'), done)
 
 describe 'typography', ->
 

@@ -86,15 +86,17 @@ establish-baseline(fs = base-font-size)
 // TODO: Make a better version of this
 debug-vertical-alignment()
   background-image: url('http://basehold.it/i/' + unit(base-line-height, ''))
-
+-check-relative(font-size)
+  if not relative-font-sizing
+    if unit(font-size) is not 'px'
+      warn('relative-font-sizing is false but a relative font size was passed to adjust-font-size-to')
 // Adjust a block to have a different font size and line height to maintain the
 // rhythm. $lines specifies how many multiples of the baseline rhythm each line
 // of this font should use up. It does not have to be an integer, but it
 // defaults to the smallest integer that is large enough to fit the font.
 // Use $from-size to adjust from a font-size other than the base font-size.
 adjust-font-size-to(to-size, lines = -lines-for-font-size(to-size), from-size = base-font-size)
-  if (not relative-font-sizing) and (from-size is not base-font-size)
-    warn('relative-font-sizing is false but a relative font size was passed to adjust-font-size-to')
+  -check-relative(from-size)
   font-size: font-unit * (to-size / from-size)
   adjust-leading-to: lines, relative-font-sizing ? to-size : base-font-size
 
@@ -107,14 +109,18 @@ adjust-leading-to(lines, font-size = base-font-size)
 
 // @public function - Calculate rhythm units.
 -rhythm(lines = 1, font-size = base-font-size, offset = 0)
-  if (not relative-font-sizing) and (font-size is not base-font-size)
-    warn('relative-font-sizing is false but a relative font size was passed to the rhythm function')
-  rhythm = font-unit * (lines * base-line-height - offset) / font-size
+  -check-relative(font-size)
+  if not relative-font-sizing
+    font-unit = font-size
+  rhythm = font-unit * (lines * base-line-height) / font-size
+  if offset
+    offset = unit(offset/font-size, relative-font-sizing ? 'em' : 'px')
   // Round the pixels down to nearest integer.
   if unit(rhythm) is 'px'
-    rhythm = floor(rhythm)
+    rhythm = floor(rhythm - offset)
+  else
+    rhythm = rhythm - offset
   return rhythm
-
 // @private Function - Calculate the minimum multiple of rhythm units needed to contain the font-size.
 -lines-for-font-size(font-size)
   lines = round-to-nearest-half-line ? ceil(2 * font-size / base-line-height) / 2 : ceil(font-size / base-line-height)
@@ -123,65 +129,66 @@ adjust-leading-to(lines, font-size = base-font-size)
   return unit(lines, '')
 
 // Apply leading whitespace. The $property can be margin or padding.
-leader(lines = 1, font-size = base-font-size, property = margin)
-  {property}-top: -rhythm(lines, font-size)
+leader(lines = 1, font-size = base-font-size, property = margin, border = 0)
+  {property}-top: -rhythm(lines, font-size, offset: border)
 
 // Apply leading whitespace as padding.
-padding-leader(lines = 1, font-size = base-font-size)
-  padding-top: -rhythm(lines, font-size)
+padding-leader(lines = 1, font-size = base-font-size, border = 0)
+  padding-top: -rhythm(lines, font-size, offset: border)
 
 // Apply leading whitespace as margin.
-margin-leader(lines = 1, font-size = base-font-size)
-  margin-top: -rhythm(lines, font-size)
+margin-leader(lines = 1, font-size = base-font-size, border = 0)
+  margin-top: -rhythm(lines, font-size, offset: border)
 
 // Apply trailing whitespace. The $property can be margin or padding.
-trailer(lines = 1, font-size = base-font-size, property = margin)
-  {property}-bottom: -rhythm(lines, font-size)
+trailer(lines = 1, font-size = base-font-size, property = margin, border = 0)
+  {property}-bottom: -rhythm(lines, font-size, offset: border)
 
 // Apply trailing whitespace as padding.
-padding-trailer(lines = 1, font-size = base-font-size)
-  padding-bottom: -rhythm(lines, font-size)
+padding-trailer(lines = 1, font-size = base-font-size, border = 0)
+  padding-bottom: -rhythm(lines, font-size, offset: border)
 
 // Apply trailing whitespace as margin.
-margin-trailer(lines = 1, font-size = base-font-size)
-  margin-bottom: -rhythm(lines, font-size)
+margin-trailer(lines = 1, font-size = base-font-size, border = 0)
+  margin-bottom: -rhythm(lines, font-size, offset: border)
 
 // Shorthand mixin to apply whitespace for top and bottom margins and padding.
-rhythm(l = 0, pl = 0, pt = 0, t = 0, font-size = base-font-size)
-  leader: l, font-size
-  padding-leader: pl, font-size
-  padding-trailer: pt, font-size
-  trailer: t, font-size
+rhythm(l = 0, pl = 0, pt = 0, t = 0, font-size = base-font-size, plb = 0, ptb = 0, lb = 0, tb = 0, border = 0 )
+
+  leader(l, font-size, offset: (lb ? lb : border))
+  padding-leader(pl, font-size, offset: (plb ? plb : border))
+  padding-trailer(pt, font-size, offset: (ptb ? ptb : border))
+  trailer(t, font-size, offset: (tb ? tb : border))
 
 // Apply a border and whitespace to any side without destroying the vertical
 // rhythm. The whitespace must be greater than the width of the border.
-apply-side-rhythm-border(side, w = 1px, lines = 1, font-size = base-font-size, bs = default-rhythm-border-style)
-  if (not relative-font-sizing) and (font-size is not base-font-size)
-    warn('relative-font-sizing is false but a relative font size was passed to apply-side-rhythm-border')
+apply-side-rhythm-border(side, w = 1px, lines = 1, font-size = base-font-size, bs = default-rhythm-border-style, property = padding)
+  -check-relative(font-size)
+  if not relative-font-sizing
+    font-unit = font-size
   border-{side}-style: bs
   border-{side}-width: font-unit * (w / font-size)
-  padding-{side}: -rhythm(lines, font-size, offset = w)
+  {property}-{side}: -rhythm(lines, font-size, offset: w)
 
 // Apply borders and whitespace equally to all sides.
-rhythm-borders(w = 1px, lines = 1, font-size = base-font-size, bs = default-rhythm-border-style)
+rhythm-borders(w = 1px, lines = 1, font-size = base-font-size, bs = default-rhythm-border-style, property = padding)
   if (not relative-font-sizing) and (font-size is not base-font-size)
     warn('relative-font-sizing is false but a relative font size was passed to rhythm-borders')
   border-style: bs
   border-width: font-unit * (w / font-size)
-  padding: -rhythm(lines, font-size, offset = w)
-
+  {property}: -rhythm(lines, font-size, offset: w)
 // Apply a leading border.
-leading-border(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
-  apply-side-rhythm-border: top, width, lines, font-size, border-style
+leading-border(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style, property = padding)
+  apply-side-rhythm-border(top, width, lines, font-size, border-style, property: property)
 
 // Apply a trailing border.
-trailing-border(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
-  apply-side-rhythm-border: bottom, width, lines, font-size, border-style
+trailing-border(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style, property = padding)
+  apply-side-rhythm-border(bottom, width, lines, font-size, border-style, property: property)
 
 // Apply both leading and trailing borders.
-horizontal-borders(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style)
-  leading-border: width, lines, font-size, border-style
-  trailing-border: width, lines, font-size, border-style
+horizontal-borders(width = 1px, lines = 1, font-size = base-font-size, border-style = default-rhythm-border-style, property = padding)
+  leading-border(width, lines, font-size, border-style, property: property)
+  trailing-border(width, lines, font-size, border-style, property: property)
 
 // ---------------------------------------------
 // @private Mixin - Internal Baseline Normalize
@@ -308,8 +315,7 @@ baseline-normalize()
     font-style: italic
 
   hr
-    -moz-box-sizing: content-box
-    box-sizing: content-box
+
     height: 0
 
   mark
@@ -448,5 +454,4 @@ baseline-normalize()
     vertical-align: top
 
   table
-    border-collapse: collapse
-    border-spacing: 0
+    $table(rhythm: true)

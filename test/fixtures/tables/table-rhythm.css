@@ -1,0 +1,68 @@
+.table-rhythm {
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 23px;
+  margin-top: 23px;
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  *border-collapse: collapsed;
+  border-radius: 4px;
+}
+.table-rhythm th,
+.table-rhythm td {
+  padding: 8px;
+  padding-bottom: 12px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 11px;
+  line-height: 24px;
+  border-color: #ddd;
+  text-align: left;
+  vertical-align: top;
+}
+.table-rhythm th {
+  font-weight: bold;
+}
+.table-rhythm thead th {
+  vertical-align: bottom;
+}
+.table-rhythm tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.table-rhythm th + th,
+.table-rhythm td + td,
+.table-rhythm th + td,
+.table-rhythm td + th {
+  border-left: 1px solid #ddd;
+}
+.table-rhythm thead:first-child tr:first-child th,
+.table-rhythm tbody:first-child tr:first-child th,
+.table-rhythm tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+.table-rhythm thead:first-child tr:first-child th:first-child,
+.table-rhythm tbody:first-child tr:first-child td:first-child {
+  border-radius: 4px 0 0 0;
+}
+.table-rhythm thead:first-child tr:first-child th:last-child,
+.table-rhythm tbody:first-child tr:first-child td:last-child {
+  border-radius: 0 4px 0 0;
+}
+.table-rhythm thead:last-child tr:last-child th:first-child,
+.table-rhythm tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 4px;
+}
+.table-rhythm thead:last-child tr:last-child th:last-child,
+.table-rhythm tbody:last-child tr:last-child td:last-child {
+  border-radius: 0 0 4px 0;
+}
+.table-rhythm tbody tr:nth-child(odd) td,
+.table-rhythm tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+.table-rhythm tbody tr:hover td,
+.table-rhythm tbody tr:hover th {
+  background-color: #f5f5f5;
+}
