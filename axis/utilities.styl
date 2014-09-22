@@ -156,9 +156,9 @@ triangle(direction = up, size = 10px, color = #000)
 // ex. sprite: 5 horizontal
 sprite(iteration, orientation = vertical)
   if orientation == vertical
-    background-position: 0 unit(@height*-1*iteration, px)
+    background-position: 0 unit(@height*-1*iteration, 'px')
   else if orientation == horizontal
-    background-position: unit(@width*iteration, px) 0
+    background-position: unit(@width*iteration, 'px') 0
   else
     warn('orientation must be horizontal or veritcal')
 
