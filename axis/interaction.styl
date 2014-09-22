@@ -69,14 +69,14 @@ hover-underline(border-size = 1px, type = solid, color = null)
 
 hover-pop(scale = 1.2, rotate = null, shadow = null)
   if shadow
-    box-shadow(0 0 1px transparent)
+    box-shadow: 0 0 1px transparent
     
   &:hover
     position: relative
     z-index: 10
     transform: scale(scale)
     if shadow
-      box-shadow(0 0 5px rgba(#000, .3))
+      box-shadow: 0 0 5px rgba(#000, .3)
     if rotate
       transform: scale(scale) rotate(rotate)
 
