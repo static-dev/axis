@@ -165,8 +165,8 @@ figure(color = default-color, dimensions = false)
 
   if length(dimensions) > 1
     display: block
-    width: unit(dimensions[0], px)
-    height: unit(dimensions[1], px)
+    width: unit(dimensions[0], 'px')
+    height: unit(dimensions[1], 'px')
   else if dimensions == false
     inline-block()
   else
@@ -201,7 +201,7 @@ navigation(size = 1, bgcolor = #222, link-color = #fff, pos-fixed = false)
   border-bottom: 1px solid rgba(darken(bgcolor, 15%),.7)
   height: (size + 14) * 2.866px
   width: 100%
-  font-size: unit(size + 14, px)
+  font-size: unit(size + 14, 'px')
 
   if pos-fixed
     position: fixed
