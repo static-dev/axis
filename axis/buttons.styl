@@ -2,9 +2,7 @@
 // Buttons
 // -------
 
-// I realize that this is insane, but trust me, it's worth it
-
-// Helper: highlight
+// Function: highlight
 // 
 // Adds a light brighter line across the top of the element for a perspective
 // effect. Takes an optional argument for strength, which takes a value between
@@ -16,7 +14,7 @@
 -highlight(strength = .3)
   box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,strength)))
 
-// Helper: parse
+// Function: parse
 // Used internally for setting button sizes.
 
 -parse(size)
@@ -29,7 +27,7 @@
   else
     return size
 
-// Mixin: Simple Button
+// Mixin: Button
 // 
 // Creates a very basic looking button style. Three optional params:
 // - color: Takes any color, defaults to the default global color
@@ -95,8 +93,6 @@ button(color = default-color, size = "medium", textColor = null)
 // ex. glossy-button: #D4513B
 // ex. glossy-button: green large
 // ex. glossy-button: #4C82D4 24
-
-// These will accept font icons interally in the very near future
 
 glossy-button(color = default-color, size = "medium", textColor = null, shadowColor = null, hoverColor = null)
 
