@@ -49,8 +49,8 @@ $button(color = default-color, size = "medium", textColor = null)
   width = round(((parsed_size * 1.53px) * 2.2) / 2)
 
   // dynamically calculated styles
-  font-size: unit(parsed_size, px)
-  padding: unit(height, px) unit(width, px)
+  font-size: unit(parsed_size, 'px')
+  padding: unit(height, 'px') unit(width, 'px')
   border-radius: round(parsed_size / 4.33333px)
   background-color: color
   color: textColor
@@ -105,8 +105,8 @@ glossy-button(color = default-color, size = "medium", textColor = null, shadowCo
   width = round(((parsed_size*1.53px)*2.2)/2)
 
   // dynamically calculated styles
-  font-size: unit(parsed_size, px)
-  padding: unit(height, px) unit(width, px)
+  font-size: unit(parsed_size, 'px')
+  padding: unit(height, 'px') unit(width, 'px')
   border-radius: round(parsed_size/4.33333px)
   gradient: color
   text-shadow: 1px 1px 1px shadowColor
@@ -124,7 +124,7 @@ glossy-button(color = default-color, size = "medium", textColor = null, shadowCo
   display: inline-block
 
   &:hover, &:focus
-    background-position: 0 unit(height * -1, px)
+    background-position: 0 unit(height * -1, 'px')
     color: darken(textColor, 3%)
     text-shadow: 1px 1px 1px hoverColor
 
