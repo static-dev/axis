@@ -91,10 +91,10 @@ button(color = default-color, size = "medium", textColor = null)
 //   described above.
 // 
 // ex. glossy-button()
-// ex. glossy-button(blue)
-// ex. glossy-button(#D4513B)
-// ex. glossy-button(green, large)
-// ex. glossy-button(#4C82D4, 24)
+// ex. glossy-button: blue
+// ex. glossy-button: #D4513B
+// ex. glossy-button: green large
+// ex. glossy-button: #4C82D4 24
 
 // These will accept font icons interally in the very near future
 
@@ -169,7 +169,7 @@ button-disabled()
     
   &:active
     background: #ccc
-    box-shadow(none)
+    box-shadow: none
     border-color: darken(#ccc, 10%)
     text-shadow: 1px 1px 1px rgba(#000,.1)
 
@@ -180,16 +180,16 @@ button-disabled()
 // 
 // This mixin makes it such that you can use classes to define buttons on your
 // page.
-// - .btn-simple: creates a simple button
-// - .btn: creates a fancy button
+// - .btn: creates a simple button
+// - .btn-fancy: creates a fancy button
 // - .disabled: disables an existing button (will only work on .btn and
 //   .btn-simple)
 
 buttons()
-  .btn-simple
-    transition()
-    $button()
   .btn
+    transition()
+    button()
+  .btn-fancy
     transition()
     glossy-button()
   .btn.disabled, .btn-simple.disabled
