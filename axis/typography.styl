@@ -10,7 +10,7 @@
   if @font-size
     line-height: 1.6em
   else
-    line-height: unit(font-size*1.6, px)
+    line-height: unit(font-size*1.6, 'px')
     line-height: 1.6rem
 
 // Mixin: Text Margin
@@ -21,7 +21,7 @@ text-margin(size=font-size)
   if @font-size
     margin: .75em 0
   else
-    margin: unit(font-size*.75, px) 0
+    margin: unit(font-size*.75, 'px') 0
 
 // Mixin: Paragraph
 // Sets a nice size, line-height, and margins on a paragraph
@@ -48,7 +48,7 @@ paragraph = $p
 
 fs(size)
   if (unit(size) == 'rem')
-    font-size: round(unit((font-size*size), px))
+    font-size: round(unit((font-size*size), 'px'))
     font-size: size
   else
     font-size: size
@@ -93,8 +93,8 @@ $small()
 // For internal use within headings
 
 -heading(multiplier)
-  font-size: unit((font-size*multiplier), px)
-  font-size: unit(multiplier, rem)
+  font-size: unit((font-size*multiplier), 'px')
+  font-size: unit(multiplier, 'rem')
   text-rendering: optimizelegibility
   font-weight: bold
   text-margin()
@@ -315,7 +315,7 @@ hyphenation()
 
 base(fonts = font-stack, size = font-size, color = font-color)
   html
-    font-size: unit(size, px)
+    font-size: unit(size, 'px')
     font-size: unit((size/16)*100, "%")
 
   body
