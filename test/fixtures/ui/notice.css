@@ -8,7 +8,7 @@
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
-  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
 }
 .notice:before,

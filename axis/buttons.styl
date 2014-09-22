@@ -1,13 +1,17 @@
-// -----------------------------------------------------
+// -------
 // Buttons
-// -----------------------------------------------------
+// -------
+
 // I realize that this is insane, but trust me, it's worth it
 
 // Helper: highlight
-// Adds a light brighter line across the top of the element for a perspective effect.
-// Takes an optional argument for strength, which takes a value between 0 and 1
-// ex. highlight
-// ex. highlight(.7)
+// 
+// Adds a light brighter line across the top of the element for a perspective
+// effect. Takes an optional argument for strength, which takes a value between
+// 0 and 1.
+// 
+// ex. highlight()
+// ex. highlight: .7
 
 -highlight(strength = .3)
   box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,strength)))
@@ -26,19 +30,22 @@
     return size
 
 // Mixin: Simple Button
-// Creates a very basic looking button style. Two optional params:
+// 
+// Creates a very basic looking button style. Three optional params:
 // - color: Takes any color, defaults to the default global color
-// - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects the
-//   font size for the text inside the button, but scales all other aspects as well.
-// ex. $button()
-// ex. $button(blue)
-// ex. $button(#D4513B)
-// ex. $button(green, large)
-// ex. $button(#4C82D4, 24)
+// - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflect
+//   the font size for the text inside the button, but scales all other aspects
+//   as well (corners, padding, etc).
+// - textColor: Takes any color for the button text, defaults to trying to
+//   detect whether the background is dark or light and setting the opposite.
+// 
+// ex. button()
+// ex. button: blue
+// ex. button: #D4513B
+// ex. button: green large
+// ex. button: #4C82D4 24
 
-// These will accept font icons interally in the very near future
-
-$button(color = default-color, size = "medium", textColor = null)
+button(color = default-color, size = "medium", textColor = null)
 
   // color detection and changes
   textColor = (light(color) ? #494949 : #fff) unless textColor
@@ -72,10 +79,17 @@ $button(color = default-color, size = "medium", textColor = null)
     background-color: darken(color, 10%)
 
 // Mixin: Glossy Button
-// Creates a more fancy looking button style. Two optional params:
+// 
+// Creates a more fancy looking button style. Five optional params:
 // - color: Takes any color, defaults to the default global color
-// - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects the
-//   font size for the text inside the button, but scales all other aspects as well.
+// - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects
+//   the font size for the text inside the button, but scales all other aspects
+//   as well.
+// - textColor: Takes any color for the button text, defaults to trying to
+//   detect whether the background is dark or light and setting the opposite.
+// - shadowColor: Color for the text shadow, default is the contrast detection
+//   described above.
+// 
 // ex. glossy-button()
 // ex. glossy-button(blue)
 // ex. glossy-button(#D4513B)
@@ -134,11 +148,13 @@ glossy-button(color = default-color, size = "medium", textColor = null, shadowCo
     border-color: darken(color, 18%)
 
 // Mixin: Button Disabled
+// 
 // Add this mixin to a button and it will make the button appear to be disabled.
-// Easiest to attach to a class like '.disabled' and add that class to the button.
+// Try attaching to a class like .disabled and adding that class to the button.
 // Takes no arguments.
-// ex.  .disabled
-//        +button-disabled
+// 
+// ex. .disabled
+//       button-disabled()
 
 button-disabled()
   background: #ccc
@@ -146,9 +162,11 @@ button-disabled()
   opacity: .5
   cursor: default
   no-select()
+
   &:hover
     background: #ccc
     background-position: 0 0
+    
   &:active
     background: #ccc
     box-shadow(none)
@@ -156,11 +174,16 @@ button-disabled()
     text-shadow: 1px 1px 1px rgba(#000,.1)
 
 // Additive Mixin: Buttons
-// WARNING: Creates classes in your css and styles them - not to be used inside an element.
-// This mixin makes it such that you can use classes to define buttons on your page.
-// .btn-simple: creates a simple button
-// .btn: creates a fancy button
-// .disabled: disables an existing button (will only work on .btn and .btn-simple)
+// 
+// WARNING: Creates classes in your css and styles them - not to be used inside
+// an element.
+// 
+// This mixin makes it such that you can use classes to define buttons on your
+// page.
+// - .btn-simple: creates a simple button
+// - .btn: creates a fancy button
+// - .disabled: disables an existing button (will only work on .btn and
+//   .btn-simple)
 
 buttons()
   .btn-simple

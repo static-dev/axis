@@ -71,6 +71,26 @@ h6 {
   line-height: 1.6em;
   text-transform: uppercase;
 }
+ul {
+  margin: 5px 15px;
+  margin: 0.32rem 0.94rem;
+  padding-left: 1rem;
+}
+ul li {
+  list-style-type: disc;
+  padding: 2px 0;
+  padding: 0.125rem;
+}
+ol {
+  margin: 5px 18px;
+  margin: 0.32rem 1.125rem;
+  padding-left: 1rem;
+}
+ol li {
+  list-style-type: decimal;
+  padding: 2px 0;
+  padding: 0.125rem;
+}
 ::-moz-selection {
   background: #0074d9;
   color: #494949;
@@ -359,27 +379,6 @@ textarea.error:focus {
 }
 .btn-simple {
   transition: all .3s ease;
-  font-size: 13px;
-  padding: 10px 22px;
-  border-radius: 3px;
-  background-color: #0074d9;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
-  line-height: 1em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border: none;
-}
-.btn-simple:hover,
-.btn-simple:focus {
-  background-color: #006ece;
-  color: #f7f7f7;
-}
-.btn-simple:active {
-  background-color: #0068c3;
 }
 .btn {
   transition: all .3s ease;
@@ -438,25 +437,6 @@ textarea.error:focus {
   box-shadow: none;
   border-color: #b8b8b8;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-}
-code {
-  padding: 3px 4px;
-  color: #df5c33;
-  background-color: #f5f5f5;
-  border: 1px solid #e1e1e8;
-  border-radius: 3px;
-  font-family: Menlo, Monaco, 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
-}
-pre {
-  display: block;
-  padding: 7px;
-  background-color: #f5f5f5;
-  border: 1px solid #e1e1e8;
-  border-radius: 3px;
-  white-space: pre-wrap;
-  word-break: break-all;
-  font-family: Menlo, Monaco, 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
-  line-height: 160%;
 }
 table {
   max-width: 100%;
