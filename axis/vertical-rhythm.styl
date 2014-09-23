@@ -316,6 +316,25 @@ baseline-normalize()
     -moz-box-sizing: content-box
     box-sizing: content-box
     height: 0
+    leader(1) 
+    trailer(1)
+    border: 0
+    position: relative
+    overflow: visible
+    &:after
+    &:before
+      content: ''
+    &:after
+      display: table
+      clear: both
+    &:before
+      display: block
+      position: absolute 
+      left: 0
+      right: 0
+      bottom: 0
+      border: 0
+      border-top: 1px solid #eee
 
   mark
     background: #ff0
