@@ -75,11 +75,11 @@ input-disabled()
 // inline or block.
 // 
 // ex. label()
-// ex. label: block
+// ex. label: 'block'
 
-label(display = inline-block)
+label(display = 'inline-block')
   line-height: 1.5em
-  display: display
+  display: unquote(display)
 
 // Mixin: Field
 // 

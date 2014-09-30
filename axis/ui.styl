@@ -11,7 +11,7 @@
 // ex. area()
 // ex. area: red // <-- not recommended
 
-area(color = #F5F5F5)
+area(color=#F5F5F5)
   box-shadow(inset 0 0 6px rgba(#000,.05))
   background-color: color
   padding: 15px
@@ -28,7 +28,7 @@ area(color = #F5F5F5)
 // ex. notice()
 // ex. notice: 500px blue
 
-notice(width = false, color = #EEEEEE, padding = 10px)
+notice(width=false, color=#EEEEEE, padding=10px)
   group()
   gradient: color 3%
   border-radius: 5px
@@ -46,24 +46,24 @@ notice(width = false, color = #EEEEEE, padding = 10px)
 // error. Defaults to notice.
 // 
 // ex. flash()
-// ex. flash: error
+// ex. flash: 'error'
 
-flash(type = notice)
-  if type == notice
+flash(type='notice')
+  if type == 'notice'
     notice(color: #6CC5FA)
     color: #fff
     font-weight: bold
     text-shadow: 1px 1px 1px rgba(#000,.2)
-  if type == success
+  if type == 'success'
     notice(color: #7BDEA3)
     color: #fff
     font-weight: bold
     text-shadow: 1px 1px 1px rgba(#000,.2)
-  if type == warning
+  if type == 'warning'
     notice(color: #FAE677)
     font-weight: bold
     text-shadow: 1px 1px 1px rgba(#fff,.2)
-  if type == error
+  if type == 'error'
     notice(color: #E77C70)
     color: #fff
     font-weight: bold
@@ -81,13 +81,13 @@ flash(type = notice)
 // ex. breadcrumb: "-" 25px red
 // ex. breadcrumb "~" 40px
 
-breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
+breadcrumb(character="/", spacing=10px, dividerColor=#CDCDCD)
   inline-list: spacing
 
   li:after
     content: character
     margin-left: spacing
-    color: divider-color
+    color: dividerColor
 
   li:last-child:after
     content: ""
@@ -104,7 +104,7 @@ breadcrumb(character = "/", spacing = 10px, divider-color = #CDCDCD)
 // ex. bubble: bottom right #5740A1 500px
 // ex. bubble: right top #5740A1 500px
 
-bubble(pos0 = left, pos1 = false, color = #EEEEEE, width = false, triangleSize = 10px, sideDistance = 15px, padding = 10px, pointer = false, triangleColor = darken(color, 3%))
+bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sideDistance=15px, padding=10px, pointer=false, triangleColor=darken(color, 3%))
 
   // use named argument 'pointer' as pos0 arg (to preserve old bubble api)
   if pointer
@@ -124,19 +124,19 @@ bubble(pos0 = left, pos1 = false, color = #EEEEEE, width = false, triangleSize =
 
   &:after
     if pos0 is top
-      directionTriangle = up
+      directionTriangle = 'up'
       positionY = top
       distanceY = -(triangleSize)
     else if pos0 is bottom
-      directionTriangle = down
+      directionTriangle = 'down'
       positionY = bottom
       distanceY = -(triangleSize)
     else if pos0 is left
-      directionTriangle = left
+      directionTriangle = 'left'
       positionX = left
       distanceX = -(triangleSize)
     else if pos0 is right
-      directionTriangle = right
+      directionTriangle = 'right'
       positionX = right
       distanceX = -(triangleSize)
 
@@ -207,20 +207,20 @@ figure(color = default-color, dimensions = false)
 // meant to be placed on a <nav> element that contains a ul.
 // 
 // ex. nav()
-// ex. nav: 1 #444 red fixed
+// ex. nav: 1 #444 red true
 
-navigation(size = 1, bgcolor = #222, link-color = #fff, pos-fixed = false)
+navigation(size = 1, bgColor = #222, linkColor = #fff, posFixed = false)
   group()
   display: block
   z-index: 10
-  gradient: bgcolor 5%
+  gradient: bgColor 5%
   box-shadow: 0 3px 3px rgba(0,0,0,.15)
-  border-bottom: 1px solid rgba(darken(bgcolor, 15%),.7)
+  border-bottom: 1px solid rgba(darken(bgColor, 15%),.7)
   height: (size + 14) * 2.866px
   width: 100%
   font-size: unit(size + 14, 'px')
 
-  if pos-fixed
+  if posFixed
     position: fixed
   else
     position: relative
@@ -229,7 +229,7 @@ navigation(size = 1, bgcolor = #222, link-color = #fff, pos-fixed = false)
     float: left
     padding: (size + 14) * .58px
     padding-left: 17px
-    color: link-color
+    color: linkColor
     bold()
     font-size: (size + 14) * 1.3px
 
@@ -237,7 +237,7 @@ navigation(size = 1, bgcolor = #222, link-color = #fff, pos-fixed = false)
     float: right
     margin: 0
     padding: (size + 14) * .8px
-    color: link-color
+    color: linkColor
 
     li
       list-style-type: none
@@ -245,12 +245,12 @@ navigation(size = 1, bgcolor = #222, link-color = #fff, pos-fixed = false)
       float: left
 
       a
-        color: link-color
+        color: linkColor
         border: none
         cursor: pointer
 
         &:hover
-          color: darken(link-color, 20%)
+          color: darken(linkColor, 20%)
           border: none
 
 // Alias: nav
