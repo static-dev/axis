@@ -146,23 +146,23 @@ h6(size=0.9)
 // 
 // ex. link()
 // ex. link: green
-// ex. link: #57777E glow
+// ex. link: #57777E 'glow'
 
-link(color = blue, style = underline)
+link(color=blue, style='underline')
   color: color
   text-decoration: none
   transition()
 
-  if style == underline
+  if style == 'underline'
     hover-underline()
     &:hover
       color: darken(@color, 15%)
-  else if style == darken
+  else if style == 'darken'
     &:hover
       color: darken(@color, 20%)
-  else if style == lighten
+  else if style == 'lighten'
     hover-lighten()
-  else if style == glow
+  else if style == 'glow'
     &:hover
       text-shadow: 0 0 7px rgba(color, .6)
       
@@ -198,7 +198,7 @@ reset-link()
 
 // ex. text-selection()
 
-text-selection(color = highlight-color, textColor = null)
+text-selection(color=highlight-color, textColor=null)
   textColor = (light(color) ? white : #494949) unless textColor
 
   &::-moz-selection
@@ -216,15 +216,15 @@ text-selection(color = highlight-color, textColor = null)
 // take. Defaults to disc. Use this on a ul element por favor.
 // 
 // ex. ul()
-// ex. ul: square
+// ex. ul: 'square'
 
-ul(style = disc)
+ul(style='disc')
   margin: 5px 15px
   margin: 0.32rem 0.94rem
   padding-left: 1rem
 
   li
-    list-style-type: style
+    list-style-type: unquote(style)
     padding: 2px 0
     padding: 0.125rem
 
@@ -235,15 +235,15 @@ ul(style = disc)
 // take. Defaults to decimal. Use this on a ol element por favor.
 // 
 // ex. ol()
-// ex. ol: upper-roman
+// ex. ol: 'upper-roman'
 
-ol(style = decimal)
+ol(style='decimal')
   margin: 5px 18px
   margin: 0.32rem 1.125rem
   padding-left: 1rem
 
   li
-    list-style-type: style
+    list-style-type: unquote(style)
     padding: 2px 0
     padding: 0.125rem
 
@@ -255,7 +255,7 @@ ol(style = decimal)
 // ex. inline-list()
 // ex. inline-list: 15px
 
-inline-list(spacing = 20px)
+inline-list(spacing=20px)
   group()
   margin: 0
   padding: 0
@@ -294,7 +294,7 @@ reset-list()
 // 
 // ex. blockquote()
 
-blockquote(color = blue)
+blockquote(color=blue)
   border-left: 4px solid color
   margin: 1em 0
   padding-left: 1.5em
@@ -347,7 +347,7 @@ hyphenation()
 // 
 // ex. base()
 
-base(fonts = font-stack, size = font-size, color = font-color)
+base(fonts=font-stack, size=font-size, color=font-color)
   html
     font-size: unit(size, 'px')
     font-size: unit((size/16)*100, "%")

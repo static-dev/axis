@@ -13,11 +13,11 @@
 // ex. hover-darken()
 // ex. hover-darken: 30%
 
-hover-darken(percent = 15%, force-use-color = false)
+hover-darken(percent = 15%, forceUseColor = false)
   &:hover
-    if @background and !force-use-color
+    if @background and !forceUseColor
       background-color: darken(@background, percent)
-    else if @background-color and !force-use-color
+    else if @background-color and !forceUseColor
       background-color: darken(@background-color, percent)
     else if @color
       color: darken(@color, percent)
@@ -31,11 +31,11 @@ hover-darken(percent = 15%, force-use-color = false)
 // ex. hover-lighten()
 // ex. hover-lighten: 30%
 
-hover-lighten(percent = 15%, force-use-color = false)
+hover-lighten(percent = 15%, forceUseColor = false)
   &:hover
-    if @background and !force-use-color
+    if @background and !forceUseColor
       background-color: lighten(@background, percent)
-    else if @background-color and !force-use-color
+    else if @background-color and !forceUseColor
       background-color: lighten(@background-color, percent)
     else if @color
       color: lighten(@color, percent)
@@ -48,13 +48,13 @@ hover-lighten(percent = 15%, force-use-color = false)
 // intended element. Works very nicely for text like in a span, and can animate.
 // 
 // ex. hover-underline()
-// ex. hover-underline: 2px dotted
+// ex. hover-underline: 2px 'dotted'
 
-hover-underline(border-size = 1px, type = solid, color = null)
-  border-bottom: border-size type transparent
+hover-underline(borderSize = 1px, type = 'solid', color = null)
+  border-bottom: borderSize unquote(type) transparent
   
   &:hover
-    border-bottom: border-size type color
+    border-bottom: borderSize unquote(type) color
 
 // Mixin: Hover Pop
 // 
@@ -100,11 +100,11 @@ hover-fade(amount = .5)
 // 
 // ex. hover-color: #D45D86
 
-hover-color(color, force-use-color = false)
+hover-color(color, forceUseColor = false)
   &:hover
-    if @background and !force-use-color
+    if @background and !forceUseColor
       background-color: color
-    else if @background-color and !force-use-color
+    else if @background-color and !forceUseColor
       background-color: color
     else if @background-color
       background-color: color

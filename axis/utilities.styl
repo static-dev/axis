@@ -40,8 +40,8 @@ b()
 // the global img-path variable to set a base image path that you don't have to
 // keep repeating. Also sets 'no-repeat' as the default background-repeat.
 // 
-// ex. bg: ../img/test.png
-// ex. bg: ../img/other.jpg center center repeat
+// ex. bg: 'test.png'
+// ex. bg: 'other.jpg' center center repeat
 
 bg(path, args...)
   args = unquote('no-repeat') unless args
@@ -52,8 +52,8 @@ bg(path, args...)
 // Make sure the image path is double the size, pass it halved numbers, and
 // you're in the retina-clear.
 // 
-// ex. bg-retina: ../img/test.png 200px 100px
-// ex. bg-retina: ../img/other.jpg 100px 50px center center repeat
+// ex. bg-retina: 'test.png' 200px 100px
+// ex. bg-retina: 'other.jpg' 100px 50px center center repeat
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
@@ -95,7 +95,7 @@ normal()
 // fanciest new method, props to Paul Irish. Only works when called as a
 // function with parens. Do not try to do it with a colon!
 // 
-// ex. ir("/img/test.jpg", 200 400)
+// ex. ir('test.jpg', 200 400)
 
 image-replace(path, dimensions...)
   dimensions = dimensions[0]
@@ -107,7 +107,7 @@ image-replace(path, dimensions...)
     width: unit(dimensions[0], 'px')
     height: unit(dimensions[1], 'px')
   else
-    warn("Make sure you also pass the image dimensions. Example: ir: '/img/whatever.jpg' 200 400")
+    warn("Make sure you also pass the image dimensions. Example: ir('/img/whatever.jpg', 200px 400px)")
 
 // Alias: ir
 ir = image-replace
@@ -120,13 +120,13 @@ ir = image-replace
 // 
 // ex. columns()
 // ex. columns: 5
-// ex. columns(8, 15px, 200px, 1px solid red)
+// ex. columns(8, 15px, 200px, '1px solid red')
 
-columns(count = 3, gap = 30px, width = null, rule = null)
+columns(count=3, gap=30px, width=null, rule=null)
   column-count: count
   column-gap: gap
   column-width: width if width
-  column-rule: rule if rule
+  column-rule: unquote(rule) if rule
 
 // Mixin: Avoid Column Break
 // 
@@ -145,24 +145,24 @@ avoid-column-break()
 // (up, down, left, right), size (in pixels), and a color.
 // 
 // ex. triangle()
-// ex. triangle: down 15px blue
+// ex. triangle: 'down' 15px blue
 
-triangle(direction = up, size = 10px, color = #000)
+triangle(direction='up', size=10px, color=#000)
   width: 0
   height: 0
-  if direction == up
+  if direction == 'up'
     border-left: size solid transparent
     border-right: size solid transparent
     border-bottom: size solid color
-  else if direction == down
+  else if direction == 'down'
     border-left: size solid transparent
     border-right: size solid transparent
     border-top: size solid color
-  else if direction == left
+  else if direction == 'left'
     border-top: size solid transparent
     border-bottom: size solid transparent
     border-right: size solid color
-  else if direction == right
+  else if direction == 'right'
     border-top: size solid transparent
     border-bottom: size solid transparent
     border-left: size solid color
@@ -175,15 +175,16 @@ triangle(direction = up, size = 10px, color = #000)
 // Width/height must be defined for this to work (as is the case for any sprite)
 // 
 // ex. sprite: 2
-// ex. sprite: 5 horizontal
+// ex. sprite: 5 'horizontal'
+// 
+// TODO: Try using image-size here if @width or @height aren't defined
 
-sprite(iteration, orientation = vertical)
-  if orientation == vertical
+sprite(iteration, orientation='vertical')
+  if orientation == 'vertical'
     background-position: 0 unit(@height*-1*iteration, 'px')
-  else if orientation == horizontal
+  else if orientation == 'horizontal'
+    // warn(unit(@width*iteration, 'px'))
     background-position: unit(@width*iteration, 'px') 0
-  else
-    warn('orientation must be horizontal or veritcal')
 
 // Alias: group
 // Clearfix with a better name. Excellent for wrangling floats.
@@ -233,7 +234,7 @@ vertically-align()
 // ex. media: 15px
 // ex. media: 15px 10px
 
-media(margin = 10px)
+media(margin=10px)
 
   left-margin = margin
   right-margin = margin
@@ -274,12 +275,12 @@ raquo()
 // 
 // ex. font-face(proxima-nova, '/fonts')
 
-font-face(name, folder, weight = normal, style = normal)
+font-face(name, folder, weight='normal', style='normal')
   @font-face
     font-family: name
-    src: url(folder unquote('/') name unquote('.eot') '?#iefix') format('embedded-opentype'), url(folder unquote('/') name unquote('.woff')) format('woff'), url(folder unquote('/') name unquote('.ttf')) format('truetype'), url(folder unquote('/') name unquote('.eot') '#svgFontName') format('svg');
-    font-weight: weight
-    font-style: style
+    src: url(folder unquote('/') name unquote('.eot') '?#iefix') format('embedded-opentype'), url(folder unquote('/') name unquote('.woff')) format('woff'), url(folder unquote('/') name unquote('.ttf')) format('truetype'), url(folder unquote('/') name unquote('.eot') unquote('#') name) format('svg');
+    font-weight: unquote(weight)
+    font-style: unquote(style)
 
 // Mixin: Debug
 // 
