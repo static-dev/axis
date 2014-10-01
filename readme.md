@@ -5,13 +5,13 @@ Axis
 [![tests](http://img.shields.io/travis/jenius/axis/master.svg?style=flat)](https://travis-ci.org/jenius/axis)
 [![dependencies](http://img.shields.io/gemnasium/jenius/axis.svg?style=flat)](https://gemnasium.com/jenius/axis)
 
-Axis is a terse, feature-rich css utility library built on top of [stylus](https://github.com/LearnBoost/stylus) and [nib](http://visionmedia.github.io/nib/). It's comparable to stylus as compass is for sass.
+Axis is a sizeable css utility library built on top of [stylus](https://github.com/LearnBoost/stylus) and [nib](http://visionmedia.github.io/nib/).
 
-> **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details. Axis will not go to v1.0 until both stylus and nib have done so.
+> **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details. Axis will not go to v1.0 until stylus has done so.
 
 ### Installation
 
-You can install axis through npm, as such
+You can install axis through npm, as such:
 
 ```
 npm install axis --save

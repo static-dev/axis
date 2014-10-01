@@ -1,7 +1,9 @@
 {
   "name": "axis",
-  "description": "css library built on stylus",
   "version": "0.2.2",
+  "description": "css library built on stylus",
+  "author": "Jeff Escalante",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/jenius/axis.git"
@@ -17,8 +19,6 @@
     "coffee-script": "*",
     "css-parse": "*"
   },
-  "author": "Jeff Escalante",
-  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
