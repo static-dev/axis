@@ -7,6 +7,8 @@ Axis CSS
 
 Axis is a terse, feature-rich css library built on top of stylus. It is built on top of [nib](http://visionmedia.github.io/nib/), providing a number of additional useful tools and mixins.
 
+> **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details. Axis will not go to v1.0 until both stylus and nib have done so.
+
 ### Installation
 
 You can install axis through npm, as such
