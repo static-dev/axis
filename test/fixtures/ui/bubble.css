@@ -19,7 +19,22 @@
 .bubble:after {
   clear: both;
 }
+.bubble:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-left: 11.3px solid transparent;
+  border-right: 11.3px solid transparent;
+  border-top: 11.3px solid #d0d0d0;
+  position: absolute;
+  bottom: -11.3px;
+  left: 14px;
+  display: block;
+}
 .bubble:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -51,7 +66,22 @@
 .bubble-tl:after {
   clear: both;
 }
+.bubble-tl:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-left: 11.3px solid transparent;
+  border-right: 11.3px solid transparent;
+  border-bottom: 11.3px solid #d0d0d0;
+  position: absolute;
+  top: -11.3px;
+  left: 14px;
+  display: block;
+}
 .bubble-tl:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -83,7 +113,22 @@
 .bubble-tr:after {
   clear: both;
 }
+.bubble-tr:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-left: 11.3px solid transparent;
+  border-right: 11.3px solid transparent;
+  border-bottom: 11.3px solid #d0d0d0;
+  position: absolute;
+  top: -11.3px;
+  right: 14px;
+  display: block;
+}
 .bubble-tr:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -115,7 +160,21 @@
 .bubble-tc:after {
   clear: both;
 }
+.bubble-tc:before {
+  margin-top: auto;
+  margin-left: -10.65px;
+  width: 0;
+  height: 0;
+  border-left: 11.3px solid transparent;
+  border-right: 11.3px solid transparent;
+  border-bottom: 11.3px solid #d0d0d0;
+  position: absolute;
+  top: -11.3px;
+  left: 50%;
+  display: block;
+}
 .bubble-tc:after {
+  margin-top: auto;
   margin-left: -10px;
   width: 0;
   height: 0;
@@ -148,7 +207,22 @@
 .bubble-bl:after {
   clear: both;
 }
+.bubble-bl:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-left: 11.3px solid transparent;
+  border-right: 11.3px solid transparent;
+  border-top: 11.3px solid #d0d0d0;
+  position: absolute;
+  bottom: -11.3px;
+  left: 14px;
+  display: block;
+}
 .bubble-bl:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -180,7 +254,22 @@
 .bubble-br:after {
   clear: both;
 }
+.bubble-br:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-left: 11.3px solid transparent;
+  border-right: 11.3px solid transparent;
+  border-top: 11.3px solid #d0d0d0;
+  position: absolute;
+  bottom: -11.3px;
+  right: 14px;
+  display: block;
+}
 .bubble-br:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -212,7 +301,21 @@
 .bubble-bc:after {
   clear: both;
 }
+.bubble-bc:before {
+  margin-top: auto;
+  margin-left: -10.65px;
+  width: 0;
+  height: 0;
+  border-left: 11.3px solid transparent;
+  border-right: 11.3px solid transparent;
+  border-top: 11.3px solid #d0d0d0;
+  position: absolute;
+  bottom: -11.3px;
+  left: 50%;
+  display: block;
+}
 .bubble-bc:after {
+  margin-top: auto;
   margin-left: -10px;
   width: 0;
   height: 0;
@@ -245,7 +348,22 @@
 .bubble-lt:after {
   clear: both;
 }
+.bubble-lt:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-top: 11.3px solid transparent;
+  border-bottom: 11.3px solid transparent;
+  border-right: 11.3px solid #d0d0d0;
+  position: absolute;
+  top: 14px;
+  left: -11.3px;
+  display: block;
+}
 .bubble-lt:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -277,7 +395,22 @@
 .bubble-lb:after {
   clear: both;
 }
+.bubble-lb:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-top: 11.3px solid transparent;
+  border-bottom: 11.3px solid transparent;
+  border-right: 11.3px solid #d0d0d0;
+  position: absolute;
+  bottom: 14px;
+  left: -11.3px;
+  display: block;
+}
 .bubble-lb:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -309,8 +442,22 @@
 .bubble-lc:after {
   clear: both;
 }
+.bubble-lc:before {
+  margin-top: -5.65px;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-top: 11.3px solid transparent;
+  border-bottom: 11.3px solid transparent;
+  border-right: 11.3px solid #d0d0d0;
+  position: absolute;
+  top: 50%;
+  left: -11.3px;
+  display: block;
+}
 .bubble-lc:after {
   margin-top: -5px;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -342,7 +489,22 @@
 .bubble-rt:after {
   clear: both;
 }
+.bubble-rt:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-top: 11.3px solid transparent;
+  border-bottom: 11.3px solid transparent;
+  border-left: 11.3px solid #d0d0d0;
+  position: absolute;
+  top: 14px;
+  right: -11.3px;
+  display: block;
+}
 .bubble-rt:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -374,7 +536,22 @@
 .bubble-rb:after {
   clear: both;
 }
+.bubble-rb:before {
+  margin-top: auto;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-top: 11.3px solid transparent;
+  border-bottom: 11.3px solid transparent;
+  border-left: 11.3px solid #d0d0d0;
+  position: absolute;
+  bottom: 14px;
+  right: -11.3px;
+  display: block;
+}
 .bubble-rb:after {
+  margin-top: auto;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
@@ -406,8 +583,22 @@
 .bubble-rc:after {
   clear: both;
 }
+.bubble-rc:before {
+  margin-top: -5.65px;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-top: 11.3px solid transparent;
+  border-bottom: 11.3px solid transparent;
+  border-left: 11.3px solid #d0d0d0;
+  position: absolute;
+  top: 50%;
+  right: -11.3px;
+  display: block;
+}
 .bubble-rc:after {
   margin-top: -5px;
+  margin-left: auto;
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
