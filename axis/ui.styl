@@ -104,9 +104,17 @@ breadcrumb(character="/", spacing=10px, dividerColor=#CDCDCD)
 // ex. bubble: bottom right #5740A1 500px
 // ex. bubble: right top #5740A1 500px
 
-bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sideDistance=15px, padding=10px, pointer=false, triangleColor=darken(color, 3%))
+bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sideDistance=15px, padding=10px, pointer=false, triangleColor=darken(color, 3%), triangleBorderColor=darken(triangleColor, 10%))
 
   // use named argument 'pointer' as pos0 arg (to preserve old bubble api)
+  borderWidth = 1px
+  sqrt2 = 1.3
+  distanceYShadow = (sideDistance - borderWidth)
+  distanceXShadow = (sideDistance - borderWidth)
+  marginLeftShadow = auto
+  marginLeft= auto
+  marginTopShadow = auto
+  marginTop = auto
   if pointer
     pos1 = pointer
     pos0 = bottom
@@ -122,46 +130,62 @@ bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sid
 
   notice: width color padding
 
+  if pos0 is top
+    directionTriangle = up
+    positionY = top
+    distanceY = -(triangleSize)
+    distanceYShadow = -(triangleSize + borderWidth * sqrt2)
+  else if pos0 is bottom
+    directionTriangle = down
+    positionY = bottom
+    distanceY = -(triangleSize)
+    distanceYShadow = -(triangleSize + borderWidth * sqrt2)
+  else if pos0 is left
+    directionTriangle = left
+    positionX = left
+    distanceX = -(triangleSize)
+    distanceXShadow = -(triangleSize + borderWidth * sqrt2)
+  else if pos0 right
+    directionTriangle = right
+    positionX = right
+    distanceX = -(triangleSize)
+    distanceXShadow = -(triangleSize + borderWidth * sqrt2)
+
+  if pos1 is left
+    positionX = left
+    distanceX = sideDistance
+  else if pos1 is right
+    positionX = right
+    distanceX = sideDistance
+  else if pos1 is bottom
+    positionY = bottom
+    distanceY = sideDistance
+  else if pos1 is top
+    positionY = top
+    distanceY = sideDistance
+  else if pos1 is center
+    if pos0 is top or pos0 is bottom or pos1 is false
+      marginLeft = -(triangleSize)
+      marginLeftShadow = -(triangleSize + borderWidth * sqrt2 / 2)
+      positionX = left
+      distanceX = 50%
+      distanceXShadow = 50%
+    else
+      marginTop = -(triangleSize/2)
+      marginTopShadow = -(triangleSize/2 + borderWidth * sqrt2 / 2)
+      positionY = top
+      distanceY = 50%
+      distanceYShadow = 50%
+
+  &:before
+    margin-top: marginTopShadow
+    margin-left: marginLeftShadow
+    triangle: directionTriangle (triangleSize + borderWidth * sqrt2) triangleBorderColor
+    absolute: positionY distanceYShadow positionX distanceXShadow
+    display: block
   &:after
-    if pos0 is top
-      directionTriangle = 'up'
-      positionY = top
-      distanceY = -(triangleSize)
-    else if pos0 is bottom
-      directionTriangle = 'down'
-      positionY = bottom
-      distanceY = -(triangleSize)
-    else if pos0 is left
-      directionTriangle = 'left'
-      positionX = left
-      distanceX = -(triangleSize)
-    else if pos0 is right
-      directionTriangle = 'right'
-      positionX = right
-      distanceX = -(triangleSize)
-
-    if pos1 is left
-      positionX = left
-      distanceX = sideDistance
-    else if pos1 is right
-      positionX = right
-      distanceX = sideDistance
-    else if pos1 is bottom
-      positionY = bottom
-      distanceY = sideDistance
-    else if pos1 is top
-      positionY = top
-      distanceY = sideDistance
-    else if pos1 is center
-      if pos0 is top or pos0 is bottom or pos1 is false
-        margin-left: -(triangleSize)
-        positionX = left
-        distanceX = 50%
-      else
-        margin-top: -(triangleSize/2)
-        positionY = top
-        distanceY = 50%
-
+    margin-top: marginTop
+    margin-left: marginLeft
     triangle: directionTriangle triangleSize triangleColor
     absolute: positionY distanceY positionX distanceX
     display: block
