@@ -104,7 +104,7 @@ breadcrumb(character="/", spacing=10px, dividerColor=#CDCDCD)
 // ex. bubble: bottom right #5740A1 500px
 // ex. bubble: right top #5740A1 500px
 
-bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sideDistance=15px, padding=10px, pointer=false, triangleColor=darken(color, 3%))
+bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sideDistance=15px, padding=10px, pointer=false, triangleColor=darken(color, 3%), triangleBorderColor=darken(triangleColor, 10%))
 
   // use named argument 'pointer' as pos0 arg (to preserve old bubble api)
   borderWidth = 1px
@@ -180,7 +180,7 @@ bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sid
   &:before
     margin-top: marginTopShadow
     margin-left: marginLeftShadow
-    triangle: directionTriangle (triangleSize + borderWidth * sqrt2) darken(triangleColor, 10%)
+    triangle: directionTriangle (triangleSize + borderWidth * sqrt2) triangleBorderColor
     absolute: positionY distanceYShadow positionX distanceXShadow
     display: block
   &:after
