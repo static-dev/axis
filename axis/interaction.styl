@@ -106,7 +106,7 @@ hover-color(color, forceUseColor = false)
       background-color: color
     else if @background-color and !forceUseColor
       background-color: color
-    else if @background-color
+    else if @background-color and !force-use-color
       background-color: color
     else if @color
       color: color
