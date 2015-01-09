@@ -24,7 +24,7 @@ match_expected = (out, p, done) ->
 
 compile_and_match = (p, done) ->
   compile(p)
-    .done(((out) => match_expected(out, p, done)), done)
+    .done(((out) => match_expected(out.result, p, done)), done)
 
 # tests
 
