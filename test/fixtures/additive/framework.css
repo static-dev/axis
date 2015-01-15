@@ -112,6 +112,10 @@ small {
 a {
   color: #0074d9;
   text-decoration: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
   transition: all .3s ease;
   border-bottom: 1px solid transparent;
 }
@@ -194,6 +198,10 @@ textarea {
   color: #555;
   width: 250px;
   text-shadow: 0 0 1px rgba(255,255,255,0.1);
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
   transition: all .3s ease;
 }
 input[type='email']:focus,
@@ -378,6 +386,10 @@ textarea.error:focus {
   outline: none;
 }
 .btn {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
   transition: all .3s ease;
   font-size: 13px;
   padding: 10px 22px;
@@ -402,6 +414,10 @@ textarea.error:focus {
   background-color: #0068c3;
 }
 .btn-fancy {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
   transition: all .3s ease;
   font-size: 13px;
   padding: 10px 22px;
