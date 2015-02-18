@@ -19,7 +19,7 @@ npm install axis --save
 
 ### Documentation
 
-You can find [full documentation for axis here](http://axis.bitballoon.com). This includes usage instructions for integration with gulp, grunt, express, and more, as well as detailed and permalink-able documentation for each mixin that axis offers.
+You can find [full documentation for axis here](http://axis.netlify.com). This includes usage instructions for integration with gulp, grunt, express, and more, as well as detailed and permalink-able documentation for each mixin that axis offers.
 
 ### Miscellaneous
 
