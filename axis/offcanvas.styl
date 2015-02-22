@@ -1,0 +1,201 @@
+// -------
+// Offcanvas
+// -------
+
+// Function: Offcanvas Menu Settings
+// 
+// Configure the offcanvas menu according to the params.
+// Params:
+//   side:  'top', 'right', 'bottom', 'left'
+//   thick:  width (left/right) or height (top/bottom) of menu
+//   show:  min-width (left/right) or min-height (top/bottom) where menu is always visible
+// 
+// ex. -offcanvas_menu_settings()
+// ex. -offcanvas_menu_settings(side: 'top', thick: 10em, show: 0)   // show:0 or show:false
+
+-offcanvas_menu_settings(side = 'left', thick = 40em, show = 80em)
+  position absolute
+  overflow-y auto
+  if side is 'left' or side is 'right'
+    width thick
+    height 100%
+    top 0
+  if side is 'top' or side is 'bottom'
+    width 100%
+    height thick
+    left 0
+  if side is 'left'
+    left 0
+    transform translate(- thick, 0)
+  if side is 'right'
+    right 0
+    transform translate(thick, 0)
+  if side is 'top'
+    top 0
+    transform translate(0, - thick)
+  if side is 'bottom'
+    bottom 0
+    transform translate(0, thick)
+  if show
+    if side is 'left' or side is 'right'
+      @media (min-width show)
+        transform translate(0,0)
+    if side is 'top' or side is 'bottom'
+      @media (min-height show)
+        transform translate(0,0)
+
+// Function: Offcanvas Content Settings
+// 
+// Configure the content element.  Parameters contain info for possible menus on all 4 sides.
+// Parameters follow css shorthand convention (top right bottom left), except all are neccessary
+//
+// Params:
+//   thick:  thickness of all 4 offcanvas menus
+//   push:   min-width/height at which menus push the content, instead of overlapping (4 values)
+//   show:   min-width/height at which menus are always visible (4 values)
+//   content:   css selector for content area
+//   open_class:  classes that parent offcanvas element will toggle for open (4 values)
+// 
+// ex. -offcanvas_content_settings()
+// ex. -offcanvas_menu_settings(thick: (0 15em 0 15em), push: (0 0em 0 0em), show: (0 0 0 0)) // always push never show
+
+-offcanvas_content_settings(thick = (0 0 0 15em), push = (0 0 0 40em), show = (0 0 0 80em), content = '.content', open_class = ('.open-top', '.open-right', '.open-bottom', '.open-left'))
+  & > {content}
+    height 100%
+    overflow-y auto
+  /* push breakpoints */
+  if push[0]
+    @media (min-height push[0])
+      &.{open_class[0]}
+        & > {content}
+          margin-top thick[0]
+        if open_class[2]
+          &:not(.{open_class[2]}) > {content}
+            height 'calc(100% - %s)' % thick[0]
+          &.{open_class[2]} > {content}
+            height 'calc(100% - %s)' % (thick[0] + thick[2])
+  if push[1]
+    @media (min-width push[1])
+      &.{open_class[1]} > {content}
+        margin-right thick[1]
+  if push[2]
+    @media (min-height push[2])
+      &.{open_class[2]}
+        & > {content}
+          margin-bottom thick[2]
+        if open_class[0]
+          &:not(.{open_class[0]}) > {content}
+            height 'calc(100% - %s)' % thick[2]
+  if push[3]
+    @media (min-width push[3])
+      &.{open_class[3]} > {content}
+        margin-left thick[3]
+
+  /* show breakpoints */
+  if show[0]
+    @media (min-height show[0])
+      & > {content}
+        margin-top thick[0]
+        if show[2] and show[2] <= show[0]
+          height 'calc(100% - %s)' % (thick[0] + thick[2])
+        else
+          height 'calc(100% - %s)' % thick[0]
+      if open_class[2]
+        &.{open_class[2]}:not(.{open_class[0]}) > {content}
+          height 'calc(100% - %s)' % (thick[0] + thick[2])
+  if show[1]
+    @media (min-width show[1])
+      & > {content}
+        margin-right thick[1]
+  if show[2]
+    @media (min-height show[2])
+      & > {content}
+        margin-bottom thick[2]
+        if show[0] and show[0] <= show[2]
+          height 'calc(100% - %s)' % (thick[0] + thick[2])
+        else
+          height 'calc(100% - %s)' % thick[2]
+      if open_class[0]
+        &.{open_class[0]}:not(.{open_class[2]}) > {content}
+          height 'calc(100% - %s)' % (thick[0] + thick[2])
+  if show[3]
+    @media (min-width show[3])
+      & > {content}
+        margin-left thick[3]
+
+
+// Mixin: Offcanvas Multi
+// 
+// Create an offcanvas element that will contain one content area and 1-4 offcanvas menus.
+// Parameters follow css shorthand convention (top right bottom left), except all are neccessary
+//
+// Params:
+//   thick:  thickness of all 4 offcanvas menus
+//   push:   min-width/height at which menus push the content, instead of overlapping (4 values)
+//   show:   min-width/height at which menus are always visible (4 values)
+//   menu:   css selectors for menus (4 values)
+//   content:   css selector for content area
+//   open_class:  classes that parent offcanvas element will toggle for open (4 values)
+// 
+// ex. offcanvas_multi()
+// ex. offcanvas_multi(thick: (10em 0 20em 0), push: (0 0 0 0), show: (0 0 80em 0), menu: ('nav' 0 '.about-us' 0), content: 'article', open_class: ('open-nav' 0 'open-about' 0))
+
+offcanvas_multi(thick = (0 0 0 15em), push = (0 0 0 40em), show = (0 0 0 80em), menu = ('.menu-top' '.menu-right' '.menu-bottom' '.menu-left'), content = '.content', open_class = ('open-top' 'open-right' 'open-bottom' 'open-left'))
+  position relative
+  overflow hidden
+  & > *
+    transition all 0.3s ease
+
+  if thick[0]
+    & > {menu[0]}
+      -offcanvas_menu_settings('top', thick[0], show[0])
+    &.{open_class[0]}
+      & > {menu[0]}
+        transform translate(0,0)
+  if thick[1]
+    & > {menu[1]}
+      -offcanvas_menu_settings('right', thick[1], show[1])
+    &.{open_class[1]}
+      & > {menu[1]}
+        transform translate(0,0)
+  if thick[2]
+    & > {menu[2]}
+      -offcanvas_menu_settings('bottom', thick[2], show[2])
+    &.{open_class[2]}
+      & > {menu[2]}
+        transform translate(0,0)
+  if thick[3]
+    & > {menu[3]}
+      -offcanvas_menu_settings('left', thick[3], show[3])
+    &.{open_class[3]}
+      & > {menu[3]}
+        transform translate(0,0)
+  
+  -offcanvas_content_settings(thick, push, show, content, open_class)
+
+
+// Mixin: Offcanvas
+// 
+// Create an offcanvas element that will contain one content area and 1 menu.
+//
+// Params:
+//   side:  'top', 'right', 'bottom', 'left'
+//   thick:  width (left/right) or height (top/bottom) of menu
+//   push:   min-width/height at which menu pushes the content, instead of overlapping
+//   show:  min-width (left/right) or min-height (top/bottom) where menu is always visible
+//   menu:   css selector for menu
+//   content:   css selector for content area
+//   open_class:  class that parent offcanvas element will toggle for open
+// 
+// ex. offcanvas()
+// ex. offcanvas(side: 'right', thick: 25em, push: 0, show: 80em, menu: 'nav', content: 'article', open: 'open')
+
+offcanvas(side = 'left', thick = 15em, push = 40em, show = 80em, menu = ".menu-left", content = ".content", open_class = "open")
+  if side is 'top'
+    offcanvas_multi(thick: (thick 0 0 0), push: (push 0 0 0), show: (show 0 0 0), menu: (menu 0 0 0), content: content, open_class: (open_class 0 0 0))
+  if side is 'right'
+    offcanvas_multi(thick: (0 thick 0 0), push: (0 push 0 0), show: (0 show 0 0), menu: (0 menu 0 0), content: content, open_class: (0 open_class 0 0))
+  if side is 'bottom'
+    offcanvas_multi(thick: (0 0 thick 0), push: (0 0 push 0), show: (0 0 show 0), menu: (0 0 menu 0), content: content, open_class: (0 0 open_class 0))
+  if side is 'left'
+    offcanvas_multi(thick: (0 0 0 thick), push: (0 0 0 push), show: (0 0 0 show), menu: (0 0 0 menu), content: content, open_class: (0 0 0 open_class))
