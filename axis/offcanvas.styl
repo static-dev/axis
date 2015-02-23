@@ -199,3 +199,19 @@ offcanvas(side = 'left', thick = 15em, push = 40em, show = 80em, menu = ".menu-l
     offcanvas_multi(thick: (0 0 thick 0), push: (0 0 push 0), show: (0 0 show 0), menu: (0 0 menu 0), content: content, open_class: (0 0 open_class 0))
   if side is 'left'
     offcanvas_multi(thick: (0 0 0 thick), push: (0 0 0 push), show: (0 0 0 show), menu: (0 0 0 menu), content: content, open_class: (0 0 0 open_class))
+
+
+// Additive Mixin: Offcanvas Menus
+// 
+// WARNING: Creates classes in your css and styles them - not to be used inside
+// an element.
+// 
+// This mixin makes it such that you can use classes to define offcanvas menus.
+// - .offcanvas - creates an offcanvas container
+// - .menu-(top/right/bottom/left) - creates an offcanvas menu
+// - .content - creates a content area for the offcanvs menu
+//   .open-(top/right/bottom/left) - toggles the corresponding menu open/close when placed on offcanvas container.
+
+offcanvas_menus()
+  .offcanvas
+    offcanvas_multi(thick: (15em 15em 15em 15em), push: (40em 30em 40em 30em), show: (0 80em 0 80em))
