@@ -279,4 +279,11 @@ describe 'additive', ->
   it 'framework', (done) ->
     compile_and_match(path.join(@path, 'framework.styl'), done)
 
+describe 'offcanvas', ->
+
+  before -> @path = path.join(test_path, 'offcanvas')
+
+  it 'offcanvas', (done) ->
+    compile_and_match(path.join(@path, 'offcanvas.styl'), done)
+
 # describe 'vertical-rhythm'

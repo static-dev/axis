@@ -8,7 +8,7 @@
 // Params:
 //   side:  'top', 'right', 'bottom', 'left'
 //   thick:  width (left/right) or height (top/bottom) of menu
-//   show:  min-width (left/right) or min-height (top/bottom) where menu is always visible
+//   show:   min-width (left/right) or min-height (top/bottom) where menu is always visible
 // 
 // ex. -offcanvas_menu_settings()
 // ex. -offcanvas_menu_settings(side: 'top', thick: 10em, show: 0)   // show:0 or show:false
@@ -59,11 +59,11 @@
 // ex. -offcanvas_content_settings()
 // ex. -offcanvas_menu_settings(thick: (0 15em 0 15em), push: (0 0em 0 0em), show: (0 0 0 0)) // always push never show
 
--offcanvas_content_settings(thick = (0 0 0 15em), push = (0 0 0 40em), show = (0 0 0 80em), content = '.content', open_class = ('.open-top', '.open-right', '.open-bottom', '.open-left'))
+-offcanvas_content_settings(thick = (0 0 0 15em), push = (0 0 0 40em), show = (0 0 0 80em), content = '.content', open_class = ('.open-top' '.open-right' '.open-bottom' '.open-left'))
   & > {content}
     height 100%
     overflow-y auto
-  /* push breakpoints */
+
   if push[0]
     @media (min-height push[0])
       &.{open_class[0]}
@@ -91,7 +91,6 @@
       &.{open_class[3]} > {content}
         margin-left thick[3]
 
-  /* show breakpoints */
   if show[0]
     @media (min-height show[0])
       & > {content}
@@ -182,7 +181,7 @@ offcanvas_multi(thick = (0 0 0 15em), push = (0 0 0 40em), show = (0 0 0 80em), 
 //   side:  'top', 'right', 'bottom', 'left'
 //   thick:  width (left/right) or height (top/bottom) of menu
 //   push:   min-width/height at which menu pushes the content, instead of overlapping
-//   show:  min-width (left/right) or min-height (top/bottom) where menu is always visible
+//   show:   min-width (left/right) or min-height (top/bottom) where menu is always visible
 //   menu:   css selector for menu
 //   content:   css selector for content area
 //   open_class:  class that parent offcanvas element will toggle for open
