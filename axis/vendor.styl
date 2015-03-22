@@ -50,9 +50,14 @@ border-radius()
 //
 // ex. opacity: .6
 
-opacity(opacity)
-  filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if support-for-ie
-  opacity: opacity
+opacity(opacity, args...)
+  
+  if args  
+    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100 args) if support-for-ie  
+  else
+    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if support-for-ie  
+    
+  opacity: opacity args
 
 // Alias: Border Box
 // A quicker way to specify border-box sizing.
