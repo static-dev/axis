@@ -1,6 +1,6 @@
 {
   "name": "axis",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "css library built on stylus",
   "author": "Jeff Escalante",
   "main": "index.js",
