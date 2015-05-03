@@ -10,10 +10,10 @@ pie()
   behavior: url(pie-path) if pie-enabled
 
 // Mixin: Rounded
-// 
+//
 // Unless you are working with a ridiculously large element, this will round the
 // corners as much as css will allow. Even in IE.
-// 
+//
 // ex. rounded()
 
 rounded()
@@ -35,11 +35,11 @@ b()
   border: arguments
 
 // Mixin: Bg
-// 
+//
 // Makes background (with image) declarations a little simpler. Use this with
 // the global img-path variable to set a base image path that you don't have to
 // keep repeating. Also sets 'no-repeat' as the default background-repeat.
-// 
+//
 // ex. bg: 'test.png'
 // ex. bg: 'other.jpg' center center repeat
 
@@ -48,24 +48,24 @@ bg(path, args...)
   background: url(img-path path) args
 
 // Mixin: bg-retina
-// 
+//
 // Make sure the image path is double the size, pass it halved numbers, and
 // you're in the retina-clear.
-// 
+//
 // ex. bg-retina: 'test.png' 200px 100px
 // ex. bg-retina: 'other.jpg' 100px 50px center center repeat
 
 bg-retina(path, width, height, args...)
   args = unquote('no-repeat') unless args
   set_size = false
-  
+
   for arg in args
     if arg == 'no-repeat'
       set_size = true
 
   background: url(img-path path) args
   background-size: width height
-  
+
   if set_size
     size: width height
 
@@ -89,12 +89,12 @@ normal()
   font-style: normal
 
 // Mixin: Image Replace
-// 
+//
 // Image replacement. Pass it an image path and the image's dimensions and any
 // text will be hidden in the div and it will show an image instead. Uses the
 // fanciest new method, props to Paul Irish. Only works when called as a
 // function with parens. Do not try to do it with a colon!
-// 
+//
 // ex. ir('test.jpg', 200 400)
 
 image-replace(path, dimensions...)
@@ -113,11 +113,11 @@ image-replace(path, dimensions...)
 ir = image-replace
 
 // Mixin: Columns
-// 
+//
 // For css3 columns. Takes column count (int), column gap (px, em), column width
 // (px, em), and a border-like declaration if you want a column rule. This
 // follows exactly with the css3 spec, it's just quicker.
-// 
+//
 // ex. columns()
 // ex. columns: 5
 // ex. columns(8, 15px, 200px, '1px solid red')
@@ -129,21 +129,21 @@ columns(count=3, gap=30px, width=null, rule=null)
   column-rule: unquote(rule) if rule
 
 // Mixin: Avoid Column Break
-// 
+//
 // If you have a list that is broken into columns, this will make sure that the
 // list item is not split across columns awkwardly. Works only in webkit at the
 // moment.
-// 
+//
 // ex. avoid-column-break()
 
 avoid-column-break()
   column-break-inside: avoid
 
 // Mixin: Triangle
-// 
+//
 // One of my favorites. Makes a little css triangle for you. Pass it a direction
 // (up, down, left, right), size (in pixels), and a color.
-// 
+//
 // ex. triangle()
 // ex. triangle: 'down' 15px blue
 
@@ -168,15 +168,15 @@ triangle(direction='up', size=10px, color=#000)
     border-left: size solid color
 
 // Mixin: Sprite
-// 
+//
 // Given a direction in which your sprites are aligned (horizontal/vertical) and
 // an iteration, will measure the width/height of your first sprite frame and
 // step through to the nth next one, depending on the given iteration number.
 // Width/height must be defined for this to work (as is the case for any sprite)
-// 
+//
 // ex. sprite: 2
 // ex. sprite: 5 'horizontal'
-// 
+//
 // TODO: Try using image-size here if @width or @height aren't defined
 
 sprite(iteration, orientation='vertical')
@@ -205,31 +205,35 @@ inline-block()
     *vertical-align: auto
 
 // Mixin: Vertically Align
-// 
 // Cross browser vertical align. Works down to IE9.
-// 
-// ex. vertically-align()
+//
+// ex. vertically-align() or reset it with vertically-align(false)
 
-vertically-align()
-  position: relative
-  top: 50%
-  transform: translateY(-50%)
+vertically-align(reset = null)
+  if reset != false
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+  else
+    position: relative
+    top: 0
+    transform: translateY(0)
 
 // Mixin: Media
-// 
+//
 // Based on Nicole Sullivan's media class, made famous by Facebook
 // http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-
 // hundreds-of-lines-of-code
-// 
+//
 // Put this on a parent and it will split the first two children left and right,
 // like you would with perhaps a comment with an avatar to the left. Pass it a
 // margin between the two. Explained fully here:
 // http://carrotblog.com/css-patterns-evolved/
-// 
+//
 // This mixin works right when the element you apply it to has two or three
 // direct children. The first one will float to the left, the second one will be
 // to the right of the first, and third will go farthest right.
-// 
+//
 // ex. media()
 // ex. media: 15px
 // ex. media: 15px 10px
@@ -257,9 +261,9 @@ media(margin=10px)
     margin-left: left-margin
 
 // Mixin: Raquo
-// 
+//
 // Because technically raquo is not semantic, it's better to add it like this.
-// 
+//
 // ex. raquo()
 
 raquo()
@@ -267,12 +271,12 @@ raquo()
     content: " \00BB"
 
 // Mixin: Font Face
-// 
+//
 // Super simple font-face declaration. Just give the name and the folder it
 // lives in. Make sure the font name matches the name of the files. Uses the
 // fontspring syntax:
 // http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
-// 
+//
 // ex. font-face(proxima-nova, '/fonts')
 
 font-face(name, folder, weight='normal', style='normal')
@@ -283,7 +287,7 @@ font-face(name, folder, weight='normal', style='normal')
     font-style: unquote(style)
 
 // Mixin: Debug
-// 
+//
 // Debugging tool - drop this at root level in your css and it will put borders
 // on every element so you can see what's up. It will also flag them if you made
 // mistakes like put in inline styles, forgot an alt on an image, left the alt
@@ -364,7 +368,7 @@ ease-in-out-back =  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 ease-in-out-swift = cubic-bezier(0.900,  0.000, 0.100, 1.000)
 
 // Function: cached-image-url
-// 
+//
 // An alternative to url() that stores images in a cache for use in
 // cache-images().
 
