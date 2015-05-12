@@ -3,11 +3,11 @@
 // --
 
 // Mixin: Area
-// 
+//
 // Just a nice little area for you to put content in. Rounded corners, box with
 // light grey background by default. You can pass it a different color if you'd
 // like.
-// 
+//
 // ex. area()
 // ex. area: red // <-- not recommended
 
@@ -20,11 +20,11 @@ area(color=#F5F5F5)
   pie()
 
 // Mixin: Notice
-// 
+//
 // A notice for you. Best used for flash alerts, this was originally an internal
 // mixin, but you can use it if you'd like. Give it a color and a width and it
 // will output a nice lightly gradiented box for your notice to reside in.
-// 
+//
 // ex. notice()
 // ex. notice: 500px blue
 
@@ -39,12 +39,12 @@ notice(width=false, color=#EEEEEE, padding=10px)
   width: width if width
 
 // Mixin: Flash
-// 
+//
 // This is really great for rails flash messages, or really any little
 // notifications like 'logged in!', 'logged out!', or 'errarrrr!'. Takes one of
 // four types and colors them nicely for you - notice, success, warning, or
 // error. Defaults to notice.
-// 
+//
 // ex. flash()
 // ex. flash: 'error'
 
@@ -70,12 +70,12 @@ flash(type='notice')
     text-shadow: 1px 1px 1px rgba(#000,.2)
 
 // Mixin: Breadcrumb
-// 
+//
 // Lay this one down on a list and it will turn the list into a breadcrumb-y
 // thing. By default separates with a slash, but you can feed it any character.
 // Second param is spacing between the list items, and the third is the color of
 // the divider. All are optional.
-// 
+//
 // ex. breadcrumb()
 // ex. breadcrumb: '>'
 // ex. breadcrumb: "-" 25px red
@@ -93,12 +93,12 @@ breadcrumb(character="/", spacing=10px, dividerColor=#CDCDCD)
     content: ""
 
 // Mixin: Bubble
-// 
+//
 // If you're anything like me, you always seem to find your designers putting
 // little bubbles in things. This mixin takes care of that problem, and makes a
 // nice bubble with 100% css. All parameters optional - accepts width, pointer
 // position (left, center, or right), and a color.
-// 
+//
 // ex. bubble()
 // ex. bubble: top center #57777E
 // ex. bubble: bottom right #5740A1 500px
@@ -191,12 +191,12 @@ bubble(pos0=left, pos1=false, color=#EEEEEE, width=false, triangleSize=10px, sid
     display: block
 
 // Mixin: Figure
-// 
+//
 // For when you want to *semantically* show an image. Put this on your
 // <figure /> element and it will style the nested image and figcaption in a
 // wonderfully pleasing manner. Takes a color (for the thin outline), and if
 // you want, dimensions of the image as a space separated list.
-// 
+//
 // ex. figure()
 // ex. figure: blue
 // ex. figure(green, 100px 400px)
@@ -223,13 +223,13 @@ figure(color = default-color, dimensions = false)
     italic()
 
 // Mixin: Navigation
-// 
+//
 // Makes a fantastic nav bar for you that doesn't look exactly like bootstrap's
 // and you can customize it as well. Params: fixed (boolean), color (recommend
 // something dark), link color, and size, which is an integer from one up, and
 // scales every aspect of the nav bar for you. All have defaults. This mixin is
 // meant to be placed on a <nav> element that contains a ul.
-// 
+//
 // ex. nav()
 // ex. nav: 1 #444 red true
 
@@ -281,14 +281,14 @@ navigation(size = 1, bgColor = #222, linkColor = #fff, posFixed = false)
 nav = navigation
 
 // Additive Mixin: Flash Notices
-// 
+//
 // WARNING: Creates classes in your css and styles them - not to be used inside
 // an element.
-// 
+//
 // Super convenient flash notices. Anything with .flash on it will display as a
 // notice, and if you add the additional class .error, .warning, .notice, or
 // .success, it will display the appropriate color background for the message.
-// 
+//
 // ex. flash-notices()
 
 flash-notices()
@@ -301,3 +301,50 @@ flash-notices()
       flash(notice)
     &.success
       flash(success)
+
+// Mixin: Radio
+//
+// A simple reset for radio button styling across browsers. Takes a color.
+// Default color is blue. Use on the <label> which wraps your radio inputs.
+//
+// ex. radio()
+// ex. radio: gray
+// ex. radio(#FF1493)
+
+radio(color=#0074d9)
+  cursor: pointer
+  display: block
+  line-height: 2.5em
+
+  // Accessible hidden styles
+  [type="radio"]
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+
+    & + span
+      display: block
+
+    // Unchecked
+    & + span:before
+      background: rgba(#000,.15)
+      border: 0.125em solid #fff
+      border-radius: 1em
+      box-shadow: 0 0 0 .1em rgba(#000, .25)        
+      content: ''
+      display: inline-block
+      height: 1em
+      margin-right: 0.75em
+      transition: 0.5s ease all
+      vertical-align: -0.33em
+      width: 1em
+
+    // Checked
+    &:checked + span:before, &:focus + span:before
+      background: color
+      box-shadow: 0 0 0 0.25em rgba(#000, .15)
