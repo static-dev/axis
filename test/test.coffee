@@ -129,6 +129,13 @@ describe 'interaction', ->
   it 'hover-color', (done) ->
     compile_and_match(path.join(@path, 'hover-color.styl'), done)
 
+describe 'reset', ->
+
+  before -> @path = path.join(test_path, 'reset')
+
+  it 'fluid-media', (done) ->
+    compile_and_match(path.join(@path, 'fluid-media.styl'), done)
+
 describe 'tables', ->
 
   before -> @path = path.join(test_path, 'tables')
