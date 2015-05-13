@@ -201,6 +201,9 @@ describe 'ui', ->
   it 'radio', (done) ->
     compile_and_match(path.join(@path, 'radio.styl'), done)
 
+  it 'range', (done) ->
+    compile_and_match(path.join(@path, 'range.styl'), done)
+
 describe 'utilities', ->
 
   before -> @path = path.join(test_path, 'utilities')
