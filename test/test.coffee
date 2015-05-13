@@ -129,6 +129,13 @@ describe 'interaction', ->
   it 'hover-color', (done) ->
     compile_and_match(path.join(@path, 'hover-color.styl'), done)
 
+describe 'print', ->
+
+  before -> @path = path.join(test_path, 'print')
+
+  it 'print-styles', (done) ->
+    compile_and_match(path.join(@path, 'print-styles.styl'), done)
+
 describe 'reset', ->
 
   before -> @path = path.join(test_path, 'reset')
