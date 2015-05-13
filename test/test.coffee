@@ -232,6 +232,9 @@ describe 'utilities', ->
   it 'inline-block', (done) ->
     compile_and_match(path.join(@path, 'inline-block.styl'), done)
 
+  it 'border-box-html', (done) ->
+    compile_and_match(path.join(@path, 'border-box-html.styl'), done)
+
   it 'media', (done) ->
     compile_and_match(path.join(@path, 'media.styl'), done)
 
