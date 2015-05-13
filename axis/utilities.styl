@@ -273,6 +273,20 @@ media(margin=10px)
     float: right
     margin-left: left-margin
 
+// Mixin: Ratio Box
+// Set a specific width/height ratio. Useful on background images and iframes.
+
+ratio-box(ratio = 1/1)
+  ratio = remove-unit(ratio)
+  overflow: hidden
+  position: relative
+
+  &:before
+    content: ''
+    display: block
+    height: 0
+    padding-top: (1 / ratio) * 100%
+
 // Mixin: Raquo
 //
 // Because technically raquo is not semantic, it's better to add it like this.
