@@ -55,6 +55,25 @@
         <td>doge</td>
       </tr>
     </table>
+    <div class="offcanvas">
+      <div class="menu-left">Left</div>
+      <div class="menu-right">Right</div>
+      <div class="menu-top">Top</div>
+      <div class="menu-bottom">Bottom</div>
+      <div class="content">
+        <div class="btn" data-toggle="left">Left</div>
+        <div class="btn" data-toggle="right">Right</div>
+        <div class="btn" data-toggle="top">Top</div>
+        <div class="btn" data-toggle="bottom">Bottom</div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector('.offcanvas').addEventListener('click', function (e) {
+        var side = e.target.getAttribute('data-toggle');
+        this.classList.toggle('open-' + side);
+      });
+    </script>
   </body>
 
 </html>

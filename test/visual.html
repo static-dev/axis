@@ -81,6 +81,9 @@
     <link rel='stylesheet' href='fixtures/utilities/triangle.css' >
     <link rel='stylesheet' href='fixtures/utilities/vertical-align.css' >
 
+    <!-- offcanvas -->
+    <link rel="stylesheet" href="fixtures/offcanvas/offcanvas.css">
+
     <style>
       body {
         font-family: sans-serif;
@@ -115,6 +118,13 @@
         margin: 1em 0;
         width: 400px;
         height: 50px;
+      }
+      .offcanvas-menu {
+        height: 200px;
+        border: 4px solid #000;
+      }
+      .offcanvas-menu .menu-left {
+        background: #d8d8d8;
       }
     </style>
   </head>
@@ -411,6 +421,24 @@
       </div>
 
     </section>
+
+    <section>
+      <div class="offcanvas-menu">
+        <div class="menu-left">Left Menu</div>
+        <div class="content">
+          <p>Narrow browser window to show/hide menu.</p>
+          <button class="button">Toggle Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelector('.offcanvas-menu').addEventListener('click', function (e) {
+        if (e.target.tagName === "BUTTON") {
+          this.classList.toggle('open');
+        }
+      });
+    </script>
 
   </body>
 
