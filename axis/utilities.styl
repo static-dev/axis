@@ -288,48 +288,58 @@ font-face(name, folder, weight='normal', style='normal')
 
 // Mixin: Debug
 //
-// Debugging tool - drop this at root level in your css and it will put borders
-// on every element so you can see what's up. It will also flag them if you made
-// mistakes like put in inline styles, forgot an alt on an image, left the alt
-// blank, etc. For god's sake don't use this in production. All credit for this
-// goes to intuit.css, from which I adapted it (and improved it a bit).
-// https://github.com/csswizardry/inuit.css
+// Debugging tool - adds a border to the current element, its children,
+// grandchildren, etc so you can see what's up – great for precise layout
+// tweaks.  It will also add flags if you made mistakes like put in inline
+// styles, forgot an alt on an image, left the alt blank, etc. Not to be used
+// in production, obviously.
+//
+// via dbox: http://codepen.io/dbox/pen/GJZzYo?editors=110
 
 debug()
-  html
+  border 1px solid MediumPurple
+  > *
+    border 1px solid DarkKhaki
+  > * > *
+    border 1px solid MediumTurquoise
+  > * > * > *
+    border 1px solid LightSlateGray
+  > * > * > * > *
+    border 1px solid LightBlue
+  > * > * > * > * > *
+    border 1px solid MediumSlateBlue
+  > * > * > * > * > * > *
+    border 1px solid DeepSkyBlue
+  > * > * > * > * > * > * > *
+    border 1px solid DarkSeaGreen
 
-    div
-      border: 1px solid green
+  img
+    background-color: #f00
+    border: 1px solid #f00
+    filter: hue-rotate(330deg) contrast(.75) saturate(6)
 
-    [style], style
-      border: 5px solid yellow
+  img[alt]
+    border: 1px solid LimeGreen
+    filter: none
 
-    style
-      border: block
+  img[alt=""]
+    border: 1px solid gold
+    filter: contrast(1) saturate(2)
 
-    img
-      border: 5px solid red
+  a
+    background: rgba(#f00, .1)
+    border: 1px solid #f00
 
-    img[alt]
-      border-color: green
+  a[title]
+    background: none
+    border-color: LimeGreen
 
-    img[alt=""]
-      border-color: yellow
+  style
+    border: block
 
-    a
-      border: 5px solid yellow
-
-    a[title]
-      border-color: green
-
-    a[href="#"]
-      outline-color: yellow
-
-    a[target]
-      border-color: red
-
-    [class=""], [id=""]
-      border: 5px solid yellow
+  [style], style, [class=""], [id=""], a[href="#"]
+    background: rgba(yellow, .2)
+    border: 1px solid gold
 
 // Custom animation timing functions, ported from bourbon
 // https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_timing-functions.scss

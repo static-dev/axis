@@ -217,6 +217,9 @@ describe 'utilities', ->
   it 'columns', (done) ->
     compile_and_match(path.join(@path, 'columns.styl'), done)
 
+  it 'debug', (done) ->
+    compile_and_match(path.join(@path, 'debug.styl'), done)    
+
   it 'font-face', (done) ->
     compile_and_match(path.join(@path, 'font-face.styl'), done)
 
