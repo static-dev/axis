@@ -173,6 +173,9 @@ describe 'typography', ->
   it 'hyphenation', (done) ->
     compile_and_match(path.join(@path, 'hyphenation.styl'), done)
 
+  it 'ellipsis', (done) ->
+    compile_and_match(path.join(@path, 'ellipsis.styl'), done)
+
 describe 'ui', ->
 
   before -> @path = path.join(test_path, 'ui')
@@ -218,7 +221,7 @@ describe 'utilities', ->
     compile_and_match(path.join(@path, 'columns.styl'), done)
 
   it 'debug', (done) ->
-    compile_and_match(path.join(@path, 'debug.styl'), done)    
+    compile_and_match(path.join(@path, 'debug.styl'), done)
 
   it 'font-face', (done) ->
     compile_and_match(path.join(@path, 'font-face.styl'), done)
