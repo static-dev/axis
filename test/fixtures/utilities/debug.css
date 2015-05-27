@@ -1,0 +1,58 @@
+.debug {
+  border: 1px solid MediumPurple;
+}
+.debug > * {
+  border: 1px solid DarkKhaki;
+}
+.debug > * > * {
+  border: 1px solid MediumTurquoise;
+}
+.debug > * > * > * {
+  border: 1px solid LightSlateGray;
+}
+.debug > * > * > * > * {
+  border: 1px solid LightBlue;
+}
+.debug > * > * > * > * > * {
+  border: 1px solid MediumSlateBlue;
+}
+.debug > * > * > * > * > * > * {
+  border: 1px solid DeepSkyBlue;
+}
+.debug > * > * > * > * > * > * > * {
+  border: 1px solid DarkSeaGreen;
+}
+.debug img {
+  border: 1px solid #f00;
+  -webkit-filter: hue-rotate(330deg) contrast(0.75) saturate(6);
+  filter: hue-rotate(330deg) contrast(0.75) saturate(6);
+}
+.debug img[alt] {
+  border: 1px solid LimeGreen;
+  -webkit-filter: none;
+  filter: none;
+}
+.debug img[alt=""] {
+  border: 1px solid #ffd700;
+  -webkit-filter: contrast(1) saturate(2);
+  filter: contrast(1) saturate(2);
+}
+.debug a {
+  background: rgba(255,0,0,0.1);
+  border: 1px solid #f00;
+}
+.debug a[title] {
+  background: none;
+  border-color: LimeGreen;
+}
+.debug style {
+  border: block;
+}
+.debug [style],
+.debug style,
+.debug [class=""],
+.debug [id=""],
+.debug a[href="#"] {
+  background: rgba(255,220,0,0.2);
+  border: 1px solid #ffd700;
+}
