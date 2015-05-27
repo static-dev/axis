@@ -1,0 +1,13 @@
+.ellipsis {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+div.narrow {
+  border: 1px solid #eee;
+  width: 300px;
+}

@@ -335,7 +335,7 @@ radio(color=#0074d9)
       background: rgba(#000,.15)
       border: 0.125em solid #fff
       border-radius: 1em
-      box-shadow: 0 0 0 .1em rgba(#000, .25)        
+      box-shadow: 0 0 0 .1em rgba(#000, .25)
       content: ''
       display: inline-block
       height: 1em
@@ -348,3 +348,97 @@ radio(color=#0074d9)
     &:checked + span:before, &:focus + span:before
       background: color
       box-shadow: 0 0 0 0.25em rgba(#000, .15)
+
+// Mixin: Range
+//
+// A clean, cross-browser styling reset for range inputs.
+// Note: range inputs are not supported in IE9 and below.
+// http://caniuse.com/#feat=input-range
+//
+// ex. range()
+// ex. range: tomato 200px 15px 9px #333
+
+range(color=#0074d9, trackWidth=100%, thumbSize=2em, trackHeight=.5em, trackColor=rgba(#000, .1))
+  -webkit-appearance: none
+  width: trackWidth
+  margin: 0
+  outline: none
+  background: transparent
+
+  &::-webkit-slider-runnable-track
+    background: trackColor
+    border: none
+    border-radius: trackHeight
+    height: trackHeight
+    width: trackWidth
+
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+    border: none
+    height: thumbSize
+    width: thumbSize
+    border-radius: 50%
+    background: color
+    margin-top: "calc(-%s / 2 + %s / 2)" % (thumbSize trackHeight)
+    transition: all 0.2s ease
+
+    &:hover
+      transform: scale(1.2)
+      cursor: pointer
+
+    &:active
+      background: darken(color, 15%)
+
+  &:focus
+    outline: none
+
+  &:focus::-webkit-slider-runnable-track
+    background: trackColor
+
+  &::-moz-range-track
+    width: trackWidth
+    height: trackHeight
+    background: trackColor
+    border: none
+    border-radius: trackHeight
+
+  &::-moz-range-thumb
+    border: none
+    height: thumbSize
+    width: thumbSize
+    border-radius: 50%
+    background: color
+    transition: all 0.2s ease
+
+    &:hover
+      transform: scale(1.2)
+
+    &:active
+      background: darken(color, 15%)
+
+  &::-moz-focus-outer
+    border: 0
+
+  &::-ms-track
+    height: trackHeight
+    width: trackWidth
+    background: transparent
+    border-width: "calc(%s / 2 + %s / 2)" % (thumbSize trackHeight) 0
+    color: transparent;
+
+  &::-ms-fill-lower, &::-ms-fill-upper, &:focus::-ms-fill-lower, &:focus::-ms-fill-upper
+    background: trackColor
+    border-radius: 10px
+
+  &::-ms-thumb
+    border: none
+    height: 2em
+    width: 2em
+    border-radius: 50%
+    background: color
+
+    &:active
+      background: darken(color, 15%)
+
+  &::-ms-tooltip
+    display: none

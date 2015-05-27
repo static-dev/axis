@@ -3,8 +3,8 @@
 // ----------
 
 // Function: Line Height
-// 
-// If there is a font-size set on the parent element, adjusts the line height to 
+//
+// If there is a font-size set on the parent element, adjusts the line height to
 // match that. If not, it uses the base font-size to calculate the line-height.
 
 -line-height()
@@ -15,10 +15,10 @@
     line-height: 1.6rem
 
 // Mixin: Text Margin
-// 
+//
 // Puts nice visually pleasing top and bottom margins on a paragraph of text.
 // Put a font-size on your element to have it adjust accordingly.
-// 
+//
 // ex. p
 //       font-size: 18px
 //       text-margin()
@@ -30,10 +30,10 @@ text-margin(size=font-size)
     margin: unit(font-size*.75, 'px') 0
 
 // Mixin: Paragraph
-// 
+//
 // Sets a nice size, line-height, and margins on a paragraph of text. Pass a
 // size in to customize. Toggle margins off if you don't want them.
-// 
+//
 // ex. p()
 // ex. p: 18px
 // ex. p: 14px false
@@ -87,9 +87,9 @@ reset-case()
   text-transform: none
 
 // Mixin: Small
-// 
+//
 // Makes your text smaller and a little lighter. Great on <small /> tags.
-// 
+//
 // ex. small()
 
 small()
@@ -110,12 +110,12 @@ small()
   openTypeLigatures() if ligatures
 
 // Mixin Set: h1, h2, h3, h4, h5, h6
-// 
+//
 // These provide nice defaults for headings based off the default font size.
 // The can scale infinitely, and work best when matched to their corresponding
 // html elements. If you'd like to change the base size of a header, just pass
 // it as an option.
-// 
+//
 // ex. h3()
 // ex. h3: 3.5
 
@@ -139,11 +139,11 @@ h6(size=0.9)
   upcase()
 
 // Mixin: Link
-// 
+//
 // A nice default style for links. Accepts a color and a style. Color can be
 // anything, style can be underline, darken, lighten, or glow, each giving it a
 // different style of interaction when hovered. More suggestions here welcome.
-// 
+//
 // ex. link()
 // ex. link: green
 // ex. link: #57777E 'glow'
@@ -165,12 +165,12 @@ link(color=blue, style='underline')
   else if style == 'glow'
     &:hover
       text-shadow: 0 0 7px rgba(color, .6)
-      
+
   &:visited
     opacity: .8
 
 // Mixin: Reset Link
-// 
+//
 // Sometimes my link mixin of the browser defaults will give you questionable
 // link defaults that you don't want on certain elements. This guy gets rid of
 // that.
@@ -181,17 +181,17 @@ reset-link()
   border: none
   text-decoration: none
   color: initial
-  
+
   &:hover
     border: none
     text-decoration: none
     color: initial
-    
+
   &:visited
     opacity: 1
 
 // Mixin: Text Selection
-// 
+//
 // This guy sets the text select color intelligently based on the
 // highlight-color variable found in the settings file. If you really want, you
 // can pass it a color override too.
@@ -204,17 +204,17 @@ text-selection(color=highlight-color, textColor=null)
   &::-moz-selection
     background: color
     color: textColor
-    
+
   &::selection
     background: color
     color: textColor
 
 // Mixin: Ul
-// 
+//
 // A nice default for list styles. More or less the same as browser defaults,
 // scales nicely. You can pass it any style that list-style-type would normally
 // take. Defaults to disc. Use this on a ul element por favor.
-// 
+//
 // ex. ul()
 // ex. ul: 'square'
 
@@ -229,11 +229,11 @@ ul(style='disc')
     padding: 0.125rem
 
 // Mixin: Ol
-// 
+//
 // A nice default for list styles. More or less the same as browser defaults,
 // scales nicely. You can pass it any style that list-style-type would normally
 // take. Defaults to decimal. Use this on a ol element por favor.
-// 
+//
 // ex. ol()
 // ex. ol: 'upper-roman'
 
@@ -248,10 +248,10 @@ ol(style='decimal')
     padding: 0.125rem
 
 // Mixin: Inline List
-// 
+//
 // For when you need your list to be horizontal. Pass it the spacing you want
 // between list elements, whatever units you'd like. Defaults to 20px.
-// 
+//
 // ex. inline-list()
 // ex. inline-list: 15px
 
@@ -269,11 +269,11 @@ inline-list(spacing=20px)
     margin-right: 0
 
 // Mixin: Reset List
-// 
+//
 // If you're tired of all the list shenanigans and want to get rid of them for
 // this special list you're working on, this is your guy. Resets the margins,
 // padding, and style.
-// 
+//
 // ex. reset-list()
 
 reset-list()
@@ -287,11 +287,11 @@ reset-list()
     margin: 0
 
 // Mixin: Blockquote
-// 
+//
 // Nice styles for a blockquote, and even puts a nice hyphen in before your
 // citation. Use with a <p> and <cite>, <footer>, or <figcaption> inside for
 // best results. Pass a color or 'none' to set the left border.
-// 
+//
 // ex. blockquote()
 
 blockquote(color=blue)
@@ -317,13 +317,13 @@ blockquote(color=blue)
 blockquo = blockquote
 
 // Hyphenation
-// 
+//
 // Hyphenation is the better word-break. It’s locale aware, and inserts the
 // hyphen character at the correct place, when breaking the words. This is
 // especially important in responsive designs. It will save you from a lot of
 // ragged lines. And, no need anymore for clunky & slow Javascript hyphenation
 // fallbacks. Taken from http://www.newnet-soft.com/blog/csstypography
-// 
+//
 // ex. hyphenation()
 
 hyphenation()
@@ -334,17 +334,29 @@ hyphenation()
     -webkit-hyphenate-before: 2
     -webkit-hyphenate-after:  3
     hyphenate-lines:          3
+    
+// Mixin: Ellipsis
+// Truncate text to the width of its container...
+// ex: ellipsis: 300px
+
+ellipsis(width=100%)
+  display: inline-block
+  max-width: width
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  word-wrap: normal
 
 // Additive Mixin: Base
-// 
+//
 // WARNING: Creates classes in your css and styles them - not to be used inside
 // an element.
-// 
+//
 // This is an essential mixin. You want this on your page. Sets your font stack,
 // size, and colors based on the settings file and makes sure that your text is
 // a great looking as possible. You can override any of the params, but there is
 // really no reason to.
-// 
+//
 // ex. base()
 
 base(fonts=font-stack, size=font-size, color=font-color)
@@ -361,12 +373,12 @@ base(fonts=font-stack, size=font-size, color=font-color)
     font-size-adjust: auto
 
 // Additive Mixin: Headers
-// 
+//
 // WARNING: Creates classes in your css and styles them - not to be used inside
 // an element.
-// 
+//
 // Adds roots' wonderful scaling header styles to your <hx> tags.
-// 
+//
 // ex. headers()
 
 headers()
@@ -389,12 +401,12 @@ headers()
     h6()
 
 // Additive Mixin: Lists
-// 
+//
 // WARNING: Creates classes in your css and styles them - not to be used inside
 // an element.
-// 
+//
 // Adds roots' styles to ul and ols.
-// 
+//
 // ex. lists()
 
 lists()
@@ -404,12 +416,12 @@ lists()
     ol()
 
 // Additive Mixin: Bold-Italic
-// 
+//
 // WARNING: Creates classes in your css and styles them - not to be used inside
 // an element.
-// 
+//
 // Adds bold and italic styles to the right tags if you did a global reset.
-// 
+//
 // ex. bold-italic()
 
 bold-italic()
@@ -423,13 +435,13 @@ bold-italic()
     italic()
 
 // Additive Mixin: Typography
-// 
+//
 // WARNING: Creates classes in your css and styles them - not to be used inside
 // an element.
-// 
+//
 // Adds roots' styles to bold and italic elements, headers, paragrapgs, small
 // text, links, lists, and blockquotes. Got all your basic elements covered.
-// 
+//
 // ex. typography()
 
 typography()
@@ -449,6 +461,6 @@ typography()
 
   blockquote
     blockquo()
-  
+
   .hyphenation
     hyphenation()
