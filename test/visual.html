@@ -68,6 +68,7 @@
     <link rel='stylesheet' href='fixtures/utilities/b.css' >
     <link rel='stylesheet' href='fixtures/utilities/bg.css' >
     <link rel='stylesheet' href='fixtures/utilities/columns.css' >
+    <link rel='stylesheet' href='fixtures/utilities/debug.css' >
     <link rel='stylesheet' href='fixtures/utilities/font-face.css' >
     <link rel='stylesheet' href='fixtures/utilities/font-weight.css' >
     <link rel='stylesheet' href='fixtures/utilities/group.css' >
@@ -281,7 +282,6 @@
       </blockquote>
 
       <p class='p hyphenation'>sdfkjhsdkjfhkjdshfksjdhfksdjhfksjdhfksjdhfkjshdfkjsdhfkjshdfkjshdkfjhsdkfjhskdfjhskdjfhskdjfhskjdhfksjdhfksjdhfksjhdfkjshdfkjshdkfjhsdkjfhskdjfhksjdhfksjdhflakejhroiweroiahsodiskjcnkzxbckjbdosifeaoihdaosjdlznxkj dsjkhfskdjhf skdjhfkjdhkfjhsdkfjhsdkfjhskdjfhksjdhfksd kdsfjhksdjhfksjdhfksjdhfksjdhfkjh kjhsdfkjsdhfksjdhfksjhdfksjhdfksjhdfksjdhfksjdhfksjdh</p>
-
     </section>
 
     <section>
@@ -409,6 +409,37 @@
       <div class="vertical-align">
         <div class='inner-div reset'>not vertically aligned</div>
       </div>
+      <div class="debug">
+        <article>
+          <hgroup>
+            <h1>debug()</h1>
+          </hgroup>
+          <p> Toggle this on a parent element. It will add a border to its children, grandchildren, etc so you can see what's up - great for precise layout tweaks.  It will also add flags if you made mistakes like put in inline styles, forgot an alt on an image, left the alt blank, etc.</p>
+          <ul>
+            <li>Level 4<span>Level 5</span></li>
+            <li>Level 4<span style="">Level 5 w/ Inline style flag</span></li>
+            <li>Level 4</li>
+          </ul>
+          <h3>Images</h3>
+          <ul>
+            <li>
+              <p>no alt tag:</p><img src="http://dogr.io/doge.png" width="150px" height="150px"/>
+            </li>
+            <li>
+              <p>empty alt tag:</p><img src="http://dogr.io/doge.png" width="150px" height="150px" alt=""/>
+            </li>
+            <li>
+              <p>all good:</p><img src="http://dogr.io/doge.png" width="150px" height="150px" alt="Alt tags for images"/>
+            </li>
+          </ul>
+          <h3>Links</h3>
+          <ul>
+            <li><a>empty a tag    </a></li>
+            <li><a href="#">I link to #</a></li>
+            <li><a href="http://www.dbox.us" title="Check out my site.">I'm cool           </a></li>
+          </ul>
+        </div>
+      </section>
 
     </section>
 
