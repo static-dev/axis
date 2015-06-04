@@ -153,3 +153,16 @@ normalize-css()
 
   td, th
     padding: 0
+
+// Mixin: Fluid Media
+// Makes your img, video, and iframe tags responsive to their parent container.
+
+fluid-media()
+  img,
+  video,
+  iframe
+    max-width: 100%
+    height: auto
+    border: 0
+    -ms-interpolation-mode: bicubic
+    display: block

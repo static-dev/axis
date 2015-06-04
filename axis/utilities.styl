@@ -204,6 +204,19 @@ inline-block()
     *display: inline
     *vertical-align: auto
 
+// Mixin: Border Box HTML
+// Add border box to every element in your project. Used in your project root.
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+
+border-box-html()
+  html
+    box-sizing: border-box
+
+  *, 
+  *:before,
+  *:after
+    box-sizing: inherit
+
 // Mixin: Vertically Align
 // Cross browser vertical align. Works down to IE9.
 //
@@ -259,6 +272,20 @@ media(margin=10px)
   & > *:nth-child(3)
     float: right
     margin-left: left-margin
+
+// Mixin: Ratio Box
+// Set a specific width/height ratio. Useful on background images and iframes.
+
+ratio-box(ratio = 1/1)
+  ratio = remove-unit(ratio)
+  overflow: hidden
+  position: relative
+
+  &:before
+    content: ''
+    display: block
+    height: 0
+    padding-top: (1 / ratio) * 100%
 
 // Mixin: Raquo
 //

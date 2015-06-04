@@ -129,6 +129,20 @@ describe 'interaction', ->
   it 'hover-color', (done) ->
     compile_and_match(path.join(@path, 'hover-color.styl'), done)
 
+describe 'print', ->
+
+  before -> @path = path.join(test_path, 'print')
+
+  it 'print-styles', (done) ->
+    compile_and_match(path.join(@path, 'print-styles.styl'), done)
+
+describe 'reset', ->
+
+  before -> @path = path.join(test_path, 'reset')
+
+  it 'fluid-media', (done) ->
+    compile_and_match(path.join(@path, 'fluid-media.styl'), done)
+
 describe 'tables', ->
 
   before -> @path = path.join(test_path, 'tables')
@@ -235,8 +249,14 @@ describe 'utilities', ->
   it 'inline-block', (done) ->
     compile_and_match(path.join(@path, 'inline-block.styl'), done)
 
+  it 'border-box-html', (done) ->
+    compile_and_match(path.join(@path, 'border-box-html.styl'), done)
+
   it 'media', (done) ->
     compile_and_match(path.join(@path, 'media.styl'), done)
+
+  it 'ratio-box', (done) ->
+    compile_and_match(path.join(@path, 'ratio-box.styl'), done)
 
   it 'no-select', (done) ->
     compile_and_match(path.join(@path, 'no-select.styl'), done)
