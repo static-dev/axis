@@ -255,6 +255,9 @@ describe 'utilities', ->
   it 'media', (done) ->
     compile_and_match(path.join(@path, 'media.styl'), done)
 
+  it 'quantity-queries', (done) ->
+    compile_and_match(path.join(@path, 'quantity-queries.styl'), done)
+
   it 'ratio-box', (done) ->
     compile_and_match(path.join(@path, 'ratio-box.styl'), done)
 
@@ -263,6 +266,9 @@ describe 'utilities', ->
 
   it 'raquo', (done) ->
     compile_and_match(path.join(@path, 'raquo.styl'), done)
+
+  it 'rem-calculator', (done) ->
+    compile_and_match(path.join(@path, 'rem-calculator.styl'), done)
 
   it 'rounded', (done) ->
     compile_and_match(path.join(@path, 'rounded.styl'), done)

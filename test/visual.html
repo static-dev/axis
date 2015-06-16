@@ -75,9 +75,11 @@
     <link rel='stylesheet' href='fixtures/utilities/image-replace.css' >
     <link rel='stylesheet' href='fixtures/utilities/inline-block.css' >
     <link rel='stylesheet' href='fixtures/utilities/media.css' >
+    <link rel='stylesheet' href='fixtures/utilities/quantity-queries.css' >    
     <link rel='stylesheet' href='fixtures/utilities/ratio-box.css' >
     <link rel='stylesheet' href='fixtures/utilities/no-select.css' >
     <link rel='stylesheet' href='fixtures/utilities/raquo.css' >
+    <link rel='stylesheet' href='fixtures/utilities/rem-calculator.css' >
     <link rel='stylesheet' href='fixtures/utilities/rounded.css' >
     <link rel='stylesheet' href='fixtures/utilities/sprite.css' >
     <link rel='stylesheet' href='fixtures/utilities/triangle.css' >
@@ -392,6 +394,41 @@
         <p>comment</p>
       </div>
 
+      <div class="quantity-queries">
+        h4>Add blue border of there are at least 2 lis:</h4>
+        <ul class="least">
+          <li>i'm one</li>
+          <li>two</li>
+          <li>tres</li>
+          <li>four</li>
+          <li>five  </li>
+        </ul>
+        <h4>Add orange border if between 0 and 20 elments:</h4>
+        <article class="between">
+          <div>i'm one</div>
+          <div>two</div>
+          <div>tres</div>
+          <div>four</div>
+          <div>five  </div>
+        </article>
+        <h4>Pink background if there are at most 9</h4>
+        <ul class="most">
+          <li>i'm one</li>
+          <li>two</li>
+          <li>tres</li>
+          <li>four</li>
+          <li>five    </li>
+        </ul>
+        <h4>Green border if exactly 5:</h4>
+        <ul class="exactly">
+          <li>i'm one</li>
+          <li>two</li>
+          <li>tres</li>
+          <li>four</li>
+          <li>five  </li>
+        </ul>
+      </div>
+
       <div class="ratio-box">
         <iframe width="1280" height="720" src="https://www.youtube.com/embed/o0xr1JRZOb4" frameborder="0" allowfullscreen></iframe>
       </div>
@@ -399,6 +436,10 @@
       <p class="no-select">you should not be able to select this text</p>
 
       <p class="raquo">look at this</p>
+
+
+      <h5 class="rem-calculator">Font-size is set as 30px but the browser see it as 1.875rem</h5>
+
 
       <div class="button rounded">look im rounded</div>
 

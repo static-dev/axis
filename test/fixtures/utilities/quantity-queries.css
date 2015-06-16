@@ -1,0 +1,17 @@
+.least > li:nth-last-child(n+2),
+.least > li:nth-last-child(n+2) ~ li {
+  border: 1px solid #09f;
+}
+.between > div:nth-last-child(n+0):nth-last-child(-n+20):first-child,
+.between > div:nth-last-child(n+0):nth-last-child(-n+20):first-child ~ div {
+  border: 1px solid #f90;
+}
+.most > li:nth-last-child(-n+7):first-child,
+.most > li:nth-last-child(-n+7):first-child ~ li {
+  background: #e35;
+  color: #fff;
+}
+.exactly > li:nth-last-child(5):first-child,
+.exactly > li:nth-last-child(5):first-child ~ li {
+  border: 1px solid #0c5;
+}
