@@ -264,6 +264,9 @@ describe 'utilities', ->
   it 'raquo', (done) ->
     compile_and_match(path.join(@path, 'raquo.styl'), done)
 
+  it 'rem-calculator', (done) ->
+    compile_and_match(path.join(@path, 'rem-calculator.styl'), done)
+
   it 'rounded', (done) ->
     compile_and_match(path.join(@path, 'rounded.styl'), done)
 

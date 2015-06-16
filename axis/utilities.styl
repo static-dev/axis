@@ -212,7 +212,7 @@ border-box-html()
   html
     box-sizing: border-box
 
-  *, 
+  *,
   *:before,
   *:after
     box-sizing: inherit
@@ -426,3 +426,19 @@ cache-images()
   body:after
     display: none
     content: background-images
+
+// Mixin: Rem Calculator
+//
+// Calculates and returns the rem value based on px input. Default base font
+// size is 16px, but can be changed with base-font-size.
+//
+// ex       : rem(30px) or rem(30)
+// returns  : 1.875rem
+
+rem(value)
+  base-font-size ?= 16px
+  type = unit(value)
+  if type == px
+    return unit(value / base-font-size, 'rem')
+  else
+    return unit(value, type)
