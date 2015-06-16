@@ -442,3 +442,33 @@ rem(value)
     return unit(value / base-font-size, 'rem')
   else
     return unit(value, type)
+
+// Block Mixin: Quantity Queries
+//
+// Set rules for a selector based on a specific sibling count.
+// via: https://github.com/pascalduez/postcss-quantity-queries
+//
+// ex. +quantity-at-least(6)
+// ex. +quantity-at-most(12, div)
+// ex. +quantity-between(0, 8, span)
+// ex. +quantity-exactly(5)
+
+quantity-at-least(count=4, selector=li)
+  & > {selector}:nth-last-child(n+{count})
+  & > {selector}:nth-last-child(n+{count}) ~ {selector}
+    {block}
+
+quantity-at-most(count=4, selector=li)
+  & > {selector}:nth-last-child(-n+{count}):first-child
+  & > {selector}:nth-last-child(-n+{count}):first-child ~ {selector}
+    {block}
+
+quantity-between(start=0, end=10, selector=li)
+  & > {selector}:nth-last-child(n+{start}):nth-last-child(-n+{end}):first-child
+  & > {selector}:nth-last-child(n+{start}):nth-last-child(-n+{end}):first-child ~ {selector}
+    {block}
+
+quantity-exactly(count=4, selector=li)
+  & > {selector}:nth-last-child({count}):first-child
+  & > {selector}:nth-last-child({count}):first-child ~ {selector}
+    {block}
