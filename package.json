@@ -12,11 +12,11 @@
     "nib": "1.x"
   },
   "devDependencies": {
-    "accord": "0.14.x",
+    "accord": "0.20.x",
     "stylus": "*",
     "mocha": "2.x",
-    "should": "4.x",
-    "coffee-script": "1.8.x",
+    "should": "7.x",
+    "coffee-script": "1.9.x",
     "css-parse": "2.x"
   },
   "scripts": {
