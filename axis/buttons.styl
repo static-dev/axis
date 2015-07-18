@@ -3,11 +3,11 @@
 // -------
 
 // Function: highlight
-// 
+//
 // Adds a light brighter line across the top of the element for a perspective
 // effect. Takes an optional argument for strength, which takes a value between
 // 0 and 1.
-// 
+//
 // ex. highlight()
 // ex. highlight: .7
 
@@ -28,7 +28,7 @@
     return size
 
 // Mixin: Button
-// 
+//
 // Creates a very basic looking button style. Three optional params:
 // - color: Takes any color, defaults to the default global color
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflect
@@ -36,7 +36,7 @@
 //   as well (corners, padding, etc).
 // - textColor: Takes any color for the button text, defaults to trying to
 //   detect whether the background is dark or light and setting the opposite.
-// 
+//
 // ex. button()
 // ex. button: blue
 // ex. button: #D4513B
@@ -72,12 +72,13 @@ button(color = default-color, size = "medium", textColor = null)
   &:hover, &:focus
     background-color: darken(color, 5%)
     color: darken(textColor, 3%)
+    border: none
 
   &:active
     background-color: darken(color, 10%)
 
 // Mixin: Glossy Button
-// 
+//
 // Creates a more fancy looking button style. Five optional params:
 // - color: Takes any color, defaults to the default global color
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects
@@ -89,7 +90,7 @@ button(color = default-color, size = "medium", textColor = null)
 //   described above.
 // - hoverColor: Color of the text shadow when hovered. Default is contrast
 //   detection as described above. You probably don't need to use this.
-// 
+//
 // ex. glossy-button()
 // ex. glossy-button: blue
 // ex. glossy-button: #D4513B
@@ -146,11 +147,11 @@ glossy-button(color = default-color, size = "medium", textColor = null, shadowCo
     border-color: darken(color, 18%)
 
 // Mixin: Button Disabled
-// 
+//
 // Add this mixin to a button and it will make the button appear to be disabled.
 // Try attaching to a class like .disabled and adding that class to the button.
 // Takes no arguments.
-// 
+//
 // ex. .disabled
 //       button-disabled()
 
@@ -164,7 +165,7 @@ button-disabled()
   &:hover
     background: #ccc
     background-position: 0 0
-    
+
   &:active
     background: #ccc
     box-shadow: none
@@ -172,10 +173,10 @@ button-disabled()
     text-shadow: 1px 1px 1px rgba(#000,.1)
 
 // Additive Mixin: Buttons
-// 
+//
 // WARNING: Creates classes in your css and styles them - not to be used inside
 // an element.
-// 
+//
 // This mixin makes it such that you can use classes to define buttons on your
 // page.
 // - .btn: creates a simple button
