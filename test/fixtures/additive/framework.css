@@ -409,6 +409,7 @@ textarea.error:focus {
 .btn:focus {
   background-color: #006ece;
   color: #f7f7f7;
+  border: none;
 }
 .btn:active {
   background-color: #0068c3;
