@@ -123,8 +123,6 @@ describe 'images', ->
   it 'sprite', (done) ->
     compile_and_match(path.join(@path, 'sprite.styl'), done)
 
-
-
 describe 'interaction', ->
 
   before -> @path = path.join(test_path, 'interaction')
@@ -146,6 +144,28 @@ describe 'interaction', ->
 
   it 'hover-color', (done) ->
     compile_and_match(path.join(@path, 'hover-color.styl'), done)
+
+describe 'layout', ->
+
+  before -> @path = path.join(test_path, 'layout')
+
+  it 'columns', (done) ->
+    compile_and_match(path.join(@path, 'columns.styl'), done)
+
+  it 'group', (done) ->
+    compile_and_match(path.join(@path, 'group.styl'), done)
+
+  it 'inline-block', (done) ->
+    compile_and_match(path.join(@path, 'inline-block.styl'), done)
+
+  it 'media', (done) ->
+    compile_and_match(path.join(@path, 'media.styl'), done)
+
+  it 'ratio-box', (done) ->
+    compile_and_match(path.join(@path, 'ratio-box.styl'), done)
+
+  it 'vertical-align', (done) ->
+    compile_and_match(path.join(@path, 'vertical-align.styl'), done)
 
 describe 'print', ->
 
@@ -252,29 +272,14 @@ describe 'utilities', ->
   it 'b', (done) ->
     compile_and_match(path.join(@path, 'b.styl'), done)
 
-  it 'columns', (done) ->
-    compile_and_match(path.join(@path, 'columns.styl'), done)
-
   it 'debug', (done) ->
     compile_and_match(path.join(@path, 'debug.styl'), done)
-
-  it 'group', (done) ->
-    compile_and_match(path.join(@path, 'group.styl'), done)
-
-  it 'inline-block', (done) ->
-    compile_and_match(path.join(@path, 'inline-block.styl'), done)
 
   it 'border-box-html', (done) ->
     compile_and_match(path.join(@path, 'border-box-html.styl'), done)
 
-  it 'media', (done) ->
-    compile_and_match(path.join(@path, 'media.styl'), done)
-
   it 'quantity-queries', (done) ->
     compile_and_match(path.join(@path, 'quantity-queries.styl'), done)
-
-  it 'ratio-box', (done) ->
-    compile_and_match(path.join(@path, 'ratio-box.styl'), done)
 
   it 'no-select', (done) ->
     compile_and_match(path.join(@path, 'no-select.styl'), done)
@@ -287,9 +292,6 @@ describe 'utilities', ->
 
   it 'triangle', (done) ->
     compile_and_match(path.join(@path, 'triangle.styl'), done)
-
-  it 'vertical-align', (done) ->
-    compile_and_match(path.join(@path, 'vertical-align.styl'), done)
 
 
 describe 'vendor', ->

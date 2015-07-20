@@ -32,7 +32,7 @@
     <!-- images -->
     <link rel='stylesheet' href='fixtures/images/image-replace.css' >
     <link rel='stylesheet' href='fixtures/images/sprite.css' >
-    <link rel='stylesheet' href='fixtures/images/bg.css' >    
+    <link rel='stylesheet' href='fixtures/images/bg.css' >
 
     <!-- interaction -->
     <link rel='stylesheet' href='fixtures/interaction/hover-darken.css' >
@@ -41,6 +41,14 @@
     <link rel='stylesheet' href='fixtures/interaction/hover-pop.css' >
     <link rel='stylesheet' href='fixtures/interaction/hover-fade.css' >
     <link rel='stylesheet' href='fixtures/interaction/hover-color.css' >
+
+    <!-- layout -->
+    <link rel='stylesheet' href='fixtures/layout/columns.css' >
+    <link rel='stylesheet' href='fixtures/layout/group.css' >
+    <link rel='stylesheet' href='fixtures/layout/inline-block.css' >
+    <link rel='stylesheet' href='fixtures/layout/media.css' >
+    <link rel='stylesheet' href='fixtures/layout/ratio-box.css' >
+    <link rel='stylesheet' href='fixtures/layout/vertical-align.css' >
 
     <!-- tables -->
     <link rel='stylesheet' href='fixtures/tables/table.css' >
@@ -74,18 +82,13 @@
 
     <!-- utilities -->
     <link rel='stylesheet' href='fixtures/utilities/b.css' >
-    <link rel='stylesheet' href='fixtures/utilities/columns.css' >
     <link rel='stylesheet' href='fixtures/utilities/debug.css' >
-    <link rel='stylesheet' href='fixtures/utilities/group.css' >
-    <link rel='stylesheet' href='fixtures/utilities/inline-block.css' >
-    <link rel='stylesheet' href='fixtures/utilities/media.css' >
     <link rel='stylesheet' href='fixtures/utilities/quantity-queries.css' >
-    <link rel='stylesheet' href='fixtures/utilities/ratio-box.css' >
     <link rel='stylesheet' href='fixtures/utilities/no-select.css' >
     <link rel='stylesheet' href='fixtures/utilities/rem-calculator.css' >
     <link rel='stylesheet' href='fixtures/utilities/rounded.css' >
     <link rel='stylesheet' href='fixtures/utilities/triangle.css' >
-    <link rel='stylesheet' href='fixtures/utilities/vertical-align.css' >
+
 
     <style>
       body {
@@ -200,6 +203,14 @@
       <div class='block image-gradient-twocolor'></div>
     </section>
 
+    <section id='images'>
+      <h1>images</h1>
+      <div class="block bg"></div>
+      <div class="block bg-retina"></div>
+
+      <p class="ir">i should not be able to be read</p>
+
+    </section>
     <section id='interaction'>
       <h1>interaction</h1>
       <div class='box hover-darken'></div>
@@ -208,6 +219,43 @@
       <div class='box hover-pop'></div>
       <div class='box hover-fade'></div>
       <div class='box hover-color'></div>
+    </section>
+
+    <section id='layout'>
+      <h1>layout</h1>
+      <ul class='columns'>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+        <li>foo</li>
+      </ul>
+
+      <div class="inline-block">inline block</div>
+
+      <div class="inline-block">inline block 2</div>
+
+      <div class="media">
+        <img src="http://upload.wikimedia.org/wikipedia/en/4/4e/Shibe_Inu_Doge_meme.jpg" alt="">
+        <p>comment</p>
+      </div>
+
+      <div class="ratio-box">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/o0xr1JRZOb4" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="vertical-align">
+        <div class='inner-div'>vertically aligned</div>
+      </div>
+      <div class="vertical-align">
+        <div class='inner-div reset'>not vertically aligned</div>
+      </div>
+
     </section>
 
     <section id='tables'>
@@ -230,6 +278,13 @@
 
     <section id='typography'>
       <h1>typography</h1>
+
+      <p class="bold">bold</p>
+      <p class="italic">italic</p>
+      <p class="bold normal">normal</p>
+
+      <p class="raquo">look at this</p>
+
 
       <p class='text-margin'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, autem, dolores quae nobis recusandae eos harum vitae rem minus sit ducimus iure repudiandae eveniet at quo voluptates aperiam reiciendis perspiciatis!</p>
       <p class='text-margin'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, autem, dolores quae nobis recusandae eos harum vitae rem minus sit ducimus iure repudiandae eveniet at quo voluptates aperiam reiciendis perspiciatis!</p>
@@ -366,36 +421,6 @@
 
       <div class="block b"></div>
 
-      <div class="block bg"></div>
-      <div class="block bg-retina"></div>
-
-      <ul class='columns'>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-        <li>foo</li>
-      </ul>
-
-      <p class="bold">bold</p>
-      <p class="italic">italic</p>
-      <p class="bold normal">normal</p>
-
-      <p class="ir">i should not be able to be read</p>
-
-      <div class="inline-block">inline block</div>
-      <div class="inline-block">inline block 2</div>
-
-      <div class="media">
-        <img src="http://upload.wikimedia.org/wikipedia/en/4/4e/Shibe_Inu_Doge_meme.jpg" alt="">
-        <p>comment</p>
-      </div>
-
       <div class="quantity-queries">
         h4>Add blue border of there are at least 2 lis:</h4>
         <ul class="least">
@@ -431,17 +456,9 @@
         </ul>
       </div>
 
-      <div class="ratio-box">
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/o0xr1JRZOb4" frameborder="0" allowfullscreen></iframe>
-      </div>
-
       <p class="no-select">you should not be able to select this text</p>
 
-      <p class="raquo">look at this</p>
-
-
       <h5 class="rem-calculator">Font-size is set as 30px but the browser see it as 1.875rem</h5>
-
 
       <div class="button rounded">look im rounded</div>
 
@@ -451,12 +468,6 @@
       <div class="tri-down"></div>
       <div class="tri-right"></div>
 
-      <div class="vertical-align">
-        <div class='inner-div'>vertically aligned</div>
-      </div>
-      <div class="vertical-align">
-        <div class='inner-div reset'>not vertically aligned</div>
-      </div>
       <div class="debug">
         <article>
           <hgroup>
