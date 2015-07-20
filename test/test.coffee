@@ -154,6 +154,15 @@ describe 'typography', ->
 
   before -> @path = path.join(test_path, 'typography')
 
+  it 'raquo', (done) ->
+    compile_and_match(path.join(@path, 'raquo.styl'), done)
+    
+  it 'font-face', (done) ->
+    compile_and_match(path.join(@path, 'font-face.styl'), done)
+
+  it 'font-weight', (done) ->
+    compile_and_match(path.join(@path, 'font-weight.styl'), done)
+
   it 'text-margin', (done) ->
     compile_and_match(path.join(@path, 'text-margin.styl'), done)
 
@@ -234,12 +243,6 @@ describe 'utilities', ->
   it 'debug', (done) ->
     compile_and_match(path.join(@path, 'debug.styl'), done)
 
-  it 'font-face', (done) ->
-    compile_and_match(path.join(@path, 'font-face.styl'), done)
-
-  it 'font-weight', (done) ->
-    compile_and_match(path.join(@path, 'font-weight.styl'), done)
-
   it 'group', (done) ->
     compile_and_match(path.join(@path, 'group.styl'), done)
 
@@ -263,9 +266,6 @@ describe 'utilities', ->
 
   it 'no-select', (done) ->
     compile_and_match(path.join(@path, 'no-select.styl'), done)
-
-  it 'raquo', (done) ->
-    compile_and_match(path.join(@path, 'raquo.styl'), done)
 
   it 'rem-calculator', (done) ->
     compile_and_match(path.join(@path, 'rem-calculator.styl'), done)

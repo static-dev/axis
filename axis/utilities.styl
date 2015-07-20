@@ -69,24 +69,6 @@ bg-retina(path, width, height, args...)
   if set_size
     size: width height
 
-// Alias: Bold
-// It's just faster to type bold() than font-weight: bold
-
-bold()
-  font-weight: bold
-
-// Alias: Italic
-// It's just faster to type italic() than font-style: italic
-
-italic()
-  font-style: italic
-
-// Alias: Normal
-// Put the font-weight and style back to normal
-
-normal()
-  font-weight: normal
-  font-style: normal
 
 // Mixin: Image Replace
 //
@@ -287,31 +269,6 @@ ratio-box(ratio = 1/1)
     height: 0
     padding-top: (1 / ratio) * 100%
 
-// Mixin: Raquo
-//
-// Because technically raquo is not semantic, it's better to add it like this.
-//
-// ex. raquo()
-
-raquo()
-  &:after
-    content: " \00BB"
-
-// Mixin: Font Face
-//
-// Super simple font-face declaration. Just give the name and the folder it
-// lives in. Make sure the font name matches the name of the files. Uses the
-// fontspring syntax:
-// http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
-//
-// ex. font-face(proxima-nova, '/fonts')
-
-font-face(name, folder, weight='normal', style='normal')
-  @font-face
-    font-family: name
-    src: url(folder unquote('/') name unquote('.eot') '?#iefix') format('embedded-opentype'), url(folder unquote('/') name unquote('.woff')) format('woff'), url(folder unquote('/') name unquote('.ttf')) format('truetype'), url(folder unquote('/') name unquote('.eot') unquote('#') name) format('svg');
-    font-weight: unquote(weight)
-    font-style: unquote(style)
 
 // Mixin: Debug
 //
