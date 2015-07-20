@@ -181,6 +181,9 @@ describe 'reset', ->
   it 'fluid-media', (done) ->
     compile_and_match(path.join(@path, 'fluid-media.styl'), done)
 
+  it 'border-box-html', (done) ->
+    compile_and_match(path.join(@path, 'border-box-html.styl'), done)
+
 describe 'tables', ->
 
   before -> @path = path.join(test_path, 'tables')
@@ -274,9 +277,6 @@ describe 'utilities', ->
 
   it 'debug', (done) ->
     compile_and_match(path.join(@path, 'debug.styl'), done)
-
-  it 'border-box-html', (done) ->
-    compile_and_match(path.join(@path, 'border-box-html.styl'), done)
 
   it 'quantity-queries', (done) ->
     compile_and_match(path.join(@path, 'quantity-queries.styl'), done)
