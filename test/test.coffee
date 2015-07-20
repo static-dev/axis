@@ -107,6 +107,24 @@ describe 'gradients', ->
   it 'image-gradient', (done) ->
     compile_and_match(path.join(@path, 'image-gradient.styl'), done)
 
+describe 'images', ->
+
+  before -> @path = path.join(test_path, 'images')
+
+  it 'bg', (done) ->
+    compile_and_match(path.join(@path, 'bg.styl'), done)
+
+  it 'image-cache', (done) ->
+    compile_and_match(path.join(@path, 'image-cache.styl'), done)
+
+  it 'image-replace', (done) ->
+    compile_and_match(path.join(@path, 'image-replace.styl'), done)
+
+  it 'sprite', (done) ->
+    compile_and_match(path.join(@path, 'sprite.styl'), done)
+
+
+
 describe 'interaction', ->
 
   before -> @path = path.join(test_path, 'interaction')
@@ -156,7 +174,7 @@ describe 'typography', ->
 
   it 'raquo', (done) ->
     compile_and_match(path.join(@path, 'raquo.styl'), done)
-    
+
   it 'font-face', (done) ->
     compile_and_match(path.join(@path, 'font-face.styl'), done)
 
@@ -234,9 +252,6 @@ describe 'utilities', ->
   it 'b', (done) ->
     compile_and_match(path.join(@path, 'b.styl'), done)
 
-  it 'bg', (done) ->
-    compile_and_match(path.join(@path, 'bg.styl'), done)
-
   it 'columns', (done) ->
     compile_and_match(path.join(@path, 'columns.styl'), done)
 
@@ -245,9 +260,6 @@ describe 'utilities', ->
 
   it 'group', (done) ->
     compile_and_match(path.join(@path, 'group.styl'), done)
-
-  it 'image-replace', (done) ->
-    compile_and_match(path.join(@path, 'image-replace.styl'), done)
 
   it 'inline-block', (done) ->
     compile_and_match(path.join(@path, 'inline-block.styl'), done)
@@ -273,17 +285,12 @@ describe 'utilities', ->
   it 'rounded', (done) ->
     compile_and_match(path.join(@path, 'rounded.styl'), done)
 
-  it 'sprite', (done) ->
-    compile_and_match(path.join(@path, 'sprite.styl'), done)
-
   it 'triangle', (done) ->
     compile_and_match(path.join(@path, 'triangle.styl'), done)
 
   it 'vertical-align', (done) ->
     compile_and_match(path.join(@path, 'vertical-align.styl'), done)
 
-  it 'image-cache', (done) ->
-    compile_and_match(path.join(@path, 'image-cache.styl'), done)
 
 describe 'vendor', ->
 
