@@ -84,13 +84,10 @@ flash(type='notice')
 breadcrumb(character="/", spacing=10px, dividerColor=#CDCDCD)
   inline-list: spacing
 
-  li:after
+  li:not(:last-child):after
     content: character
     margin-left: spacing
     color: dividerColor
-
-  li:last-child:after
-    content: ""
 
 // Mixin: Bubble
 //
