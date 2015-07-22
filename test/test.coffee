@@ -167,6 +167,9 @@ describe 'layout', ->
   it 'vertical-align', (done) ->
     compile_and_match(path.join(@path, 'vertical-align.styl'), done)
 
+  it 'table-layout', (done) ->
+    compile_and_match(path.join(@path, 'table-layout.styl'), done)    
+
 describe 'print', ->
 
   before -> @path = path.join(test_path, 'print')
