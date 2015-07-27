@@ -112,3 +112,22 @@ ratio-box(ratio = 1/1)
     display: block
     height: 0
     padding-top: (1 / ratio) * 100%
+
+
+// Mixin: Table Layout
+//
+// Sometimes you just need a good old-fashioned table layout.
+// Read more: http://colintoh.com/blog/display-table-anti-hero
+//
+// ex: tl()
+// ex: tl(auto)
+
+tl(layoutType = fixed)
+  display: table
+  table-layout: layoutType  // "fixed" or "auto"
+  margin: 0
+  padding: 0
+  width: 100%
+
+  > *
+    display: table-cell
