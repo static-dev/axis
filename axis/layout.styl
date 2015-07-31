@@ -113,6 +113,19 @@ ratio-box(ratio = 1/1)
     height: 0
     padding-top: (1 / ratio) * 100%
 
+// Mixin: Horizontal Rule
+//
+// Clean reset for divider lines.
+//
+// ex: rule()
+// ex rule(blue)
+
+rule($color = rgba(#000, .15), $spacing = 1.5em)
+  border: 0
+  border-bottom: 1px solid $color
+  height: 0
+  padding: 0
+  margin: $spacing 0
 
 // Mixin: Table Layout
 //
