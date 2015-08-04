@@ -164,11 +164,14 @@ describe 'layout', ->
   it 'ratio-box', (done) ->
     compile_and_match(path.join(@path, 'ratio-box.styl'), done)
 
+  it 'rule', (done) ->
+    compile_and_match(path.join(@path, 'rule.styl'), done)
+
   it 'vertical-align', (done) ->
     compile_and_match(path.join(@path, 'vertical-align.styl'), done)
 
   it 'table-layout', (done) ->
-    compile_and_match(path.join(@path, 'table-layout.styl'), done)    
+    compile_and_match(path.join(@path, 'table-layout.styl'), done)
 
 describe 'print', ->
 
