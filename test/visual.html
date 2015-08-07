@@ -43,6 +43,10 @@
     <link rel='stylesheet' href='fixtures/interaction/hover-color.css' >
     <link rel='stylesheet' href='fixtures/interaction/hover-glow.css' >
     <link rel='stylesheet' href='fixtures/interaction/hover-float.css' >
+    <link rel='stylesheet' href='fixtures/interaction/click-down.css' >
+    <link rel='stylesheet' href='fixtures/interaction/click-shadow.css' >
+    <link rel='stylesheet' href='fixtures/interaction/click-inset.css' >
+    <link rel='stylesheet' href='fixtures/interaction/click-shrink.css' >
 
     <!-- layout -->
     <link rel='stylesheet' href='fixtures/layout/columns.css' >
@@ -123,6 +127,10 @@
         border: 1px solid;
         float: left;
         margin: .5em .5em 0 0;
+        transition: all .2s ease;
+      }
+      .click-down {
+        transition: none;
       }
       .bub {
         margin: 1em 0;
@@ -225,6 +233,10 @@
       <div class='box hover-color'></div>
       <div class='box hover-glow'></div>
       <div class='box hover-float'></div>
+      <div class='box click-down'>click me</div>
+      <div class='box click-shadow'>click me</div>
+      <div class='box click-inset'>click me</div>  
+      <div class='box click-shrink'>click me</div>
     </section>
 
     <section id='layout'>

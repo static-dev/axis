@@ -115,7 +115,8 @@ hover-color(color, forceUseColor = false)
 
 // Mixin: Hover Glow
 //
-// Creates a glow when hovering an element. Takes a color and a radius (size). Recommended to be used with transition.
+// Creates a glow when hovering an element. Takes a color and a radius (size).
+// Recommended to be used with transition.
 //
 // ex: hover-glow()
 
@@ -123,10 +124,10 @@ hover-glow($color = rgba(blue, .8),  $radius = 20px )
   &:hover
     box-shadow: 0px 0px $radius 2px $color
 
-
 // Mixin: Hover Float
 //
-// Gives an element the effect of rising up vertically with a small shadow underneath. Recommended to be use with transition.
+// Gives an element the effect of rising up vertically with a small shadow
+//  underneath. Recommended to be use with transition.
 //
 // Ex: hover-float()
 
@@ -150,3 +151,47 @@ hover-float()
     &:before
       opacity: 1
       transform: scale(1)
+
+// Mixin: Click down
+//
+// Move an element down while clicked/tapped. Takes distance.
+//
+// ex: click-down()
+
+click-down($distance = 1px)
+  &:active
+    transform: translateY($distance)
+
+// Mixin: Click shadow
+//
+// Creates a shadow under element while clicked/tapped. Takes distance and
+// radius (size). Recommended to be use with transition.
+//
+// ex: click-shadow()
+
+click-shadow($distance = 2px, $radius = 10px )
+  &:active
+    box-shadow: 0px $distance $radius 2px rgba(0, 0, 0, 0.25)
+
+// Mixin: Click inset
+//
+// Creates an inset shadow on an elment while clicked/tapped. Takes radius
+// (inset shadow size). Recommended to be use with transition.
+//
+// ex: click-inset()
+
+click-inset($radius = 20px)
+  $distance = $radius / 2
+  &:active
+    box-shadow: inset 0px $distance $radius rgba(0, 0, 0, 0.35);
+
+// Mixin: Click-shrink
+//
+// Scale down an element when clicked/tapped. Gives the effect of "sinking"
+// or lowering on the z-axis.
+//
+// ex: click-shrink()
+   
+click-shrink($distance = .92)
+  &:active
+    transform: scale($distance)

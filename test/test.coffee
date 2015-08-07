@@ -151,6 +151,18 @@ describe 'interaction', ->
   it 'hover-float', (done) ->
     compile_and_match(path.join(@path, 'hover-float.styl'), done)
 
+  it 'click-down', (done) ->
+    compile_and_match(path.join(@path, 'click-down.styl'), done)
+
+  it 'click-shadow', (done) ->
+    compile_and_match(path.join(@path, 'click-shadow.styl'), done)
+
+  it 'click-inset', (done) ->
+    compile_and_match(path.join(@path, 'click-inset.styl'), done)
+
+  it 'click-shrink', (done) ->
+    compile_and_match(path.join(@path, 'click-shrink.styl'), done)      
+
 describe 'layout', ->
 
   before -> @path = path.join(test_path, 'layout')
