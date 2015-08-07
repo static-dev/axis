@@ -145,6 +145,12 @@ describe 'interaction', ->
   it 'hover-color', (done) ->
     compile_and_match(path.join(@path, 'hover-color.styl'), done)
 
+  it 'hover-glow', (done) ->
+    compile_and_match(path.join(@path, 'hover-glow.styl'), done)
+
+  it 'hover-float', (done) ->
+    compile_and_match(path.join(@path, 'hover-float.styl'), done)
+
 describe 'layout', ->
 
   before -> @path = path.join(test_path, 'layout')
