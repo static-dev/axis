@@ -152,7 +152,7 @@ hover-float()
       opacity: 1
       transform: scale(1)
 
-// Mixin: Click down
+// Mixin: Click Down
 //
 // Move an element down while clicked/tapped. Takes distance.
 //
@@ -162,7 +162,7 @@ click-down($distance = 1px)
   &:active
     transform: translateY($distance)
 
-// Mixin: Click shadow
+// Mixin: Click Shadow
 //
 // Creates a shadow under element while clicked/tapped. Takes distance and
 // radius (size). Recommended to be use with transition.
@@ -173,7 +173,7 @@ click-shadow($distance = 2px, $radius = 10px )
   &:active
     box-shadow: 0px $distance $radius 2px rgba(0, 0, 0, 0.25)
 
-// Mixin: Click inset
+// Mixin: Click Inset
 //
 // Creates an inset shadow on an elment while clicked/tapped. Takes radius
 // (inset shadow size). Recommended to be use with transition.
@@ -185,13 +185,13 @@ click-inset($radius = 20px)
   &:active
     box-shadow: inset 0px $distance $radius rgba(0, 0, 0, 0.35);
 
-// Mixin: Click-shrink
+// Mixin: Click Shrink
 //
 // Scale down an element when clicked/tapped. Gives the effect of "sinking"
 // or lowering on the z-axis.
 //
 // ex: click-shrink()
-   
+
 click-shrink($distance = .92)
   &:active
     transform: scale($distance)

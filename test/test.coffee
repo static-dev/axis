@@ -161,7 +161,7 @@ describe 'interaction', ->
     compile_and_match(path.join(@path, 'click-inset.styl'), done)
 
   it 'click-shrink', (done) ->
-    compile_and_match(path.join(@path, 'click-shrink.styl'), done)      
+    compile_and_match(path.join(@path, 'click-shrink.styl'), done)
 
 describe 'layout', ->
 
@@ -191,12 +191,6 @@ describe 'layout', ->
   it 'table-layout', (done) ->
     compile_and_match(path.join(@path, 'table-layout.styl'), done)
 
-describe 'print', ->
-
-  before -> @path = path.join(test_path, 'print')
-
-  it 'print-styles', (done) ->
-    compile_and_match(path.join(@path, 'print-styles.styl'), done)
 
 describe 'reset', ->
 
@@ -207,6 +201,9 @@ describe 'reset', ->
 
   it 'border-box-html', (done) ->
     compile_and_match(path.join(@path, 'border-box-html.styl'), done)
+
+  it 'print-styles', (done) ->
+    compile_and_match(path.join(@path, 'print-styles.styl'), done)
 
 describe 'tables', ->
 
