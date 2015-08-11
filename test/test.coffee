@@ -211,7 +211,7 @@ describe 'tables', ->
 
   it 'table-styles', (done) ->
     compile_and_match(path.join(@path, 'table.styl'), done)
-
+#
 describe 'typography', ->
 
   before -> @path = path.join(test_path, 'typography')
@@ -264,7 +264,7 @@ describe 'ui', ->
 
   it 'area', (done) ->
     compile_and_match(path.join(@path, 'area.styl'), done)
-
+  #
   it 'breadcrumb', (done) ->
     compile_and_match(path.join(@path, 'breadcrumb.styl'), done)
 
@@ -343,5 +343,3 @@ describe 'additive', ->
 
   it 'framework', (done) ->
     compile_and_match(path.join(@path, 'framework.styl'), done)
-
-# describe 'vertical-rhythm'

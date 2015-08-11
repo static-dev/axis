@@ -4,7 +4,7 @@
 
 // global-reset delegated to nib
 
-support-for-ie ?= true
+$support-for-ie ?= true
 
 // Mixin: Normalize CSS
 // Based on v3.0.1 https://github.com/necolas/normalize.css
@@ -179,7 +179,7 @@ border-box-html()
   *:before,
   *:after
     box-sizing: inherit
-    
+
 // Mixin: Print Styles
 // Nice clean print styles so you don't have to worry about it.
 
@@ -229,7 +229,7 @@ print-styles()
       widows: 3
 
     code
-      font: 12pt Courier, monospace
+      font: 12pt Courier, $monospace
 
     blockquote
       margin: 1.2em

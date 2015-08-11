@@ -7,9 +7,9 @@
 // ex. bg: 'test.png'
 // ex. bg: 'other.jpg' center center repeat
 
-bg(path, args...)
-  args = unquote('no-repeat') unless args
-  background: url(img-path path) args
+bg($path, $args...)
+  $args = unquote('no-repeat') unless $args
+  background: url($img-path $path) $args
 
 // Mixin: bg-retina
 //
@@ -19,19 +19,19 @@ bg(path, args...)
 // ex. bg-retina: 'test.png' 200px 100px
 // ex. bg-retina: 'other.jpg' 100px 50px center center repeat
 
-bg-retina(path, width, height, args...)
-  args = unquote('no-repeat') unless args
-  set_size = false
+bg-retina($path, $width, $height, $args...)
+  $args = unquote('no-repeat') unless $args
+  $set_size = false
 
-  for arg in args
-    if arg == 'no-repeat'
-      set_size = true
+  for $arg in $args
+    if $arg == 'no-repeat'
+      $set_size = true
 
-  background: url(img-path path) args
-  background-size: width height
+  background: url($img-path $path) $args
+  background-size: $width $height
 
-  if set_size
-    size: width height
+  if $set_size
+    size: $width $height
 
 // Mixin: Image Replace
 //
@@ -42,15 +42,15 @@ bg-retina(path, width, height, args...)
 //
 // ex. ir('test.jpg', 200 400)
 
-image-replace(path, dimensions...)
-  dimensions = dimensions[0]
+image-replace($path, $dimensions...)
+  $dimensions = $dimensions[0]
   font: 0/0 a
   text-shadow: none
   color: transparent
-  bg: path if path
-  if length(dimensions) > 1
-    width: unit(dimensions[0], 'px')
-    height: unit(dimensions[1], 'px')
+  bg: $path if $path
+  if length($dimensions) > 1
+    width: unit($dimensions[0], 'px')
+    height: unit($dimensions[1], 'px')
   else
     warn("Make sure you also pass the image dimensions. Example: ir('/img/whatever.jpg', 200px 400px)")
 
@@ -62,12 +62,12 @@ ir = image-replace
 // An alternative to url() that stores images in a cache for use in
 // cache-images().
 
-background-images = null
+$background-images = null
 
 cached-image-url()
-  base = ''
-  s = unquote('url("' + base + join('', arguments) + '")')
-  push(background-images, s) unless s in background-images
+  $base = ''
+  $s = unquote('url("' + $base + join('', arguments) + '")')
+  push($background-images, $s) unless $s in $background-images
   url(arguments)
 
 // Mixin: Cache Images
@@ -76,7 +76,7 @@ cached-image-url()
 cache-images()
   body:after
     display: none
-    content: background-images
+    content: $background-images
 
 // Mixin: Sprite
 //
@@ -90,9 +90,9 @@ cache-images()
 //
 // TODO: Try using image-size here if @width or @height aren't defined
 
-sprite(iteration, orientation='vertical')
-  if orientation == 'vertical'
-    background-position: 0 unit(@height*-1*iteration, 'px')
-  else if orientation == 'horizontal'
+sprite($iteration, $orientation = 'vertical')
+  if $orientation == 'vertical'
+    background-position: 0 unit(@height*-1*$iteration, 'px')
+  else if $orientation == 'horizontal'
     // warn(unit(@width*iteration, 'px'))
-    background-position: unit(@width*iteration, 'px') 0
+    background-position: unit(@width*$iteration, 'px') 0

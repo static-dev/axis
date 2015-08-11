@@ -13,11 +13,11 @@ group = clearfix
 // ex. columns: 5
 // ex. columns(8, 15px, 200px, '1px solid red')
 
-columns(count=3, gap=30px, width=null, rule=null)
-  column-count: count
-  column-gap: gap
-  column-width: width if width
-  column-rule: unquote(rule) if rule
+columns($count = 3, $gap = 30px, $width = null, $rule = null)
+  column-count: $count
+  column-gap: $gap
+  column-width: $width if $width
+  column-rule: unquote($rule) if $rule
 
 // Mixin: Avoid Column Break
 //
@@ -48,8 +48,8 @@ inline-block()
 //
 // ex. vertically-align() or reset it with vertically-align(false)
 
-vertically-align(reset = null)
-  if reset != false
+vertically-align($reset = null)
+  if $reset != false
     position: relative
     top: 50%
     transform: translateY(-50%)
@@ -77,14 +77,14 @@ vertically-align(reset = null)
 // ex. media: 15px
 // ex. media: 15px 10px
 
-media(margin=10px)
+media($margin = 10px)
 
-  left-margin = margin
-  right-margin = margin
+  $left-margin = $margin
+  $right-margin = $margin
 
-  if length(arguments) > 1
-    left-margin = arguments[0]
-    right-margin = arguments[1]
+  if length($arguments) > 1
+    $left-margin = $arguments[0]
+    $right-margin = $arguments[1]
 
   overflow: hidden
   zoom: 1
@@ -94,16 +94,16 @@ media(margin=10px)
     overflow: hidden
   & > *:first-child
     float: left
-    margin-right: right-margin
+    margin-right: $right-margin
   & > *:nth-child(3)
     float: right
-    margin-left: left-margin
+    margin-left: $left-margin
 
 // Mixin: Ratio Box
 // Set a specific width/height ratio. Useful on background images and iframes.
 
-ratio-box(ratio = 1/1)
-  ratio = remove-unit(ratio)
+ratio-box($ratio = 1/1)
+  $ratio = remove-unit($ratio)
   overflow: hidden
   position: relative
 
@@ -111,7 +111,7 @@ ratio-box(ratio = 1/1)
     content: ''
     display: block
     height: 0
-    padding-top: (1 / ratio) * 100%
+    padding-top: (1 / $ratio) * 100%
 
 // Mixin: Horizontal Rule
 //
@@ -135,9 +135,9 @@ rule($color = rgba(#000, .15), $spacing = 1.5em)
 // ex: tl()
 // ex: tl(auto)
 
-tl(layoutType = fixed)
+tl($layout-type = fixed)
   display: table
-  table-layout: layoutType  // "fixed" or "auto"
+  table-layout: $layout-type  // "fixed" or "auto"
   margin: 0
   padding: 0
   width: 100%
