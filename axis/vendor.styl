@@ -13,53 +13,10 @@
 // ex. transition: color 1s ease
 // ex. transition(color 1s ease, background 2.4s linear)
 
-//Cache nib transition mixin.
-_transition = transition
-
 transition()
   arguments = unquote('all .3s ease') unless arguments
-  _transition: arguments
+  transition: arguments
 
-
-// Alias: Box Shadow
-//
-// Box shadow with pie support, if you are using it.
-//
-// ex. box-shadow: 1px 1px 3px blue
-// ex. box-shadow(1px 1px 3px blue, inset 2px 0 5px rgba(0,0,0,.5))
-
-box-shadow()
-  box-shadow: arguments
-  pie()
-
-// Alias: Border Radius
-//
-// Border-radius with pie support, if you are using it.
-//
-// ex. +round-corners(5px)
-
-border-radius()
-  border-radius: arguments
-  pie()
-
-// Alias: Opacity
-//
-// I know, it seems silly. But every time you go to old IE testing you will be
-// thanking yourself for using this instead of the normal opacity declaration.
-// Overrides default opacity.
-//
-// ex. opacity: .6
-
-opacity($opacity, $args...)
-
-  $support-for-ie = support-for-ie // address in #192
-
-  if $args
-    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", $opacity * 100 $args) if $support-for-ie
-  else
-    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", $opacity * 100) if $support-for-ie
-
-  opacity: $opacity $args
 
 // Alias: Border Box
 // A quicker way to specify border-box sizing.
