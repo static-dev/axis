@@ -7,7 +7,7 @@
 
 -focus-glow($color = $default-color)
   &:focus
-    box-shadow(0 0 5px rgba($color,.7))
+    box-shadow: 0 0 5px rgba($color,.7)
     border: 1px solid desaturate($color, 35%)
     outline: none
 
@@ -22,7 +22,7 @@
 // ex. input: #D45D86 400px
 
 input($color = $aqua, $width = 250px)
-  box-shadow(inset 0 1px 1px rgba(#000, 0.1))
+  box-shadow: inset 0 1px 1px rgba(#000, 0.1)
   -webkit-font-smoothing: antialiased
   font-size: unit($font-size, 'px')
   font-family: $font-stack
