@@ -22,12 +22,9 @@
   margin: 0;
   padding: 0;
 }
-.inline-list:before,
 .inline-list:after {
   content: "";
   display: table;
-}
-.inline-list:after {
   clear: both;
 }
 .inline-list li {
