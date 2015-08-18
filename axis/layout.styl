@@ -1,4 +1,4 @@
-// Alias: group
+// Mixin: group
 // Clearfix with a better name. Excellent for wrangling floats. Taken from
 // http://www.cssmojo.com/latest_new_clearfix_so_far/
 // Does not support IE 6 and 7 because you should not support them either.
@@ -9,9 +9,47 @@ group()
     display: table
     clear: both
 
+// Function: pos
+// Backs position helpers, found below
+-pos(type, args)
+  i = 0
+  position: unquote(type)
+  for j in (1..4)
+    if length(args) > i
+      {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+    i += 1
+
 // Alias: clearfix
 // Group with a worse name. If you need really can't break the habit.
 clearfix = group
+
+// Mixin: Positions
+// Syntax shortcuts for absolute, relative, and fixed positioning. Ported
+// from nib: https://github.com/tj/nib/blob/master/lib/nib/positions.styl
+
+fixed()
+  -pos('fixed', arguments)
+
+absolute()
+  -pos('absolute', arguments)
+
+relative()
+  -pos('relative', arguments)
+
+// Mixin: Size
+// Shortcut for setting width and height quickly. If passed one value, sets this
+// value as both width and height.
+//
+// ex. size: 10px 30px
+// ex. size: 10px
+
+size()
+  if length(arguments) == 1
+    width: arguments[0]
+    height: arguments[0]
+  else
+    width: arguments[0]
+    height: arguments[1]
 
 // Mixin: Columns
 //
