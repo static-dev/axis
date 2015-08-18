@@ -20,11 +20,11 @@ var match_expected = function(out, p, done) {
     var expected_path = path.join(path.dirname(p), path.basename(p, '.styl')) + '.css';
     if (!fs.existsSync(expected_path)) { throw '"expected" file doesnt exist' };
     var expected_contents = fs.readFileSync(expected_path, 'utf8');
-    cssparse(out).should.eql(cssparse(expected_contents))
+    cssparse(out).should.eql(cssparse(expected_contents));
+    done();
   } catch (err) {
     return done(err)
   }
-  done()
 }
 
 var compile_and_match = function(p, done) {

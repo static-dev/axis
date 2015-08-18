@@ -12,7 +12,7 @@
 // ex. highlight: .7
 
 -highlight($strength = .3)
-  box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,$strength)))
+  box-shadow: s("inset 0 1px 0 %s", rgba(255,255,255,$strength))
 
 // Function: parse
 // Used internally for setting button sizes.
@@ -142,7 +142,7 @@ glossy-button($color = $default-color, $size = "medium", $text-color = null, $sh
     text-shadow: 1px 1px 1px $hover-color
 
   &:active
-    box-shadow(s("inset 0 1px %s %s", $parsed-size/2.6px, rgba(darken($color, 25%),.6)))
+    box-shadow: s("inset 0 1px %s %s", $parsed-size/2.6px, rgba(darken($color, 25%),.6))
     text-shadow: $down-shadow
     border-color: darken($color, 18%)
 
