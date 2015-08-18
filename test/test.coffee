@@ -144,9 +144,6 @@ describe 'layout', ->
   it 'group', (done) ->
     compile_and_match(path.join(@path, 'group.styl'), done)
 
-  it 'inline-block', (done) ->
-    compile_and_match(path.join(@path, 'inline-block.styl'), done)
-
   it 'media', (done) ->
     compile_and_match(path.join(@path, 'media.styl'), done)
 

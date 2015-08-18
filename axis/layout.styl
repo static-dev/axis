@@ -1,7 +1,17 @@
 // Alias: group
-// Clearfix with a better name. Excellent for wrangling floats.
+// Clearfix with a better name. Excellent for wrangling floats. Taken from
+// http://www.cssmojo.com/latest_new_clearfix_so_far/
+// Does not support IE 6 and 7 because you should not support them either.
 
-group = clearfix
+group()
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+// Alias: clearfix
+// Group with a worse name. If you need really can't break the habit.
+clearfix = group
 
 // Mixin: Columns
 //
@@ -29,19 +39,6 @@ columns($count = 3, $gap = 30px, $width = null, $rule = null)
 
 avoid-column-break()
   column-break-inside: avoid
-
-// Alias: Inline Block
-// Cross browser inline block display. Saves many IE headaches.
-
-inline-block()
-  display: inline-block
-
-  if support-for-ie
-    display: -moz-inline-stack
-    vertical-align: baseline
-    zoom: 1
-    *display: inline
-    *vertical-align: auto
 
 // Mixin: Vertically Align
 // Cross browser vertical align. Works down to IE9.
@@ -77,7 +74,7 @@ vertically-align($reset = null)
 // ex. media: 15px
 // ex. media: 15px 10px
 
-media($margin = 10px)
+media-object($margin = 10px)
 
   $left-margin = $margin
   $right-margin = $margin
@@ -90,7 +87,7 @@ media($margin = 10px)
   zoom: 1
 
   & > *
-    inline-block()
+    display: inline-block
     overflow: hidden
   & > *:first-child
     float: left
