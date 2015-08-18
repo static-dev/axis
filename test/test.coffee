@@ -299,9 +299,6 @@ describe 'vendor', ->
   it 'box-shadow', (done) ->
     compile_and_match(path.join(@path, 'box-shadow.styl'), done)
 
-  it 'opacity', (done) ->
-    compile_and_match(path.join(@path, 'opacity.styl'), done)
-
   it 'transition', (done) ->
     compile_and_match(path.join(@path, 'transition.styl'), done)
 
