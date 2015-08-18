@@ -40,12 +40,12 @@ raquo()
 //
 // ex. font-face(proxima-nova, '/fonts')
 
-font-face(name, folder, weight='normal', style='normal')
+font-face($name, $folder, $weight = 'normal', $style = 'normal')
   @font-face
-    font-family: name
-    src: url(folder unquote('/') name unquote('.eot') '?#iefix') format('embedded-opentype'), url(folder unquote('/') name unquote('.woff')) format('woff'), url(folder unquote('/') name unquote('.ttf')) format('truetype'), url(folder unquote('/') name unquote('.eot') unquote('#') name) format('svg');
-    font-weight: unquote(weight)
-    font-style: unquote(style)
+    font-family: $name
+    src: url($folder unquote('/') $name unquote('.eot') '?#iefix') format('embedded-opentype'), url($folder unquote('/') $name unquote('.woff')) format('woff'), url($folder unquote('/') $name unquote('.ttf')) format('truetype'), url($folder unquote('/') $name unquote('.eot') unquote('#') $name) format('svg');
+    font-weight: unquote($weight)
+    font-style: unquote($style)
 
 // Function: Line Height
 //
@@ -68,11 +68,11 @@ font-face(name, folder, weight='normal', style='normal')
 //       font-size: 18px
 //       text-margin()
 
-text-margin(size=font-size)
+text-margin($size = $font-size)
   if @font-size
     margin: .75em 0
   else
-    margin: unit(font-size*.75, 'px') 0
+    margin: unit($font-size*.75, 'px') 0
 
 // Mixin: Paragraph
 //
@@ -83,11 +83,11 @@ text-margin(size=font-size)
 // ex. p: 18px
 // ex. p: 14px false
 
-p(size=1rem, margins = true)
-  font-size: size
-  text-margin() if margins
+p($size = 1rem, $margins = true)
+  font-size: $size
+  text-margin() if $margins
   -line-height()
-  openTypeLigatures() if ligatures
+  open-type-ligatures() if $ligatures
 
 // Alias: paragraph
 paragraph = p
@@ -97,12 +97,12 @@ paragraph = p
 // ex. fs: 16px
 // ex. fs: 1.2rem
 
-fs(size)
-  if (unit(size) == 'rem')
-    font-size: round(unit((font-size*size), 'px'))
-    font-size: size
+fs($size)
+  if (unit($size) == 'rem')
+    font-size: round(unit(($font-size*$size), 'px'))
+    font-size: $size
   else
-    font-size: size
+    font-size: $size
 
 // Alias: Uppercase
 // An alias for 'text-transform: uppercase'
@@ -145,14 +145,14 @@ small()
 // Function: Heading
 // For internal use within headings
 
--heading(multiplier)
-  font-size: unit((font-size*multiplier), 'px')
-  font-size: unit(multiplier, 'rem')
+-heading($multiplier)
+  font-size: unit(($font-size*$multiplier), 'px')
+  font-size: unit($multiplier, 'rem')
   text-rendering: optimizelegibility
   font-weight: bold
   text-margin()
   -line-height()
-  openTypeLigatures() if ligatures
+  openTypeLigatures() if $ligatures
 
 // Mixin Set: h1, h2, h3, h4, h5, h6
 //
@@ -164,23 +164,23 @@ small()
 // ex. h3()
 // ex. h3: 3.5
 
-h1(size=2.4)
-  -heading(size)
+h1($size=2.4)
+  -heading($size)
 
-h2(size=1.8)
-  -heading(size)
+h2($size=1.8)
+  -heading($size)
 
-h3(size=1.5)
-  -heading(size)
+h3($size=1.5)
+  -heading($size)
 
-h4(size=1.3)
-  -heading(size)
+h4($size=1.3)
+  -heading($size)
 
-h5(size=1.0)
-  -heading(size)
+h5($size=1.0)
+  -heading($size)
 
-h6(size=0.9)
-  -heading(size)
+h6($size=0.9)
+  -heading($size)
   upcase()
 
 // Mixin: Link
@@ -193,12 +193,12 @@ h6(size=0.9)
 // ex. link: green
 // ex. link: #57777E 'glow'
 
-link(color=blue, style='underline')
-  color: color
+link($color = $blue, $style = 'underline')
+  color: $color
   text-decoration: none
   transition()
 
-  if style == 'underline'
+  if $style == 'underline'
     hover-underline()
     &:hover
       color: darken(@color, 15%)
@@ -209,7 +209,7 @@ link(color=blue, style='underline')
     hover-lighten()
   else if style == 'glow'
     &:hover
-      text-shadow: 0 0 7px rgba(color, .6)
+      text-shadow: 0 0 7px rgba($color, .6)
 
   &:visited
     opacity: .8
@@ -243,16 +243,17 @@ reset-link()
 
 // ex. text-selection()
 
-text-selection(color=highlight-color, textColor=null)
-  textColor = (light(color) ? white : #494949) unless textColor
+text-selection($color = $highlight-color, $text-color = null)
+
+  $text-color = (light($color) ? white : #494949) unless $text-color
 
   &::-moz-selection
-    background: color
-    color: textColor
+    background: $color
+    color: $text-color
 
   &::selection
-    background: color
-    color: textColor
+    background: $color
+    color: $text-color
 
 // Mixin: Ul
 //
@@ -263,13 +264,13 @@ text-selection(color=highlight-color, textColor=null)
 // ex. ul()
 // ex. ul: 'square'
 
-ul(style='disc')
+ul($style = 'disc')
   margin: 5px 15px
   margin: 0.32rem 0.94rem
   padding-left: 1rem
 
   li
-    list-style-type: unquote(style)
+    list-style-type: unquote($style)
     padding: 2px 0
     padding: 0.125rem
 
@@ -282,13 +283,13 @@ ul(style='disc')
 // ex. ol()
 // ex. ol: 'upper-roman'
 
-ol(style='decimal')
+ol($style = 'decimal')
   margin: 5px 18px
   margin: 0.32rem 1.125rem
   padding-left: 1rem
 
   li
-    list-style-type: unquote(style)
+    list-style-type: unquote($style)
     padding: 2px 0
     padding: 0.125rem
 
@@ -300,14 +301,14 @@ ol(style='decimal')
 // ex. inline-list()
 // ex. inline-list: 15px
 
-inline-list(spacing=20px)
+inline-list($spacing = 20px)
   group()
   margin: 0
   padding: 0
 
   li
     float: left
-    margin-right: spacing
+    margin-right: $spacing
     list-style-type: none
 
   li:last-child
@@ -339,8 +340,8 @@ reset-list()
 //
 // ex. blockquote()
 
-blockquote(color=blue)
-  border-left: 4px solid color
+blockquote($color = $blue)
+  border-left: 4px solid $color
   margin: 1em 0
   padding-left: 1.5em
   group()
@@ -392,14 +393,14 @@ hyphenation()
 //
 // ex. base()
 
-base(fonts=font-stack, size=font-size, color=font-color)
+base($fonts = $font-stack, $size = $font-size, $color = $font-color)
   html
-    font-size: unit(size, 'px')
-    font-size: unit((size/16)*100, "%")
+    font-size: unit($size, 'px')
+    font-size: unit(($size/16)*100, "%")
 
   body
-    font-family: fonts
-    color: color
+    font-family: $fonts
+    color: $color
     -webkit-font-smoothing: antialiased
     -webkit-text-size-adjust: 100%
     -ms-text-size-adjust: 100%

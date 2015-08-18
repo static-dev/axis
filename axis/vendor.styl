@@ -50,14 +50,16 @@ border-radius()
 //
 // ex. opacity: .6
 
-opacity(opacity, args...)
-  
-  if args  
-    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100 args) if support-for-ie  
+opacity($opacity, $args...)
+
+  $support-for-ie = support-for-ie // address in #192
+
+  if $args
+    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", $opacity * 100 $args) if $support-for-ie
   else
-    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", opacity * 100) if support-for-ie  
-    
-  opacity: opacity args
+    filter: s("progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)", $opacity * 100) if $support-for-ie
+
+  opacity: $opacity $args
 
 // Alias: Border Box
 // A quicker way to specify border-box sizing.
@@ -70,11 +72,11 @@ border-box()
 // In case you want to use an unsupported background-position property, this
 // should set you straight!
 
-background-position-x(x)
-  background-position: x 0
+background-position-x($x)
+  background-position: $x 0
 
-background-position-y(y)
-  background-position: 0 y
+background-position-y($y)
+  background-position: 0 $y
 
 // Mixin: Opentype ligatures
 //
@@ -86,7 +88,7 @@ background-position-y(y)
 // Source: http://www.newnet-soft.com/blog/csstypography
 // Additional: http://blog.fontdeck.com/post/15777165734/opentype-1
 
-openTypeLigatures()
+open-type-ligatures()
   -moz-font-feature-settings:    "liga=1, dlig=1"
   -ms-font-feature-settings:     "liga", "dlig"
   -webkit-font-feature-settings: "liga", "dlig"

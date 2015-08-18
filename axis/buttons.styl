@@ -11,21 +11,21 @@
 // ex. highlight()
 // ex. highlight: .7
 
--highlight(strength = .3)
-  box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,strength)))
+-highlight($strength = .3)
+  box-shadow(s("inset 0 1px 0 %s", rgba(255,255,255,$strength)))
 
 // Function: parse
 // Used internally for setting button sizes.
 
--parse(size)
-  if size == "small"
+-parse($size)
+  if $size == "small"
     return 10
-  else if size == "medium"
+  else if $size == "medium"
     return 13
-  else if size == "large"
+  else if $size == "large"
     return 18
   else
-    return size
+    return $size
 
 // Mixin: Button
 //
@@ -34,7 +34,7 @@
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflect
 //   the font size for the text inside the button, but scales all other aspects
 //   as well (corners, padding, etc).
-// - textColor: Takes any color for the button text, defaults to trying to
+// - $text-color: Takes any color for the button text, defaults to trying to
 //   detect whether the background is dark or light and setting the opposite.
 //
 // ex. button()
@@ -43,39 +43,39 @@
 // ex. button: green large
 // ex. button: #4C82D4 24
 
-button(color = default-color, size = "medium", textColor = null)
+button($color = $default-color, $size = "medium", $text-color = null)
 
   // color detection and changes
-  textColor = (light(color) ? #494949 : #fff) unless textColor
-  parsed_size = -parse(size)
+  $text-color = (light($color) ? #494949 : #fff) unless $text-color
+  $parsed-size = -parse($size)
 
   // now that we've got numbers, let's work some proportions
-  height = round((parsed_size * 1.53px) / 2)
-  width = round(((parsed_size * 1.53px) * 2.2) / 2)
+  $height = round(($parsed-size * 1.53px) / 2)
+  $width = round((($parsed-size * 1.53px) * 2.2) / 2)
 
   // dynamically calculated styles
-  font-size: unit(parsed_size, 'px')
-  padding: unit(height, 'px') unit(width, 'px')
-  border-radius: round(parsed_size / 4.33333px)
-  background-color: color
-  color: textColor
+  font-size: unit($parsed-size, 'px')
+  padding: unit($height, 'px') unit($width, 'px')
+  border-radius: round($parsed-size / 4.33333px)
+  background-color: $color
+  color: $text-color
 
   // constant styles
   cursor: pointer
   font-weight: bold
-  font-family: font-stack
+  font-family: $font-stack
   line-height: 1em
   text-align: center
   text-decoration: none
   display: inline-block
   border none
   &:hover, &:focus
-    background-color: darken(color, 5%)
-    color: darken(textColor, 3%)
+    background-color: darken($color, 5%)
+    color: darken($text-color, 3%)
     border: none
 
   &:active
-    background-color: darken(color, 10%)
+    background-color: darken($color, 10%)
 
 // Mixin: Glossy Button
 //
@@ -84,11 +84,11 @@ button(color = default-color, size = "medium", textColor = null)
 // - size: Takes 'small', 'medium', 'large', or an integer. The numbers reflects
 //   the font size for the text inside the button, but scales all other aspects
 //   as well.
-// - textColor: Takes any color for the button text, defaults to trying to
+// - $text-color: Takes any color for the button text, defaults to trying to
 //   detect whether the background is dark or light and setting the opposite.
-// - shadowColor: Color for the text shadow, default is the contrast detection
+// - $shadow-color: Color for the text shadow, default is the contrast detection
 //   described above.
-// - hoverColor: Color of the text shadow when hovered. Default is contrast
+// - $hover-color: Color of the text shadow when hovered. Default is contrast
 //   detection as described above. You probably don't need to use this.
 //
 // ex. glossy-button()
@@ -97,54 +97,54 @@ button(color = default-color, size = "medium", textColor = null)
 // ex. glossy-button: green large
 // ex. glossy-button: #4C82D4 24
 
-glossy-button(color = default-color, size = "medium", textColor = null, shadowColor = null, hoverColor = null)
+glossy-button($color = $default-color, $size = "medium", $text-color = null, $shadow-color = null, $hover-color = null)
 
   // color detection and changes
-  if textColor
-    darkText = light(textColor) ? true : false
+  if $text-color
+    $dark-text = light($text-color) ? true : false
   else
-    darkText = light(color) ? false : true
-    textColor = darkText ? white : #494949
+    $dark-text = light($color) ? false : true
+    $text-color = $dark-text ? white : #494949
 
-  shadowColor = darkText ? rgba(#000,.1) : rgba(#fff,.3) unless shadowColor
-  hoverColor = darkText ? rgba(#000,.2) : rgba(#fff,.5) unless hoverColor
-  downShadow = darkText ? 0 -1px 1px rgba(#000,.2) : 1px 1px 1px rgba(#fff,.6)
+  $shadow-color = $dark-text ? rgba(#000,.1) : rgba(#fff,.3) unless $shadow-color
+  $hover-color = $dark-text ? rgba(#000,.2) : rgba(#fff,.5) unless $hover-color
+  $down-shadow = $dark-text ? 0 -1px 1px rgba(#000,.2) : 1px 1px 1px rgba(#fff,.6)
 
   // parse words, make sure it's a number
-  parsed_size = -parse(size)
+  $parsed-size = -parse($size)
 
   // now that we've got numbers, let's work some proportions
-  height = round((parsed_size*1.53px)/2)
-  width = round(((parsed_size*1.53px)*2.2)/2)
+  $height = round(($parsed-size*1.53px)/2)
+  $width = round((($parsed-size*1.53px)*2.2)/2)
 
   // dynamically calculated styles
-  font-size: unit(parsed_size, 'px')
-  padding: unit(height, 'px') unit(width, 'px')
-  border-radius: round(parsed_size/4.33333px)
-  gradient: color
-  text-shadow: 1px 1px 1px shadowColor
-  border: s('1px solid %s', darken(color, 10%))
-  color: textColor
+  font-size: unit($parsed-size, 'px')
+  padding: unit($height, 'px') unit($width, 'px')
+  border-radius: round($parsed-size/4.33333px)
+  gradient($color)
+  text-shadow: 1px 1px 1px $shadow-color
+  border: s('1px solid %s', darken($color, 10%))
+  color: $text-color
 
   // constant styles
   -highlight()
   cursor: pointer
   font-weight: bold
-  font-family: font-stack
+  font-family: $font-stack
   line-height: 1em
   text-align: center
   text-decoration: none
   display: inline-block
 
   &:hover, &:focus
-    background-position: 0 unit(height * -1, 'px')
-    color: darken(textColor, 3%)
-    text-shadow: 1px 1px 1px hoverColor
+    background-position: 0 unit($height * -1, 'px')
+    color: darken($text-color, 3%)
+    text-shadow: 1px 1px 1px $hover-color
 
   &:active
-    box-shadow(s("inset 0 1px %s %s", parsed_size/2.6px, rgba(darken(color, 25%),.6)))
-    text-shadow: downShadow
-    border-color: darken(color, 18%)
+    box-shadow(s("inset 0 1px %s %s", $parsed-size/2.6px, rgba(darken($color, 25%),.6)))
+    text-shadow: $down-shadow
+    border-color: darken($color, 18%)
 
 // Mixin: Button Disabled
 //
