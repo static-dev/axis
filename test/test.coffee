@@ -225,6 +225,9 @@ describe 'typography', ->
 
   it 'hyphenation', (done) ->
     compile_and_match(path.join(@path, 'hyphenation.styl'), done)
+    
+  it 'shadow-stroke', (done) ->
+    compile_and_match(path.join(@path, 'shadow-stroke.styl'), done)
 
 describe 'ui', ->
 

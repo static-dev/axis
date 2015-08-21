@@ -381,6 +381,17 @@ hyphenation()
     -webkit-hyphenate-after:  3
     hyphenate-lines:          3
 
+// Mixin: Shadow Stroke
+//
+// Creates a text outline using text-shadow. Ported from nib.
+// Takes a color.
+//
+// ex: shadow-stroke()
+// ex: sahdow-stroke(red)
+
+shadow-stroke($color = $blue)
+  text-shadow: -1px -1px 0 $color, 1px -1px 0 $color, -1px 1px 0 $color, 1px 1px 0 $color
+
 // Additive Mixin: Base
 //
 // WARNING: Creates classes in your css and styles them - not to be used inside
