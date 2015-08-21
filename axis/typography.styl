@@ -47,6 +47,20 @@ font-face($name, $folder, $weight = 'normal', $style = 'normal')
     font-weight: unquote($weight)
     font-style: unquote($style)
 
+
+// Mixin: Ellipsis
+// Truncate text to the width of its container...
+// ex: ellipsis()
+// ex: ellipsis: 300px
+
+ellipsis($width = 100%)
+  white-space: nowrap
+  display: inline-block
+  max-width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  word-wrap: normal
+
 // Function: Line Height
 //
 // If there is a font-size set on the parent element, adjusts the line height to
