@@ -2,17 +2,6 @@
 // Utilities
 // ---------
 
-
-// Mixin: Rounded
-//
-// Unless you are working with a ridiculously large element, this will round the
-// corners as much as css will allow. Even in IE.
-//
-// ex. rounded()
-
-rounded()
-  border-radius: 999px
-
 // Alias: No Select
 // You can't highlight this.
 
@@ -26,6 +15,47 @@ no-select()
 b()
   arguments = unquote('1px solid') unless arguments
   border: arguments
+
+// Alias: Transition
+//
+// Transition with an intelligent default.
+//
+// ex. transition()
+// ex. transition: color 1s ease
+// ex. transition(color 1s ease, background 2.4s linear)
+
+transition()
+  arguments = unquote('all .3s ease') unless arguments
+  transition: arguments
+
+// Alias: Border Box
+// A quicker way to specify border-box sizing.
+
+border-box()
+  box-sizing: border-box
+
+// Alias: Opentype ligatures
+//
+// The vast majority of fonts contain lowercase and uppercase alphabets,
+// numerals, punctuation and accents. Many professionally-designed fonts
+// also contain ligatures, alternative characters, smallcaps, different kinds of
+// numbers, and sometimes much more besides. This enables it.
+//
+// Source: http://www.newnet-soft.com/blog/csstypography
+// Additional: http://blog.fontdeck.com/post/15777165734/opentype-1
+
+open-type-ligatures()
+  font-feature-settings: "liga", "dlig"
+
+// Mixin: Rounded
+//
+// Unless you are working with a ridiculously large element, this will round the
+// corners as much as css will allow. Even in IE.
+//
+// ex. rounded()
+
+rounded()
+  border-radius: 999px
 
 // Mixin: Triangle
 //
