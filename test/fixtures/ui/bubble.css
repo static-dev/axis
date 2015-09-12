@@ -1,7 +1,7 @@
 .bubble {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -41,8 +41,8 @@
 }
 .bubble-tl {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -82,8 +82,8 @@
 }
 .bubble-tr {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -123,8 +123,8 @@
 }
 .bubble-tc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -164,8 +164,8 @@
 }
 .bubble-bl {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -205,8 +205,8 @@
 }
 .bubble-br {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -246,8 +246,8 @@
 }
 .bubble-bc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -287,8 +287,8 @@
 }
 .bubble-lt {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -328,8 +328,8 @@
 }
 .bubble-lb {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -369,8 +369,8 @@
 }
 .bubble-lc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -410,8 +410,8 @@
 }
 .bubble-rt {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -451,8 +451,8 @@
 }
 .bubble-rb {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
@@ -492,8 +492,8 @@
 }
 .bubble-rc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;

@@ -21,7 +21,7 @@ gradient($color1, $color2 = null, $strength = 10%)
   $start = $color2 ? $color1 : lighten($color1, $strength)
   $end = $color2 ? $color2 : darken($color1, $strength)
   background: $start
-  background: $end linear-gradient(0deg, $start, $end) repeat-x
+  background: $end linear-gradient(180deg, $start, $end) repeat-x
 
 // Mixin: Image Gradient
 //
@@ -42,4 +42,4 @@ image-gradient($color1, $color2 = null, $image-path = 'noise.png', $strength = 1
   $start = $color2 ? $color1 : lighten($color1, $strength)
   $end = $color2 ? $color2 : darken($color1, $strength)
   background: $start
-  background: url($img-path $image-path) repeat, $end linear-gradient(0deg, $start, $end) repeat-x
+  background: url($img-path $image-path) repeat, $end linear-gradient(180deg, $start, $end) repeat-x

@@ -1,7 +1,7 @@
 .notice {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(90deg, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(0deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;

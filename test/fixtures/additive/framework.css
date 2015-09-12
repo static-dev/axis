@@ -409,8 +409,8 @@ textarea.error:focus {
   padding: 10px 22px;
   border-radius: 3px;
   background: #0084f6;
-  background: #0068c3 -webkit-linear-gradient(90deg, #0084f6, #0068c3) repeat-x;
-  background: #0068c3 linear-gradient(0deg, #0084f6, #0068c3) repeat-x;
+  background: #0068c3 -webkit-linear-gradient(270deg, #0084f6, #0068c3) repeat-x;
+  background: #0068c3 linear-gradient(180deg, #0084f6, #0068c3) repeat-x;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   border: 1px solid #0068c3;
   color: #fff;

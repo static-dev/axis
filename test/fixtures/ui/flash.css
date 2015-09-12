@@ -1,7 +1,7 @@
 .flash-notice {
   background: #70c7fa;
-  background: #62c1fa -webkit-linear-gradient(90deg, #70c7fa, #62c1fa) repeat-x;
-  background: #62c1fa linear-gradient(0deg, #70c7fa, #62c1fa) repeat-x;
+  background: #62c1fa -webkit-linear-gradient(270deg, #70c7fa, #62c1fa) repeat-x;
+  background: #62c1fa linear-gradient(180deg, #70c7fa, #62c1fa) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #49b7f9;
@@ -18,8 +18,8 @@
 }
 .flash-warning {
   background: #fae77b;
-  background: #fae46c -webkit-linear-gradient(90deg, #fae77b, #fae46c) repeat-x;
-  background: #fae46c linear-gradient(0deg, #fae77b, #fae46c) repeat-x;
+  background: #fae46c -webkit-linear-gradient(270deg, #fae77b, #fae46c) repeat-x;
+  background: #fae46c linear-gradient(180deg, #fae77b, #fae46c) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #f9df53;
@@ -35,8 +35,8 @@
 }
 .flash-error {
   background: #e88074;
-  background: #e67467 -webkit-linear-gradient(90deg, #e88074, #e67467) repeat-x;
-  background: #e67467 linear-gradient(0deg, #e88074, #e67467) repeat-x;
+  background: #e67467 -webkit-linear-gradient(270deg, #e88074, #e67467) repeat-x;
+  background: #e67467 linear-gradient(180deg, #e88074, #e67467) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #e26153;
@@ -53,8 +53,8 @@
 }
 .flash-success {
   background: #7fdfa6;
-  background: #73dc9d -webkit-linear-gradient(90deg, #7fdfa6, #73dc9d) repeat-x;
-  background: #73dc9d linear-gradient(0deg, #7fdfa6, #73dc9d) repeat-x;
+  background: #73dc9d -webkit-linear-gradient(270deg, #7fdfa6, #73dc9d) repeat-x;
+  background: #73dc9d linear-gradient(180deg, #7fdfa6, #73dc9d) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #5fd790;
