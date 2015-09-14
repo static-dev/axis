@@ -21,17 +21,11 @@
   background: #0074d9;
   margin-top: calc(-2em / 2 + 0.5em / 2);
   -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
 .range::-webkit-slider-thumb:hover {
   -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+          transform: scale(1.2);
   cursor: pointer;
 }
 .range::-webkit-slider-thumb:active {
@@ -56,17 +50,9 @@
   width: 2em;
   border-radius: 50%;
   background: #0074d9;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 .range::-moz-range-thumb:hover {
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 .range::-moz-range-thumb:active {

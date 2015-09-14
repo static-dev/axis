@@ -51,7 +51,6 @@
     <!-- layout -->
     <link rel='stylesheet' href='fixtures/layout/columns.css' >
     <link rel='stylesheet' href='fixtures/layout/group.css' >
-    <link rel='stylesheet' href='fixtures/layout/inline-block.css' >
     <link rel='stylesheet' href='fixtures/layout/media.css' >
     <link rel='stylesheet' href='fixtures/layout/ratio-box.css' >
     <link rel='stylesheet' href='fixtures/layout/rule.css' >
@@ -76,6 +75,9 @@
     <link rel='stylesheet' href='fixtures/typography/lists.css' >
     <link rel='stylesheet' href='fixtures/typography/blockquo.css' >
     <link rel='stylesheet' href='fixtures/typography/hyphenation.css' >
+    <link rel='stylesheet' href='fixtures/typography/shadow-stroke.css' >
+    <link rel='stylesheet' href='fixtures/typography/ellipsis.css' >
+
 
     <!-- ui -->
     <link rel='stylesheet' href='fixtures/ui/area.css' >
@@ -136,6 +138,9 @@
         margin: 1em 0;
         width: 400px;
         height: 50px;
+      }
+      .narrow {
+        width: 30%;
       }
     </style>
   </head>
@@ -235,7 +240,7 @@
       <div class='box hover-float'></div>
       <div class='box click-down'>click me</div>
       <div class='box click-shadow'>click me</div>
-      <div class='box click-inset'>click me</div>  
+      <div class='box click-inset'>click me</div>
       <div class='box click-shrink'>click me</div>
     </section>
 
@@ -253,10 +258,6 @@
         <li>foo</li>
         <li>foo</li>
       </ul>
-
-      <div class="inline-block">inline block</div>
-
-      <div class="inline-block">inline block 2</div>
 
       <div class="media">
         <img src="http://upload.wikimedia.org/wikipedia/en/4/4e/Shibe_Inu_Doge_meme.jpg" alt="">
@@ -369,6 +370,10 @@
       </blockquote>
 
       <p class='p hyphenation'>sdfkjhsdkjfhkjdshfksjdhfksdjhfksjdhfksjdhfkjshdfkjsdhfkjshdfkjshdkfjhsdkfjhskdfjhskdjfhskdjfhskjdhfksjdhfksjdhfksjhdfkjshdfkjshdkfjhsdkjfhskdjfhksjdhfksjdhflakejhroiweroiahsodiskjcnkzxbckjbdosifeaoihdaosjdlznxkj dsjkhfskdjhf skdjhfkjdhkfjhsdkfjhsdkfjhskdjfhksjdhfksd kdsfjhksdjhfksjdhfksjdhfksjdhfkjh kjhsdfkjsdhfksjdhfksjhdfksjhdfksjhdfksjdhfksjdhfksjdh</p>
+      <h1 class='shadow-stroke'>I am stroked text.</h1>
+      <div class="narrow">
+        <h1 class="ellipsis">Sometimes you have to truncate verbose lines, and that's all there is to say.</h1>
+      </div>
     </section>
 
     <section>

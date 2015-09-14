@@ -8,16 +8,14 @@
     "type": "git",
     "url": "git://github.com/jenius/axis.git"
   },
-  "dependencies": {
-    "nib": "1.x"
-  },
   "devDependencies": {
     "accord": "0.20.x",
-    "stylus": "*",
-    "mocha": "2.x",
-    "should": "7.x",
+    "autoprefixer-stylus": "0.7.x",
+    "chai": "3.x",
     "coffee-script": "1.9.x",
-    "css-parse": "2.x"
+    "css-parse": "2.x",
+    "mocha": "2.x",
+    "stylus": "*"
   },
   "scripts": {
     "test": "mocha"

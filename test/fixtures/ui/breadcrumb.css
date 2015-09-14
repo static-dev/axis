@@ -2,12 +2,9 @@
   margin: 0;
   padding: 0;
 }
-.breadcrumb:before,
 .breadcrumb:after {
   content: "";
   display: table;
-}
-.breadcrumb:after {
   clear: both;
 }
 .breadcrumb li {

@@ -2,10 +2,7 @@
   color: #0074d9;
   text-decoration: none;
   -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  transition: all .3s ease;
+          transition: all .3s ease;
   border-bottom: 1px solid transparent;
 }
 .link:hover {
@@ -21,10 +18,7 @@
   color: #0074d9;
   text-decoration: none;
   -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  transition: all .3s ease;
+          transition: all .3s ease;
   border-bottom: 1px solid transparent;
   border: none;
   text-decoration: none;

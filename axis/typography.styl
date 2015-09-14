@@ -47,6 +47,20 @@ font-face($name, $folder, $weight = 'normal', $style = 'normal')
     font-weight: unquote($weight)
     font-style: unquote($style)
 
+
+// Mixin: Ellipsis
+// Truncate text to the width of its container...
+// ex: ellipsis()
+// ex: ellipsis: 300px
+
+ellipsis($width = 100%)
+  white-space: nowrap
+  display: inline-block
+  max-width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  word-wrap: normal
+
 // Function: Line Height
 //
 // If there is a font-size set on the parent element, adjusts the line height to
@@ -56,7 +70,7 @@ font-face($name, $folder, $weight = 'normal', $style = 'normal')
   if @font-size
     line-height: 1.6em
   else
-    line-height: unit(font-size*1.6, 'px')
+    line-height: unit($font-size*1.6, 'px')
     line-height: 1.6rem
 
 // Mixin: Text Margin
@@ -380,6 +394,17 @@ hyphenation()
     -webkit-hyphenate-before: 2
     -webkit-hyphenate-after:  3
     hyphenate-lines:          3
+
+// Mixin: Shadow Stroke
+//
+// Creates a text outline using text-shadow. Ported from nib.
+// Takes a color.
+//
+// ex: shadow-stroke()
+// ex: sahdow-stroke(red)
+
+shadow-stroke($color = $blue)
+  text-shadow: -1px -1px 0 $color, 1px -1px 0 $color, -1px 1px 0 $color, 1px 1px 0 $color
 
 // Additive Mixin: Base
 //

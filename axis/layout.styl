@@ -1,7 +1,55 @@
-// Alias: group
-// Clearfix with a better name. Excellent for wrangling floats.
+// Mixin: group
+// Clearfix with a better name. Excellent for wrangling floats. Taken from
+// http://www.cssmojo.com/latest_new_clearfix_so_far/
+// Does not support IE 6 and 7 because you should not support them either.
 
-group = clearfix
+group()
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+// Alias: clearfix
+// Group with a worse name. If you need really can't break the habit.
+clearfix = group
+
+// Function: pos
+// Backs position helpers, found below
+-pos(type, args)
+  i = 0
+  position: unquote(type)
+  for j in (1..4)
+    if length(args) > i
+      {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+    i += 1
+
+// Mixin: Positions
+// Syntax shortcuts for absolute, relative, and fixed positioning. Ported
+// from nib: https://github.com/tj/nib/blob/master/lib/nib/positions.styl
+
+fixed()
+  -pos('fixed', arguments)
+
+absolute()
+  -pos('absolute', arguments)
+
+relative()
+  -pos('relative', arguments)
+
+// Mixin: Size
+// Shortcut for setting width and height quickly. If passed one value, sets this
+// value as both width and height.
+//
+// ex. size: 10px 30px
+// ex. size: 10px
+
+size()
+  if length(arguments) == 1
+    width: arguments[0]
+    height: arguments[0]
+  else
+    width: arguments[0]
+    height: arguments[1]
 
 // Mixin: Columns
 //
@@ -29,19 +77,6 @@ columns($count = 3, $gap = 30px, $width = null, $rule = null)
 
 avoid-column-break()
   column-break-inside: avoid
-
-// Alias: Inline Block
-// Cross browser inline block display. Saves many IE headaches.
-
-inline-block()
-  display: inline-block
-
-  if support-for-ie
-    display: -moz-inline-stack
-    vertical-align: baseline
-    zoom: 1
-    *display: inline
-    *vertical-align: auto
 
 // Mixin: Vertically Align
 // Cross browser vertical align. Works down to IE9.
@@ -73,24 +108,24 @@ vertically-align($reset = null)
 // direct children. The first one will float to the left, the second one will be
 // to the right of the first, and third will go farthest right.
 //
-// ex. media()
-// ex. media: 15px
-// ex. media: 15px 10px
+// ex. media-object()
+// ex. media-object: 15px
+// ex. media-object: 15px 10px
 
-media($margin = 10px)
+media-object($margin = 10px)
 
   $left-margin = $margin
   $right-margin = $margin
 
-  if length($arguments) > 1
-    $left-margin = $arguments[0]
-    $right-margin = $arguments[1]
+  if length(arguments) > 1
+    $left-margin = arguments[0]
+    $right-margin = arguments[1]
 
   overflow: hidden
   zoom: 1
 
   & > *
-    inline-block()
+    display: inline-block
     overflow: hidden
   & > *:first-child
     float: left

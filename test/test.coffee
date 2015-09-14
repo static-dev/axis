@@ -1,37 +1,8 @@
-should = require 'should'
 path = require 'path'
-fs = require 'fs'
-accord = require 'accord'
-axis = require '../'
-cssparse = require 'css-parse'
-
-# utilities
-
-test_path = path.join(__dirname, 'fixtures')
-
-compile = (p) ->
-  accord.load('stylus').renderFile(p, { use: axis() })
-
-match_expected = (out, p, done) ->
-  try
-    expected_path = path.join(path.dirname(p), path.basename(p, '.styl')) + '.css'
-    if not fs.existsSync(expected_path) then throw '"expected" file doesnt exist'
-    expected_contents = fs.readFileSync(expected_path, 'utf8')
-    cssparse(out).should.eql(cssparse(expected_contents))
-  catch err
-    return done(err)
-  done()
-
-compile_and_match = (p, done) ->
-  compile(p)
-    .done(((out) => match_expected(out.result, p, done)), done)
-
-# tests
 
 describe 'api', ->
 
-  before ->
-    @pkg = require('../package.json')
+  before -> @pkg = require('../package.json')
 
   it 'exposes the library path', ->
     axis.path.should.match(/axis/)
@@ -173,9 +144,6 @@ describe 'layout', ->
   it 'group', (done) ->
     compile_and_match(path.join(@path, 'group.styl'), done)
 
-  it 'inline-block', (done) ->
-    compile_and_match(path.join(@path, 'inline-block.styl'), done)
-
   it 'media', (done) ->
     compile_and_match(path.join(@path, 'media.styl'), done)
 
@@ -258,6 +226,12 @@ describe 'typography', ->
   it 'hyphenation', (done) ->
     compile_and_match(path.join(@path, 'hyphenation.styl'), done)
 
+  it 'shadow-stroke', (done) ->
+    compile_and_match(path.join(@path, 'shadow-stroke.styl'), done)
+
+  it 'ellipsis', (done) ->
+    compile_and_match(path.join(@path, 'ellipsis.styl'), done)
+
 describe 'ui', ->
 
   before -> @path = path.join(test_path, 'ui')
@@ -293,20 +267,20 @@ describe 'utilities', ->
 
   before -> @path = path.join(test_path, 'utilities')
 
-  it 'b', (done) ->
-    compile_and_match(path.join(@path, 'b.styl'), done)
-
-  it 'debug', (done) ->
-    compile_and_match(path.join(@path, 'debug.styl'), done)
-
-  it 'quantity-queries', (done) ->
-    compile_and_match(path.join(@path, 'quantity-queries.styl'), done)
-
   it 'no-select', (done) ->
     compile_and_match(path.join(@path, 'no-select.styl'), done)
 
-  it 'rem-calculator', (done) ->
-    compile_and_match(path.join(@path, 'rem-calculator.styl'), done)
+  it 'b', (done) ->
+    compile_and_match(path.join(@path, 'b.styl'), done)
+
+  it 'transition', (done) ->
+    compile_and_match(path.join(@path, 'transition.styl'), done)
+
+  it 'border-box', (done) ->
+    compile_and_match(path.join(@path, 'border-box.styl'), done)
+
+  it 'open-type-ligatures', (done) ->
+    compile_and_match(path.join(@path, 'open-type-ligatures.styl'), done)
 
   it 'rounded', (done) ->
     compile_and_match(path.join(@path, 'rounded.styl'), done)
@@ -314,28 +288,14 @@ describe 'utilities', ->
   it 'triangle', (done) ->
     compile_and_match(path.join(@path, 'triangle.styl'), done)
 
+  it 'debug', (done) ->
+    compile_and_match(path.join(@path, 'debug.styl'), done)
 
-describe 'vendor', ->
+  it 'quantity-queries', (done) ->
+    compile_and_match(path.join(@path, 'quantity-queries.styl'), done)
 
-  before -> @path = path.join(test_path, 'vendor')
-
-  it 'background-position', (done) ->
-    compile_and_match(path.join(@path, 'background-position.styl'), done)
-
-  it 'border-box', (done) ->
-    compile_and_match(path.join(@path, 'border-box.styl'), done)
-
-  it 'border-radius', (done) ->
-    compile_and_match(path.join(@path, 'border-radius.styl'), done)
-
-  it 'box-shadow', (done) ->
-    compile_and_match(path.join(@path, 'box-shadow.styl'), done)
-
-  it 'opacity', (done) ->
-    compile_and_match(path.join(@path, 'opacity.styl'), done)
-
-  it 'transition', (done) ->
-    compile_and_match(path.join(@path, 'transition.styl'), done)
+  it 'rem-calculator', (done) ->
+    compile_and_match(path.join(@path, 'rem-calculator.styl'), done)
 
 describe 'additive', ->
 

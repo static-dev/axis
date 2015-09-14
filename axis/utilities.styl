@@ -2,25 +2,6 @@
 // Utilities
 // ---------
 
-
-// Mixin: Pie
-// When turned on, enables css3 pie (http://css3pie.com/) for all
-// elements that can use it. Which makes IE look a lot nicer.
-
-pie()
-  behavior: url($pie-path) if $pie-enabled
-
-// Mixin: Rounded
-//
-// Unless you are working with a ridiculously large element, this will round the
-// corners as much as css will allow. Even in IE.
-//
-// ex. rounded()
-
-rounded()
-  border-radius: 999px
-  pie()
-
 // Alias: No Select
 // You can't highlight this.
 
@@ -34,6 +15,47 @@ no-select()
 b()
   arguments = unquote('1px solid') unless arguments
   border: arguments
+
+// Alias: Transition
+//
+// Transition with an intelligent default.
+//
+// ex. transition()
+// ex. transition: color 1s ease
+// ex. transition(color 1s ease, background 2.4s linear)
+
+transition()
+  arguments = unquote('all .3s ease') unless arguments
+  transition: arguments
+
+// Alias: Border Box
+// A quicker way to specify border-box sizing.
+
+border-box()
+  box-sizing: border-box
+
+// Alias: Opentype ligatures
+//
+// The vast majority of fonts contain lowercase and uppercase alphabets,
+// numerals, punctuation and accents. Many professionally-designed fonts
+// also contain ligatures, alternative characters, smallcaps, different kinds of
+// numbers, and sometimes much more besides. This enables it.
+//
+// Source: http://www.newnet-soft.com/blog/csstypography
+// Additional: http://blog.fontdeck.com/post/15777165734/opentype-1
+
+open-type-ligatures()
+  font-feature-settings: "liga", "dlig"
+
+// Mixin: Rounded
+//
+// Unless you are working with a ridiculously large element, this will round the
+// corners as much as css will allow. Even in IE.
+//
+// ex. rounded()
+
+rounded()
+  border-radius: 999px
 
 // Mixin: Triangle
 //
@@ -120,6 +142,52 @@ debug()
     background: rgba(yellow, .2)
     border: 1px solid gold
 
+// Block Mixin: Quantity Queries
+//
+// Set rules for a selector based on a specific sibling count.
+// via: https://github.com/pascalduez/postcss-quantity-queries
+//
+// ex. +quantity-at-least(6)
+// ex. +quantity-at-most(12, div)
+// ex. +quantity-between(0, 8, span)
+// ex. +quantity-exactly(5)
+
+quantity-at-least($count = 4, $selector = li)
+  & > {$selector}:nth-last-child(n+{$count})
+  & > {$selector}:nth-last-child(n+{$count}) ~ {$selector}
+    {block}
+
+quantity-at-most($count = 4, $selector = li)
+  & > {$selector}:nth-last-child(-n+{$count}):first-child
+  & > {$selector}:nth-last-child(-n+{$count}):first-child ~ {$selector}
+    {block}
+
+quantity-between($start = 0, $end = 10, $selector = li)
+  & > {$selector}:nth-last-child(n+{$start}):nth-last-child(-n+{$end}):first-child
+  & > {$selector}:nth-last-child(n+{$start}):nth-last-child(-n+{$end}):first-child ~ {$selector}
+    {block}
+
+quantity-exactly($count = 4, $selector = li)
+  & > {$selector}:nth-last-child({$count}):first-child
+  & > {$selector}:nth-last-child({$count}):first-child ~ {$selector}
+    {block}
+
+// Function: Rem Calculator
+//
+// Calculates and returns the rem value based on px input. Default base font
+// size is 16px, but can be changed with base-font-size.
+//
+// ex       : rem(30px) or rem(30)
+// returns  : 1.875rem
+
+-rem($value)
+  $base-font-size ?= 16px
+  $type = unit($value)
+  if $type == px
+    return unit($value / $base-font-size, 'rem')
+  else
+    return unit($value, $type)
+
 // Custom animation timing functions, ported from bourbon
 // https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_timing-functions.scss
 
@@ -155,49 +223,3 @@ $ease-in-out-expo =  cubic-bezier(1.000,  0.000, 0.000, 1.000)
 $ease-in-out-circ =  cubic-bezier(0.785,  0.135, 0.150, 0.860)
 $ease-in-out-back =  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 $ease-in-out-swift = cubic-bezier(0.900,  0.000, 0.100, 1.000)
-
-// Function: Rem Calculator
-//
-// Calculates and returns the rem value based on px input. Default base font
-// size is 16px, but can be changed with base-font-size.
-//
-// ex       : rem(30px) or rem(30)
-// returns  : 1.875rem
-
--rem($value)
-  $base-font-size ?= 16px
-  $type = unit($value)
-  if $type == px
-    return unit($value / $base-font-size, 'rem')
-  else
-    return unit($value, $type)
-
-// Block Mixin: Quantity Queries
-//
-// Set rules for a selector based on a specific sibling count.
-// via: https://github.com/pascalduez/postcss-quantity-queries
-//
-// ex. +quantity-at-least(6)
-// ex. +quantity-at-most(12, div)
-// ex. +quantity-between(0, 8, span)
-// ex. +quantity-exactly(5)
-
-quantity-at-least($count = 4, $selector = li)
-  & > {$selector}:nth-last-child(n+{$count})
-  & > {$selector}:nth-last-child(n+{$count}) ~ {$selector}
-    {block}
-
-quantity-at-most($count = 4, $selector = li)
-  & > {$selector}:nth-last-child(-n+{$count}):first-child
-  & > {$selector}:nth-last-child(-n+{$count}):first-child ~ {$selector}
-    {block}
-
-quantity-between($start = 0, $end = 10, $selector = li)
-  & > {$selector}:nth-last-child(n+{$start}):nth-last-child(-n+{$end}):first-child
-  & > {$selector}:nth-last-child(n+{$start}):nth-last-child(-n+{$end}):first-child ~ {$selector}
-    {block}
-
-quantity-exactly($count = 4, $selector = li)
-  & > {$selector}:nth-last-child({$count}):first-child
-  & > {$selector}:nth-last-child({$count}):first-child ~ {$selector}
-    {block}

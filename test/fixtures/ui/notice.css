@@ -1,21 +1,15 @@
 .notice {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 -moz-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 -o-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 -ms-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
-  background: #e7e7e7 linear-gradient(to bottom, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #d6d6d6;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
   position: relative;
 }
-.notice:before,
 .notice:after {
   content: "";
   display: table;
-}
-.notice:after {
   clear: both;
 }

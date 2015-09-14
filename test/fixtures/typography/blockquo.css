@@ -3,12 +3,9 @@
   margin: 1em 0;
   padding-left: 1.5em;
 }
-.blockquote:before,
 .blockquote:after {
   content: "";
   display: table;
-}
-.blockquote:after {
   clear: both;
 }
 .blockquote > p {
