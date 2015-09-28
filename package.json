@@ -9,13 +9,13 @@
     "url": "git://github.com/jenius/axis.git"
   },
   "devDependencies": {
-    "accord": "0.20.x",
-    "autoprefixer-stylus": "0.7.x",
-    "chai": "3.x",
-    "coffee-script": "1.9.x",
-    "css-parse": "2.x",
-    "mocha": "2.x",
-    "stylus": "*"
+    "accord": "0.20.3",
+    "autoprefixer-stylus": "0.7.1",
+    "chai": "3.3.0",
+    "coffee-script": "1.9.3",
+    "css-parse": "2.0.0",
+    "mocha": "2.3.3",
+    "stylus": "0.52.4"
   },
   "scripts": {
     "test": "mocha"
