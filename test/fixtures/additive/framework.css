@@ -392,6 +392,11 @@ textarea.error:focus {
   text-decoration: none;
   display: inline-block;
   border: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .btn:hover,
 .btn:focus {
@@ -422,6 +427,11 @@ textarea.error:focus {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .btn-fancy:hover,
 .btn-fancy:focus {

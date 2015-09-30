@@ -16,6 +16,11 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .glossy-button:hover,
 .glossy-button:focus {
