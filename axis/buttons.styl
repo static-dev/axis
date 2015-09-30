@@ -46,7 +46,7 @@
 button($color = $default-color, $size = "medium", $text-color = null)
 
   // color detection and changes
-  $text-color = (light($color) ? #494949 : #fff) unless $text-color
+  $text-color = (light(darken($color, 22%)) ? rgba(#000, .7) : #fff) unless $text-color
   $parsed-size = -parse($size)
 
   // now that we've got numbers, let's work some proportions
@@ -68,7 +68,9 @@ button($color = $default-color, $size = "medium", $text-color = null)
   text-align: center
   text-decoration: none
   display: inline-block
-  border none
+  border: none
+  no-select()
+
   &:hover, &:focus
     background-color: darken($color, 5%)
     color: darken($text-color, 3%)
@@ -103,8 +105,8 @@ glossy-button($color = $default-color, $size = "medium", $text-color = null, $sh
   if $text-color
     $dark-text = light($text-color) ? true : false
   else
-    $dark-text = light($color) ? false : true
-    $text-color = $dark-text ? white : #494949
+    $dark-text = light(darken($color, 22%)) ? false : true
+    $text-color = $dark-text ? white : rgba(#000, .7)
 
   $shadow-color = $dark-text ? rgba(#000,.1) : rgba(#fff,.3) unless $shadow-color
   $hover-color = $dark-text ? rgba(#000,.2) : rgba(#fff,.5) unless $hover-color
@@ -135,6 +137,7 @@ glossy-button($color = $default-color, $size = "medium", $text-color = null, $sh
   text-align: center
   text-decoration: none
   display: inline-block
+  no-select()
 
   &:hover, &:focus
     background-position: 0 unit($height * -1, 'px')
