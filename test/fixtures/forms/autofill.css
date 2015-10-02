@@ -1,0 +1,16 @@
+.autofill input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #0074d9 inset;
+  -webkit-text-fill-color: #fff !important;
+}
+.autofill input:-moz-autofill {
+  -moz-text-fill-color: #fff !important;
+  -moz-box-shadow: 0 0 0px 1000px #0074d9 inset;
+}
+.autofill input:-o-autofill {
+  -o-text-fill-color: !important;
+  -o-box-shadow: 0 0 0px 1000px #0074d9 inset;
+}
+.autofill input:-khtml-autofill {
+  -khtml-text-fill-color: #fff !important;
+  -khtml-box-shadow: 0 0 0px 1000px #0074d9 inset;
+}
