@@ -159,12 +159,12 @@ small()
 // Function: Heading
 // For internal use within headings
 
--heading($multiplier)
+-heading($multiplier, $margins = true)
   font-size: unit(($font-size*$multiplier), 'px')
   font-size: unit($multiplier, 'rem')
   text-rendering: optimizelegibility
   font-weight: bold
-  text-margin()
+  text-margin() if $margins
   -line-height()
   openTypeLigatures() if $ligatures
 
