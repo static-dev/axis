@@ -198,6 +198,29 @@ fields($direction = right, $width = 370px)
     &.error
       field-error()
 
+// Mixin: Autofill
+
+// When forms are auto-filled, the background color for the inputs (ie: pale
+// yellow) can be very jarring, especially if you have a dark background.  This
+// allows you to override that. Takes background color and text color.
+
+// ex. autofill(red, yellow)
+
+autofill($background = #0074D9, $color = #fff)
+  &:-webkit-autofill
+    -webkit-box-shadow 0 0 0px 1000px $background inset
+    -webkit-text-fill-color $color !important
+  &:-moz-autofill
+    -moz-text-fill-color $color !important
+    -moz-box-shadow 0 0 0px 1000px $background inset
+  &:-o-autofill
+    -o-text-fill-color @color !important
+    -o-box-shadow 0 0 0px 1000px $background inset
+  &:-khtml-autofill
+    -khtml-text-fill-color $color !important
+    -khtml-box-shadow 0 0 0px 1000px $background inset
+
+
 // Additive Mixin: Forms
 //
 // WARNING: Creates classes in your css and styles them - not to be used inside

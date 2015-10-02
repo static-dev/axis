@@ -68,6 +68,9 @@ describe 'forms', ->
   it 'field-success', (done) ->
       compile_and_match(path.join(@path, 'field-success.styl'), done)
 
+  it 'autofill', (done) ->
+      compile_and_match(path.join(@path, 'autofill.styl'), done)
+
 describe 'gradients', ->
 
   before -> @path = path.join(test_path, 'gradients')
