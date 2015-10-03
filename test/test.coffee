@@ -251,6 +251,9 @@ describe 'ui', ->
   it 'flash', (done) ->
     compile_and_match(path.join(@path, 'flash.styl'), done)
 
+  it 'icon-arrow', (done) ->
+    compile_and_match(path.join(@path, 'icon-arrow.styl'), done)
+
   it 'icon-x', (done) ->
     compile_and_match(path.join(@path, 'icon-x.styl'), done)
 

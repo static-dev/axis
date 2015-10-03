@@ -222,15 +222,43 @@ figure($color = $default-color, $dimensions = false)
     text-align: center
     italic()
 
-
-// Mixin: icon-x
+// Mixin: icon-arrow
 //
 // Here's an asset you've probably had to create a lot. Now you don't.
-// Creates a nice "X" close/delete button. Takes size, color, or stroke
+// Creates a nice arrow icon in pure css. Useful for navigation. Takes size,
+// color, or stroke.
 
 // ex: close()
 // ex: close(25px, yellowgreen, 2px)
 
+icon-arrow($direction = 'right', $size = 40px, $color = #888, $stroke = 1px)
+  height: $size
+  width: $size
+
+  &:after
+    content: ''
+    border-right: $stroke solid $color
+    border-top: $stroke solid $color
+    display: block
+    height: unit($size * 0.625, 'px')
+    width: unit($size * 0.625, 'px')
+    margin-left: 1%
+    if $direction == 'right'
+      transform: rotate(45deg) translateX(unit($size * 0.1, 'px')) translateY(unit($size * 0.1, 'px'))
+    else if $direction == 'left'
+      transform: rotate(-135deg) translateX(unit($size * -0.3, 'px') ) translateY(unit($size * 0.1, 'px'))
+    else if $direction == 'down'
+      transform: rotate(135deg) translateX(unit($size * -0.1, 'px')) translateY(unit($size * -0.1, 'px'))
+    else if $direction == 'up'
+      transform: rotate(-45deg) translateX(unit($size * -0.1, 'px')) translateY(unit($size * 0.3, 'px'))
+
+// Mixin: icon-x
+//
+// Here's another n asset you've probably had to create a lot. Now you don't.
+// Creates a nice "X" close/delete icon. Takes size, color, or stroke
+
+// ex: close()
+// ex: close(25px, yellowgreen, 2px)
 
 icon-x($size = 40px, $color = #888, $stroke = 1px)
   width: $size
@@ -250,7 +278,7 @@ icon-x($size = 40px, $color = #888, $stroke = 1px)
 
   &:after
     transform: rotate(-45deg)
-    
+
 // Mixin: Navigation
 //
 // Makes a fantastic nav bar for you that doesn't look exactly like bootstrap's
