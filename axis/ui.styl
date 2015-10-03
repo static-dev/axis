@@ -222,6 +222,35 @@ figure($color = $default-color, $dimensions = false)
     text-align: center
     italic()
 
+
+// Mixin: icon-x
+//
+// Here's an asset you've probably had to create a lot. Now you don't.
+// Creates a nice "X" close/delete button. Takes size, color, or stroke
+
+// ex: close()
+// ex: close(25px, yellowgreen, 2px)
+
+
+icon-x($size = 40px, $color = #888, $stroke = 1px)
+  width: $size
+  height: $size
+  display: block
+  position: relative
+
+  &:before, &:after
+    transition: all .3s ease
+    content: ''
+    position: absolute
+    width: $size
+    top: 50%
+    height: $stroke
+    background: $color
+    transform: rotate(45deg)
+
+  &:after
+    transform: rotate(-45deg)
+    
 // Mixin: Navigation
 //
 // Makes a fantastic nav bar for you that doesn't look exactly like bootstrap's

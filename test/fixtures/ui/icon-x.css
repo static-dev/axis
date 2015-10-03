@@ -1,0 +1,25 @@
+.icon-x {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: relative;
+}
+.icon-x:before,
+.icon-x:after {
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+  content: '';
+  position: absolute;
+  width: 40px;
+  top: 50%;
+  height: 1px;
+  background: #888;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.icon-x:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
