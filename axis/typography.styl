@@ -216,14 +216,14 @@ link($color = $blue, $style = 'underline')
     hover-underline()
     &:hover
       color: darken(@color, 15%)
-  else if style == 'darken'
+  else if $style == 'darken'
     &:hover
       color: darken(@color, 20%)
-  else if style == 'lighten'
+  else if $style == 'lighten'
     hover-lighten()
-  else if style == 'glow'
+  else if $style == 'glow'
     &:hover
-      text-shadow: 0 0 7px rgba($color, .6)
+      text-shadow: 0 0 7px rgba(@color, .6)
 
   &:visited
     opacity: .8
