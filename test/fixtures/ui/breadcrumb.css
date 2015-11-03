@@ -15,11 +15,8 @@
 .breadcrumb li:last-child {
   margin-right: 0;
 }
-.breadcrumb li:after {
+.breadcrumb li:not(:last-child):after {
   content: "/";
   margin-left: 10px;
   color: #cdcdcd;
-}
-.breadcrumb li:last-child:after {
-  content: "";
 }
