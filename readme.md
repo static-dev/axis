@@ -5,7 +5,7 @@ Axis
 [![tests](http://img.shields.io/travis/jenius/axis/master.svg?style=flat)](https://travis-ci.org/jenius/axis)
 [![dependencies](http://img.shields.io/gemnasium/jenius/axis.svg?style=flat)](https://gemnasium.com/jenius/axis)
 
-Axis is a large and robust css utility library built on top of [stylus](https://github.com/LearnBoost/stylus).
+Axis is a large and robust css utility library built on top of [stylus](https://github.com/stylus/stylus).
 
 > **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details. Axis will not go to v1.0 until stylus has done so.
 
