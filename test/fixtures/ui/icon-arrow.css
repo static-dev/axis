@@ -11,7 +11,6 @@
   width: 25px;
   margin-left: 1%;
   -webkit-transform: rotate(45deg) translateX(4px) translateY(4px);
-      -ms-transform: rotate(45deg) translateX(4px) translateY(4px);
           transform: rotate(45deg) translateX(4px) translateY(4px);
 }
 .icon-arrow-left {
@@ -27,6 +26,5 @@
   width: 25px;
   margin-left: 1%;
   -webkit-transform: rotate(-135deg) translateX(-12px) translateY(4px);
-      -ms-transform: rotate(-135deg) translateX(-12px) translateY(4px);
           transform: rotate(-135deg) translateX(-12px) translateY(4px);
 }

@@ -16,12 +16,10 @@
 }
 .hover-float:hover {
   -webkit-transform: translateY(-7px);
-      -ms-transform: translateY(-7px);
           transform: translateY(-7px);
 }
 .hover-float:hover:before {
   opacity: 1;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
 }
