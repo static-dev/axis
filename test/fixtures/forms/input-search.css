@@ -12,7 +12,7 @@
   width: 250px;
   text-shadow: 0 0 1px rgba(255,255,255,0.1);
   -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
   padding-left: 9px;
   border-radius: 999px;
 }
