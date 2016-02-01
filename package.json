@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "accord": "0.22.0",
-    "autoprefixer-stylus": "0.8.1",
+    "autoprefixer-stylus": "0.9.1",
     "chai": "3.5.0",
     "coffee-script": "1.10.0",
     "css-parse": "2.0.0",

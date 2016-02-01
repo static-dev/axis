@@ -1,8 +1,8 @@
 .transition {
   -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
 }
 .trans-custom {
   -webkit-transition: all 1s ease;
-          transition: all 1s ease;
+  transition: all 1s ease;
 }

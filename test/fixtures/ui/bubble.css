@@ -1,6 +1,6 @@
 .bubble {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -41,7 +41,7 @@
 }
 .bubble-tl {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -82,7 +82,7 @@
 }
 .bubble-tr {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -123,7 +123,7 @@
 }
 .bubble-tc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -164,7 +164,7 @@
 }
 .bubble-bl {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -205,7 +205,7 @@
 }
 .bubble-br {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -246,7 +246,7 @@
 }
 .bubble-bc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -287,7 +287,7 @@
 }
 .bubble-lt {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -328,7 +328,7 @@
 }
 .bubble-lb {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -369,7 +369,7 @@
 }
 .bubble-lc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -410,7 +410,7 @@
 }
 .bubble-rt {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -451,7 +451,7 @@
 }
 .bubble-rb {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;
@@ -492,7 +492,7 @@
 }
 .bubble-rc {
   background: #efefef;
-  background: #e7e7e7 -webkit-linear-gradient(270deg, #efefef, #e7e7e7) repeat-x;
+  background: #e7e7e7 -webkit-linear-gradient(top, #efefef, #e7e7e7) repeat-x;
   background: #e7e7e7 linear-gradient(180deg, #efefef, #e7e7e7) repeat-x;
   border-radius: 5px;
   padding: 10px;

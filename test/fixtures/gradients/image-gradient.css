@@ -1,10 +1,10 @@
 .image-gradient-twocolor {
   background: #d13f19;
-  background: url("foo.png") repeat, #0074d9 -webkit-linear-gradient(270deg, #d13f19, #0074d9) repeat-x;
+  background: url("foo.png") repeat, #0074d9 -webkit-linear-gradient(top, #d13f19, #0074d9) repeat-x;
   background: url("foo.png") repeat, #0074d9 linear-gradient(180deg, #d13f19, #0074d9) repeat-x;
 }
 .image-gradient-onecolor {
   background: #e44921;
-  background: url("foo.png") repeat, #bc3917 -webkit-linear-gradient(270deg, #e44921, #bc3917) repeat-x;
+  background: url("foo.png") repeat, #bc3917 -webkit-linear-gradient(top, #e44921, #bc3917) repeat-x;
   background: url("foo.png") repeat, #bc3917 linear-gradient(180deg, #e44921, #bc3917) repeat-x;
 }

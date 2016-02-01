@@ -21,7 +21,7 @@
   background: #0074d9;
   margin-top: calc(-2em / 2 + 0.5em / 2);
   -webkit-transition: all 0.2s ease;
-          transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .range::-webkit-slider-thumb:hover {
   -webkit-transform: scale(1.2);
@@ -50,6 +50,7 @@
   width: 2em;
   border-radius: 50%;
   background: #0074d9;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 .range::-moz-range-thumb:hover {

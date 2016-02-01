@@ -11,7 +11,7 @@
   height: 10px;
   width: 90%;
   opacity: 0;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 80%);
+  background: -webkit-radial-gradient(center ellipse, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 80%);
   background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 80%);
 }
 .hover-float:hover {
