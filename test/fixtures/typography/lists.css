@@ -24,7 +24,7 @@
 }
 .inline-list:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
 .inline-list li {

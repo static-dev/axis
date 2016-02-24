@@ -4,7 +4,7 @@
 }
 .breadcrumb:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
 .breadcrumb li {
