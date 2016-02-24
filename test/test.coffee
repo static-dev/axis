@@ -71,6 +71,12 @@ describe 'forms', ->
   it 'autofill', (done) ->
       compile_and_match(path.join(@path, 'autofill.styl'), done)
 
+  it 'radio', (done) ->
+    compile_and_match(path.join(@path, 'radio.styl'), done)
+
+  it 'range', (done) ->
+    compile_and_match(path.join(@path, 'range.styl'), done)
+
 describe 'gradients', ->
 
   before -> @path = path.join(test_path, 'gradients')
@@ -265,12 +271,6 @@ describe 'ui', ->
 
   it 'notice', (done) ->
     compile_and_match(path.join(@path, 'notice.styl'), done)
-
-  it 'radio', (done) ->
-    compile_and_match(path.join(@path, 'radio.styl'), done)
-
-  it 'range', (done) ->
-    compile_and_match(path.join(@path, 'range.styl'), done)
 
 describe 'utilities', ->
 
