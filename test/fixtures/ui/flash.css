@@ -13,7 +13,7 @@
 }
 .flash-notice:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
 .flash-warning {
@@ -30,7 +30,7 @@
 }
 .flash-warning:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
 .flash-error {
@@ -48,7 +48,7 @@
 }
 .flash-error:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
 .flash-success {
@@ -66,6 +66,6 @@
 }
 .flash-success:after {
   content: "";
-  display: table;
+  display: block;
   clear: both;
 }
