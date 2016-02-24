@@ -74,7 +74,7 @@ describe 'forms', ->
   it 'radio', (done) ->
     compile_and_match(path.join(@path, 'radio.styl'), done)
 
-  it 'range', (done) ->
+  it 'range-input', (done) ->
     compile_and_match(path.join(@path, 'range.styl'), done)
 
 describe 'gradients', ->
