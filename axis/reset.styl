@@ -84,7 +84,7 @@ reset-html5()
     display none
 
 // Mixin: Normalize CSS
-// Based on v3.0.1 https://github.com/necolas/normalize.css
+// Based on v4.0.0 https://github.com/necolas/normalize.css
 
 normalize-css()
   html
@@ -93,33 +93,37 @@ normalize-css()
     -webkit-text-size-adjust: 100%
 
   body
-    margin: 0
+    margin 0
 
-  article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary
+  article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
     display: block
 
   audio, canvas, progress, video
     display: inline-block
-    vertical-align: baseline
 
   audio:not([controls])
     display: none
     height: 0
 
-  [hidden], template
+  progress
+    vertical-align: baseline
+
+  template, [hidden]
     display: none
 
   a
-    background: transparent
+    background-color: transparent
 
-    &:active, &:hover
-      outline: 0
+  a:active, a:hover
+    outline-width: 0
 
   abbr[title]
-    border-bottom: 1px dotted
+    border-bottom: none
+    text-decoration: underline
+    text-decoration: underline dotted
 
   b, strong
-    font-weight: bold
+    font-weight: inherit
 
   dfn
     font-style: italic
@@ -129,7 +133,7 @@ normalize-css()
     margin: 0.67em 0
 
   mark
-    background: #ff0
+    background-color: #ff0
     color: #000
 
   small
@@ -141,73 +145,60 @@ normalize-css()
     position: relative
     vertical-align: baseline
 
-  sup
-    top: -0.5em
-
   sub
     bottom: -0.25em
 
+  sup
+    top: -0.5em
+
   img
-    border: 0
+    border-style: none
 
   svg:not(:root)
     overflow: hidden
-
-  figure
-    margin: 1em 40px
-
-  hr
-    -moz-box-sizing: content-box
-    box-sizing: content-box
-    height: 0
-
-  pre
-    overflow: auto
 
   code, kbd, pre, samp
     font-family: monospace, monospace
     font-size: 1em
 
-  button, input, optgroup, select, textarea
-    color: inherit
-    font: inherit
-    margin: 0
+  figure
+    margin: 1em 40px
 
-  button
+  hr
+    box-sizing: content-box
+    height: 0
     overflow: visible
+
+  button, input, select, textarea
+    font: inherit
+
+  optgroup
+    font-weight: bold
+
+  button, input, select
+    overflow: visible
+
+  button, input, select, textarea
+    margin: 0
 
   button, select
     text-transform: none
 
-  button, html input[type="button"], input[type="reset"], input[type="submit"]
-    -webkit-appearance: button
+  button, [type="button"], [type="reset"], [type="submit"]
     cursor: pointer
 
-  button[disabled], html input[disabled]
+  [disabled]
     cursor: default
+
+  button, html [type="button"], [type="reset"], [type="submit"]
+    -webkit-appearance: button
 
   button::-moz-focus-inner, input::-moz-focus-inner
     border: 0
     padding: 0
 
-  input
-    line-height: normal
-
-  input[type="checkbox"], input[type="radio"]
-    box-sizing: border-box
-    padding: 0
-
-  input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button
-    height: auto
-
-  input[type="search"]
-    -webkit-appearance: textfield
-    -moz-box-sizing: content-box
-    -webkit-box-sizing: content-box
-    box-sizing: content-box
-
-  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration
-    -webkit-appearance: none
+  button:-moz-focusring, input:-moz-focusring
+    outline: 1px dotted ButtonText
 
   fieldset
     border: 1px solid #c0c0c0
@@ -215,21 +206,29 @@ normalize-css()
     padding: 0.35em 0.625em 0.75em
 
   legend
-    border: 0
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    color: inherit
+    display: table
+    max-width: 100%
     padding: 0
+    white-space: normal
 
   textarea
     overflow: auto
 
-  optgroup
-    font-weight: bold
-
-  table
-    border-collapse: collapse
-    border-spacing: 0
-
-  td, th
+  [type="checkbox"], [type="radio"]
+    box-sizing: border-box
     padding: 0
+
+  [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button
+    height: auto
+
+  [type="search"]
+    -webkit-appearance: textfield
+
+  [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration
+    -webkit-appearance: none
 
 // Mixin: Fluid Media
 // Makes your img, video, and iframe tags responsive to their parent container.
