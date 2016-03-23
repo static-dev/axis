@@ -3,6 +3,7 @@
   "version": "0.6.1",
   "description": "css library built on stylus",
   "author": "Jeff Escalante",
+  "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
