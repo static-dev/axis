@@ -47,6 +47,19 @@ border-box()
 open-type-ligatures()
   font-feature-settings: "liga", "dlig"
 
+// Alias: Multi-line padding
+//
+// You can not apply the background and padding to a <span> or an inline element.
+// The left and right padding will only apply to the very first and very last line.
+// On each of the middle lines, the background will butt up immediately next to the text.
+//
+// The attribute box-decoration-break solves this problem but needs prefixing.
+//
+// Source: http://codepen.io/chriscoyier/pen/hIvFe
+
+multi-line-padding()
+  box-decoration-break: clone;
+
 // Mixin: Rounded
 //
 // Unless you are working with a ridiculously large element, this will round the
