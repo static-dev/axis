@@ -294,6 +294,9 @@ describe 'utilities', ->
   it 'open-type-ligatures', (done) ->
     compile_and_match(path.join(@path, 'open-type-ligatures.styl'), done)
 
+  it 'multi-line-padding', (done) ->
+    compile_and_match(path.join(@path, 'multi-line-padding.styl'), done)
+
   it 'rounded', (done) ->
     compile_and_match(path.join(@path, 'rounded.styl'), done)
 
