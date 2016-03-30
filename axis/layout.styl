@@ -21,7 +21,7 @@ clearfix()
   position: unquote(type)
   for j in (1..4)
     if length(args) > i
-      {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+      {args[i]}: args[i + 1] is a 'unit' or 'auto' ? args[i += 1] : 0
     i += 1
 
 // Mixin: Positions
