@@ -147,6 +147,9 @@ describe 'layout', ->
 
   before -> @path = path.join(test_path, 'layout')
 
+  it 'position', (done) ->
+    compile_and_match(path.join(@path, 'position.styl'), done)
+
   it 'columns', (done) ->
     compile_and_match(path.join(@path, 'columns.styl'), done)
 

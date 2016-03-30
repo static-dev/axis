@@ -1,0 +1,10 @@
+.absolute {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+.auto {
+  position: relative;
+  top: auto;
+  right: auto;
+}
