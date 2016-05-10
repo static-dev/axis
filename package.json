@@ -10,7 +10,7 @@
     "url": "git://github.com/jenius/axis.git"
   },
   "devDependencies": {
-    "accord": "0.23.0",
+    "accord": "0.24.0",
     "autoprefixer-stylus": "0.9.3",
     "chai": "3.5.0",
     "coffee-script": "1.10.0",
