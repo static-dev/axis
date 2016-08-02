@@ -8,3 +8,8 @@
   top: auto;
   right: auto;
 }
+.static {
+  position: static;
+  bottom: 12px;
+  left: 34px;
+}

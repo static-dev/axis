@@ -39,37 +39,37 @@ describe 'forms', ->
     compile_and_match(path.join(@path, 'input.styl'), done)
 
   it 'input-search', (done) ->
-      compile_and_match(path.join(@path, 'input-search.styl'), done)
+    compile_and_match(path.join(@path, 'input-search.styl'), done)
 
   it 'input-disabled', (done) ->
-      compile_and_match(path.join(@path, 'input-disabled.styl'), done)
+    compile_and_match(path.join(@path, 'input-disabled.styl'), done)
 
   it 'label', (done) ->
-      compile_and_match(path.join(@path, 'label.styl'), done)
+    compile_and_match(path.join(@path, 'label.styl'), done)
 
   it 'field', (done) ->
-      compile_and_match(path.join(@path, 'field.styl'), done)
+    compile_and_match(path.join(@path, 'field.styl'), done)
 
   it 'input-error', (done) ->
-      compile_and_match(path.join(@path, 'input-error.styl'), done)
+    compile_and_match(path.join(@path, 'input-error.styl'), done)
 
   it 'field-error', (done) ->
-      compile_and_match(path.join(@path, 'field-error.styl'), done)
+    compile_and_match(path.join(@path, 'field-error.styl'), done)
 
   it 'input-warning', (done) ->
-      compile_and_match(path.join(@path, 'input-warning.styl'), done)
+    compile_and_match(path.join(@path, 'input-warning.styl'), done)
 
   it 'field-warning', (done) ->
-      compile_and_match(path.join(@path, 'field-warning.styl'), done)
+    compile_and_match(path.join(@path, 'field-warning.styl'), done)
 
   it 'input-success', (done) ->
-      compile_and_match(path.join(@path, 'input-success.styl'), done)
+    compile_and_match(path.join(@path, 'input-success.styl'), done)
 
   it 'field-success', (done) ->
-      compile_and_match(path.join(@path, 'field-success.styl'), done)
+    compile_and_match(path.join(@path, 'field-success.styl'), done)
 
   it 'autofill', (done) ->
-      compile_and_match(path.join(@path, 'autofill.styl'), done)
+    compile_and_match(path.join(@path, 'autofill.styl'), done)
 
   it 'radio', (done) ->
     compile_and_match(path.join(@path, 'radio.styl'), done)
