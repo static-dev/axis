@@ -25,8 +25,8 @@ clearfix()
     i += 1
 
 // Mixin: Positions
-// Syntax shortcuts for absolute, relative, and fixed positioning. Ported
-// from nib: https://github.com/tj/nib/blob/master/lib/nib/positions.styl
+// Syntax shortcuts for absolute, relative, fixed, and static positioning. Mostly
+// ported from nib: https://github.com/tj/nib/blob/master/lib/nib/positions.styl
 
 fixed()
   -pos('fixed', arguments)
@@ -36,6 +36,9 @@ absolute()
 
 relative()
   -pos('relative', arguments)
+
+static()
+  -pos('static', arguments)
 
 // Mixin: Size
 // Shortcut for setting width and height quickly. If passed one value, sets this
