@@ -109,20 +109,20 @@ small {
   opacity: 0.6;
   font-weight: normal;
 }
-a[href]:not([class]) {
+a {
   color: #0074d9;
   text-decoration: none;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
   border-bottom: 1px solid transparent;
 }
-a[href]:not([class]):hover {
+a:hover {
   border-bottom: 1px solid;
 }
-a[href]:not([class]):hover {
+a:hover {
   color: #0063b8;
 }
-a[href]:not([class]):visited {
+a:visited {
   opacity: 0.8;
 }
 blockquote {
