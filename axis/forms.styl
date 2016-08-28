@@ -260,8 +260,10 @@ range-input($color = #0074d9, $track-width = 100%, $thumb-size = 2em, $track-hei
     transition: all 0.2s ease
 
     &:hover
-      transform: scale(1.2)
       cursor: pointer
+
+    &:hover, &.active
+      transform: scale(1.2)
 
     &:active
       background: darken($color, 15%)
@@ -287,7 +289,7 @@ range-input($color = #0074d9, $track-width = 100%, $thumb-size = 2em, $track-hei
     background: $color
     transition: all 0.2s ease
 
-    &:hover
+    &:hover, &.active
       transform: scale(1.2)
 
     &:active
