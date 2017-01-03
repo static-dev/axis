@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "accord": "0.26.3",
-    "autoprefixer-stylus": "0.11.0",
+    "autoprefixer-stylus": "0.13.0",
     "chai": "3.5.0",
     "coffee-script": "1.12.1",
     "css-parse": "2.0.0",
