@@ -7,8 +7,6 @@ Axis
 
 Axis is a large and robust css utility library built on top of [stylus](https://github.com/stylus/stylus).
 
-> **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details. Axis will not go to v1.0 until stylus has done so.
-
 ### Installation
 
 You can install axis through npm, as such:
