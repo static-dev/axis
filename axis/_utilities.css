@@ -1,0 +1,87 @@
+/* --------- */
+/* Utilities */
+/* --------- */
+
+:root {
+  /*  Mixin: Responsive overflow
+
+  Make wide elements scroll horizontally at a set breakpoint, with a nice
+  visual cue (shadow) - mostly useful for responsive tables. Note: must be set
+  on containing element. */
+  --responsive-overflow {
+    position: relative;
+
+    @media (max-width: 767px) {
+      & > * {
+        overflow-x: auto;
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        width: 1rem;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,.15));
+        position: absolute;
+        right: -1px;
+        top: 0;
+        border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+      }
+    }
+  }
+
+  /* Mixin: Debug
+
+  Debugging tool - adds a border to the current element, its children,
+  grandchildren, etc so you can see what's up – great for precise layout
+  tweaks.  It will also add flags if you made mistakes like put in inline
+  styles, forgot an alt on an image, left the alt blank, etc. Not to be used
+  in production, obviously.
+
+  learn more here: https://codepen.io/dbox/pen/GJZzYo?editors=1100 */
+  --debug {
+    border: 1px solid MediumPurple;
+
+    & > * { border: 1px solid DarkKhaki; }
+    & > * > * { border: 1px solid MediumTurquoise; }
+    & > * > * > * { border: 1px solid LightSlateGray; }
+    & > * > * > * > * { border: 1px solid LightBlue; }
+    & > * > * > * > * > * { border: 1px solid MediumSlateBlue; }
+    & > * > * > * > * > * > * { border: 1px solid DeepSkyBlue; }
+    & > * > * > * > * > * > * > * { border: 1px solid DarkSeaGreen; }
+
+    & img {
+      border: 1px solid #f00;
+      filter: hue-rotate(330deg) contrast(.75) saturate(6);
+    }
+
+    & img[alt] {
+      border: 1px solid LimeGreen;
+      filter: none
+    }
+
+    & img[alt=""] {
+      border: 1px solid gold;
+      filter: contrast(1) saturate(2)
+    }
+
+    & a {
+      background: rgba(#f00, .1);
+      border: 1px solid #f00;
+    }
+
+    & a[title] {
+      background: none;
+      border-color: LimeGreen;
+    }
+
+    & style {
+      border: block;
+    }
+
+    & [style], style, [class=""], [id=""], a[href="#"] {
+      background: rgba(yellow, .2);
+      border: 1px solid gold;
+    }
+  }
+}

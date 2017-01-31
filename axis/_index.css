@@ -1,0 +1,22 @@
+@import '_settings.css';
+@import '_reset.css';
+@import '_interaction.css';
+@import '_typography.css';
+@import '_code.css';
+@import '_utilities.css';
+@import '_layout.css';
+@import '_button.css';
+@import '_forms.css';
+@import '_tables.css';
+
+:root {
+  --axis-framework {
+    @apply --reset-elements;
+    @apply --typography;
+    @apply --code-blocks;
+    @apply --forms;
+    @apply --buttons;
+    @apply --layout;
+    @apply --tables;
+  }
+}

@@ -1,0 +1,123 @@
+/* ------ */
+/* Tables */
+/* ------ */
+
+:root {
+  /* Mixin: Basic Table
+
+  Creates a nice basic style for your tables. */
+  --table-basic {
+    border-collapse: separate;
+    border-spacing: 0;
+    max-width: 100%;
+    width: 100%;
+    border-radius: var(--table-radius);
+    margin-bottom: var(--default-margin);
+    position: relative;
+    text-align: left;
+    border: var(--table-border);
+
+    & th, & td {
+      padding: .5em 1em;
+      border-top: var(--table-border);
+      text-align: inherit;
+    }
+
+    & tr th {
+      border-bottom: var(--table-border);
+    }
+
+    & tr:first-child th,
+    & tr:first-child td {
+      border-top: 0;
+    }
+
+    & tr:first-child td:first-child,
+    & tr:first-child th:first-child{
+      border-radius: var(--table-radius) 0 0 0;
+    }
+
+    & tr:first-child td:last-child,
+    & tr:first-child th:last-child {
+      border-radius: 0 var(--table-radius) 0 0;
+    }
+
+    & tr:last-child td:last-child {
+      border-radius: 0 0 var(--table-radius) 0;
+    }
+
+    & tr:last-child td:first-child {
+      border-radius: 0 0 0 var(--table-radius);
+    }
+
+    & thead + tbody tr:first-child td:first-child,
+    & thead + tbody tr:first-child td:last-child {
+      border-radius: 0;
+    }
+
+    & th + th, & td + td, & th + td, & td + th {
+      border-left: var(--table-border);
+    }
+  }
+
+  /* Mixin: Minimal Table
+
+  Minimal styling for your table. */
+  --table-minimal {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: var(--default-margin);
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+
+    & td, & th {
+      line-height: var(--line-height);
+      padding: .5em 1em;
+      text-align: inherit;      
+    }
+
+    & td {
+      border-top: var(--default-border);
+    }
+  }
+
+  /* Table utility: Zebra stripes
+
+  Slightly darkens every other row of your table. Note: must be applied after
+  --table-basic or --table-minimal.
+  */
+  --zebra-stripes {
+    & tr:nth-child(odd) td {
+      background: var(--zebra-stipe-color);
+    }
+  }
+
+  /* Table utility: Hover rows
+
+  Darkens the row you are hovered on for increased readability. Note: must be
+  applied after --table-basic or --table-minimal.
+  */
+  --hover-rows {
+    & tr {
+      @apply --transition;
+
+      &:hover {
+        background: var(--hover-row-color);
+      }
+    }
+  }
+
+  /* Additive Mixin: Tables
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles to tables.  */
+  --tables {
+    table {
+      @apply --table-basic
+    }
+  }
+}

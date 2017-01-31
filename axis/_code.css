@@ -1,0 +1,62 @@
+/* ----------- */
+/* Code Blocks */
+/* ----------- */
+
+:root {
+  /* Mixin: Code
+
+  Styles inline code snippets. Fits nicely within a pagaraph. */
+  --code {
+    background-color: color(var(--base-gray) lightness(96%));
+    border: 1px solid color(var(--base-gray) lightness(85%));
+    border-radius: var(--global-border-radius);
+    color: var(--color-accent);
+    font-family: var(--font-monospace);
+    font-size: .8rem;
+    padding: .08rem .2rem;
+    white-space: normal;
+  }
+
+  /* Mixin: Pre
+
+  Default styling for code blocks. */
+  --pre {
+    background-color: color(var(--base-gray) lightness(96%));
+    border: 1px solid color(var(--base-gray) lightness(80%));
+    border-radius: var(--global-border-radius);
+    display: block;
+    font-family: var(--font-monospace);
+    font-size: .8rem;
+    line-height: inherit;
+    margin: 0 0 var(--default-margin);
+    padding: .5rem .8rem;
+    white-space: pre-wrap;
+  }
+
+
+  /* Mixin: Pre Dark
+
+  Dark theme for code blocks.  Note: must be applied after --pre.*/
+  --pre-dark {
+    background-color: color(var(--base-gray) lightness(20%));
+    color: color(var(--base-gray) lightness(75%));
+    border: 1px solid color(var(--base-gray) lightness(14%));
+  }
+
+
+  /* Additive Mixin: Code blocks
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles to code blocks. */
+  --code-blocks {
+    code {
+      @apply --code;
+    }
+
+    pre {
+      @apply --pre;
+    }
+  }
+}
