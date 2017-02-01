@@ -1,12 +1,12 @@
-# ![](http://axis2.netlify.com/img/axis-logo-small.png)
+# <img src="https://dl.dropboxusercontent.com/u/18590/axis-logo.svg" width="250px" height="75px">
 
 [![npm](http://img.shields.io/npm/v/axis.svg?style=flat)](http://badge.fury.io/js/axis)
 
 Axis is a modern, modular, & powerful css toolkit built on top ~~Stylus~~ [Postcss](https://github.com/postcss/postcss) & [cssnext](https://github.com/MoOx/postcss-cssnext).
 
-> Note: This is a pre-release for a total Axis rework moving away from Stylus. [More info here](https://github.com/static-dev/axis/pull/323)
+> **Note**: This is a pre-release for a total Axis rework moving away from Stylus. [More info here](https://github.com/static-dev/axis/pull/323)
 
-## Installation
+### Installation
 
 You can install Axis through npm:
 
@@ -26,7 +26,7 @@ Then make sure you are using postcss-import and call Axis at the top of your css
 
 You can find [full documentation for Axis here](#).
 
-### Library Size: 0kb
+### Bloat free
 
 Since Axis is a mixin library, it actually adds zero size to your code. That's right, when you include Axis and compile it, _not a single character is added to your code_.
 
