@@ -16,7 +16,7 @@ npm install axis@2.0.0-alpha.1 --save
 
 Then make sure you are using postcss-import and call Axis at the top of your css:
 
-```
+```css
 @import 'axis';
 
 /* Your awesome css here */
@@ -25,6 +25,10 @@ Then make sure you are using postcss-import and call Axis at the top of your css
 ### Documentation
 
 You can find [full documentation for Axis here](#).
+
+### Try it out
+
+Dive in and see how it works in the [codepen playground](http://codepen.io/dbox/pen/NdpWPM?editors=1100).
 
 ### Bloat free
 
