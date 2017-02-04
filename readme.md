@@ -2,7 +2,7 @@
 
 [![npm](http://img.shields.io/npm/v/axis.svg?style=flat)](http://badge.fury.io/js/axis)
 
-Axis is a modern, modular, & powerful css toolkit built on top ~~Stylus~~ [Postcss](https://github.com/postcss/postcss) & [cssnext](https://github.com/MoOx/postcss-cssnext).
+Axis is a modern, modular, & powerful css toolkit built on top of ~~Stylus~~ [Postcss](https://github.com/postcss/postcss) & [cssnext](https://github.com/MoOx/postcss-cssnext).
 
 > **Note**: This is a pre-release for a total Axis rework moving away from Stylus. [More info here](https://github.com/static-dev/axis/pull/323)
 
