@@ -1,0 +1,106 @@
+/* ------ */
+/* Button */
+/* ------ */
+
+:root {
+
+  /* Mixin: Button
+
+  Creates a basic button. */
+  --button {
+    padding: calc(var(--button-med-size) * .6) calc(var(--button-med-size) * .8);
+    font-size: var(--button-med-size);
+    @apply --transition;
+    cursor: pointer;
+    line-height: 1em;
+    text-decoration: none;
+    display: inline-block;
+    border: var(--outline-button-stroke) solid var(--button-bg-color);
+    border-radius: var(--button-radius);
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    user-select: none;
+
+    &:hover, &:active {
+      border: var(--outline-button-stroke) solid color(var(--button-bg-color) shade(20%));
+      background-color: color(var(--button-bg-color) shade(20%));
+    }
+  }
+
+  /* --- Button modifiers --- */
+
+  /* Mixin: Large button
+
+  Make the default button bigger. Note: must be applied after --button. */
+  --button-large {
+    padding: calc(var(--button-large-size) * .6) calc(var(--button-large-size));
+    font-size: var(--button-large-size);
+  }
+
+  /* Mixin: Small button
+
+  Make the default button smaller. Note: must be applied after --button. */
+  --button-small {
+    padding: calc(var(--button-small-size) * .6) calc(var(--button-small-size) * .8) calc(var(--button-small-size) * .5);
+    font-size: var(--button-small-size);
+  }
+
+  /* Mixin: Outline button
+
+  Creates an outline-style button. Note: must be applied after --button. */
+  --button-outline {
+    background: var(--outline-button-bg-color);
+    color: var(--outline-button-stroke-color);
+    border: var(--outline-button-stroke) solid var(--outline-button-stroke-color);
+
+    &:hover {
+      background: var(--outline-button-bg-hover-color);
+      border: var(--outline-button-stroke) solid var(--outline-button-stroke-hover-color);
+      color: var(--outline-button-stroke-hover-color);
+    }
+  }
+
+  /* Mixin: Disabled button
+
+  Sometimes you dont want buttons to be clicked. This is one of those times.
+   Note: must be applied after --button. */
+  --button-disabled {
+    cursor: not-allowed;
+    background-color: color(var(--base-gray) tint(70%));
+    border: var(--outline-button-stroke) solid color(var(--base-gray) tint(70%));
+
+    &:hover {
+      background-color: color(var(--base-gray) tint(70%));
+      border: var(--outline-button-stroke) solid color(var(--base-gray) tint(70%));
+    }
+  }
+
+  /* Additive Mixin: Buttons
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles to buttons. */
+  --buttons {
+    button,
+    .btn {
+      @apply --button;
+
+      &.large {
+        @apply --button-large;
+      }
+
+      &.small {
+        @apply --button-small;
+      }
+
+      &.outline {
+        @apply --button-outline;
+      }
+
+      &.disabled {
+        @apply --button-disabled;
+      }
+    }
+  }
+}

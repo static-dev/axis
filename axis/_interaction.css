@@ -1,0 +1,63 @@
+/* ----------- */
+/* Interaction */
+/* ----------- */
+
+:root {
+  /* Mixin: Transition
+
+  Quickly add the default transtion. */
+  --transition {
+    transition: all var(--default-transition-duration) var(--default-easing)
+  }
+
+  /* Mixin: Hover underline
+
+  Adds an underline to your links.
+  */
+  --hover-underline {
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid currentColor
+    }
+  }
+
+  /* Mixin: hover pop
+
+  On hover, your element pops out from the page.
+  */
+  --hover-pop {
+    &:hover {
+      transform: scale(1.1)
+    }
+  }
+
+  /* Mixin: Click down
+
+  Move an element down while clicked/tapped. */
+  --click-down {
+    transition-duration: .2s;
+
+    &:active {
+      transform: translateY(2px)
+    }
+  }
+
+  /* Mixin: Click inset
+
+  Creates an inset shadow on an elment while clicked/tapped. */
+  --click-inset {
+    &:active {
+      box-shadow: inset 0px .5rem 1rem rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  /* Mixin: Click shrink
+
+  Scale down an element when clicked/tapped. Gives the effect of "sinking" */
+  --click-shrink {
+    &:active {
+      transform: scale(.95)
+    }
+  }
+}

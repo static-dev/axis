@@ -1,27 +1,19 @@
 {
   "name": "axis",
-  "version": "1.0.0",
-  "description": "css library built on stylus",
+  "version": "2.0.0-alpha1",
+  "description": "Axis is a terse, modular & powerful css utility library built on top PostCSS and cssnext.",
+  "main": "index.css",
   "author": "Jeff Escalante",
   "license": "MIT",
-  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jenius/axis.git"
+    "url": "git://github.com/static-dev/axis.git"
   },
-  "devDependencies": {
-    "accord": "0.26.3",
-    "autoprefixer-stylus": "0.13.0",
-    "chai": "3.5.0",
-    "coffee-script": "1.12.3",
-    "css-parse": "2.0.0",
-    "mocha": "3.2.0",
-    "stylus": "0.54.5"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "engines": {
-    "node": ">=0.8.0"
-  }
+  "style": "index.css",
+  "keywords": [
+    "axis",
+    "css",
+    "cssnext",
+    "postcss"
+  ]
 }

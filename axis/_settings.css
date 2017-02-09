@@ -1,0 +1,116 @@
+:root {
+  /* ---------- Defaults ----------- */
+  --global-border-radius: 2px;
+  --default-border: 1px solid color(var(--base-gray) tint(70%));
+  --default-margin: 1.5rem;
+  --default-easing: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  --default-transition-duration: .3s;
+
+  /* ---------- Colors ----------- */
+  --base-gray: #767d84; /* Allows all grays to have consistent tint */
+  --color-primary: #0074D9;
+  --color-accent: #c25;
+  --color-warning: #d83030;
+  --selection-highlight: color(var(--color-primary) a(15%));
+  --tap-highlight: rgba(0,0,0,0);
+
+  /* ---------- Typography ----------- */
+  --base-font-size: 16px;
+  --base-font-weight: normal;
+  --font-stack: var(--font-sans);
+  --font-color: color(var(--base-gray) shade(35%));
+  --line-height: 1.5;
+  --paragraph-line-height: var(--line-height);
+  --paragraph-margin: .75rem;
+  --heading-size-multiplier: 1;  /* Change this to scale all headers at once. ex: 1.3 */
+  --heading-line-height: 1.3;
+  --heading-font-weight: 500; /* ex: bold, bolder, 400, 500, 600 */
+  --heading-display: block;
+  --heading-margin: var(--paragraph-margin);
+  --blockquote-boder-color: var(--color-primary);
+
+  /* Font Stacks */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
+  --font-helvetica: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+
+  /* ---------- Buttons ----------- */
+  --button-text-color: #fff;
+  --button-bg-color: var(--color-primary);
+  --button-bg-hover-color: color(var(--button-bg-color) shade(20%));
+  --button-med-size: .9rem;
+  --button-large-size: 1.3rem;
+  --button-small-size: .75rem;
+  --button-radius: var(--global-border-radius);
+
+  /* outline button */
+  --outline-button-stroke: 1px;
+  --outline-button-bg-color: transparent;
+  --outline-button-bg-hover-color: inherit;
+  --outline-button-stroke-color: var(--base-gray);
+  --outline-button-stroke-hover-color: var(--button-bg-color);
+
+  /* ---------- Layout ----------- */
+  --hr-color: color(var(--base-gray) a(30%));
+  --hr-size: 1px;
+
+  /* ---------- Forms ----------- */
+
+  /* 1. Text inputs */
+  --input-width: 100%;
+  --input-max-width: 25rem;
+  --input-min-width: auto;
+  --input-border-color: color(var(--base-gray) tint(70%));
+  --input-border-hover-color: color(var(--input-border-color) shade(20%));
+  --input-bg-color: transparent;
+  --input-text-color: inherit;
+  --input-height: auto;
+  --input-padding: .4em .65em;
+  --input-stroke: 1px;
+  --input-focus-inset: 1px;
+  --input-focus-color: var(--color-primary);
+
+  /* 2. Autofill */
+  --input-autofill-bg-color: var(--base-gray);
+  --input-autofill-text-color: white;
+
+  /* 3. Textarea*/
+  --text-area-width: var(--input-width);
+  --text-area-max-width: var(--input-max-width);
+  --text-area-min-width: var(--input-min-width);
+
+  /* 4. Lables */
+  --label-display: block; /* switch to inline-block to have label next to input */
+  --label-align: left;
+  --label-min-width: auto;
+  --label-max-width: auto;
+  --label-width: 100%;
+
+  /* 5. Fieldset */
+  --fieldset-border: var(--default-border);
+
+  /* 6. Select box */
+  --input-select-width: var(--input-width);
+  --input-select-min-width: var(--input-min-width);
+  --input-select-max-width: var(--input-max-width);
+  --input-select-arrow-color: color(var(--base-gray) tint(50%));
+  --input-select-arrow-size: .4em;
+  --input-select-bg-color: var(--input-bg-color);
+
+  /* 7. Radio buttons and checkboxes */
+  --control-label-text-size: var(--base-font-size);
+  --input-control: transparent;
+  --input-control-active: var(--color-primary);
+  --input-control-border: color(var(--base-gray) tint(70%));
+  --input-control-disabled: color(var(--base-gray) tint(70%));
+  --input-control-disabled-checked: color(var(--input-control-active) tint(40%));
+  --input-control-checkmark: #fff;
+
+
+  /* ---------- Tables ---------- */
+  --table-radius: var(--global-border-radius);
+  --table-border: var(--default-border);
+  --zebra-stipe-color: rgba(0,0,0,.03);
+  --hover-row-color: rgba(0,0,0,.08);
+}

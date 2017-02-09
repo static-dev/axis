@@ -1,0 +1,27 @@
+/* ------ */
+/* Layout */
+/* ------ */
+
+:root {
+  /* Mixin: Hr
+  Better horizontal rule presets */
+  --hr {
+    border: 0;
+    border-bottom: var(--hr-size) solid var(--hr-color);
+    height: 0;
+    padding: 0;
+    margin: var(--default-margin) 0
+  }
+
+  /* Additive Mixin: Layout
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles layout elements */
+  --layout {
+    hr {
+      @apply --hr
+    }
+  }
+}

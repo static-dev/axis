@@ -1,0 +1,102 @@
+/* ----- */
+/* Reset */
+/* ----- */
+
+/* Todo: Port fluid-media + print styles */
+
+:root {
+  /* Additive Mixin: Border Box HTML
+
+  Add border box to every element in your project. Used in your project root. Included in --sanitize, below..
+  http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+
+  --border-box-html {
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+  }
+
+  /* Additive Mixin: Tap Highlight
+
+  Changes the tap highlight color on mobile webkit devices.
+  Defaults to invisible, but make sure you have clear :hover or :active states
+  on all tappable elements. */
+
+  --tap-highlight {
+    input, textarea, button, select, a {
+      -webkit-tap-highlight-color: var(--tap-highlight);
+    }
+  }
+
+  /* Additive Mixin: Sanitize
+
+  Global resets and defaults not included in other Axis mixins. Based on
+  sanitize.css: https://github.com/jonathantneal/sanitize.css */
+  --sanitize {
+    body, figure, button, input, optgroup, select, textarea  {
+      margin: 0;
+    }
+
+    figcaption, figure, main {
+    	display: block;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, ::before, ::after {
+      background-repeat: no-repeat;
+      box-sizing: inherit;
+    }
+
+    abbr[title] {
+      border-bottom: none;
+      text-decoration: underline;
+      text-decoration: underline dotted;
+    }
+
+    b, strong {
+      font-weight: bolder;
+    }
+
+    a, area, button, input, label, select, summary, textarea, [tabindex] {
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+    }
+
+    [aria-busy="true"] {
+      cursor: progress;
+    }
+
+    [aria-controls] {
+      cursor: pointer;
+    }
+
+    [aria-hidden="false"][hidden] {
+      clip: rect(0, 0, 0, 0);
+      display: inherit;
+      position: absolute;
+    }
+
+    [aria-hidden="false"][hidden]:focus {
+      clip: auto;
+    }
+
+    [aria-disabled] {
+      cursor: default;
+    }
+  }
+
+  /* Additive Mixin: Reset Elements
+
+  Include all resets at once. */
+  --reset-elements {
+    @apply --sanitize;
+    @apply --tap-highlight;
+  }
+}

@@ -1,0 +1,484 @@
+/* ------ */
+/* Forms */
+/* ------ */
+
+/* todo: error, warning, success inputs, input active glow, input active arrow */
+
+:root {
+  /* Mixin: Input
+  A general purpose mixin for text inputs. Provides an nice attractive default
+  style that's easily customizable. */
+  --input {
+    @apply --transition;
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+    border: var(--input-stroke) solid var(--input-border-color);
+    border-radius: var(--global-border-radius);
+    height: var(--input-height);
+    outline: none;
+    padding: var(--input-padding);
+    background: var(--input-bg-color);
+    font-family: inherit;
+    width: var(--input-width);
+    max-width: var(--input-max-width);
+    min-width: var(--input-min-width);
+    color: var(--input-text-color);
+    font-size: inherit;
+    line-height: inherit;
+
+    &:hover {
+      border-color: var(--input-border-hover-color);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 var(--input-focus-inset) var(--input-focus-color);
+      border: 1px solid var(--input-focus-color);
+      outline: none
+    }
+  }
+
+  /* Mixin: Input warning
+
+  When someone F'd it up, you gotta show them how it is. Put this on an input
+  to make it clear that something is not quite right.  */
+  --input-warning {
+    border-color: var(--color-warning);
+
+    &:focus {
+      border-color: color(var(--color-warning) a(50%));
+      box-shadow: 0 0 .6rem color(var(--color-warning) a(50%))
+    }
+  }
+
+  /* Mixin: Autofill
+
+  When forms are auto-filled, the background color for the inputs (ie: pale
+  yellow) can be very jarring, especially if you have a dark background.  This
+  allows you to override that. */
+
+  --autofill {
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -webkit-text-fill-color: var(--input-autofill-text-color)
+    }
+
+    &:-moz-autofill {
+      -moz-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -moz-text-fill-color: var(--input-autofill-text-color)
+    }
+
+    &:-o-autofill {
+      -o-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -o-text-fill-color: var(--input-autofill-text-color)
+    }
+
+    &:-khtml-autofill {
+      -khtml-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -khtml-text-fill-color: var(--input-autofill-text-color)
+    }
+  }
+
+  /* Mixin: Textarea
+
+  Get your text areas looking nice. */
+  --textarea {
+    @apply --input;
+    @apply --autofill;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: var(--text-area-width);
+    max-width: var(--text-area-max-width);
+    min-width: var(--text-area-min-width);
+  }
+
+  --label {
+    display: var(--label-display);
+    text-align: var(--label-align);
+    min-width: var(--label-min-width);
+    max-width: var(--label-max-width);
+    width: var(--label-width);
+  }
+
+  /* Mixin: File Input
+
+  Styles the file input to look like a normal button. Note: Currently only works
+  in Webkit. Do not use if you need cross browser support. */
+  --file-input {
+    box-sizing: border-box;
+    font-size: var(--base-font-size);
+    cursor: pointer;
+    line-height: 1em;
+    text-decoration: none;
+    display: inline-block;
+    border: var(--outline-button-stroke) solid var(--button-bg-color);
+    border-radius: var(--button-radius);
+    outline: 0;
+    padding: .4rem;
+    position: relative;
+    width: 200px;
+    color: var(--button-text-color);
+
+    &:after {
+      box-sizing: inherit;
+      text-align: center;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--button-bg-color);
+      content: 'Choose a file ...';
+      padding: calc(var(--button-med-size) * .6) calc(var(--button-med-size) * .8);
+    }
+    &:hover:after, &:active:after {
+      background-color: color(var(--button-bg-color) shade(20%));
+    }
+  }
+
+  /* Mixin: Fieldset
+
+  Apply default styling to fieldsets */
+  --fieldset {
+    border: var(--fieldset-border);
+    border-radius: var(--global-border-radius);
+  }
+
+  /* Mixin: Select box
+
+  Uniform, cross-browser select-box styling.
+  Note: Must be applied to a container wrapping the <select> tag. */
+
+  --select-box {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: var(--input-select-width);
+    min-width: --input-select-min-width;
+    max-width: var(--input-select-max-width);
+    border-radius: var(--global-border-radius);
+    background-color: var(--input-select-bg-color);
+    border: var(--fieldset-border);
+
+    &:hover {
+      border-color: var(--input-border-hover-color);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 1px var(--input-focus-color);
+      border: 1px solid var(--input-focus-color);
+      outline: none;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - (var(--input-select-arrow-size) / 2));
+      right: .75em;
+      z-index: 2;
+      display: none;
+      pointer-events: none;
+      display: block;
+      border-left: var(--input-select-arrow-size) solid transparent;
+      border-right: var(--input-select-arrow-size) solid transparent;
+      border-top: var(--input-select-arrow-size) solid var(--input-select-arrow-color);
+    }
+
+    & select {
+      width: 100%;
+      margin: 0;
+      outline: none;
+      padding: var(--input-padding);
+      font-size: var(--base-font-size); /*anything except 16px will create page zoom on ios */
+      border: none;
+      border-radius: var(--global-border-radius);
+      border: var(--input-stroke) solid color(var(--base-gray) tint(70%));
+      padding-right: 2em;
+      background: none;
+      border: 0px solid transparent;
+      appearance: none;
+      color: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      text-transform: none;
+      margin: 0;
+
+      &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+      }
+
+      &::-ms-expand {
+        display: none;
+      }
+
+      &:focus, &:active {
+        border: none;
+        box-shadow: none;
+      }
+
+      & option {
+        padding: .3rem .7rem
+      }
+    }
+  }
+
+  /* Mixin: Checkbox
+
+  Styles checkboxes (and their labels) uniformly across browsers. Apply this
+  to [type='checkbox'] or a class on a checkbox. */
+  --checkbox {
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+
+    & + label {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      padding-left: calc(1.875 * var(--control-label-text-size));
+      cursor: pointer;
+      vertical-align: middle;
+      font-size: var(--control-label-text-size);
+      line-height: 1.3em;
+      margin-bottom: calc(0.5 * var(--control-label-text-size));
+
+      &:hover {
+        &:before {
+          border: 1px solid var(--input-control-active)
+        }
+      }
+
+      &:before {
+        border-radius: var(--global-border-radius);
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: calc(1.25 * var(--control-label-text-size));
+        height: calc(1.25 * var(--control-label-text-size));
+        content: '';
+        transition: border .2s ease;
+        border: 1px solid var(--input-control-border);
+        background: var(--input-control);
+      }
+
+      &:after {
+        box-sizing: border-box;
+        position: absolute;
+        content: '';
+        transition: all .2s ease;
+        top: calc(0.125 * var(--control-label-text-size));
+        left: calc(0.4375 * var(--control-label-text-size));
+        width: calc(0.375 * var(--control-label-text-size));
+        height: calc(0.75 * var(--control-label-text-size));
+        transform: scale(0) rotate(45deg);
+        border-width: calc(0.125 * var(--control-label-text-size));
+        border-style: solid;
+        border-color: var(--input-control-checkmark);
+        border-top: 0;
+        border-left: 0;
+      }
+    }
+
+    &:checked + label {
+      &:before {
+        border: var(--input-control-active);
+        background: var(--input-control-active);
+      }
+
+      &:after {
+        transform: scale(1) rotate(45deg);
+      }
+    }
+
+    &[disabled], &[disabled] + label {
+      cursor: not-allowed;
+
+      &:hover, &:before, &:after {
+        cursor: not-allowed;
+      }
+    }
+
+    &[disabled] + label {
+      color: var(--input-control-disabled);
+
+      &:before {
+        border-color: var(--input-control-disabled);
+      }
+    }
+
+    &:checked[disabled] + label {
+      &:before {
+        border: var(--input-control-disabled-checked);
+        background: var(--input-control-disabled-checked);
+      }
+    }
+  }
+
+
+  /* Mixin: Radio
+
+  Styles radio buttons (and their labels) uniformly across browsers. Apply this
+  to [type='radio'] or a class on a ratio button. */
+  --radio {
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+
+    & + label {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      padding-left: calc(1.875 * var(--control-label-text-size));
+      cursor: pointer;
+      vertical-align: middle;
+      font-size: var(--control-label-text-size);
+      line-height: 1.3em;
+      margin-bottom: calc(0.5 * var(--control-label-text-size));
+
+      &:hover {
+        &:before {
+          border: 1px solid var(--input-control-active);
+        }
+      }
+
+      &:before {
+        border-radius: 50%;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: calc(1.25 * var(--control-label-text-size));
+        height: calc(1.25 * var(--control-label-text-size));
+        content: '';
+        transition: border .2s ease;
+        border: 1px solid var(--input-control-border);
+        background: var(--input-control);
+      }
+
+      &:after {
+        box-sizing: border-box;
+        position: absolute;
+        content: '';
+        transition: all .2s ease;
+        top: calc(0.375 * var(--control-label-text-size));
+        left: calc(0.375 * var(--control-label-text-size));
+        width: calc(0.5 * var(--control-label-text-size));
+        height: calc(0.5 * var(--control-label-text-size));
+        border-radius: 50%;
+        background: var(--input-control-active);
+        transform: scale(0);
+      }
+    }
+
+    &:checked + label {
+      &:before {
+        border: 1px solid var(--input-control-active);
+      }
+
+      &:after {
+        transform: scale(1);
+      }
+    }
+
+    &[disabled], &[disabled] + label {
+      cursor: not-allowed;
+
+      &:hover, &:before, &:after {
+        cursor: not-allowed;
+      }
+    }
+
+    &:checked[disabled] + label {
+      &:before {
+        border: 1px solid var(--input-control-disabled-checked);
+      }
+
+      &:after {
+        background: var(--input-control-disabled-checked);
+      }
+    }
+  }
+
+  /* Additive Mixin: Controls
+
+  Gets your checkboxes and radio buttons looking good as heck across all the
+  browsers.  */
+  --controls {
+    input[type='checkbox'] {
+      @apply --checkbox;
+    }
+    input[type='radio'] {
+      @apply --radio;
+    }
+  }
+
+  /* Additive Mixin: Forms
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds default form styling to the appropriate HTML elements. */
+  --forms {
+    [type='email'],
+    [type='number'],
+    [type='password'],
+    [type='search'],
+    [type='tel'],
+    [type='text'],
+    [type='url'],
+    [type='color'],
+    [type='date'],
+    [type='datetime'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='time'],
+    [type='week'] {
+      @apply --input;
+      @apply --autofill;
+    }
+
+    textarea {
+      @apply --textarea;
+    }
+
+    /*overwrites for color */
+    input[type='color'] {
+      padding: .2rem;
+      width: 2.5rem;
+      max-width: 2.5rem;
+      min-width: 2.5rem;
+      height: 1.5em;
+    }
+
+
+    input[type='reset'],
+    input[type='button'],
+    input[type='submit'] {
+      @apply --button;
+    }
+
+    input[type='reset'] {
+      @apply --button-outline;
+    }
+
+    /* Radio buttons and Checkboxes */
+    @apply --controls;
+
+    label {
+      @apply --label;
+    }
+
+    fieldset {
+      @apply --fieldset;
+    }
+
+    .select-box {
+      @apply --select-box;
+    }
+  }
+}
