@@ -87,6 +87,13 @@ describe 'gradients', ->
   it 'image-gradient', (done) ->
     compile_and_match(path.join(@path, 'image-gradient.styl'), done)
 
+describe 'shadows', ->
+
+  before -> @path = path.join(test_path, 'shadows')
+
+  it 'shadow', (done) ->
+    compile_and_match(path.join(@path, 'shadow.styl'), done)
+
 describe 'images', ->
 
   before -> @path = path.join(test_path, 'images')
