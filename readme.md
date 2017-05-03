@@ -11,7 +11,7 @@ Axis is a modern, modular, & powerful css toolkit built on top of ~~Stylus~~ web
 You can install Axis through npm:
 
 ```
-npm install axis@alpha
+npm install axis@alpha --save
 ```
 
 Then make sure you are using postcss-import and call Axis at the top of your css:
